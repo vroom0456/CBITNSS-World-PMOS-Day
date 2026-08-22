@@ -176,19 +176,19 @@ export default function Home() {
             <div className="stats-grid">
               <div className="stat-box reveal">
                 <div className="stat-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0891B2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5"/><path d="M7.5 13l4.5-2 4.5 2"/><path d="M4.5 19.5c2-2 4.5-3 7.5-3s5.5 1 7.5 3"/><path d="M3.5 16.5c1.5-1.5 4.5-2 8.5-2s7 .5 8.5 2"/></svg>
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#567C8D" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5"/><path d="M7.5 13l4.5-2 4.5 2"/><path d="M4.5 19.5c2-2 4.5-3 7.5-3s5.5 1 7.5 3"/><path d="M3.5 16.5c1.5-1.5 4.5-2 8.5-2s7 .5 8.5 2"/></svg>
                 </div>
                 <div><span className="num-val" data-target="20">0</span><span className="num-unit">%</span><div className="stat-lbl">Indian Women Affected</div></div>
               </div>
               <div className="stat-box reveal">
                 <div className="stat-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0891B2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#567C8D" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                 </div>
                 <div><span className="num-val" data-target="70">0</span><span className="num-unit">%</span><div className="stat-lbl">Remain Undiagnosed</div></div>
               </div>
               <div className="stat-box reveal">
                 <div className="stat-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0891B2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#567C8D" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
                 <div><span className="num-val" data-target="100">0</span><span className="num-unit">%</span><div className="stat-lbl">Manageable via Lifestyle</div></div>
               </div>
@@ -203,7 +203,7 @@ export default function Home() {
             
             <div className="reveal" style={{ background: "var(--soft-mint-bg)", border: "1.5px solid var(--soft-mint-border)", padding: "1.3rem 1.8rem", borderRadius: "var(--r-md)", marginBottom: "2.5rem", display: "flex", alignItems: "center", gap: "1.2rem", textAlign: "left" }}>
               <div style={{ width: 44, height: 44, background: "#fff", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 12px rgba(15,56,84,0.08)" }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F3854" strokeWidth="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v10"/><path d="M9 12h6"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F4858" strokeWidth="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v10"/><path d="M9 12h6"/></svg>
               </div>
               <div style={{ fontSize: "0.9rem", color: "var(--nss-navy)", lineHeight: 1.65 }}>
                 <strong>Medical Nomenclature Consensus (PMOS):</strong> Medical authorities now designate PCOS/PCOD as <strong>PMOS (Polyendocrine Metabolic Ovarian Syndrome)</strong> to accurately highlight that the condition impacts whole-body endocrine &amp; metabolic health beyond ovaries.

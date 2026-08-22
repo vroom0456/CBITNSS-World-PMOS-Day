@@ -1,24 +1,45 @@
 /* Full Original CSS System */
 
 :root {
-      --nss-navy: #0F3854; --nss-navy-dark: #092234;
-      --nss-blue-accent: #0284C7; --nss-blue-soft: #F0F9FF;
-      --bg-main: #F2F9FA; --card-white: #FFFFFF;
-      --soft-teal-bg: #E6F7F9; --soft-teal-border: #BAE6FD; --soft-teal-accent: #0891B2;
-      --soft-mint-bg: #ECFDF5; --soft-mint-border: #A7F3D0;
-      --soft-navy-bg: #F0FDF4; --soft-navy-border: #BBF7D0; --soft-navy-text: #166534;
-      --text-main: #0C2B40; --text-body: #334155; --text-muted: #64748B;
-      --border-light: #E0F2FE;
-      --shadow-soft: 0 4px 20px rgba(15,56,84,0.04);
-      --shadow-card: 0 12px 36px rgba(15,56,84,0.08);
-      --shadow-modal: 0 24px 72px rgba(12,43,64,0.25);
-      --glass-bg: rgba(255,255,255,0.7);
-      --glass-border: rgba(186,230,253,0.5);
-      --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 9999px;
-      --ease-out: cubic-bezier(0.22,1,0.36,1);
-      --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
-      --transition: all 0.28s cubic-bezier(0.4,0,0.2,1);
-    }
+  --bg-main: #F5EFEB;            /* Warm Soft Beige Background */
+  --card-white: #FFFFFF;         /* Pure White Card Background */
+  --nss-teal: #567C8D;           /* Primary Elegance Teal */
+  --nss-teal-dark: #2F4858;      /* Deep Slate Teal for Headings & Text */
+  --nss-teal-soft: #EBF2F5;      /* Soft Light Teal Accent Background */
+  --nss-teal-border: #B8CBD5;    /* Soft Teal Border */
+  --beige-container: #ECE3DB;    /* Soft Beige Container */
+  --beige-border: #DCD0C7;       /* Soft Beige Border */
+
+  /* Overrides for system-wide color consistency */
+  --nss-navy: #2F4858;
+  --nss-navy-dark: #1E2F3A;
+  --nss-blue-accent: #567C8D;
+  --nss-blue-soft: #EBF2F5;
+  --soft-teal-bg: #EBF2F5;
+  --soft-teal-border: #B8CBD5;
+  --soft-teal-accent: #567C8D;
+  --soft-mint-bg: #ECE3DB;
+  --soft-mint-border: #DCD0C7;
+  --soft-navy-bg: #EBF2F5;
+  --soft-navy-border: #B8CBD5;
+  --soft-navy-text: #2F4858;
+
+  --text-main: #2F4858;
+  --text-body: #4A5568;
+  --text-muted: #718096;
+  --border-light: #DCD0C7;
+
+  --shadow-soft: 0 4px 20px rgba(47, 72, 88, 0.06);
+  --shadow-card: 0 12px 36px rgba(47, 72, 88, 0.09);
+  --shadow-modal: 0 24px 72px rgba(47, 72, 88, 0.28);
+
+  --glass-bg: rgba(255, 255, 255, 0.90);
+  --glass-border: rgba(184, 203, 213, 0.6);
+  --r-sm: 12px; --r-md: 18px; --r-lg: 24px; --r-pill: 9999px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;}
     body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg-main);color:var(--text-main);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;}
