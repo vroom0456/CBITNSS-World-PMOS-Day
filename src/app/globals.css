@@ -88,7 +88,7 @@
     #progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--nss-blue-accent),var(--soft-teal-accent));z-index:10000;width:0%;transition:width 0.08s linear;border-radius:0 2px 2px 0;}
 
     /* NAVBAR */
-    nav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 5%;background:rgba(255,255,255,0.92);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(234,232,242,0.7);box-shadow:0 1px 20px rgba(45,48,146,0.06);transition:background 0.3s ease,box-shadow 0.3s ease;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 5%;background:rgba(238,228,218,0.94);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid #D8C4AC;box-shadow:0 1px 20px rgba(58,43,39,0.06);transition:background 0.3s ease,box-shadow 0.3s ease;}
     nav.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 24px rgba(45,48,146,0.10);}
     .nav-brand{display:flex;align-items:center;gap:0.9rem;}
     .nss-logo-img{width:58px;height:58px;border-radius:50%;object-fit:contain;box-shadow:0 4px 18px rgba(45,48,146,0.20);transition:transform 0.45s var(--ease-spring),box-shadow 0.3s ease;flex-shrink:0;}
@@ -149,7 +149,7 @@
     .section{padding:90px 5%;}
     .container{max-width:1140px;margin:0 auto;}
     .heading-box{text-align:center;max-width:700px;margin:0 auto 3.5rem;}
-    .section-tag{font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.16em;color:var(--nss-blue-accent);margin-bottom:0.5rem;display:inline-block;}
+    .section-tag{display:inline-flex;align-items:center;gap:0.4rem;background:#C8A49F;color:#FFFFFF;padding:0.35rem 1rem;border-radius:var(--r-pill);font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem;box-shadow:0 2px 10px rgba(200,164,159,0.25);}
     .section-title{font-size:clamp(1.9rem,3.5vw,2.55rem);font-weight:800;color:var(--nss-navy);line-height:1.2;margin-bottom:0.8rem;}
     #team .section-title{white-space:nowrap;font-size:clamp(0.82rem,4.2vw,2.35rem);word-break:keep-all;}
     .section-title span.accent{color:var(--soft-teal-accent);}
