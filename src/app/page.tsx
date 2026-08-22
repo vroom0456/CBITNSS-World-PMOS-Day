@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '74px' }}>
+      <main style={{ paddingTop: '60px' }}>
 
         {/* ─── 1. HERO SECTION ─── */}
         <section id="hero">
@@ -58,7 +58,7 @@ export default function HomePage() {
             </div>
 
             {/* EVENT DETAILS BADGE */}
-            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.55rem 1.25rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '0.5rem 1rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.85rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)', maxWidth: '100%' }}>
+            <div className="hero-event-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.55rem 1.25rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '0.5rem 1rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.85rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)', maxWidth: '100%' }}>
               <span>📅 <strong>Date &amp; Time:</strong> 1st Sept 2026 · 10:00 AM</span>
               <span style={{ color: 'var(--nss-blue-accent)', display: 'inline-block' }}>•</span>
               <span>📍 <strong>Venue:</strong> Assembly Hall, CBIT</span>
@@ -73,36 +73,38 @@ export default function HomePage() {
               Polycystic Ovary Syndrome (PCOS) is a common hormonal condition that affects many women and girls, yet it is often misunderstood or left undiagnosed. This World PCOS Day, explore reliable information about its causes, symptoms, health effects, diagnosis and management.
             </p>
 
-            {/* HERO BUTTONS — BIG HIGHLIGHTED ASK ANONYMOUSLY BUTTON ABOVE ALL OTHERS */}
-            <div className="hero-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', width: '100%' }}>
+            {/* HERO BUTTONS — Primary CTA prominent, secondary as compact links */}
+            <div className="hero-buttons">
+              {/* PRIMARY: Ask Anonymous — visually dominant */}
               <button
                 onClick={() => window.dispatchEvent(new Event('openModal'))}
                 className="btn-hero-modal"
                 style={{
                   background: 'linear-gradient(135deg, var(--nss-blue-accent) 0%, #5B32E8 100%)',
                   color: '#FFFFFF',
-                  padding: '1.15rem 2.8rem',
+                  padding: '0.9rem 2.4rem',
                   borderRadius: 'var(--r-pill)',
                   fontWeight: 800,
-                  fontSize: '1.15rem',
-                  boxShadow: '0 10px 32px rgba(124, 92, 252, 0.45)',
+                  fontSize: '1rem',
+                  boxShadow: '0 8px 28px rgba(124, 92, 252, 0.4)',
                   border: 'none',
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.6rem',
+                  gap: '0.5rem',
                   letterSpacing: '-0.01em'
                 }}
               >
-                🌸 Ask Doctor Anonymously →
+                Ask Doctor Anonymously →
               </button>
 
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0.4rem' }}>
-                <Link href="/understand" className="btn-hero-guide" style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '2px solid var(--border-light)', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 700 }}>
-                  📖 Understand PMOS
+              {/* SECONDARY: Compact horizontal link row */}
+              <div className="hero-secondary-links">
+                <Link href="/understand" className="btn-hero-guide" style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--nss-navy)', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                  Understand PMOS
                 </Link>
-                <Link href="/self-test" className="btn-hero-guide" style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '2px solid var(--border-light)', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 700 }}>
-                  📝 2-Minute Self-Check
+                <Link href="/self-test" className="btn-hero-guide" style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--nss-navy)', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                  Self-Check
                 </Link>
               </div>
             </div>
@@ -118,17 +120,17 @@ export default function HomePage() {
               <p className="section-desc">Sourced from the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.8rem' }}>
+            <div className="stats-grid" id="stats-banner">
               {[
                 { num: '1 in 8', label: 'Reproductive Age Women', desc: 'Affects up to 13% of women worldwide, making it the most prevalent hormonal condition.', src: 'Monash Guideline 2023', srcDesc: 'Epidemiology data from 2023 International Evidence-Based Guideline for the Assessment and Management of PCOS/PMOS.' },
                 { num: '170M+', label: 'Worldwide Impact', desc: 'Over 170 million individuals globally experience reproductive, metabolic, or emotional symptoms.', src: 'WHO & Monash Data 2026', srcDesc: 'Global burden statistics published by WHO and Monash University international research consensus.' },
                 { num: '2026', label: 'Terminology Update', desc: 'International consensus renamed the condition "PMOS" to reflect multi-system metabolic and endocrine health.', src: '2026 PMOS Nomenclature Consensus', srcDesc: 'International terminology update clarifying that ovaries are not the sole origin of the condition.' },
               ].map((s, i) => (
-                <div key={i} className="stat-box reveal" style={{ background: 'var(--soft-teal-bg)', padding: '2rem 1.5rem', borderRadius: 'var(--r-md)', border: '1px solid var(--soft-teal-border)', textAlign: 'center' }}>
-                  <span className="num-val" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--nss-blue-accent)' }}>{s.num}</span>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.4rem' }}>{s.label}</h3>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.6 }}>{s.desc}</p>
-                  <button className="source-trigger-btn" style={{ marginTop: '0.8rem' }} onClick={() => openSourceModal(s.src, s.srcDesc)}>
+                <div key={i} className="stat-box reveal">
+                  <span className="num-val">{s.num}</span>
+                  <h3>{s.label}</h3>
+                  <p>{s.desc}</p>
+                  <button className="source-trigger-btn" onClick={() => openSourceModal(s.src, s.srcDesc)}>
                     ⓘ Sources
                   </button>
                 </div>
@@ -138,17 +140,19 @@ export default function HomePage() {
         </section>
 
         {/* ─── 3. CAMPAIGN NAVIGATION HUB (Unique to Homepage) ─── */}
-        <section style={{ padding: '4rem 0', background: 'var(--bg-main)' }}>
-          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <span className="section-tag">🧭 Campaign Navigation Hub</span>
+        <section className="section" style={{ background: 'var(--bg-main)' }}>
+          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <div className="heading-box reveal">
+              <span className="section-tag">Campaign Navigation Hub</span>
               <h2 className="section-title">Explore <span className="accent">PMOS Campaign Sections</span></h2>
               <p className="section-desc">Each topic has its own dedicated page. Select a section below to learn more.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem' }}>
+            {/* Desktop: grid cards. Mobile: compact editorial nav rows via CSS classes */}
+            <div className="nav-hub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.4rem' }}>
               {[
                 {
+                  num: '01',
                   icon: '🔬',
                   tag: 'Medical Guide',
                   title: 'Understand PMOS & 4 Pillars',
@@ -157,6 +161,7 @@ export default function HomePage() {
                   btn: 'Open Medical Guide →'
                 },
                 {
+                  num: '02',
                   icon: '🩺',
                   tag: 'Symptom Care',
                   title: 'Symptoms & Clinical Care',
@@ -165,6 +170,7 @@ export default function HomePage() {
                   btn: 'Open Symptoms Guide →'
                 },
                 {
+                  num: '03',
                   icon: '📝',
                   tag: 'Interactive Tool',
                   title: '2-Minute Self-Check Wizard',
@@ -173,6 +179,7 @@ export default function HomePage() {
                   btn: 'Start Self-Check →'
                 },
                 {
+                  num: '04',
                   icon: '💡',
                   tag: 'Science Check',
                   title: 'Myths vs Facts & Care',
@@ -181,6 +188,7 @@ export default function HomePage() {
                   btn: 'Open Myths & Science →'
                 },
                 {
+                  num: '05',
                   icon: '🌸',
                   tag: 'Student Privacy',
                   title: 'Ask a Doctor Anonymously',
@@ -189,6 +197,7 @@ export default function HomePage() {
                   btn: 'Submit Doubt Anonymously →'
                 },
                 {
+                  num: '06',
                   icon: '📚',
                   tag: 'Campus Kit',
                   title: 'Research & Campus Kit',
@@ -197,21 +206,27 @@ export default function HomePage() {
                   btn: 'Open Research & Kit →'
                 },
               ].map((card, idx) => (
-                <div key={idx} className="symptom-card reveal" style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '2rem 1.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'var(--shadow-soft)' }}>
+                <Link key={idx} href={card.link} className="nav-hub-row reveal" style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '1.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'var(--shadow-soft)', textDecoration: 'none' }}>
+                  {/* Desktop inner layout */}
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-                      <span style={{ fontSize: '2.2rem' }}>{card.icon}</span>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', padding: '0.25rem 0.75rem', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
+                      <span className="nav-hub-row-icon" style={{ fontSize: '2rem' }}>{card.icon}</span>
+                      <span className="nav-hub-row-tag" style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', padding: '0.25rem 0.75rem', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
                         {card.tag}
                       </span>
                     </div>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.5rem' }}>{card.title}</h3>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '1.5rem' }}>{card.desc}</p>
+                    {/* Mobile: row layout via CSS classes */}
+                    <div className="nav-hub-row-left">
+                      <h3 className="nav-hub-row-title" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>{card.title}</h3>
+                      <p className="nav-hub-row-desc" style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '1.2rem' }}>{card.desc}</p>
+                    </div>
                   </div>
-                  <Link href={card.link} style={{ background: 'var(--soft-teal-bg)', color: 'var(--nss-navy)', border: '1.5px solid var(--soft-teal-border)', padding: '0.75rem 1.2rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.88rem', textAlign: 'center', display: 'block' }}>
+                  <span className="nav-hub-row-btn" style={{ background: 'var(--soft-teal-bg)', color: 'var(--nss-navy)', border: '1.5px solid var(--soft-teal-border)', padding: '0.65rem 1rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.85rem', textAlign: 'center', display: 'block' }}>
                     {card.btn}
-                  </Link>
-                </div>
+                  </span>
+                  {/* Mobile-only arrow */}
+                  <span className="nav-hub-row-arrow" aria-hidden>›</span>
+                </Link>
               ))}
             </div>
           </div>
