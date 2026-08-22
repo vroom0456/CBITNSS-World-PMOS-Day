@@ -110,6 +110,9 @@ export default function Navbar() {
           <span>Menu</span>
         </button>
       </div>
+
+      {/* GLOBAL FLOATING ASK ANONYMOUS BUTTON (ON EVERY PAGE) */}
+      <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
     </>
   );
 }

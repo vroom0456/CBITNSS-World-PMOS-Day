@@ -89,9 +89,6 @@ export default function AboutPage() {
         </section>
       </main>
 
-      {/* FLOATING ASK BUTTON */}
-      <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
-
       <Footer />
     </>
   );

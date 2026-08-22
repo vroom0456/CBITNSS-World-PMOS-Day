@@ -49,19 +49,8 @@ export default function HomePage() {
       <Navbar />
       <main style={{ paddingTop: '74px' }}>
 
-        {/* ─── SPECIAL TOP BANNER: ANONYMOUS QUESTION MENTION ─── */}
-        <div style={{ background: 'linear-gradient(90deg, #2D1B4E 0%, #7C5CFC 100%)', color: '#FFFFFF', padding: '0.75rem 1.5rem', textAlign: 'center', fontSize: '0.88rem', fontWeight: 700, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <span>🌸 <strong>Special Mention:</strong> Have a personal health doubt? Ask Doctor Anonymously — 100% Confidential (No Name or Student ID Collected)</span>
-          <button 
-            onClick={() => window.dispatchEvent(new Event('openModal'))}
-            style={{ background: '#FFFFFF', color: '#2D1B4E', padding: '0.4rem 1rem', borderRadius: '9999px', fontWeight: 800, fontSize: '0.82rem', border: 'none', cursor: 'pointer', boxShadow: '0 2px 10px rgba(0,0,0,0.15)' }}
-          >
-            Ask Anonymously Now →
-          </button>
-        </div>
-
         {/* ─── 1. HERO SECTION ─── */}
-        <section id="hero" style={{ paddingTop: '50px' }}>
+        <section id="hero">
           <div className="hero-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="nss-hero-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)' }}>
               <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} priority />
@@ -84,16 +73,38 @@ export default function HomePage() {
               <strong>PMOS (Polyendocrine Metabolic Ovarian Syndrome)</strong> — the condition formerly known as PCOS — affects reproductive, endocrine, metabolic, and emotional health in 1 in 8 women worldwide.
             </p>
 
-            <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/understand" className="btn-hero-modal" style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.9rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800 }}>
-                📖 Understand PMOS
-              </Link>
-              <Link href="/self-test" className="btn-hero-guide" style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '2px solid var(--border-light)', padding: '0.9rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 700 }}>
-                📝 2-Minute Self-Check
-              </Link>
-              <button onClick={() => window.dispatchEvent(new Event('openModal'))} style={{ background: 'transparent', color: 'var(--nss-blue-accent)', border: 'none', fontWeight: 800, fontSize: '0.92rem', cursor: 'pointer', padding: '0.9rem 1rem' }}>
-                🌸 Ask Anonymously →
+            {/* HERO BUTTONS — BIG HIGHLIGHTED ASK ANONYMOUSLY BUTTON ABOVE ALL OTHERS */}
+            <div className="hero-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', width: '100%' }}>
+              <button
+                onClick={() => window.dispatchEvent(new Event('openModal'))}
+                className="btn-hero-modal"
+                style={{
+                  background: 'linear-gradient(135deg, var(--nss-blue-accent) 0%, #5B32E8 100%)',
+                  color: '#FFFFFF',
+                  padding: '1.15rem 2.8rem',
+                  borderRadius: 'var(--r-pill)',
+                  fontWeight: 800,
+                  fontSize: '1.15rem',
+                  boxShadow: '0 10px 32px rgba(124, 92, 252, 0.45)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  letterSpacing: '-0.01em'
+                }}
+              >
+                🌸 Ask Doctor Anonymously →
               </button>
+
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0.4rem' }}>
+                <Link href="/understand" className="btn-hero-guide" style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '2px solid var(--border-light)', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 700 }}>
+                  📖 Understand PMOS
+                </Link>
+                <Link href="/self-test" className="btn-hero-guide" style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '2px solid var(--border-light)', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 700 }}>
+                  📝 2-Minute Self-Check
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -207,9 +218,6 @@ export default function HomePage() {
         </section>
 
       </main>
-
-      {/* FLOATING ASK BUTTON */}
-      <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
 
       {/* ANONYMOUS MODAL */}
       <div
