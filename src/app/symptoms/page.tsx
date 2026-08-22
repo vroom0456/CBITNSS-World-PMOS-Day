@@ -77,7 +77,7 @@ export default function SymptomsPage() {
               <button className="tab-btn active" onClick={(e) => window.showTab('daily', e.currentTarget)}>🌅 Exercise &amp; Movement</button>
               <button className="tab-btn" onClick={(e) => window.showTab('microbiome', e.currentTarget)}>🦠 Gut Microbiome Care</button>
               <button className="tab-btn" onClick={(e) => window.showTab('medical', e.currentTarget)}>💊 Inositols &amp; Clinical Checks</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('mental', e.currentTarget)}>🧘 Mental &amp; Sleep Care</button>
+              <button className="tab-btn" onClick={(e) => window.showTab('emotional', e.currentTarget)}>🧘 Emotional Wellbeing</button>
             </div>
 
             {/* TAB 1: EXERCISE */}
@@ -107,7 +107,7 @@ export default function SymptomsPage() {
                   <div className="pre-num">1</div>
                   <div className="pre-info">
                     <h5>Probiotic &amp; Prebiotic Support</h5>
-                    <p>Supports gut microbial diversity, short-chain fatty acid (SCFA) production, and gut epithelial barrier integrity.</p>
+                    <p>Supports gut microbial diversity, short-chain fatty acid (SCFA) production, and gut epithelial barrier integrity, which may help reduce systemic inflammation in PMOS.</p>
                   </div>
                 </div>
               </div>
@@ -133,14 +133,21 @@ export default function SymptomsPage() {
               </div>
             </div>
 
-            {/* TAB 4: MENTAL */}
-            <div className="tab-content" id="tab-mental" style={{ display: "none" }}>
+            {/* TAB 4: EMOTIONAL WELLBEING */}
+            <div className="tab-content" id="tab-emotional" style={{ display: "none" }}>
               <div className="precautions-list">
                 <div className="pre-card">
                   <div className="pre-num">1</div>
                   <div className="pre-info">
-                    <h5>Psychological Wellbeing &amp; Body Confidence</h5>
-                    <p>International guidelines highlight emotional wellbeing as a core pillar. Mindfulness and support reduce chronic stress.</p>
+                    <h5>Emotional Wellbeing &amp; Body Confidence</h5>
+                    <p>International guidelines highlight emotional wellbeing as a core pillar of PMOS care. Mindfulness, therapy, and peer support reduce chronic stress and improve quality of life.</p>
+                  </div>
+                </div>
+                <div className="pre-card">
+                  <div className="pre-num">2</div>
+                  <div className="pre-info">
+                    <h5>Reducing Stigma &amp; Seeking Support</h5>
+                    <p>Acknowledging emotional challenges as physiological — not personal weakness — encourages seeking support from healthcare professionals and trusted individuals.</p>
                   </div>
                 </div>
               </div>
