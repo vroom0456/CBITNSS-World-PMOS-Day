@@ -48,7 +48,7 @@ export default function HomePage() {
       <Navbar />
       <main style={{ paddingTop: '74px' }}>
 
-        {/* ─── HERO SECTION ─── */}
+        {/* ─── 1. HERO SECTION (Unique to Homepage) ─── */}
         <section id="hero">
           <div className="hero-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="nss-hero-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)' }}>
@@ -83,7 +83,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── GLOBAL STATISTICS ─── */}
+        {/* ─── 2. GLOBAL STATISTICS (Unique to Homepage) ─── */}
         <section id="numbers" style={{ padding: '3.5rem 0', background: 'var(--card-white)', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
           <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -111,50 +111,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── WHY THE NAME CHANGED (SINGLE LINE HEADING) ─── */}
+        {/* ─── 3. CAMPAIGN NAVIGATION HUB (Unique to Homepage) ─── */}
         <section style={{ padding: '4rem 0', background: 'var(--bg-main)' }}>
-          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <span className="section-tag">🔬 Nomenclature Evolution</span>
-              <h2 className="section-title" style={{ whiteSpace: 'nowrap', fontSize: 'clamp(1.1rem, 4.4vw, 2.35rem)' }}>
-                Why the Name Changed: <span className="accent">PCOS → PMOS</span>
-              </h2>
-              <p className="section-desc">Understanding why international medical guidelines updated the terminology in 2026.</p>
-            </div>
-
-            <div className="timeline-track reveal">
-              <div className="timeline-step">
-                <span className="timeline-year">1935 – 2020s</span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)' }}>The Old Name: PCOS — Polycystic Ovary Syndrome</h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.65, marginTop: '0.3rem' }}>
-                  Originally named after fluid-filled sacs on ovarian ultrasounds. However, many individuals have no cysts, and cysts are not the primary cause.
-                </p>
-              </div>
-
-              <div className="timeline-step">
-                <span className="timeline-year">2026 Consensus</span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)' }}>Current Terminology: PMOS — Polyendocrine Metabolic Ovarian Syndrome</h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.65, marginTop: '0.3rem' }}>
-                  Accurately describes multi-system health: <strong>Polyendocrine</strong> (hormones), <strong>Metabolic</strong> (insulin), and <strong>Ovarian</strong> (ovulation).
-                </p>
-              </div>
-            </div>
-
-            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link href="/understand" style={{ background: 'var(--soft-teal-bg)', border: '1.5px solid var(--soft-teal-border)', color: 'var(--nss-navy)', padding: '0.75rem 1.6rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.92rem', display: 'inline-block' }}>
-                🔬 Read Full PMOS &amp; 4-Pillars Guide →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── EXPLORE AWARENESS HUB / FEATURE CARDS ─── */}
-        <section style={{ padding: '4rem 0', background: 'var(--card-white)' }}>
           <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <span className="section-tag">🧭 Campaign Navigation Hub</span>
-              <h2 className="section-title">Explore <span className="accent">PMOS Campaign Pages</span></h2>
-              <p className="section-desc">Access dedicated, in-depth resources tailored for students, loved ones, and campus health education.</p>
+              <h2 className="section-title">Explore <span className="accent">PMOS Campaign Sections</span></h2>
+              <p className="section-desc">Each topic has its own dedicated page. Select a section below to learn more.</p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem' }}>
@@ -163,85 +126,67 @@ export default function HomePage() {
                   icon: '🔬',
                   tag: 'Medical Guide',
                   title: 'Understand PMOS & 4 Pillars',
-                  desc: 'Deep dive into why the name changed from PCOS to PMOS, reproductive, endocrine, metabolic, and emotional health pillars.',
+                  desc: 'Learn why the name changed from PCOS to PMOS and explore the reproductive, endocrine, metabolic, and emotional health pillars.',
                   link: '/understand',
-                  btn: 'Explore Medical Guide →'
+                  btn: 'Open Medical Guide →'
                 },
                 {
                   icon: '🩺',
                   tag: 'Symptom Care',
-                  title: 'Symptoms & Clinical Protocol',
-                  desc: 'Evidence-based symptom identification, exercise response, gut microbiome care, and clinical lab evaluation.',
+                  title: 'Symptoms & Clinical Care',
+                  desc: 'View common evidence-based symptoms, exercise response, gut microbiome support, and clinical lab evaluations.',
                   link: '/symptoms',
-                  btn: 'View Symptoms & Care →'
+                  btn: 'Open Symptoms Guide →'
                 },
                 {
                   icon: '📝',
                   tag: 'Interactive Tool',
                   title: '2-Minute Self-Check Wizard',
-                  desc: 'A 1-question-at-a-time awareness check with progress bar, non-diagnostic guidance, and tailored next steps.',
+                  desc: 'Take a brief 1-question-at-a-time awareness questionnaire with tailored results and doctor appointment pointers.',
                   link: '/self-test',
-                  btn: 'Start 2-Min Self-Check →'
+                  btn: 'Start Self-Check →'
                 },
                 {
                   icon: '💡',
                   tag: 'Science Check',
                   title: 'Myths vs Facts & Care',
-                  desc: 'Expandable evidence-backed cards debunking fertility, diet, and body-type misunderstandings about PMOS.',
+                  desc: 'Interactive cards debunking fertility, diet, and weight myths alongside evidence-backed lifestyle guidance.',
                   link: '/myths',
-                  btn: 'Explore Myths vs Facts →'
+                  btn: 'Open Myths & Science →'
                 },
                 {
                   icon: '🌸',
                   tag: 'Student Privacy',
                   title: 'Ask a Doctor Anonymously',
-                  desc: 'Submit personal health doubts with 100% student confidentiality. Answered live by certified Gynaecologists.',
+                  desc: 'Submit your health doubts with 100% student confidentiality. Answered live by certified Gynaecologists.',
                   link: '/ask',
                   btn: 'Submit Doubt Anonymously →'
                 },
                 {
                   icon: '📚',
                   tag: 'Campus Kit',
-                  title: 'Research & Downloads',
-                  desc: 'Monash and Journal of Clinical Medicine citations, printable A4 posters, Instagram cards, and offline QR code.',
+                  title: 'Research & Campus Kit',
+                  desc: 'Review Monash and Journal of Clinical Medicine citations, download printable A4 posters, and access offline QR code.',
                   link: '/resources',
-                  btn: 'Access Research & Kit →'
+                  btn: 'Open Research & Kit →'
                 },
               ].map((card, idx) => (
-                <div key={idx} className="symptom-card reveal" style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '2rem 1.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div key={idx} className="symptom-card reveal" style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '2rem 1.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'var(--shadow-soft)' }}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
                       <span style={{ fontSize: '2.2rem' }}>{card.icon}</span>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', background: '#FFFFFF', border: '1px solid var(--soft-teal-border)', padding: '0.25rem 0.75rem', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', padding: '0.25rem 0.75rem', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
                         {card.tag}
                       </span>
                     </div>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.5rem' }}>{card.title}</h3>
                     <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '1.5rem' }}>{card.desc}</p>
                   </div>
-                  <Link href={card.link} style={{ background: '#FFFFFF', color: 'var(--nss-navy)', border: '1.5px solid var(--border-light)', padding: '0.75rem 1.2rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.88rem', textAlign: 'center', display: 'block' }}>
+                  <Link href={card.link} style={{ background: 'var(--soft-teal-bg)', color: 'var(--nss-navy)', border: '1.5px solid var(--soft-teal-border)', padding: '0.75rem 1.2rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.88rem', textAlign: 'center', display: 'block' }}>
                     {card.btn}
                   </Link>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── VERIFIED HELPLINES BANNER ─── */}
-        <section style={{ padding: '3.5rem 0', background: 'var(--bg-main)' }}>
-          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: '2rem', display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <div style={{ fontSize: '2.5rem' }}>📞</div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)' }}>Need Support or Have Questions?</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.3rem', lineHeight: 1.6 }}>
-                  Reach out to verified national helplines or contact D. Nomini (CBIT NSS Women&apos;s Administrator) at <strong>+91 96766 48023</strong>.
-                </p>
-              </div>
-              <Link href="/ask" style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.8rem 1.6rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.9rem' }}>
-                🌸 Ask Doctor Anonymously
-              </Link>
             </div>
           </div>
         </section>
