@@ -9,6 +9,7 @@ export default function UnderstandPage() {
   const [activeTab, setActiveTab] = useState<'reproductive' | 'endocrine' | 'metabolic' | 'emotional'>('reproductive');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

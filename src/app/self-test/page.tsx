@@ -96,6 +96,7 @@ export default function SelfTestPage() {
   const [quizFinished, setQuizFinished] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

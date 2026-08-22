@@ -22,6 +22,7 @@ const teamMembers = [
 
 export default function AboutPage() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
