@@ -141,29 +141,33 @@ export default function UnderstandPage() {
               <p className="section-desc">Clarifying common names used across international literature and regional practice.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-              <div style={{ background: 'var(--soft-teal-bg)', border: '1.5px solid var(--nss-blue-accent)', padding: '1.8rem', borderRadius: 'var(--r-md)' }}>
-                <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>2026 International Terminology</span>
+            <div className="row g-4">
+              <div className="col-12 col-md-6 col-lg-4">
+                <div style={{ background: 'var(--soft-teal-bg)', border: '1.5px solid var(--nss-blue-accent)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>2026 International Terminology</span>
                 <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PMOS</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                   <strong>Polyendocrine Metabolic Ovarian Syndrome.</strong> Current medical consensus emphasising that endocrine and metabolic features are central — not just the ovaries.
                 </p>
               </div>
 
-              <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)' }}>
-                <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Former / Historical Name</span>
+              <div className="col-12 col-md-6 col-lg-4">
+                <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Former / Historical Name</span>
                 <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PCOS</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                   <strong>Polycystic Ovary Syndrome.</strong> The traditional term used for decades. Replaced because &quot;cysts&quot; can be misleading and ovaries are not the sole cause.
                 </p>
               </div>
 
-              <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)' }}>
-                <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Common Regional Term (India)</span>
+              <div className="col-12 col-md-6 col-lg-4">
+                <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Common Regional Term (India)</span>
                 <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PCOD</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                   <strong>Polycystic Ovarian Disease.</strong> A term commonly used in clinical conversations in South Asia. Refers to the same underlying spectrum of symptoms as PMOS.
                 </p>
+                </div>
               </div>
             </div>
           </div>
