@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HomePage() {
-  // Source Drawer Modal State
   const [sourceDrawerOpen, setSourceDrawerOpen] = useState(false);
   const [selectedSourceTitle, setSelectedSourceTitle] = useState('');
   const [selectedSourceContent, setSelectedSourceContent] = useState('');
@@ -21,21 +20,7 @@ export default function HomePage() {
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(r => observer.observe(r));
-
-    const anonModal = document.getElementById('anon-modal');
-    const handleOpenModal = () => {
-      if (anonModal) {
-        anonModal.style.display = 'flex';
-        requestAnimationFrame(() => requestAnimationFrame(() => anonModal.classList.add('active')));
-        document.body.style.overflow = 'hidden';
-      }
-    };
-    window.addEventListener('openModal', handleOpenModal);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('openModal', handleOpenModal);
-    };
+    return () => observer.disconnect();
   }, []);
 
   const openSourceModal = (title: string, content: string) => {
@@ -47,75 +32,57 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '60px' }}>
+      <main className="page-main">
 
-        {/* ─── 1. HERO SECTION ─── */}
+        {/* ─── 1. HERO ─── */}
         <section id="hero">
-          <div className="hero-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <div className="nss-hero-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)' }}>
-              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} priority />
-              CBIT NSS
+          <div className="hero-container">
+            {/* Brand badge */}
+            <div className="nss-hero-badge">
+              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={18} height={18} priority />
+              <span>CBIT NSS</span>
             </div>
 
-            {/* EVENT DETAILS BADGE */}
-            <div className="hero-event-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.55rem 1.25rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '0.5rem 1rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.85rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)', maxWidth: '100%' }}>
-              <span>📅 <strong>Date &amp; Time:</strong> 1st Sept 2026 · 10:00 AM</span>
-              <span style={{ color: 'var(--nss-blue-accent)', display: 'inline-block' }}>•</span>
-              <span>📍 <strong>Venue:</strong> Assembly Hall, CBIT</span>
+            {/* Event info — single compact line */}
+            <div className="hero-event-info">
+              <span>📅 1st Sept 2026 · 10:00 AM</span>
+              <span className="hero-event-sep">·</span>
+              <span>📍 Assembly Hall, CBIT</span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(1.85rem, 5.2vw, 3.6rem)', lineHeight: 1.24, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '880px' }}>
+            <h1 className="hero-h1">
               PCOS Uncovered:{' '}
-              <span className="accent-text" style={{ color: 'var(--nss-blue-accent)' }}>Awareness, Understanding and Empowerment</span>
+              <span className="accent-text">Awareness, Understanding &amp; Empowerment</span>
             </h1>
 
-            <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '740px', margin: '0 auto 2rem', textAlign: 'center' }}>
-              Polycystic Ovary Syndrome (PCOS) is a common hormonal condition that affects many women and girls, yet it is often misunderstood or left undiagnosed. This World PCOS Day, explore reliable information about its causes, symptoms, health effects, diagnosis and management.
+            <p className="hero-desc">
+              Polycystic Ovary Syndrome (PCOS) is a common hormonal condition affecting millions — yet often misunderstood or undiagnosed. This World PCOS Day, explore reliable information about causes, symptoms, diagnosis and management.
             </p>
 
-            {/* HERO BUTTONS — Primary CTA prominent, secondary as compact links */}
-            <div className="hero-buttons">
-              {/* PRIMARY: Ask Anonymous — visually dominant */}
+            {/* CTA Row */}
+            <div className="hero-cta-row">
+              {/* Primary — ask anonymous */}
               <button
+                className="btn-primary-cta"
                 onClick={() => window.dispatchEvent(new Event('openModal'))}
-                className="btn-hero-modal"
-                style={{
-                  background: 'linear-gradient(135deg, var(--nss-blue-accent) 0%, #5B32E8 100%)',
-                  color: '#FFFFFF',
-                  padding: '0.9rem 2.4rem',
-                  borderRadius: 'var(--r-pill)',
-                  fontWeight: 800,
-                  fontSize: '1rem',
-                  boxShadow: '0 8px 28px rgba(124, 92, 252, 0.4)',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  letterSpacing: '-0.01em'
-                }}
               >
-                Ask Doctor Anonymously →
+                Ask a Doctor Anonymously
               </button>
 
-              {/* SECONDARY: Compact horizontal link row */}
-              <div className="hero-secondary-links">
-                <Link href="/understand" className="btn-hero-guide" style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--nss-navy)', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                  Understand PMOS
-                </Link>
-                <Link href="/self-test" className="btn-hero-guide" style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--nss-navy)', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                  Self-Check
-                </Link>
+              {/* Secondary links */}
+              <div className="hero-sec-links">
+                <Link href="/understand" className="btn-sec-link">Understand PMOS</Link>
+                <Link href="/self-test" className="btn-sec-link">Self-Check →</Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─── 2. GLOBAL STATISTICS (Unique to Homepage) ─── */}
-        <section id="numbers" style={{ padding: '3.5rem 0', background: 'var(--card-white)', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
-          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">📊 Global Statistics</span>
+        {/* ─── 2. STATISTICS ─── */}
+        <section id="numbers">
+          <div className="container">
+            <div className="heading-box reveal">
+              <span className="section-tag">Global Statistics</span>
               <h2 className="section-title">PMOS <span className="accent">By The Numbers</span></h2>
               <p className="section-desc">Sourced from the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.</p>
             </div>
@@ -139,93 +106,39 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── 3. CAMPAIGN NAVIGATION HUB (Unique to Homepage) ─── */}
-        <section className="section" style={{ background: 'var(--bg-main)' }}>
-          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        {/* ─── 3. CAMPAIGN NAV HUB ─── */}
+        <section className="section section-alt">
+          <div className="container">
             <div className="heading-box reveal">
-              <span className="section-tag">Campaign Navigation Hub</span>
-              <h2 className="section-title">Explore <span className="accent">PMOS Campaign Sections</span></h2>
-              <p className="section-desc">Each topic has its own dedicated page. Select a section below to learn more.</p>
+              <span className="section-tag">Explore</span>
+              <h2 className="section-title">Campaign <span className="accent">Sections</span></h2>
+              <p className="section-desc">Each topic has its own dedicated page.</p>
             </div>
 
-            {/* Desktop: grid cards. Mobile: compact editorial nav rows via CSS classes */}
-            <div className="nav-hub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.4rem' }}>
+            <div className="nav-hub-grid">
               {[
-                {
-                  num: '01',
-                  icon: '🔬',
-                  tag: 'Medical Guide',
-                  title: 'Understand PMOS & 4 Pillars',
-                  desc: 'Learn why the name changed from PCOS to PMOS and explore the reproductive, endocrine, metabolic, and emotional health pillars.',
-                  link: '/understand',
-                  btn: 'Open Medical Guide →'
-                },
-                {
-                  num: '02',
-                  icon: '🩺',
-                  tag: 'Symptom Care',
-                  title: 'Symptoms & Clinical Care',
-                  desc: 'View common evidence-based symptoms, exercise response, gut microbiome support, and clinical lab evaluations.',
-                  link: '/symptoms',
-                  btn: 'Open Symptoms Guide →'
-                },
-                {
-                  num: '03',
-                  icon: '📝',
-                  tag: 'Interactive Tool',
-                  title: '2-Minute Self-Check Wizard',
-                  desc: 'Take a brief 1-question-at-a-time awareness questionnaire with tailored results and doctor appointment pointers.',
-                  link: '/self-test',
-                  btn: 'Start Self-Check →'
-                },
-                {
-                  num: '04',
-                  icon: '💡',
-                  tag: 'Science Check',
-                  title: 'Myths vs Facts & Care',
-                  desc: 'Interactive cards debunking fertility, diet, and weight myths alongside evidence-backed lifestyle guidance.',
-                  link: '/myths',
-                  btn: 'Open Myths & Science →'
-                },
-                {
-                  num: '05',
-                  icon: '🌸',
-                  tag: 'Student Privacy',
-                  title: 'Ask a Doctor Anonymously',
-                  desc: 'Submit your health doubts with 100% student confidentiality. Answered live by certified Gynaecologists.',
-                  link: '/ask',
-                  btn: 'Submit Doubt Anonymously →'
-                },
-                {
-                  num: '06',
-                  icon: '📚',
-                  tag: 'Campus Kit',
-                  title: 'Research & Campus Kit',
-                  desc: 'Review Monash and Journal of Clinical Medicine citations, download printable A4 posters, and access offline QR code.',
-                  link: '/resources',
-                  btn: 'Open Research & Kit →'
-                },
+                { num: '01', icon: '🔬', tag: 'Medical Guide',   title: 'Understand PMOS & 4 Pillars',    desc: 'Why the name changed from PCOS to PMOS and the four multi-system health pillars.', link: '/understand' },
+                { num: '02', icon: '🩺', tag: 'Symptom Care',    title: 'Symptoms & Clinical Care',        desc: 'Evidence-based symptoms, exercise response, gut microbiome and lab evaluations.', link: '/symptoms' },
+                { num: '03', icon: '📝', tag: 'Interactive Tool', title: '2-Minute Self-Check Wizard',     desc: 'A brief awareness questionnaire with tailored results and doctor pointers.', link: '/self-test' },
+                { num: '04', icon: '💡', tag: 'Science Check',   title: 'Myths vs Facts & Care',          desc: 'Debunking fertility, diet, and weight myths with evidence-backed guidance.', link: '/myths' },
+                { num: '05', icon: '🌸', tag: 'Student Privacy', title: 'Ask a Doctor Anonymously',       desc: '100% anonymous medical doubt submission answered live by certified gynaecologists.', link: '/ask' },
+                { num: '06', icon: '📚', tag: 'Campus Kit',      title: 'Research & Campus Kit',          desc: 'Monash citations, printable posters and the offline QR reference kit.', link: '/resources' },
               ].map((card, idx) => (
-                <Link key={idx} href={card.link} className="nav-hub-row reveal" style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '1.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'var(--shadow-soft)', textDecoration: 'none' }}>
-                  {/* Desktop inner layout */}
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-                      <span className="nav-hub-row-icon" style={{ fontSize: '2rem' }}>{card.icon}</span>
-                      <span className="nav-hub-row-tag" style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', padding: '0.25rem 0.75rem', borderRadius: 'var(--r-pill)', textTransform: 'uppercase' }}>
-                        {card.tag}
-                      </span>
-                    </div>
-                    {/* Mobile: row layout via CSS classes */}
-                    <div className="nav-hub-row-left">
-                      <h3 className="nav-hub-row-title" style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>{card.title}</h3>
-                      <p className="nav-hub-row-desc" style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '1.2rem' }}>{card.desc}</p>
+                <Link key={idx} href={card.link} className="nav-hub-row reveal">
+                  {/* Desktop: icon+tag visible. Mobile: hidden via CSS */}
+                  <span className="nhr-icon">{card.icon}</span>
+                  <span className="nhr-tag">{card.tag}</span>
+
+                  {/* Always visible */}
+                  <div className="nhr-content">
+                    <span className="nhr-num">{card.num}</span>
+                    <div className="nhr-text">
+                      <strong className="nhr-title">{card.title}</strong>
+                      <span className="nhr-desc">{card.desc}</span>
                     </div>
                   </div>
-                  <span className="nav-hub-row-btn" style={{ background: 'var(--soft-teal-bg)', color: 'var(--nss-navy)', border: '1.5px solid var(--soft-teal-border)', padding: '0.65rem 1rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.85rem', textAlign: 'center', display: 'block' }}>
-                    {card.btn}
-                  </span>
-                  {/* Mobile-only arrow */}
-                  <span className="nav-hub-row-arrow" aria-hidden>›</span>
+
+                  <span className="nhr-arrow" aria-hidden>›</span>
                 </Link>
               ))}
             </div>
@@ -234,95 +147,23 @@ export default function HomePage() {
 
       </main>
 
-      {/* ANONYMOUS MODAL */}
-      <div
-        className="modal-overlay"
-        id="anon-modal"
-        onClick={(e) => {
-          if (e.target === document.getElementById('anon-modal')) {
-            (document.getElementById('anon-modal') as HTMLElement).classList.remove('active');
-            document.body.style.overflow = '';
-          }
-        }}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-      >
-        <div className="modal-window">
-          <button
-            className="modal-close-btn"
-            onClick={() => {
-              (document.getElementById('anon-modal') as HTMLElement).classList.remove('active');
-              document.body.style.overflow = '';
-            }}
-            aria-label="Close window"
-          >✕</button>
-          <span className="modal-badge">🔒 100% Student Confidentiality</span>
-          <h3 id="modal-title">Ask a Doctor Anonymously</h3>
-          <p className="desc" style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginBottom: '1.2rem', lineHeight: 1.65 }}>
-            Do <strong>NOT</strong> include your name, email, phone, or student ID. All questions are compiled by CBIT NSS and answered live by certified medical professionals.
-          </p>
-          <div className="privacy-notice">🛡️ <strong>Educational Notice:</strong> Responses provide general awareness only and do not constitute personal medical diagnosis or emergency care.</div>
-          <form
-            id="modal-anon-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const btn = document.getElementById('modal-submit-btn') as HTMLButtonElement;
-              if (btn) {
-                btn.textContent = '⏳ Submitting...';
-                btn.disabled = true;
-                setTimeout(() => {
-                  btn.textContent = '✅ Submitted Anonymously!';
-                  (document.getElementById('modal-success') as HTMLElement).style.display = 'block';
-                  setTimeout(() => {
-                    btn.textContent = '🌸 Submit Question Anonymously';
-                    btn.disabled = false;
-                    (document.getElementById('modal-success') as HTMLElement).style.display = 'none';
-                    (document.getElementById('modal-anon-form') as HTMLFormElement)?.reset();
-                    (document.getElementById('anon-modal') as HTMLElement).classList.remove('active');
-                    document.body.style.overflow = '';
-                  }, 2500);
-                }, 900);
-              }
-            }}
-          >
-            <div className="form-group">
-              <label htmlFor="modal-q-topic">Select Category (Optional)</label>
-              <select id="modal-q-topic" name="category">
-                <option value="General PMOS Doubts">General PMOS &amp; Symptoms</option>
-                <option value="Irregular Periods">Irregular Periods &amp; Cycle Pain</option>
-                <option value="Acne Weight Issues">Hormonal Acne &amp; Weight Shifts</option>
-                <option value="Emotional Wellbeing">Emotional Wellbeing &amp; Stress</option>
-                <option value="Diet Lifestyle">Diet &amp; Lifestyle Doubts</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="modal-q-message">Your Question for the Doctor *</label>
-              <textarea id="modal-q-message" name="message" rows={4} placeholder="Type your doubt freely here... e.g. Is it normal to miss periods for 2 months when stressed?" required></textarea>
-            </div>
-            <button type="submit" className="btn-submit-modal" id="modal-submit-btn">🌸 Submit Question Anonymously</button>
-          </form>
-          <div className="modal-success-alert" id="modal-success">
-            <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>✅</div>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--soft-navy-text)' }}>Anonymous Question Submitted!</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PMOS Day 2026.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* SOURCE DRAWER MODAL */}
+      {/* SOURCE DRAWER */}
       {sourceDrawerOpen && (
-        <div className="modal-overlay active" style={{ display: 'flex' }} onClick={() => setSourceDrawerOpen(false)}>
+        <div
+          className="modal-overlay active"
+          style={{ display: 'flex' }}
+          onClick={() => setSourceDrawerOpen(false)}
+        >
           <div className="modal-window" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={() => setSourceDrawerOpen(false)}>✕</button>
             <span className="modal-badge">📚 Citation Source</span>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>{selectedSourceTitle}</h3>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.7 }}>{selectedSourceContent}</p>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>{selectedSourceTitle}</h3>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.65 }}>{selectedSourceContent}</p>
             <button
               onClick={() => setSourceDrawerOpen(false)}
-              style={{ marginTop: '1.5rem', background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.65rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 800, width: '100%' }}
+              style={{ marginTop: '1.5rem', background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.65rem 1.4rem', borderRadius: '10px', fontWeight: 800, width: '100%', cursor: 'pointer', border: 'none' }}
             >
-              Close Citation
+              Close
             </button>
           </div>
         </div>
