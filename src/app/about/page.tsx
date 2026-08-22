@@ -86,19 +86,6 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: '80px' }}>
-        {/* DOCTOR ADVOCACY BANNER */}
-        <section id="doctor" style={{ padding: "3rem 0 2rem" }}>
-          <div className="container">
-            <div className="doctor-advocacy-banner reveal">
-              <div style={{ fontSize: "2.5rem" }}>💜</div>
-              <div>
-                <h4>Remember: You Deserve Proper Medical Care</h4>
-                <p>Never hesitate to advocate for your health. If you feel unwell, consult a qualified healthcare provider. Our CBIT NSS team stands with you!</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* TEAM SECTION */}
         <section id="team" style={{ padding: "2rem 0 5rem" }}>
           <div className="container">

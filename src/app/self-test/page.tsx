@@ -175,7 +175,7 @@ export default function SelfTestPage() {
             <div className="heading-box reveal">
               <span className="section-tag">🔬 Evidence-Based Assessment</span>
               <h2 className="section-title">PCOD / PMOS <span className="accent">Clinical Self-Test</span></h2>
-              <p className="section-desc">Based on <em>Journal of Clinical Medicine (2023)</em> Rotterdam &amp; NIH Diagnostic Criteria for PCOD Phenotypes.</p>
+              <p className="section-desc" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block', margin: '0 auto', maxWidth: '100%', fontSize: 'clamp(0.72rem, 2.2vw, 0.98rem)' }}>Based on <em>Journal of Clinical Medicine (2023)</em> Rotterdam &amp; NIH Diagnostic Criteria for PCOD Phenotypes.</p>
             </div>
             
             <div className="quiz-card reveal">

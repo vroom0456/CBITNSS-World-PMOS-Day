@@ -134,7 +134,7 @@ export default function Home() {
           <div className="hero-container">
             <div className="nss-hero-badge"><Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} />CBIT NSS Awareness Campaign 2026</div>
             <span className="hero-date">📅 September 1, 2026 · World PCOD &amp; PMOS Day</span>
-            <h1>Understanding <span className="accent-text">PCOD &amp; PMOS</span> 🌸</h1>
+            <h1 style={{ whiteSpace: 'nowrap', fontSize: 'clamp(1.4rem, 5.2vw, 3.8rem)', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%', maxWidth: '100%' }}>Understanding <span className="accent-text">PCOD &amp; PMOS</span> 🌸</h1>
             <p className="hero-desc">Polycystic Ovarian Disease &amp; PMOS affect 1 in 5 young women. CBIT NSS brings you a clear, easy-to-understand guide and a 100% anonymous Q&amp;A window for your personal health doubts. 💕</p>
             <div className="hero-buttons">
               <button className="btn-hero-modal" onClick={() => window.dispatchEvent(new Event('openModal'))}>🌸 Ask Anonymous Question to Gynaecologist</button>

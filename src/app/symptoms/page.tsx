@@ -234,6 +234,19 @@ export default function SymptomsPage() {
             </div>
           </div>
         </section>
+
+        {/* DOCTOR ADVOCACY BANNER */}
+        <section id="doctor" style={{ padding: "1rem 0 4rem" }}>
+          <div className="container">
+            <div className="doctor-advocacy-banner reveal">
+              <div style={{ fontSize: "2.5rem" }}>💜</div>
+              <div>
+                <h4>Remember: You Deserve Proper Medical Care</h4>
+                <p>Never hesitate to advocate for your health. If you feel unwell, consult a qualified healthcare provider. Our CBIT NSS team stands with you!</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* FLOATING ACTION BUTTON */}
