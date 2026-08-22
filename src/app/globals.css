@@ -451,17 +451,17 @@
       }
 
       /* Header & Navigation — Compact Glass Navbar */
-      nav { padding: max(0.4rem, env(safe-area-inset-top)) 4% 0.4rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--soft-teal-border); }
-      .nav-brand { gap: 0.5rem; }
-      .nss-logo-img { width: 32px; height: 32px; box-shadow: 0 3px 10px rgba(8,145,178,0.18); }
-      .brand-text { border-left: 2px solid var(--nss-blue-accent); padding-left: 0.5rem; }
-      .brand-text .title { font-size: 0.96rem; letter-spacing: -0.01em; }
+      nav { padding: max(0.35rem, env(safe-area-inset-top)) 4% 0.35rem; min-height: 52px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-light); }
+      .nav-brand { gap: 0.4rem; }
+      .nss-logo-img { width: 30px; height: 30px; }
+      .brand-text { border-left: 2px solid var(--nss-blue-accent); padding-left: 0.45rem; }
+      .brand-text .title { font-size: 0.92rem; font-weight: 800; }
       .brand-text .subtitle { display: none; }
       .nav-links { display: none; }
-      .mobile-menu-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--soft-teal-bg); border: 1.5px solid var(--soft-teal-border); border-radius: 9999px; padding: 0.35rem 0.8rem; height: 36px; min-height: 36px; color: var(--nss-navy); font-size: 0.78rem; font-weight: 800; }
+      .mobile-menu-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--soft-teal-bg); border: 1.5px solid var(--soft-teal-border); border-radius: 9999px; padding: 0.3rem 0.75rem; height: 34px; min-height: 34px; color: var(--nss-navy); font-size: 0.76rem; font-weight: 800; }
       .mobile-menu-btn span { display: none; }
-      .mobile-menu-btn::before { content: '☰ Menu'; }
-      .mobile-menu-btn.active::before { content: '✕ Close'; }
+      .mobile-menu-btn::before { content: 'Menu'; }
+      .mobile-menu-btn.active::before { content: 'Close'; }
 
       /* Hero Section — Comfortable Mobile Scaling */
       #hero { padding: 80px 1.1rem 32px; text-align: center; }

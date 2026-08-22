@@ -33,7 +33,7 @@ export default function Navbar() {
     <>
       <nav id="navbar" className={scrolled ? 'scrolled' : ''} role="navigation" aria-label="Main Navigation">
         <Link href="/" className="nav-brand" onClick={closeDrawer}>
-          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={34} height={34} className="nss-logo-img" priority />
+          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={32} height={32} className="nss-logo-img" priority />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
             <span className="subtitle">World PMOS Awareness Day · 2026</span>
@@ -52,7 +52,7 @@ export default function Navbar() {
           <li><Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link></li>
           <li>
             <button className="nav-btn-modal" onClick={() => window.dispatchEvent(new Event('openModal'))}>
-              🌸 Ask Anonymous
+              Ask Anonymous
             </button>
           </li>
         </ul>
@@ -68,51 +68,46 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* MOBILE DRAWER */}
+      {/* MOBILE DRAWER (Clean text links, no emojis) */}
       <div className={`mobile-nav-drawer ${drawerOpen ? 'active' : ''}`} id="mobile-drawer">
-        <Link href="/" className="m-link" onClick={closeDrawer}>🏠 Home</Link>
-        <Link href="/understand" className="m-link" onClick={closeDrawer}>🔬 Understand PMOS</Link>
-        <Link href="/symptoms" className="m-link" onClick={closeDrawer}>🩺 Symptoms &amp; Care</Link>
-        <Link href="/self-test" className="m-link" onClick={closeDrawer}>📝 2-Min Self-Check</Link>
-        <Link href="/myths" className="m-link" onClick={closeDrawer}>💡 Myths vs Facts</Link>
-        <Link href="/ask" className="m-link" onClick={closeDrawer}>🌸 Ask Doctor Anonymously</Link>
-        <Link href="/resources" className="m-link" onClick={closeDrawer}>📚 Research &amp; Resources</Link>
-        <Link href="/about" className="m-link" onClick={closeDrawer}>🤝 NSS Core Team</Link>
+        <Link href="/" className="m-link" onClick={closeDrawer}>Home</Link>
+        <Link href="/understand" className="m-link" onClick={closeDrawer}>Understand PMOS</Link>
+        <Link href="/symptoms" className="m-link" onClick={closeDrawer}>Symptoms &amp; Care</Link>
+        <Link href="/self-test" className="m-link" onClick={closeDrawer}>2-Min Self-Check</Link>
+        <Link href="/myths" className="m-link" onClick={closeDrawer}>Myths vs Facts</Link>
+        <Link href="/ask" className="m-link" onClick={closeDrawer}>Ask Doctor Anonymously</Link>
+        <Link href="/resources" className="m-link" onClick={closeDrawer}>Research &amp; Resources</Link>
+        <Link href="/about" className="m-link" onClick={closeDrawer}>NSS Core Team</Link>
         <button 
           className="nav-btn-modal" 
           onClick={() => { closeDrawer(); window.dispatchEvent(new Event('openModal')); }} 
           style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}
         >
-          🌸 Ask Anonymous Question
+          Ask Anonymous Question
         </button>
       </div>
 
-      {/* MOBILE BOTTOM NAVIGATION BAR */}
+      {/* MOBILE BOTTOM NAVIGATION BAR (Clean typography) */}
       <div className="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
         <Link href="/" className={pathname === '/' ? 'active' : ''}>
-          <span className="nav-icon">🏠</span>
           <span>Home</span>
         </Link>
         <Link href="/understand" className={pathname === '/understand' ? 'active' : ''}>
-          <span className="nav-icon">💡</span>
           <span>Learn</span>
         </Link>
         <Link href="/self-test" className={pathname === '/self-test' ? 'active' : ''}>
-          <span className="nav-icon">📝</span>
           <span>Check</span>
         </Link>
         <Link href="/ask" className={pathname === '/ask' ? 'active' : ''}>
-          <span className="nav-icon">🌸</span>
           <span>Ask</span>
         </Link>
         <button onClick={toggleDrawer}>
-          <span className="nav-icon">☰</span>
           <span>Menu</span>
         </button>
       </div>
 
-      {/* GLOBAL FLOATING ASK ANONYMOUS BUTTON (ON EVERY PAGE) */}
-      <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
+      {/* GLOBAL FLOATING ASK ANONYMOUS BUTTON */}
+      <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">Ask Anonymous</button>
     </>
   );
 }
