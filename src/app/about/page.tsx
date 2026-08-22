@@ -4,15 +4,6 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
-declare global {
-  interface Window {
-    closeModal: () => void;
-    closeModalOnOverlay: (e: React.SyntheticEvent) => void;
-    handleGenContactSubmit: (e: React.SyntheticEvent) => void;
-    handleModalAnonSubmit: (e: React.SyntheticEvent) => void;
-  }
-}
-
 const teamMembers = [
   { avatar: 'NK', role: 'President', name: 'Nithesh Kumar', phone: '+91 85229 92585', tel: '+918522992585', email: 'n.nitheshkumar8106@gmail.com' },
   { avatar: 'BS', role: 'Vice President', name: 'Bandaru Sampath', phone: '+91 72071 27045', tel: '+917207127045', email: 'sampathkavali45@gmail.com' },
@@ -38,48 +29,6 @@ export default function AboutPage() {
       });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
     reveals.forEach(r => observer.observe(r));
-
-    const anonModal = document.getElementById('anon-modal');
-    const handleOpenModal = () => {
-      if(anonModal) {
-        anonModal.style.display = 'flex';
-        requestAnimationFrame(() => requestAnimationFrame(() => anonModal.classList.add('active')));
-        document.body.style.overflow = 'hidden';
-      }
-    };
-    window.addEventListener('openModal', handleOpenModal);
-    window.closeModal = function() {
-      if(anonModal) {
-        anonModal.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => { anonModal.style.display = 'none'; }, 400);
-      }
-    };
-    window.closeModalOnOverlay = function(e: React.SyntheticEvent) { if (e.target === anonModal) window.closeModal(); };
-    if(anonModal) anonModal.style.display = 'none';
-
-    window.handleGenContactSubmit = function(e: React.SyntheticEvent) {
-      e.preventDefault();
-      const btn = document.getElementById('gen-submit-btn') as HTMLButtonElement;
-      if(btn) {
-        btn.textContent = '⏳ Sending...'; btn.disabled = true;
-        setTimeout(() => {
-          btn.textContent = '✅ Sent Successfully!';
-          const alert = document.getElementById('gen-success-alert');
-          if(alert) alert.style.display = 'block';
-          setTimeout(() => {
-            btn.textContent = '✉️ Send Message to CBIT NSS'; btn.disabled = false;
-            if(alert) alert.style.display = 'none';
-            (document.getElementById('gen-contact-form') as HTMLFormElement)?.reset();
-          }, 3500);
-        }, 900);
-      }
-    };
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('openModal', handleOpenModal);
-    };
   }, []);
 
   return (
@@ -87,30 +36,30 @@ export default function AboutPage() {
       <Navbar />
       <main style={{ paddingTop: '80px' }}>
         {/* TEAM SECTION */}
-        <section id="team" style={{ padding: "2rem 0 5rem" }}>
-          <div className="container">
-            <div className="heading-box reveal">
+        <section id="team" style={{ padding: "3rem 0 5rem", background: "var(--bg-main)" }}>
+          <div className="container" style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 1.5rem" }}>
+            <div className="heading-box reveal" style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span className="section-tag">🤝 Unified Leadership</span>
               <h2 className="section-title">CBIT NSS Core Committee 2026–2027</h2>
-              <p className="section-desc">Our dedicated CBIT NSS team available to support students across campus.</p>
+              <p className="section-desc">Our dedicated CBIT NSS team leading the World PMOS Awareness Campaign across campus.</p>
             </div>
 
             {/* SPECIAL SPOTLIGHT: WOMEN'S ADMINISTRATOR */}
-            <div className="women-admin-spotlight reveal">
-              <div className="spotlight-top">
-                <span className="spotlight-badge">👑 Special Role · Student Support &amp; Guidance</span>
+            <div className="women-admin-spotlight reveal" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", borderRadius: "var(--r-lg)", padding: "2rem", marginBottom: "3rem" }}>
+              <div className="spotlight-top" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+                <span className="spotlight-badge" style={{ background: "var(--nss-blue-accent)", color: "#FFFFFF", padding: "0.3rem 0.9rem", borderRadius: "var(--r-pill)", fontSize: "0.78rem", fontWeight: 800 }}>👑 Special Role · Student Support &amp; Guidance</span>
                 <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-muted)" }}>CBIT NSS Executive Body</span>
               </div>
-              <div className="spotlight-body">
-                <div className="spotlight-avatar">DN</div>
+              <div className="spotlight-body" style={{ display: "flex", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
+                <div className="spotlight-avatar" style={{ width: "70px", height: "70px", borderRadius: "50%", background: "var(--nss-blue-accent)", color: "#FFFFFF", fontSize: "1.6rem", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>DN</div>
                 <div className="spotlight-info">
-                  <p className="role">Women&apos;s Administrator</p>
-                  <h3 className="name">D. Nomini</h3>
-                  <p className="desc">Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
+                  <p className="role" style={{ fontSize: "0.85rem", fontWeight: 800, color: "var(--nss-blue-accent)", textTransform: "uppercase" }}>Women&apos;s Administrator</p>
+                  <h3 className="name" style={{ fontSize: "1.4rem", fontWeight: 800, color: "var(--nss-navy)" }}>D. Nomini</h3>
+                  <p className="desc" style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.2rem" }}>Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
                   <div className="spotlight-actions" style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', marginTop: '1rem' }}>
                     <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
                     <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email D. Nomini</a>
-                    <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PCOD" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
+                    <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PMOS" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
                   </div>
                 </div>
               </div>
@@ -135,60 +84,12 @@ export default function AboutPage() {
               ))}
             </div>
 
-            {/* GENERAL CONTACT FORM */}
-            <div className="contact-form-grid" style={{ gridTemplateColumns: "1fr", maxWidth: "680px", margin: "4rem auto 0" }}>
-              <div className="form-panel reveal">
-                <h4>Send Us a Direct Message</h4>
-                <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginBottom: "1.5rem" }}>Have a non-anonymous query or want to join CBIT NSS initiatives? Send us a direct message below.</p>
-                <form id="gen-contact-form" onSubmit={(e) => window.handleGenContactSubmit(e)}>
-                  <div className="input-field"><label htmlFor="gname">Your Name</label><input type="text" id="gname" placeholder="Enter your full name" required /></div>
-                  <div className="input-field"><label htmlFor="gemail">Email Address</label><input type="email" id="gemail" placeholder="student@cbit.ac.in" required /></div>
-                  <div className="input-field"><label htmlFor="gsubject">Topic / Purpose</label><select id="gsubject"><option value="Event Volunteering">Event Volunteering</option><option value="PCOD Drive Support">PCOD Drive Support</option><option value="General Query">General Query</option></select></div>
-                  <div className="input-field"><label htmlFor="gmsg">Your Message</label><textarea id="gmsg" rows={4} placeholder="How can our team help you?" required></textarea></div>
-                  <button type="submit" className="btn-send-general" id="gen-submit-btn">✉️ Send Message to CBIT NSS</button>
-                </form>
-                <div id="gen-success-alert" style={{ display: "none", marginTop: "1rem", padding: "1rem", background: "var(--soft-pink-bg)", borderRadius: "var(--r-sm)", color: "var(--nss-teal-dark)", fontWeight: 700 }}>✅ Message Sent Successfully! Our team will respond shortly.</div>
-              </div>
-            </div>
-
           </div>
         </section>
       </main>
 
-      {/* FLOATING ACTION BUTTON */}
+      {/* FLOATING ASK BUTTON */}
       <button className="floating-ask-btn" onClick={() => window.dispatchEvent(new Event('openModal'))} aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
-
-      {/* ANONYMOUS MODAL */}
-      <div className="modal-overlay" id="anon-modal" onClick={(e) => window.closeModalOnOverlay(e)} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div className="modal-window">
-          <div className="modal-header">
-            <h3 id="modal-title">🌸 Ask Anonymous Question to Gynaecologist</h3>
-            <button className="modal-close-btn" onClick={() => window.closeModal()} aria-label="Close window">✕</button>
-          </div>
-          <div className="privacy-notice">🛡️ <strong>100% Confidential:</strong> This window collects ZERO personal info. Your submission cannot be traced to you.</div>
-          <form id="modal-anon-form" onSubmit={(e) => window.handleModalAnonSubmit(e)}>
-            <div className="form-group">
-              <label htmlFor="modal-q-topic">Select Topic Category (Optional)</label>
-              <select id="modal-q-topic" name="category">
-                <option value="General PCOD Doubts">General PCOD &amp; Symptoms</option>
-                <option value="Irregular Periods">Irregular Periods &amp; Cycle Pain</option>
-                <option value="Acne Weight Issues">Hormonal Acne &amp; Weight Issues</option>
-                <option value="Diet Medication">Diet &amp; Medication Doubts</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="modal-q-message">Your Anonymous Question for the Gynaecologist *</label>
-              <textarea id="modal-q-message" name="message" rows={4} placeholder="Type your doubt freely here... e.g. Is it normal to miss periods for 2 months when stressed?" required></textarea>
-            </div>
-            <button type="submit" className="btn-submit-modal" id="modal-submit-btn">🌸 Submit Question Anonymously</button>
-          </form>
-          <div className="modal-success-alert" id="modal-success">
-            <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>✅</div>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--nss-teal-dark)" }}>Anonymous Question Submitted!</h4>
-            <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.4rem", lineHeight: 1.6 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
-          </div>
-        </div>
-      </div>
 
       <Footer />
     </>
