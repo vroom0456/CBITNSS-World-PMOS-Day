@@ -739,7 +739,7 @@
         text-align: left;
       }
       .stat-box {
-        padding: 12px 0 !important;
+        padding: 10px 0 !important;
         border-radius: 0 !important;
         background: transparent !important;
         border: none !important;
@@ -928,6 +928,16 @@
         align-items: center;
       }
       .footer-bar-links { font-size: 11px; }
+
+      /* ── WIZARD, MYTHS & TIMELINE (Mobile) ── */
+      .wizard-option-btn { padding: 12px 14px; min-height: 48px; font-size: 14px; }
+      .myth-card-expandable { padding: 14px 16px; }
+      .myth-header-row { font-size: 14px; }
+      .myth-body-content { font-size: 13.5px; padding-top: 12px; margin-top: 12px; }
+      .timeline-track { margin: 1.5rem auto 0; padding-left: 1.2rem; }
+      .timeline-step { margin-bottom: 1.5rem; }
+      .timeline-step::before { left: -1.75rem; width: 14px; height: 14px; top: 0.25rem; border-width: 3px; }
+      .timeline-year { font-size: 11px; padding: 3px 8px; margin-bottom: 6px; }
     }
 
     /* ── 390px–430px — 20px horizontal page padding ── */
@@ -1006,7 +1016,6 @@
 
 @media (max-width: 768px) {
   .mobile-bottom-nav { display: flex; }
-  body { padding-bottom: calc(52px + env(safe-area-inset-bottom)); }
   .floating-ask-btn { display: none !important; }
 }
 
