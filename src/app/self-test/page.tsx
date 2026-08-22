@@ -264,7 +264,7 @@ export default function SelfTestPage() {
 
       {/* ANONYMOUS MODAL */}
       <div className="modal-overlay" id="anon-modal" onClick={(e) => window.closeModalOnOverlay(e)} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div className="modal-container">
+        <div className="modal-window">
           <div className="modal-header">
             <h3 id="modal-title">🌸 Ask Anonymous Question to Gynaecologist</h3>
             <button className="modal-close-btn" onClick={() => window.closeModal()} aria-label="Close window">✕</button>
