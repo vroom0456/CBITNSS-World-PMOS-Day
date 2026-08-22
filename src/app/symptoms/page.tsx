@@ -265,7 +265,7 @@ export default function SymptomsPage() {
           </form>
           <div className="modal-success-alert" id="modal-success">
             <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>✅</div>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--soft-navy-text)" }}>Anonymous Question Submitted!</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--espresso-dark)" }}>Anonymous Question Submitted!</h4>
             <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.4rem", lineHeight: 1.6 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
           </div>
         </div>

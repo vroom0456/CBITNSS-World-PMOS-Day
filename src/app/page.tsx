@@ -201,7 +201,7 @@ export default function Home() {
           <div className="container">
             <div className="heading-box reveal"><span className="section-tag">🌸 Understanding Health</span><h2 className="section-title">What Happens in <span className="accent">PCOD / PMOS?</span></h2><p className="section-desc">PCOD and PMOS affect systemic endocrine and ovarian health. Here everything is explained in clean, simple terms.</p></div>
             
-            <div className="reveal" style={{ background: "var(--soft-mint-bg)", border: "1.5px solid var(--soft-mint-border)", padding: "1.3rem 1.8rem", borderRadius: "var(--r-md)", marginBottom: "2.5rem", display: "flex", alignItems: "center", gap: "1.2rem", textAlign: "left" }}>
+            <div className="reveal" style={{ background: "var(--soft-pink-bg)", border: "1.5px solid var(--soft-pink-border)", padding: "1.3rem 1.8rem", borderRadius: "var(--r-md)", marginBottom: "2.5rem", display: "flex", alignItems: "center", gap: "1.2rem", textAlign: "left" }}>
               <div style={{ width: 44, height: 44, background: "#fff", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 12px rgba(15,56,84,0.08)" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3A2B27" strokeWidth="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v10"/><path d="M9 12h6"/></svg>
               </div>
@@ -274,7 +274,7 @@ export default function Home() {
           </form>
           <div className="modal-success-alert" id="modal-success">
             <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>✅</div>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--soft-navy-text)" }}>Anonymous Question Submitted!</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--espresso-dark)" }}>Anonymous Question Submitted!</h4>
             <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.4rem", lineHeight: 1.6 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
           </div>
         </div>
