@@ -51,7 +51,7 @@ export default function AskPage() {
         <section style={{ padding: '3rem 0 4rem', background: '#FFFFFF' }}>
           <div className="container" style={{ maxWidth: '780px', margin: '0 auto', padding: '0 1.5rem' }}>
             
-            <div style={{ background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: '2.4rem 2rem', boxShadow: 'var(--shadow-card)' }}>
+            <div style={{ background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: 'clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)', boxShadow: 'var(--shadow-card)' }}>
               
               <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
                 <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }}>🔒</span>

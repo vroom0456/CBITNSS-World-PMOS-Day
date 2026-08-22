@@ -146,7 +146,7 @@ export default function SelfTestPage() {
               {!quizFinished ? (
                 <div>
                   {/* Progress tracker */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '0.4rem', marginBottom: '0.6rem', fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-blue-accent)' }}>
+                  <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3" style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-blue-accent)' }}>
                     <span>{wizardQuestions[currentStep].category}</span>
                     <span>Step {currentStep + 1} of {wizardQuestions.length}</span>
                   </div>

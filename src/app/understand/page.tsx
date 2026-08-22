@@ -44,7 +44,7 @@ export default function UnderstandPage() {
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <span className="section-tag">🔬 Nomenclature Evolution</span>
               <h2 className="section-title" style={{ fontSize: 'clamp(1.1rem, 4.4vw, 2.35rem)' }}>
-                Why the Name Changed: <span className="accent">PCOS → PMOS</span>
+                Why the Name Changed: <br className="d-block d-md-none" /><span className="accent">PCOS → PMOS</span>
               </h2>
               <p className="section-desc">Understanding why international medical guidelines updated the terminology in 2026.</p>
             </div>
