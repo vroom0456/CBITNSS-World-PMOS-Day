@@ -70,7 +70,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '720px', margin: '0 auto 2rem', textAlign: 'center' }}>
-              Join <strong>CBIT NSS</strong> in promoting evidence-based awareness for <strong>Polyendocrine Metabolic Ovarian Syndrome (PMOS)</strong> — formerly PCOS. Empowering young women with clinical knowledge, confidential guidance, and proactive care.
+              Explore the causes, symptoms, health effects, risk reduction, diagnosis and management of Polycystic Ovary Syndrome (PMOS/PCOS).
             </p>
 
             {/* HERO BUTTONS — BIG HIGHLIGHTED ASK ANONYMOUSLY BUTTON ABOVE ALL OTHERS */}
