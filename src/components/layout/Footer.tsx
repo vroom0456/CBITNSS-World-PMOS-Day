@@ -30,12 +30,13 @@ export default function Footer() {
               Explore Awareness
             </h5>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
-              <li><Link href="/" style={{ color: '#D4C9E8', transition: 'color 0.2s' }}>🏠 Home &amp; Overview</Link></li>
-              <li><Link href="/#understand" style={{ color: '#D4C9E8' }}>🔬 Why The Name Changed to PMOS</Link></li>
+              <li><Link href="/" style={{ color: '#D4C9E8' }}>🏠 Home Overview</Link></li>
+              <li><Link href="/understand" style={{ color: '#D4C9E8' }}>🔬 Understand PMOS &amp; 4 Pillars</Link></li>
               <li><Link href="/symptoms" style={{ color: '#D4C9E8' }}>🩺 Symptoms &amp; Clinical Care</Link></li>
               <li><Link href="/self-test" style={{ color: '#D4C9E8' }}>📝 2-Minute Self-Check Wizard</Link></li>
-              <li><Link href="/#myths" style={{ color: '#D4C9E8' }}>💡 Myths vs Facts</Link></li>
-              <li><Link href="/#ask" style={{ color: '#D4C9E8' }}>🌸 Ask Doctor Anonymously</Link></li>
+              <li><Link href="/myths" style={{ color: '#D4C9E8' }}>💡 Myths vs Facts</Link></li>
+              <li><Link href="/ask" style={{ color: '#D4C9E8' }}>🌸 Ask Doctor Anonymously</Link></li>
+              <li><Link href="/resources" style={{ color: '#D4C9E8' }}>📚 Research &amp; Campus Kit</Link></li>
               <li><Link href="/about" style={{ color: '#D4C9E8' }}>🤝 CBIT NSS Executive Team</Link></li>
             </ul>
           </div>
@@ -57,9 +58,9 @@ export default function Footer() {
             © 2026 CBIT NSS (National Service Scheme). World PMOS Awareness Campaign.
           </div>
           <div style={{ display: 'flex', gap: '1.2rem', color: '#B3A7C7' }}>
-            <Link href="/#resources" style={{ color: 'inherit' }}>Sources &amp; References</Link>
+            <Link href="/resources" style={{ color: 'inherit' }}>Sources &amp; References</Link>
             <span>•</span>
-            <Link href="/#ask" style={{ color: 'inherit' }}>Anonymous Q&amp;A Privacy</Link>
+            <Link href="/ask" style={{ color: 'inherit' }}>Anonymous Q&amp;A Privacy</Link>
           </div>
         </div>
       </div>
