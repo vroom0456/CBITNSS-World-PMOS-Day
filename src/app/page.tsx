@@ -49,17 +49,31 @@ export default function HomePage() {
       <Navbar />
       <main style={{ paddingTop: '74px' }}>
 
-        {/* ─── 1. HERO SECTION (Unique to Homepage) ─── */}
-        <section id="hero">
+        {/* ─── SPECIAL TOP BANNER: ANONYMOUS QUESTION MENTION ─── */}
+        <div style={{ background: 'linear-gradient(90deg, #2D1B4E 0%, #7C5CFC 100%)', color: '#FFFFFF', padding: '0.75rem 1.5rem', textAlign: 'center', fontSize: '0.88rem', fontWeight: 700, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <span>🌸 <strong>Special Mention:</strong> Have a personal health doubt? Ask Doctor Anonymously — 100% Confidential (No Name or Student ID Collected)</span>
+          <button 
+            onClick={() => window.dispatchEvent(new Event('openModal'))}
+            style={{ background: '#FFFFFF', color: '#2D1B4E', padding: '0.4rem 1rem', borderRadius: '9999px', fontWeight: 800, fontSize: '0.82rem', border: 'none', cursor: 'pointer', boxShadow: '0 2px 10px rgba(0,0,0,0.15)' }}
+          >
+            Ask Anonymously Now →
+          </button>
+        </div>
+
+        {/* ─── 1. HERO SECTION ─── */}
+        <section id="hero" style={{ paddingTop: '50px' }}>
           <div className="hero-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="nss-hero-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)' }}>
               <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} priority />
               CBIT NSS Awareness Campaign 2026
             </div>
 
-            <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.8rem' }}>
-              📅 World PMOS Awareness Day 2026
-            </span>
+            {/* EVENT DETAILS BADGE */}
+            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.6rem 1.5rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '1.2rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)' }}>
+              <span>📅 <strong>Date &amp; Time:</strong> 1st September 2026 · 10:00 AM</span>
+              <span style={{ color: 'var(--nss-blue-accent)' }}>•</span>
+              <span>📍 <strong>Venue:</strong> Assembly Hall, CBIT</span>
+            </div>
 
             <h1 style={{ fontSize: 'clamp(1.9rem, 5.5vw, 3.8rem)', lineHeight: 1.22, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '840px' }}>
               More Than the Ovaries.{' '}
