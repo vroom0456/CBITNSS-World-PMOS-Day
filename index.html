@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World PCOD & PMOS Day 2026 — CBIT NSS</title>
+  <meta name="description" content="Official World PCOD & PMOS Day 2026 Awareness Platform by CBIT NSS. Polyendocrine Metabolic Ovarian Syndrome guide, anonymous doubts, self-assessment quiz, symptoms, diet tips, myths vs facts, precautions, and team contacts." />
+  <meta name="theme-color" content="#FBFBFE" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --nss-navy: #2D3092; --nss-navy-dark: #1E2064;
+      --nss-orange: #E84A0C; --nss-orange-soft: #FFF2ED;
+      --bg-main: #FBFBFE; --card-white: #FFFFFF;
+      --soft-pink-bg: #FDF0F6; --soft-pink-border: #FBCFE8; --soft-pink-accent: #DB2777;
+      --soft-lavender: #F5F2FF; --soft-lavender-border: #DDD6FE;
+      --soft-green-bg: #F0FDF4; --soft-green-border: #BBF7D0; --soft-green-text: #166534;
+      --text-main: #1E2050; --text-body: #4A4E69; --text-muted: #6C7293;
+      --border-light: #EAE8F2;
+      --shadow-soft: 0 4px 20px rgba(45,48,146,0.05);
+      --shadow-card: 0 12px 36px rgba(45,48,146,0.10);
+      --shadow-modal: 0 24px 72px rgba(30,32,100,0.28);
+      --glass-bg: rgba(255,255,255,0.15);
+      --glass-border: rgba(255,255,255,0.25);
+      --r-sm: 12px; --r-md: 18px; --r-lg: 26px; --r-pill: 9999px;
+      --ease-out: cubic-bezier(0.22,1,0.36,1);
+      --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+      --transition: all 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg-main);color:var(--text-main);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;}
+    a{color:inherit;text-decoration:none;}
+    button{font-family:inherit;cursor:pointer;border:none;outline:none;}
+    :focus-visible{outline:2.5px solid var(--soft-pink-accent);outline-offset:3px;border-radius:6px;}
+    h1,h2,h3,h4,h5,h6,p,span,a{overflow-wrap:break-word;word-break:break-word;}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.72s var(--ease-out),transform 0.72s var(--ease-out);}
+    .reveal.revealed{opacity:1;transform:translateY(0);}
+    .stagger-grid .reveal:nth-child(1){transition-delay:0.05s;}
+    .stagger-grid .reveal:nth-child(2){transition-delay:0.12s;}
+    .stagger-grid .reveal:nth-child(3){transition-delay:0.19s;}
+    .stagger-grid .reveal:nth-child(4){transition-delay:0.26s;}
+    .stagger-grid .reveal:nth-child(5){transition-delay:0.33s;}
+    .stagger-grid .reveal:nth-child(6){transition-delay:0.40s;}
+    .stagger-grid .reveal:nth-child(7){transition-delay:0.47s;}
+    .stagger-grid .reveal:nth-child(8){transition-delay:0.54s;}
+    .stagger-grid .reveal:nth-child(9){transition-delay:0.61s;}
+    .stagger-grid .reveal:nth-child(10){transition-delay:0.68s;}
+    .stagger-grid .reveal:nth-child(11){transition-delay:0.75s;}
+    .stagger-grid .reveal:nth-child(12){transition-delay:0.82s;}
+    .stagger-grid .reveal:nth-child(13){transition-delay:0.89s;}
+    .stagger-grid .reveal:nth-child(14){transition-delay:0.96s;}
+    .reveal-left{opacity:0;transform:translateX(-36px);transition:opacity 0.7s var(--ease-out),transform 0.7s var(--ease-out);}
+    .reveal-right{opacity:0;transform:translateX(36px);transition:opacity 0.7s var(--ease-out),transform 0.7s var(--ease-out);}
+    .reveal-left.revealed,.reveal-right.revealed{opacity:1;transform:translateX(0);}
+    .reveal-scale{opacity:0;transform:scale(0.88);transition:opacity 0.65s var(--ease-spring),transform 0.65s var(--ease-spring);}
+    .reveal-scale.revealed{opacity:1;transform:scale(1);}
+
+    /* KEYFRAMES */
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes floatYSlow{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-14px) rotate(3deg)}66%{transform:translateY(-6px) rotate(-2deg)}}
+    @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(219,39,119,0.45)}70%{box-shadow:0 0 0 18px rgba(219,39,119,0)}100%{box-shadow:0 0 0 0 rgba(219,39,119,0)}}
+    @keyframes scale-in{0%{opacity:0;transform:scale(0.9) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+    @keyframes fade-in{from{opacity:0}to{opacity:1}}
+    @keyframes sparkle{0%,100%{opacity:0;transform:scale(0) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(180deg)}}
+    @keyframes hero-blob{0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}25%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}50%{border-radius:50% 60% 30% 60%/30% 70% 60% 40%}75%{border-radius:40% 70% 60% 30%/60% 40% 50% 70%}}
+    @keyframes counter-pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+    @keyframes tab-slide-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float-badge{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.02)}}
+
+    /* PROGRESS BAR */
+    #progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--nss-orange),var(--soft-pink-accent));z-index:10000;width:0%;transition:width 0.08s linear;border-radius:0 2px 2px 0;}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 5%;background:rgba(255,255,255,0.92);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(234,232,242,0.7);box-shadow:0 1px 20px rgba(45,48,146,0.06);transition:background 0.3s ease,box-shadow 0.3s ease;}
+    nav.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 24px rgba(45,48,146,0.10);}
+    .nav-brand{display:flex;align-items:center;gap:0.9rem;}
+    .nss-logo-img{width:58px;height:58px;border-radius:50%;object-fit:contain;box-shadow:0 4px 18px rgba(45,48,146,0.20);transition:transform 0.45s var(--ease-spring),box-shadow 0.3s ease;flex-shrink:0;}
+    .nss-logo-img:hover{transform:scale(1.1) rotate(6deg);box-shadow:0 8px 28px rgba(45,48,146,0.28);}
+    .brand-text{display:flex;flex-direction:column;text-align:left;border-left:3px solid var(--nss-orange);padding-left:0.8rem;}
+    .brand-text .title{font-size:1.25rem;font-weight:800;color:var(--nss-navy);line-height:1.1;letter-spacing:-0.01em;}
+    .brand-text .subtitle{font-size:0.68rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:1px;}
+    .nav-links{display:flex;gap:1.4rem;align-items:center;list-style:none;}
+    .nav-links a{font-size:0.86rem;font-weight:700;color:var(--text-body);transition:color 0.22s ease;position:relative;padding-bottom:2px;}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--soft-pink-accent);transform:scaleX(0);transform-origin:right;transition:transform 0.28s var(--ease-out);border-radius:2px;}
+    .nav-links a:hover{color:var(--nss-navy);}
+    .nav-links a:hover::after{transform:scaleX(1);transform-origin:left;}
+    .nav-btn-modal{background:var(--soft-pink-accent);color:#fff!important;padding:0.52rem 1.2rem;border-radius:var(--r-pill);font-weight:800!important;font-size:0.83rem!important;box-shadow:0 4px 16px rgba(219,39,119,0.32);transition:all 0.3s var(--ease-spring)!important;display:inline-flex;align-items:center;gap:0.35rem;}
+    .nav-btn-modal:hover{background:#BE185D;transform:translateY(-3px) scale(1.04);box-shadow:0 10px 28px rgba(219,39,119,0.45);}
+    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+    .mobile-menu-btn span{width:24px;height:2.5px;background:var(--nss-navy);border-radius:99px;transition:all 0.35s var(--ease-out);transform-origin:center;}
+    .mobile-menu-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .mobile-menu-btn.active span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .mobile-menu-btn.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+    .mobile-nav-drawer{position:fixed;top:56px;left:0;right:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);padding:1.25rem 4%;flex-direction:column;gap:0.6rem;border-bottom:1px solid var(--border-light);box-shadow:0 16px 40px rgba(45,48,146,0.12);z-index:9998;transform:translateY(-110%);opacity:0;transition:transform 0.4s var(--ease-out),opacity 0.3s ease;display:flex;}
+    .mobile-nav-drawer.active{transform:translateY(0);opacity:1;}
+    .mobile-nav-drawer a{font-size:0.92rem;font-weight:700;color:var(--nss-navy);padding:0.7rem 1rem;border-radius:14px;background:rgba(245,242,255,0.65);transition:all 0.2s ease;display:flex;align-items:center;justify-content:space-between;}
+    .mobile-nav-drawer a:active{background:var(--soft-pink-bg);color:var(--soft-pink-accent);transform:scale(0.98);}
+
+    /* HERO */
+    #hero{padding:130px 5% 90px;text-align:center;background:linear-gradient(160deg,#FDF0F6 0%,#F5F2FF 50%,var(--bg-main) 100%);position:relative;overflow:hidden;}
+    #hero::before,#hero::after{content:'';position:absolute;border-radius:50%;filter:blur(60px);z-index:0;pointer-events:none;}
+    #hero::before{width:420px;height:420px;background:rgba(219,39,119,0.08);top:-80px;right:-80px;animation:hero-blob 12s ease-in-out infinite;}
+    #hero::after{width:320px;height:320px;background:rgba(45,48,146,0.06);bottom:0;left:-60px;animation:hero-blob 15s ease-in-out infinite reverse;}
+    .hero-container{max-width:840px;margin:0 auto;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;}
+    .nss-hero-badge{display:inline-flex;align-items:center;gap:0.8rem;background:rgba(255,255,255,0.85);border:1.5px solid var(--soft-pink-border);padding:0.5rem 1.4rem;border-radius:var(--r-pill);font-size:0.88rem;font-weight:800;color:var(--nss-navy);margin-bottom:1.6rem;box-shadow:0 4px 20px rgba(219,39,119,0.10);animation:float-badge 4s ease-in-out infinite;backdrop-filter:blur(10px);}
+    .nss-hero-badge img{width:30px;height:30px;border-radius:50%;}
+    .hero-date{font-size:0.85rem;font-weight:800;color:var(--nss-orange);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:0.9rem;display:block;opacity:0;animation:fade-in 0.8s 0.3s var(--ease-out) forwards;}
+    #hero h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:800;color:var(--nss-navy);line-height:1.18;margin-bottom:1.2rem;text-align:center;opacity:0;animation:scale-in 0.9s 0.4s var(--ease-out) forwards;}
+    #hero h1 span.pink-text{color:var(--soft-pink-accent);}
+    .hero-desc{font-size:1.08rem;color:var(--text-body);max-width:640px;margin:0 auto 2.4rem;font-weight:400;line-height:1.8;text-align:center;opacity:0;animation:fade-in 0.9s 0.6s ease forwards;}
+    .hero-buttons{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fade-in 0.8s 0.8s ease forwards;}
+    .btn-hero-modal{background:var(--soft-pink-accent);color:#fff;padding:0.88rem 2rem;border-radius:var(--r-pill);font-weight:800;font-size:0.98rem;box-shadow:0 6px 24px rgba(219,39,119,0.38);transition:all 0.35s var(--ease-spring);display:inline-flex;align-items:center;gap:0.45rem;}
+    .btn-hero-modal:hover{background:#BE185D;transform:translateY(-4px) scale(1.04);box-shadow:0 14px 36px rgba(219,39,119,0.52);}
+    .btn-hero-guide{background:rgba(255,255,255,0.85);color:var(--nss-navy);border:2px solid var(--border-light);padding:0.88rem 2rem;border-radius:var(--r-pill);font-weight:700;font-size:0.98rem;transition:all 0.3s var(--ease-spring);backdrop-filter:blur(8px);}
+    .btn-hero-guide:hover{background:var(--soft-lavender);transform:translateY(-3px);border-color:var(--nss-navy);box-shadow:0 8px 24px rgba(45,48,146,0.14);}
+    .hero-sparkle{position:absolute;pointer-events:none;z-index:0;font-size:1.2rem;}
+    .hero-sparkle:nth-child(1){top:15%;left:8%;animation:sparkle 3.5s 0s ease-in-out infinite,floatYSlow 5s 0s ease-in-out infinite;}
+    .hero-sparkle:nth-child(2){top:20%;right:12%;animation:sparkle 3.5s 0.8s ease-in-out infinite,floatYSlow 6s 0.5s ease-in-out infinite;}
+    .hero-sparkle:nth-child(3){bottom:25%;left:15%;animation:sparkle 3.5s 1.4s ease-in-out infinite,floatY 4s 1s ease-in-out infinite;}
+    .hero-sparkle:nth-child(4){bottom:30%;right:8%;animation:sparkle 3.5s 0.4s ease-in-out infinite,floatYSlow 7s 0.2s ease-in-out infinite;}
+
+    /* EMERGENCY STRIP */
+    .emergency-strip{background:var(--nss-orange-soft);border-top:1px solid #FFDCD0;border-bottom:1px solid #FFDCD0;padding:0.75rem 5%;display:flex;align-items:center;justify-content:center;gap:1rem;font-size:0.88rem;color:#9A2C00;flex-wrap:wrap;}
+    .strip-header{font-weight:800;display:inline-flex;align-items:center;gap:0.4rem;color:var(--nss-orange);flex-shrink:0;}
+    .strip-items{display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;justify-content:center;}
+    .strip-pill{background:#FFFFFF;border:1px solid #FFDCD0;padding:0.35rem 0.85rem;border-radius:99px;color:#9A2C00;font-size:0.82rem;display:inline-flex;align-items:center;gap:0.4rem;transition:all 0.25s var(--ease-spring);text-decoration:none;}
+    .strip-pill strong{color:var(--nss-orange);font-weight:800;}
+    .strip-pill:hover{background:var(--nss-orange);color:#FFFFFF;border-color:var(--nss-orange);transform:translateY(-2px);box-shadow:0 4px 14px rgba(232,74,12,0.25);}
+    .strip-pill:hover strong{color:#FFFFFF;}
+
+    /* SECTION LAYOUT */
+    .section{padding:90px 5%;}
+    .container{max-width:1140px;margin:0 auto;}
+    .heading-box{text-align:center;max-width:700px;margin:0 auto 3.5rem;}
+    .section-tag{font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.16em;color:var(--nss-orange);margin-bottom:0.5rem;display:inline-block;}
+    .section-title{font-size:clamp(1.9rem,3.5vw,2.55rem);font-weight:800;color:var(--nss-navy);line-height:1.2;margin-bottom:0.8rem;}
+    #team .section-title{white-space:nowrap;font-size:clamp(0.82rem,4.2vw,2.35rem);word-break:keep-all;}
+    .section-title span.accent{color:var(--soft-pink-accent);}
+    .section-desc{font-size:1.02rem;color:var(--text-body);line-height:1.78;}
+
+    /* STATS BANNER — matching webpage box theme (card-white + soft pink border + soft shadow) */
+    #stats-banner{
+      background: var(--card-white);
+      border: 2px solid var(--soft-pink-border);
+      border-radius: var(--r-lg);
+      padding: 3rem 2.5rem;
+      margin: 0 0 5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;text-align:center;position:relative;z-index:1;}
+    .stat-box{
+      background: var(--soft-pink-bg);
+      border: 1.5px solid var(--soft-pink-border);
+      border-radius: var(--r-md); padding: 1.8rem 1.2rem;
+      transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .stat-box:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(219,39,119,0.12);
+      border-color: var(--soft-pink-accent);
+    }
+    .stat-box .stat-icon{width:48px;height:48px;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;animation:floatY 3s ease-in-out infinite;}
+    .stat-box:nth-child(2) .stat-icon{animation-delay:0.5s;}
+    .stat-box:nth-child(3) .stat-icon{animation-delay:1s;}
+    .stat-box:nth-child(4) .stat-icon{animation-delay:1.5s;}
+    .stat-box .num-val{font-size:2.8rem;font-weight:800;color:var(--nss-navy);display:inline-block;line-height:1;}
+    .stat-box .num-unit{font-size:1.8rem;font-weight:800;color:var(--soft-pink-accent);}
+    .stat-box .stat-lbl{font-size:0.82rem;color:var(--text-body);margin-top:0.5rem;font-weight:700;}
+
+    /* SUMMARY CARD */
+    .summary-card{background:var(--card-white);border:2px solid var(--soft-pink-border);border-radius:var(--r-lg);padding:2.5rem;box-shadow:var(--shadow-card);margin-bottom:5rem;text-align:left;}
+    .summary-card h3{font-size:1.25rem;font-weight:800;color:var(--nss-navy);margin-bottom:1.3rem;display:flex;align-items:center;gap:0.6rem;}
+    .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;}
+    .summary-item{background:var(--soft-pink-bg);padding:1.4rem;border-radius:var(--r-md);border-left:4px solid var(--soft-pink-accent);transition:transform 0.3s var(--ease-spring),box-shadow 0.3s ease;}
+    .summary-item:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(219,39,119,0.1);}
+    .summary-item strong{display:block;font-size:0.98rem;color:var(--soft-pink-accent);margin-bottom:0.4rem;font-weight:800;}
+    .summary-item p{font-size:0.88rem;color:var(--text-body);line-height:1.65;}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;text-align:left;}
+    .about-box{background:var(--soft-lavender);border:1.5px solid var(--soft-lavender-border);border-radius:var(--r-lg);padding:2.8rem 2.4rem;transition:transform 0.4s var(--ease-spring),box-shadow 0.3s ease;}
+    .about-box:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);}
+    .about-box h4{font-size:1.3rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.9rem;}
+    .about-box p{font-size:0.97rem;color:var(--text-body);line-height:1.8;margin-bottom:1.8rem;}
+    .stat-row{display:flex;gap:1rem;flex-wrap:wrap;}
+    .stat-badge{background:#fff;border:1px solid var(--soft-lavender-border);padding:0.9rem 1.2rem;border-radius:var(--r-md);text-align:center;flex:1;min-width:90px;transition:transform 0.3s var(--ease-spring);}
+    .stat-badge:hover{transform:scale(1.06);}
+    .stat-badge .num{font-size:1.55rem;font-weight:800;color:var(--nss-navy);}
+    .stat-badge .lbl{font-size:0.72rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;}
+    .about-text h4{font-size:1.2rem;font-weight:800;color:var(--nss-navy);margin:1.6rem 0 0.6rem;}
+    .about-text p{font-size:0.97rem;color:var(--text-body);line-height:1.8;}
+
+    /* QUIZ */
+    .quiz-card{background:var(--card-white);border:2px solid var(--soft-pink-border);border-radius:var(--r-lg);padding:2.8rem 2.4rem;box-shadow:var(--shadow-card);margin-bottom:5rem;text-align:left;}
+    .quiz-card h3{font-size:1.4rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.5rem;}
+    .quiz-card p.sub{font-size:0.95rem;color:var(--text-body);margin-bottom:1.8rem;}
+    .quiz-list{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:1.8rem;}
+    .quiz-row{display:flex;align-items:center;justify-content:space-between;background:var(--bg-main);border:1.5px solid var(--border-light);padding:1rem 1.4rem;border-radius:var(--r-md);cursor:pointer;transition:background 0.25s ease,border-color 0.25s ease,transform 0.2s var(--ease-spring);}
+    .quiz-row:hover{background:var(--soft-pink-bg);border-color:var(--soft-pink-border);transform:translateX(4px);}
+    .quiz-row:has(input:checked){background:var(--soft-pink-bg);border-color:var(--soft-pink-accent);}
+    .quiz-row label{font-size:0.93rem;font-weight:700;color:var(--nss-navy);cursor:pointer;flex:1;}
+    .quiz-row input[type="checkbox"]{width:22px;height:22px;accent-color:var(--soft-pink-accent);cursor:pointer;flex-shrink:0;}
+    .btn-calc-quiz{background:var(--nss-navy);color:#fff;width:100%;padding:0.95rem;border-radius:var(--r-pill);font-weight:800;font-size:1rem;box-shadow:0 4px 18px rgba(45,48,146,0.28);transition:all 0.35s var(--ease-spring);}
+    .btn-calc-quiz:hover{background:var(--nss-navy-dark);transform:translateY(-3px);box-shadow:0 10px 28px rgba(45,48,146,0.35);}
+    .quiz-result{display:none;margin-top:1.8rem;padding:1.6rem;border-radius:var(--r-md);text-align:center;}
+    .quiz-result.active{display:block;animation:scale-in 0.5s var(--ease-spring);}
+
+    /* SYMPTOMS */
+    .symptoms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;text-align:left;}
+    .symptom-card{background:var(--card-white);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.8rem 1.5rem;box-shadow:var(--shadow-soft);transition:all 0.38s var(--ease-spring);cursor:default;}
+    .symptom-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(45,48,146,0.12);border-color:var(--soft-pink-border);}
+    .symptom-icon{width:52px;height:52px;background:var(--soft-pink-bg);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem;transition:transform 0.35s var(--ease-spring);}
+    .symptom-card:hover .symptom-icon{transform:scale(1.15) rotate(-4deg);}
+    .symptom-card h4{font-size:1rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.4rem;}
+    .symptom-card p{font-size:0.86rem;color:var(--text-body);line-height:1.65;}
+
+    /* TABS */
+    .tab-buttons{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .tab-btn{background:var(--bg-main);border:1.5px solid var(--border-light);color:var(--text-body);padding:0.6rem 1.5rem;border-radius:var(--r-pill);font-size:0.88rem;font-weight:700;transition:all 0.3s var(--ease-spring);}
+    .tab-btn:hover{border-color:var(--nss-navy);color:var(--nss-navy);transform:translateY(-2px);}
+    .tab-btn.active{background:var(--nss-navy);color:#fff;border-color:var(--nss-navy);box-shadow:0 4px 18px rgba(45,48,146,0.25);transform:translateY(-2px);}
+    .tab-content{display:none;}
+    .tab-content.active{display:block;animation:tab-slide-in 0.38s var(--ease-out);}
+    .precautions-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem;text-align:left;}
+    .pre-card{background:var(--bg-main);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s var(--ease-spring);}
+    .pre-card:hover{transform:translateX(6px);border-color:var(--nss-navy);}
+    .pre-num{width:38px;height:38px;background:var(--nss-navy);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.88rem;flex-shrink:0;}
+    .pre-info h5{font-size:0.98rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.35rem;}
+    .pre-info p{font-size:0.85rem;color:var(--text-body);line-height:1.65;}
+
+    /* DIET */
+    .diet-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;text-align:left;}
+    .diet-box{border-radius:var(--r-lg);padding:2.5rem;transition:transform 0.4s var(--ease-spring),box-shadow 0.3s ease;}
+    .diet-box:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);}
+    .diet-box.eat{background:var(--soft-green-bg);border:1.5px solid var(--soft-green-border);}
+    .diet-box.avoid{background:var(--soft-pink-bg);border:1.5px solid var(--soft-pink-border);}
+    .diet-box h4{font-size:1.22rem;font-weight:800;margin-bottom:1.4rem;display:flex;align-items:center;gap:0.6rem;}
+    .diet-box.eat h4{color:var(--soft-green-text);}
+    .diet-box.avoid h4{color:#B91C1C;}
+    .food-list{display:flex;flex-direction:column;gap:0.75rem;}
+    .food-item{display:flex;align-items:center;gap:0.8rem;background:rgba(255,255,255,0.88);padding:0.8rem 1.1rem;border-radius:var(--r-sm);font-size:0.88rem;font-weight:700;color:var(--text-main);transition:transform 0.25s var(--ease-spring),box-shadow 0.25s ease;}
+    .food-item:hover{transform:translateX(6px);box-shadow:0 4px 14px rgba(0,0,0,0.05);}
+
+    /* MYTHS */
+    .myths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;text-align:left;}
+    .myth-card{border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-soft);border:1.5px solid var(--border-light);transition:all 0.38s var(--ease-spring);}
+    .myth-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-card);}
+    .myth-top{background:#FEE2E2;padding:1.2rem 1.4rem;}
+    .myth-top .tag-red{font-size:0.7rem;font-weight:800;color:#DC2626;text-transform:uppercase;letter-spacing:0.08em;}
+    .myth-top p{font-size:0.9rem;font-weight:700;color:#7F1D1D;margin-top:0.25rem;}
+    .fact-bottom{background:#D1FAE5;padding:1.2rem 1.4rem;}
+    .fact-bottom .tag-green{font-size:0.7rem;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;}
+    .fact-bottom p{font-size:0.9rem;font-weight:700;color:#064E3B;margin-top:0.25rem;}
+
+    /* DOCTOR */
+    .doctor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.4rem;text-align:left;}
+    .doctor-card{background:var(--card-white);border-radius:var(--r-md);padding:1.6rem;border-left:4px solid #E84A0C;box-shadow:var(--shadow-soft);transition:all 0.35s var(--ease-spring);}
+    .doctor-card:hover{transform:translateY(-6px) translateX(4px);box-shadow:var(--shadow-card);}
+    .doctor-card .icon{font-size:1.9rem;margin-bottom:0.6rem;display:block;}
+    .doctor-card h5{font-size:0.97rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.35rem;}
+    .doctor-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
+    .doctor-advocacy-banner{background:var(--soft-lavender);border:1.5px solid var(--soft-lavender-border);border-radius:var(--r-lg);padding:2.2rem 2.4rem;margin-top:2.5rem;display:flex;gap:1.5rem;align-items:center;text-align:left;transition:transform 0.4s var(--ease-spring);}
+    .doctor-advocacy-banner:hover{transform:translateY(-4px);}
+    .doctor-advocacy-banner h4{font-size:1.15rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.35rem;}
+    .doctor-advocacy-banner p{font-size:0.9rem;color:var(--text-body);line-height:1.7;}
+
+    /* RESOURCES */
+    .resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem;text-align:left;}
+    .resource-card{background:var(--bg-main);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.35s var(--ease-spring);}
+    .resource-card:hover{background:var(--soft-lavender);border-color:var(--soft-lavender-border);transform:translateY(-5px);box-shadow:var(--shadow-card);}
+    .resource-icon-wrap{width:48px;height:48px;border-radius:14px;background:var(--soft-pink-bg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;transition:transform 0.35s var(--ease-spring);}
+    .resource-card:hover .resource-icon-wrap{transform:scale(1.12) rotate(-5deg);}
+    .resource-card h5{font-size:0.93rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.3rem;}
+    .resource-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
+
+    /* WOMEN ADMIN SPOTLIGHT CARD */
+    .women-admin-spotlight{
+      background: linear-gradient(135deg, #FDF0F6 0%, #FFFFFF 100%);
+      border: 2px solid var(--soft-pink-border);
+      border-radius: var(--r-lg);
+      padding: 2.2rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 10px 32px rgba(219,39,119,0.10);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease;
+      text-align: left;
+    }
+    .women-admin-spotlight:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(219,39,119,0.16);
+    }
+    .spotlight-top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .spotlight-badge{
+      background: var(--soft-pink-accent);
+      color: #fff;
+      padding: 0.35rem 1.1rem;
+      border-radius: var(--r-pill);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .spotlight-body{
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    .spotlight-avatar{
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--soft-pink-accent), #BE185D);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(219,39,119,0.30);
+      flex-shrink: 0;
+      border: 3px solid #fff;
+    }
+    .spotlight-info h3.name{
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--nss-navy);
+      margin-bottom: 0.2rem;
+    }
+    .spotlight-info p.role{
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--soft-pink-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .spotlight-info p.desc{
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 1.1rem;
+    }
+    .spotlight-actions{
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    @media(max-width:650px){
+      .spotlight-body{ flex-direction: column; text-align: center; }
+      .spotlight-actions{ justify-content: center; }
+    }
+
+    /* TEAM — Compact, Sized Down Cards */
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:1rem;text-align:left;}
+    .member-card{background:var(--card-white);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.1rem 1rem;transition:all 0.35s var(--ease-spring);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-soft);}
+    .member-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--nss-navy),var(--soft-pink-accent));transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease-out);}
+    .member-card:hover{transform:translateY(-5px);border-color:rgba(45,48,146,0.25);box-shadow:0 8px 24px rgba(45,48,146,0.08);}
+    .member-card:hover::after{transform:scaleX(1);}
+    .member-top{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem;}
+    .member-avatar{width:42px;height:42px;border-radius:50%;background:var(--soft-lavender);color:var(--nss-navy);display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:800;flex-shrink:0;border:2px solid var(--nss-orange);box-shadow:0 3px 10px rgba(45,48,146,0.10);transition:transform 0.35s var(--ease-spring);}
+    .member-card:hover .member-avatar{transform:scale(1.08) rotate(4deg);}
+    .member-meta .role-pill{display:inline-block;font-size:0.65rem;font-weight:800;color:var(--nss-orange);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.15rem;}
+    .member-meta .name{font-size:0.92rem;font-weight:800;color:var(--nss-navy);line-height:1.2;}
+    .member-actions{display:flex;flex-direction:column;gap:0.35rem;margin-top:0.75rem;padding-top:0.75rem;border-top:1px dashed var(--border-light);}
+    .btn-contact-pill{display:inline-flex;align-items:center;gap:0.4rem;background:var(--bg-main);border:1px solid var(--border-light);padding:0.35rem 0.65rem;border-radius:var(--r-pill);font-size:0.75rem;font-weight:700;color:var(--text-main);transition:all 0.25s var(--ease-spring);text-decoration:none;}
+    .btn-contact-pill:hover{background:var(--nss-navy);color:#fff;border-color:var(--nss-navy);transform:translateX(3px);}
+    .btn-contact-pill.whatsapp-pill{background:var(--soft-pink-accent);color:#fff;border-color:var(--soft-pink-accent);justify-content:center;margin-top:0.2rem;}
+    .btn-contact-pill.whatsapp-pill:hover{background:#BE185D;transform:translateY(-2px);}
+
+    /* CONTACT FORM */
+    .contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;text-align:left;}
+    .form-panel{background:var(--bg-main);border:1.5px solid var(--border-light);border-radius:var(--r-lg);padding:2.5rem;}
+    .form-panel h4{font-size:1.3rem;font-weight:800;color:var(--nss-navy);margin-bottom:1.3rem;}
+    .input-field{margin-bottom:1.2rem;}
+    .input-field label{display:block;font-size:0.78rem;font-weight:800;color:var(--nss-navy);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;}
+    .input-field input,.input-field select,.input-field textarea{width:100%;padding:0.88rem 1.1rem;border:1.5px solid var(--border-light);border-radius:var(--r-sm);font-family:inherit;font-size:0.93rem;background:#fff;outline:none;transition:border-color 0.25s ease,box-shadow 0.25s ease;color:var(--text-main);}
+    .input-field input:focus,.input-field select:focus,.input-field textarea:focus{border-color:var(--nss-navy);box-shadow:0 0 0 3px rgba(45,48,146,0.10);}
+    .btn-send-general{width:100%;background:var(--nss-navy);color:#fff;padding:0.95rem;border-radius:var(--r-pill);font-size:1rem;font-weight:800;box-shadow:0 4px 18px rgba(45,48,146,0.28);transition:all 0.35s var(--ease-spring);}
+    .btn-send-general:hover{background:var(--nss-navy-dark);transform:translateY(-3px);box-shadow:0 10px 28px rgba(45,48,146,0.35);}
+
+    /* MODAL */
+    .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(20,20,60,0.6);backdrop-filter:blur(10px) saturate(150%);-webkit-backdrop-filter:blur(10px) saturate(150%);z-index:100000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
+    .modal-overlay.active{opacity:1;pointer-events:all;}
+    .modal-window{background:var(--card-white);border:2px solid var(--soft-pink-border);border-radius:var(--r-lg);max-width:580px;width:100%;padding:2.8rem 2.4rem;box-shadow:var(--shadow-modal);position:relative;max-height:90vh;overflow-y:auto;transform:translateY(30px) scale(0.96);transition:transform 0.45s var(--ease-spring),opacity 0.35s ease;opacity:0;}
+    .modal-overlay.active .modal-window{transform:translateY(0) scale(1);opacity:1;}
+    .modal-close-btn{position:absolute;top:1.3rem;right:1.3rem;width:36px;height:36px;border-radius:50%;background:var(--bg-main);color:var(--nss-navy);font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s var(--ease-spring);border:1px solid var(--border-light);}
+    .modal-close-btn:hover{background:var(--nss-orange);color:#fff;border-color:var(--nss-orange);transform:rotate(90deg) scale(1.1);}
+    .modal-badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--soft-pink-accent);color:#fff;padding:0.35rem 1rem;border-radius:var(--r-pill);font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;}
+    .modal-window h3{font-size:1.5rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.5rem;}
+    .modal-window p.desc{font-size:0.93rem;color:var(--text-body);margin-bottom:1.4rem;line-height:1.72;}
+    .privacy-notice{background:var(--soft-lavender);border-left:4px solid var(--nss-navy);padding:0.85rem 1.1rem;border-radius:var(--r-sm);font-size:0.83rem;color:var(--nss-navy);font-weight:600;margin-bottom:1.5rem;}
+    .form-group{margin-bottom:1.1rem;}
+    .form-group label{display:block;font-size:0.78rem;font-weight:800;color:var(--nss-navy);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;}
+    .form-group select,.form-group textarea{width:100%;padding:0.85rem 1rem;border:1.5px solid var(--border-light);border-radius:var(--r-sm);font-family:inherit;font-size:0.92rem;background:var(--bg-main);color:var(--text-main);outline:none;transition:border-color 0.25s ease,box-shadow 0.25s ease;resize:vertical;}
+    .form-group select:focus,.form-group textarea:focus{border-color:var(--soft-pink-accent);box-shadow:0 0 0 3px rgba(219,39,119,0.10);}
+    .btn-submit-modal{width:100%;background:var(--soft-pink-accent);color:#fff;padding:0.95rem;border-radius:var(--r-pill);font-size:1rem;font-weight:800;box-shadow:0 4px 18px rgba(219,39,119,0.32);transition:all 0.35s var(--ease-spring);}
+    .btn-submit-modal:hover{background:#BE185D;transform:translateY(-3px);box-shadow:0 10px 28px rgba(219,39,119,0.48);}
+    .modal-success-alert{display:none;background:var(--soft-green-bg);border:1.5px solid var(--soft-green-border);padding:1.5rem;border-radius:var(--r-md);text-align:center;margin-top:1.2rem;}
+    .modal-success-alert.active{display:block;animation:scale-in 0.5s var(--ease-spring);}
+
+    /* FLOATING BTN */
+    .floating-ask-btn{position:fixed;bottom:2rem;right:2rem;background:var(--soft-pink-accent);color:#fff;padding:0.82rem 1.7rem;border-radius:var(--r-pill);font-size:0.88rem;font-weight:800;box-shadow:0 8px 28px rgba(219,39,119,0.42);z-index:9990;transition:all 0.35s var(--ease-spring);display:flex;align-items:center;gap:0.5rem;animation:pulse-ring 2.5s ease-in-out infinite;}
+    .floating-ask-btn:hover{transform:translateY(-4px) scale(1.06);background:#BE185D;box-shadow:0 16px 38px rgba(219,39,119,0.56);animation:none;}
+
+    /* FOOTER */
+    footer{background:var(--nss-navy);color:rgba(255,255,255,0.85);padding:70px 5% 30px;text-align:left;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+    .footer-brand h4{color:#fff;font-size:1.08rem;font-weight:800;margin-bottom:0.5rem;}
+    .footer-brand p{font-size:0.86rem;line-height:1.7;opacity:0.82;}
+    .footer-links h5{color:#fff;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;}
+    .footer-links ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+    .footer-links a{font-size:0.86rem;transition:color 0.22s ease;}
+    .footer-links a:hover{color:var(--nss-orange);}
+    .footer-bar{border-top:1px solid rgba(255,255,255,0.12);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;}
+
+    /* ============================================================
+       MOBILE & TABLET OPTIMIZED LAYOUT (MINIMAL, SPACIOUS & UNCLUTTERED)
+       ============================================================ */
+    @media (max-width: 1024px) {
+      nav { padding: 0.65rem 4%; }
+      .nav-links { gap: 1rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      .team-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    }
+
+    @media (max-width: 768px) {
+      /* Touch Feedback */
+      button:active, .btn-hero-modal:active, .btn-hero-guide:active, .btn-contact-pill:active, .tab-btn:active, .floating-ask-btn:active, .quiz-row:active {
+        transform: scale(0.97) !important;
+      }
+
+      /* Header & Navigation — Ultra-Clean Glass Navbar & Pill Menu Toggle */
+      nav { padding: max(0.45rem, env(safe-area-inset-top)) 4% 0.45rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--soft-pink-border); }
+      .nav-brand { gap: 0.55rem; }
+      .nss-logo-img { width: 36px; height: 36px; box-shadow: 0 3px 10px rgba(219,39,119,0.18); }
+      .brand-text { border-left: 2px solid var(--nss-orange); padding-left: 0.55rem; }
+      .brand-text .title { font-size: 1.02rem; letter-spacing: -0.01em; }
+      .brand-text .subtitle { display: none; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--soft-pink-bg); border: 1.5px solid var(--soft-pink-border); border-radius: 99px; padding: 0.4rem 0.85rem; height: 36px; min-height: 36px; color: var(--nss-navy); font-size: 0.78rem; font-weight: 800; }
+      .mobile-menu-btn span { display: none; }
+      .mobile-menu-btn::before { content: '☰ Menu'; }
+      .mobile-menu-btn.active::before { content: '✕ Close'; }
+
+      /* Hero Section — Clean & Minimalist */
+      #hero { padding: 84px 1.25rem 36px; text-align: center; }
+      .hero-sparkle { display: none; }
+      .nss-hero-badge { font-size: 0.74rem; padding: 0.4rem 0.95rem; margin-bottom: 0.9rem; gap: 0.45rem; border-radius: 99px; min-height: 36px; }
+      .nss-hero-badge img { width: 20px; height: 20px; }
+      .hero-date { font-size: 0.72rem; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+      #hero h1 { font-size: clamp(1.65rem, 6.2vw, 2.3rem); line-height: 1.22; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+      .hero-desc { font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.6rem; padding: 0 0.25rem; color: var(--text-body); }
+      .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 0.75rem; }
+      .btn-hero-modal, .btn-hero-guide { width: 100%; justify-content: center; min-height: 46px; padding: 0.8rem 1.3rem; font-size: 0.88rem; border-radius: 99px; }
+
+      /* Emergency Helpline Strip */
+      .emergency-strip { padding: 0.75rem 1.25rem; flex-direction: column; gap: 0.55rem; text-align: center; }
+      .strip-header { font-size: 0.82rem; }
+      .strip-items { width: 100%; display: flex; gap: 0.45rem; justify-content: center; flex-wrap: wrap; }
+      .strip-pill { padding: 0.35rem 0.75rem; font-size: 0.76rem; min-height: 38px; border-radius: 99px; flex: 1; min-width: 130px; justify-content: center; }
+
+      /* Containers & Sections */
+      .section { padding: 48px 1.25rem; }
+      .heading-box { margin-bottom: 2.2rem; }
+      .section-tag { font-size: 0.72rem; letter-spacing: 0.12em; }
+      .section-title { font-size: clamp(1.35rem, 5vw, 1.8rem); line-height: 1.28; margin-bottom: 0.5rem; }
+      .section-desc { font-size: 0.90rem; line-height: 1.65; }
+
+      /* Stats Banner — Sleek Rounded Glass Cards */
+      #stats-banner { padding: 1.5rem 1rem; margin-bottom: 2.8rem; border-radius: 20px; border: 1.5px solid var(--soft-pink-border); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+      .stat-box { padding: 1.1rem 0.6rem; border-radius: 16px; background: var(--soft-pink-bg); border: 1px solid var(--soft-pink-border); min-width: 0; }
+      .stat-box .stat-icon { width: 40px; height: 40px; margin: 0 auto 0.5rem; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(219,39,119,0.08); }
+      .stat-box .stat-icon svg { width: 22px; height: 22px; }
+      .stat-box .num-val { font-size: 1.85rem; }
+      .stat-box .num-unit { font-size: 1.2rem; }
+      .stat-box .stat-lbl { font-size: 0.72rem; line-height: 1.35; margin-top: 0.35rem; }
+
+      /* Summary Card */
+      .summary-card { padding: 1.5rem 1.1rem; margin-bottom: 2.8rem; border-radius: 20px; }
+      .summary-card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+      .summary-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+      .summary-item { padding: 1.1rem; border-radius: 14px; }
+
+      /* About Section */
+      .about-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+      .about-box { padding: 1.5rem 1.1rem; border-radius: 20px; }
+      .about-box h4 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+      .about-box p { font-size: 0.90rem; line-height: 1.65; margin-bottom: 1.3rem; }
+      .stat-row { gap: 0.6rem; }
+      .stat-badge { padding: 0.7rem 0.6rem; border-radius: 14px; }
+      .stat-badge .num { font-size: 1.25rem; }
+
+      /* Quiz Card */
+      .quiz-card { padding: 1.5rem 1.1rem; margin-bottom: 2.8rem; border-radius: 20px; }
+      .quiz-card h3 { font-size: 1.2rem; }
+      .quiz-card p.sub { font-size: 0.88rem; margin-bottom: 1.3rem; }
+      .quiz-list { gap: 0.7rem; margin-bottom: 1.3rem; }
+      .quiz-row { padding: 0.85rem 1rem; border-radius: 14px; gap: 0.75rem; min-height: 48px; }
+      .quiz-row label { font-size: 0.85rem; line-height: 1.45; }
+      .btn-calc-quiz { padding: 0.88rem; font-size: 0.92rem; border-radius: 99px; min-height: 46px; }
+
+      /* Symptoms & Tab Controls */
+      .tab-btn { min-height: 44px; padding: 0.6rem 1.3rem; font-size: 0.84rem; }
+      .symptoms-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .symptom-card { padding: 1.1rem 0.85rem; border-radius: 16px; text-align: center; }
+      .symptom-icon { width: 44px; height: 44px; margin: 0 auto 0.7rem; font-size: 1.3rem; border-radius: 14px; }
+      .symptom-card h4 { font-size: 0.92rem; margin-bottom: 0.3rem; }
+      .symptom-card p { font-size: 0.78rem; line-height: 1.5; }
+      .precautions-list { grid-template-columns: 1fr; gap: 0.85rem; }
+      .pre-card { padding: 1.1rem 1rem; gap: 0.85rem; border-radius: 16px; }
+      .pre-num { width: 34px; height: 34px; font-size: 0.82rem; border-radius: 10px; }
+
+      /* Diet Section */
+      .diet-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+      .diet-box { padding: 1.5rem 1.1rem; border-radius: 20px; }
+      .diet-box h4 { font-size: 1.1rem; margin-bottom: 1rem; }
+      .food-item { padding: 0.75rem 0.9rem; font-size: 0.84rem; border-radius: 12px; min-height: 44px; }
+
+      /* Myths vs Facts */
+      .myths-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .myth-card { border-radius: 16px; }
+      .myth-top, .fact-bottom { padding: 1rem 1.15rem; }
+      .myth-top p, .fact-bottom p { font-size: 0.86rem; line-height: 1.55; }
+
+      /* Doctor Warning & Helplines */
+      .doctor-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .doctor-card { padding: 1.1rem 0.85rem; border-radius: 16px; border-left-width: 3px; }
+      .doctor-card h5 { font-size: 0.88rem; margin-bottom: 0.25rem; }
+      .doctor-card p { font-size: 0.78rem; line-height: 1.5; }
+      .doctor-advocacy-banner { padding: 1.4rem 1.1rem; border-radius: 20px; flex-direction: column; text-align: center; gap: 0.8rem; }
+      .doctor-advocacy-banner h4 { font-size: 1.1rem; }
+      .doctor-advocacy-banner p { font-size: 0.86rem; }
+      .resources-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+      .resource-card { padding: 1.1rem 1rem; border-radius: 16px; gap: 0.85rem; }
+      .resource-icon-wrap { width: 42px; height: 42px; font-size: 1.2rem; border-radius: 12px; }
+      .resource-card h5 { font-size: 0.90rem; }
+      .resource-card p { font-size: 0.82rem; }
+
+      /* Women Admin Spotlight Card — Prominent & Featured VIP Card */
+      .women-admin-spotlight { padding: 1.6rem 1.25rem; margin-bottom: 2.2rem; border-radius: 20px; background: linear-gradient(145deg, #FDF0F6 0%, #FFFFFF 100%); border: 1.5px solid var(--soft-pink-border); }
+      .spotlight-top { margin-bottom: 1rem; }
+      .spotlight-body { flex-direction: column; text-align: center; align-items: center; gap: 1.1rem; }
+      .spotlight-avatar { width: 64px; height: 64px; font-size: 1.4rem; margin: 0 auto; box-shadow: 0 6px 18px rgba(219,39,119,0.25); }
+      .spotlight-info h3.name { font-size: 1.3rem; }
+      .spotlight-info p.role { font-size: 0.80rem; }
+      .spotlight-info p.desc { font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.2rem; }
+      .spotlight-actions { flex-direction: column; width: 100%; gap: 0.6rem; }
+      .spotlight-actions a { width: 100%; justify-content: center; min-height: 44px; padding: 0.65rem 1rem; font-size: 0.84rem; border-radius: 99px; }
+
+      /* Team Members Section — Compact 2-Column In-Theme Micro Cards (Saves 75% Space & Matches Site Theme 100%) */
+      .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; margin-top: 0.9rem; }
+      .member-card { flex-direction: column; align-items: center; justify-content: space-between; text-align: center; padding: 0.8rem 0.5rem; border-radius: 16px; background: #ffffff; border: 1.5px solid var(--soft-pink-border); box-shadow: 0 4px 14px rgba(219,39,119,0.06); min-height: 0; }
+      .member-card::after { display: none; }
+      .member-card:hover { transform: translateY(-2px); border-color: var(--soft-pink-accent); }
+      .member-top { margin-bottom: 0.4rem; flex-direction: column; align-items: center; text-align: center; gap: 0.35rem; width: 100%; }
+      .member-avatar { width: 36px; height: 36px; font-size: 0.82rem; border-width: 1.5px; border-color: var(--soft-pink-border); background: var(--soft-pink-bg); color: var(--soft-pink-accent); flex-shrink: 0; }
+      .member-meta { text-align: center; }
+      .member-meta .role-pill { font-size: 0.58rem; letter-spacing: 0.02em; margin-bottom: 0.1rem; display: block; color: var(--nss-orange); font-weight: 800; text-transform: uppercase; }
+      .member-meta .name { font-size: 0.82rem; font-weight: 800; color: var(--nss-navy); line-height: 1.2; }
+      .member-actions { flex-direction: column; gap: 0.3rem; margin-top: 0.4rem; padding-top: 0.4rem; border-top: 1px dashed var(--soft-pink-border); width: 100%; }
+      .btn-contact-pill { min-height: 32px; padding: 0.3rem 0.5rem; font-size: 0.72rem; border-radius: 99px; justify-content: center; background: var(--soft-pink-bg); border: 1px solid var(--soft-pink-border); color: var(--soft-pink-accent); font-weight: 800; width: 100%; }
+
+      /* Contact Form */
+      .contact-form-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .form-panel { padding: 1.6rem 1.1rem; border-radius: 20px; }
+      .form-panel h4 { font-size: 1.15rem; margin-bottom: 1rem; }
+      .input-field input, .input-field select, .input-field textarea { padding: 0.85rem 1rem; font-size: 0.90rem; border-radius: 12px; min-height: 46px; }
+      .btn-send-general { min-height: 48px; border-radius: 99px; }
+
+      /* Modal Window — Accessible Touch Targets & Safe Padding */
+      .modal-window { padding: 1.8rem 1.25rem 1.5rem; border-radius: 24px; max-width: 94%; max-height: 88vh; }
+      .modal-close-btn { top: 1rem; right: 1rem; width: 44px; height: 44px; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
+      .modal-window h3 { font-size: 1.25rem; }
+      .modal-window p.desc { font-size: 0.86rem; line-height: 1.6; margin-bottom: 1rem; }
+      .btn-submit-modal { min-height: 48px; border-radius: 99px; }
+
+      /* Floating Action Button — Safe Area Aware */
+      .floating-ask-btn { bottom: max(1.2rem, calc(1.2rem + env(safe-area-inset-bottom))); right: max(1.2rem, calc(1.2rem + env(safe-area-inset-right))); padding: 0.75rem 1.3rem; min-height: 46px; font-size: 0.82rem; border-radius: 99px; box-shadow: 0 8px 24px rgba(219,39,119,0.38); }
+
+      /* Footer — Ultra-Compact & Minimalist on Mobile */
+      footer { padding: 28px 1.25rem calc(20px + env(safe-area-inset-bottom)); text-align: center; }
+      .footer-grid { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+      .footer-links { display: none; }
+      .footer-brand { text-align: center; max-width: 320px; }
+      .footer-brand h4 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+      .footer-brand p { font-size: 0.78rem; line-height: 1.5; opacity: 0.85; }
+      .footer-bar { flex-direction: column; text-align: center; gap: 0.3rem; font-size: 0.75rem; border-top-color: rgba(255,255,255,0.08); padding-top: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .symptoms-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+      .doctor-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+      #stats-banner { padding: 1.3rem 0.85rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+      .stat-box { padding: 0.95rem 0.5rem; }
+      .stat-box .num-val { font-size: 1.7rem; }
+      .stat-box .num-unit { font-size: 1.15rem; }
+      .stat-box .stat-lbl { font-size: 0.68rem; line-height: 1.3; }
+      .btn-contact-pill.whatsapp-pill { font-size: 0.72rem; }
+    }
+
+    /* Small Phone Screens (320px–360px) */
+    @media (max-width: 360px) {
+      .symptoms-grid, .doctor-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .member-card { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; padding: 0.75rem 0.85rem; }
+      .member-top { flex-direction: row; text-align: left; width: auto; margin-bottom: 0; }
+      .member-meta { text-align: left; }
+      .member-actions { flex-direction: row; width: auto; margin-top: 0; padding-top: 0; border-top: none; }
+      .btn-contact-pill { width: auto; padding: 0.3rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-brand">
+      <img src="nss-logo.png" alt="CBIT NSS Logo" class="nss-logo-img" />
+      <div class="brand-text"><span class="title">CBIT NSS</span><span class="subtitle">World PCOD & PMOS Day · 2026</span></div>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About PCOD/PMOS</a></li>
+      <li><a href="#quiz-tool">Self Test</a></li>
+      <li><a href="#symptoms">Symptoms</a></li>
+      <li><a href="#precautions">Precautions</a></li>
+      <li><a href="#diet">Diet</a></li>
+      <li><a href="#myths">Myths vs Facts</a></li>
+      <li><a href="#team">NSS Team</a></li>
+      <li><button class="nav-btn-modal" onclick="openModal()">🌸 Ask Anonymous</button></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobile-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="#about" class="m-link">About PCOD</a>
+    <a href="#quiz-tool" class="m-link">Self Test Quiz</a>
+    <a href="#symptoms" class="m-link">Symptoms</a>
+    <a href="#precautions" class="m-link">Precautions</a>
+    <a href="#diet" class="m-link">Diet Tips</a>
+    <a href="#myths" class="m-link">Myths vs Facts</a>
+    <a href="#team" class="m-link">NSS Team</a>
+    <button class="nav-btn-modal" onclick="openModal();closeDrawer();" style="width:100%;justify-content:center;margin-top:0.5rem;">🌸 Ask Anonymous Question</button>
+  </div>
+  <section id="hero">
+    <span class="hero-sparkle">🌸</span>
+    <span class="hero-sparkle">💜</span>
+    <span class="hero-sparkle">✨</span>
+    <span class="hero-sparkle">🌷</span>
+    <div class="hero-container">
+      <div class="nss-hero-badge"><img src="nss-logo.png" alt="CBIT NSS Logo" />CBIT NSS Awareness Campaign 2026</div>
+      <span class="hero-date">📅 September 1, 2026 · World PCOD & PMOS Day</span>
+      <h1>Understanding <span class="pink-text">PCOD &amp; PMOS</span> 🌸</h1>
+      <p class="hero-desc">Polycystic Ovarian Disease &amp; PMOS affect 1 in 5 young women. CBIT NSS brings you a clear, easy-to-understand guide and a 100% anonymous Q&amp;A window for your personal health doubts. 💕</p>
+      <div class="hero-buttons">
+        <button class="btn-hero-modal" onclick="openModal()">🌸 Ask Anonymous Question to Gynaecologist</button>
+        <a href="#about" class="btn-hero-guide">📖 Read Health Guide</a>
+      </div>
+    </div>
+  </section>
+  <div class="emergency-strip">
+    <div class="strip-header">🆘 <strong>24/7 Women's Helplines</strong></div>
+    <div class="strip-items">
+      <a href="tel:1091" class="strip-pill"><span>Women's Help:</span> <strong>1091</strong></a>
+      <a href="tel:9152987821" class="strip-pill"><span>iCall:</span> <strong>9152987821</strong></a>
+      <a href="tel:18602662345" class="strip-pill"><span>Vandrevala:</span> <strong>1860-266-2345</strong></a>
+    </div>
+  </div>
+  <div class="container section">
+    <div id="stats-banner" class="reveal">
+      <div class="stats-grid stagger-grid">
+        <div class="stat-box reveal">
+          <div class="stat-icon">
+            <!-- Yoga Lotus Meditating Girl Vector SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5"/><path d="M7.5 13l4.5-2 4.5 2"/><path d="M4.5 19.5c2-2 4.5-3 7.5-3s5.5 1 7.5 3"/><path d="M3.5 16.5c1.5-1.5 4.5-2 8.5-2s7 .5 8.5 2"/></svg>
+          </div>
+          <div><span class="num-val" data-target="20">0</span><span class="num-unit">%</span></div>
+          <div class="stat-lbl">Indian Women Have PCOD/PMOS</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon">
+            <!-- Menstrual Cup Vector SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 6 6 12c0 4 2 6 6 8 4-2 6-4 6-8 0-6-2-10-6-10z" fill="rgba(219,39,119,0.1)"/><path d="M10 20v2a2 2 0 0 0 4 0v-2"/><line x1="6" y1="4" x2="18" y2="4"/></svg>
+          </div>
+          <div><span class="num-val" data-target="70">0</span><span class="num-unit">%</span></div>
+          <div class="stat-lbl">Cases Go Undiagnosed</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon">
+            <!-- Period Droplets Vector SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="rgba(219,39,119,0.15)"/></svg>
+          </div>
+          <div><span class="num-val" data-target="90">0</span><span class="num-unit">%</span></div>
+          <div class="stat-lbl">Recovery With Lifestyle</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon">
+            <!-- Sanitary Pad Vector SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="5" fill="rgba(219,39,119,0.08)"/><path d="M4 10c3 0 3 4 3 4s0 4-3 4"/><path d="M20 10c-3 0-3 4-3 4s0 4 3 4"/><path d="M10 8h4"/><path d="M10 16h4"/></svg>
+          </div>
+          <div><span class="num-val" data-target="100">0</span><span class="num-unit">%</span></div>
+          <div class="stat-lbl">Support From CBIT NSS</div>
+        </div>
+      </div>
+    </div>
+    <div class="summary-card reveal">
+      <h3>⚡ PCOD &amp; PMOS in 1 Minute (Quick Summary)</h3>
+      <div class="summary-grid">
+        <div class="summary-item"><strong>1. What is PCOD &amp; PMOS?</strong><p>PMOS (Polyendocrine Metabolic Ovarian Syndrome) / PCOD is a systemic hormonal and metabolic condition where ovaries form immature follicles. 100% manageable with care!</p></div>
+        <div class="summary-item"><strong>2. Key Symptoms</strong><p>Irregular/delayed periods, sudden weight gain around stomach, stubborn facial acne, or scalp hair thinning.</p></div>
+        <div class="summary-item"><strong>3. Simple Care Steps</strong><p>30 mins daily brisk walking, reduced refined sugar/junk food, 7-8 hours sleep, and routine medical check-ups.</p></div>
+      </div>
+    </div>
+    <section id="about" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">🌸 Understanding Health</span><h2 class="section-title">What Happens in <span class="accent">PCOD / PMOS?</span></h2><p class="section-desc">PCOD and PMOS affect systemic endocrine and ovarian health. Here everything is explained in clean, simple terms.</p></div>
+      
+      <!-- PMOS MEDICAL UPDATE BANNER -->
+      <div class="reveal" style="background:var(--soft-lavender);border:1.5px solid var(--soft-lavender-border);padding:1.3rem 1.8rem;border-radius:var(--r-md);margin-bottom:2.5rem;display:flex;align-items:center;gap:1.2rem;text-align:left;">
+        <div style="width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(45,48,146,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2D3092" stroke-width="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v10"/><path d="M9 12h6"/></svg>
+        </div>
+        <div style="font-size:0.9rem;color:var(--nss-navy);line-height:1.65;">
+          <strong>Medical Nomenclature Consensus (PMOS):</strong> Medical authorities now designate PCOS/PCOD as <strong>PMOS (Polyendocrine Metabolic Ovarian Syndrome)</strong> to accurately highlight that the condition impacts whole-body endocrine &amp; metabolic health beyond ovaries.
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-box reveal-left">
+          <h4>Medical Overview</h4>
+          <p>During a typical cycle, ovaries release one mature egg. In PCOD, slight hormone imbalances cause ovaries to produce multiple small, immature eggs (follicles) that remain as cysts. Early lifestyle care restores normal cycle balance.</p>
+          <div class="stat-row">
+            <div class="stat-badge"><div class="num">1 in 5</div><div class="lbl">Women Affected</div></div>
+            <div class="stat-badge"><div class="num">70%</div><div class="lbl">Undiagnosed</div></div>
+            <div class="stat-badge"><div class="num">100%</div><div class="lbl">Manageable</div></div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <h4>📌 Contributing Triggers</h4>
+          <p>Insulin resistance (high sugar processing), elevated stress levels, sedentary routines, and processed diets.</p>
+          <h4>✨ Reassuring Fact</h4>
+          <p>PCOD is fully manageable with simple daily habits. Most women live active, healthy, and fertile lives with basic diet and exercise modifications.</p>
+        </div>
+      </div>
+    </section>
+    <section id="quiz-tool" style="padding:2rem 0 5rem;">
+      <div class="quiz-card reveal-scale">
+        <h3>✨ Interactive PCOD Self-Assessment Quiz</h3>
+        <p class="sub">Check symptoms you have experienced over the last 3-6 months to receive instant initial guidance:</p>
+        <form id="quiz-form">
+          <div class="quiz-list">
+            <div class="quiz-row" onclick="toggleCheck('q1')"><label for="q1">1. Are your period cycles frequently irregular, delayed, or missed?</label><input type="checkbox" id="q1" /></div>
+            <div class="quiz-row" onclick="toggleCheck('q2')"><label for="q2">2. Have you noticed sudden weight gain around your abdomen area?</label><input type="checkbox" id="q2" /></div>
+            <div class="quiz-row" onclick="toggleCheck('q3')"><label for="q3">3. Do you struggle with stubborn acne on your jawline or upper back?</label><input type="checkbox" id="q3" /></div>
+            <div class="quiz-row" onclick="toggleCheck('q4')"><label for="q4">4. Have you noticed unwanted coarse hair growth on chin or upper lip?</label><input type="checkbox" id="q4" /></div>
+            <div class="quiz-row" onclick="toggleCheck('q5')"><label for="q5">5. Are you experiencing significant scalp hair thinning or hair fall?</label><input type="checkbox" id="q5" /></div>
+          </div>
+          <button type="button" class="btn-calc-quiz" onclick="calculateQuizScore()">🔍 Calculate Assessment Summary</button>
+        </form>
+        <div class="quiz-result" id="quiz-result-box">
+          <h4 id="quiz-res-title" style="font-size:1.22rem;font-weight:800;margin-bottom:0.3rem;"></h4>
+          <p id="quiz-res-desc" style="font-size:0.93rem;color:var(--text-body);margin-top:0.4rem;"></p>
+        </div>
+      </div>
+    </section>
+    <section id="symptoms" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">🔍 Simple Signs</span><h2 class="section-title">Common <span class="accent">PCOD Symptoms</span></h2><p class="section-desc">Symptoms vary from person to person. Knowing these early helps you seek timely advice.</p></div>
+      <div class="symptoms-grid stagger-grid">
+        <div class="symptom-card reveal"><div class="symptom-icon">🗓️</div><h4>Irregular Periods</h4><p>Missed or delayed periods (fewer than 9 cycles per year).</p></div>
+        <div class="symptom-card reveal"><div class="symptom-icon">⚖️</div><h4>Weight Fluctuations</h4><p>Difficulty losing weight around the abdomen area.</p></div>
+        <div class="symptom-card reveal"><div class="symptom-icon">🌡️</div><h4>Hormonal Acne</h4><p>Breakouts along the jawline, chin, or upper back.</p></div>
+        <div class="symptom-card reveal"><div class="symptom-icon">💇‍♀️</div><h4>Hair Thinning</h4><p>Scalp hair fall or thinning on top of the head.</p></div>
+        <div class="symptom-card reveal"><div class="symptom-icon">🦱</div><h4>Facial/Body Hair</h4><p>Extra hair growth on chin, upper lip, or chest.</p></div>
+        <div class="symptom-card reveal"><div class="symptom-icon">😴</div><h4>Fatigue &amp; Tiredness</h4><p>Low energy levels due to hormonal and sleep changes.</p></div>
+      </div>
+    </section>
+    <section id="precautions" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">🛡️ Health Precautions</span><h2 class="section-title">Steps for <span class="accent">Daily Care</span></h2><p class="section-desc">Small, consistent daily habits make a massive positive impact on your hormonal balance.</p></div>
+      <div class="tab-buttons reveal">
+        <button class="tab-btn active" onclick="showTab('daily',this)">🌅 Daily Lifestyle</button>
+        <button class="tab-btn" onclick="showTab('medical',this)">🏥 Medical Checks</button>
+        <button class="tab-btn" onclick="showTab('mental',this)">🧘 Mental Wellness</button>
+      </div>
+      <div class="tab-content active" id="tab-daily">
+        <div class="precautions-list">
+          <div class="pre-card"><div class="pre-num">1</div><div class="pre-info"><h5>30 Mins Daily Exercise 🏃‍♀️</h5><p>Brisk walking, dancing, or swimming improves insulin balance.</p></div></div>
+          <div class="pre-card"><div class="pre-num">2</div><div class="pre-info"><h5>Consistent 7-8 Hrs Sleep 😴</h5><p>Regular sleep schedules lower stress hormone levels.</p></div></div>
+          <div class="pre-card"><div class="pre-num">3</div><div class="pre-info"><h5>Track Period Dates 📅</h5><p>Use a calendar app to note cycle lengths for doctor visits.</p></div></div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-medical">
+        <div class="precautions-list">
+          <div class="pre-card"><div class="pre-num">1</div><div class="pre-info"><h5>Gynaecologist Consultation 🏥</h5><p>Visit a doctor every 6 months for routine pelvic ultrasound.</p></div></div>
+          <div class="pre-card"><div class="pre-num">2</div><div class="pre-info"><h5>Fasting Glucose Test 🩸</h5><p>Check blood sugar levels annually to catch early changes.</p></div></div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-mental">
+        <div class="precautions-list">
+          <div class="pre-card"><div class="pre-num">1</div><div class="pre-info"><h5>10 Mins Meditation 🌿</h5><p>Simple breathing exercises lower cortisol stress hormones.</p></div></div>
+          <div class="pre-card"><div class="pre-num">2</div><div class="pre-info"><h5>Student Support Groups 💜</h5><p>Connect with peers and our CBIT NSS team to discuss health freely.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="diet" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">🥗 Food Guide</span><h2 class="section-title">Dietary <span class="accent">Tips</span></h2><p class="section-desc">Nourish your body with anti-inflammatory whole foods to balance blood sugar naturally.</p></div>
+      <div class="diet-grid">
+        <div class="diet-box eat reveal-left"><h4>✅ Foods to Eat</h4><div class="food-list"><div class="food-item"><span>🥗</span><span>Spinach, Methi &amp; Green Leafy Veggies</span></div><div class="food-item"><span>🫘</span><span>Lentils, Chickpeas &amp; Sprouted Pulses</span></div><div class="food-item"><span>🫐</span><span>Fresh Guava, Apples &amp; Berries</span></div><div class="food-item"><span>🥜</span><span>Almonds, Walnuts &amp; Flaxseeds</span></div></div></div>
+        <div class="diet-box avoid reveal-right"><h4>❌ Foods to Limit</h4><div class="food-list"><div class="food-item"><span>🍭</span><span>Sugary Sodas, Drinks &amp; Sweets</span></div><div class="food-item"><span>🍞</span><span>White Maida Bread &amp; Pastries</span></div><div class="food-item"><span>🍟</span><span>Deep Fried Junk Food</span></div><div class="food-item"><span>🧃</span><span>Packaged Sugary Fruit Juices</span></div></div></div>
+      </div>
+    </section>
+    <section id="myths" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">💡 Science Check</span><h2 class="section-title">PCOD <span class="accent">Myths vs Facts</span></h2><p class="section-desc">Let's clear common misunderstandings with medical facts.</p></div>
+      <div class="myths-grid stagger-grid">
+        <div class="myth-card reveal"><div class="myth-top"><span class="tag-red">❌ Myth</span><p>"Women with PCOD can never get pregnant."</p></div><div class="fact-bottom"><span class="tag-green">✅ Fact</span><p>Most women with PCOD conceive naturally or with simple lifestyle changes &amp; medical guidance.</p></div></div>
+        <div class="myth-card reveal"><div class="myth-top"><span class="tag-red">❌ Myth</span><p>"PCOD only affects overweight women."</p></div><div class="fact-bottom"><span class="tag-green">✅ Fact</span><p>PCOD occurs in women of all body types, including lean PCOD driven by stress or genetics.</p></div></div>
+        <div class="myth-card reveal"><div class="myth-top"><span class="tag-red">❌ Myth</span><p>"PCOD completely disappears after marriage."</p></div><div class="fact-bottom"><span class="tag-green">✅ Fact</span><p>PCOD requires consistent healthy lifestyle management regardless of marital status.</p></div></div>
+        <div class="myth-card reveal"><div class="myth-top"><span class="tag-red">❌ Myth</span><p>"The pill is the only treatment available."</p></div><div class="fact-bottom"><span class="tag-green">✅ Fact</span><p>Diet, daily exercise, and stress management are the primary first-line treatments for PCOD root cause.</p></div></div>
+      </div>
+    </section>
+    <section id="doctor" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">🏥 Medical Warning Signs</span><h2 class="section-title">When to See a <span class="accent">Doctor</span></h2><p class="section-desc">Don't ignore persistent signs. Consult a certified gynaecologist if you experience these symptoms:</p></div>
+      <div class="doctor-grid stagger-grid">
+        <div class="doctor-card reveal"><span class="icon">🗓️</span><h5>Missed 3+ Periods</h5><p>If you have missed 3 consecutive cycles, seek immediate gynaecological advice.</p></div>
+        <div class="doctor-card reveal"><span class="icon">⚖️</span><h5>Rapid Weight Gain</h5><p>Unexplained sudden weight gain around the abdomen warrants insulin screening.</p></div>
+        <div class="doctor-card reveal"><span class="icon">🌡️</span><h5>Severe Cystic Acne</h5><p>Acne unresponsive to dermatological creams indicates underlying hormone shifts.</p></div>
+        <div class="doctor-card reveal"><span class="icon">💇‍♀️</span><h5>Rapid Hair Thinning</h5><p>Sudden scalp hair loss or excessive facial hair growth requires hormone evaluation.</p></div>
+      </div>
+      <div class="doctor-advocacy-banner reveal"><div style="font-size:2.5rem;">💜</div><div><h4>Remember: You Deserve Proper Medical Care</h4><p>Never hesitate to advocate for your health. If you feel unwell, consult a qualified healthcare provider. Our CBIT NSS team stands with you!</p></div></div>
+    </section>
+    <section id="resources" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">📞 Support Resources</span><h2 class="section-title">Verified <span class="accent">Helplines</span></h2><p class="section-desc">Save these numbers. Help is always available — you are never alone.</p></div>
+      <div class="resources-grid stagger-grid">
+        <div class="resource-card reveal"><div class="resource-icon-wrap">🏥</div><div><h5>National Women's Helpline</h5><p><strong>1091</strong> (Toll-Free 24/7) — Government dedicated helpline for women's safety &amp; health guidance.</p></div></div>
+        <div class="resource-card reveal"><div class="resource-icon-wrap">🧠</div><div><h5>iCall Mental Health</h5><p><strong>9152987821</strong> — Free mental health &amp; counseling for emotional stress linked to health issues.</p></div></div>
+        <div class="resource-card reveal"><div class="resource-icon-wrap">👶</div><div><h5>National Fertility Helpline</h5><p><strong>1800-103-2224</strong> — Guidance for reproductive health &amp; fertility doubts.</p></div></div>
+        <div class="resource-card reveal"><div class="resource-icon-wrap">🏫</div><div><h5>CBIT Women's Cell</h5><p>Confidential guidance available at campus for all student health &amp; personal concerns.</p></div></div>
+      </div>
+    </section>
+    <section id="team" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal">
+        <span class="section-tag">🤝 Unified Leadership</span>
+        <h2 class="section-title">CBIT NSS Core Committee 2026–2027</h2>
+        <p class="section-desc">Our dedicated CBIT NSS team available to support students across campus.</p>
+      </div>
+
+      <!-- SPECIAL SPOTLIGHT: WOMEN'S ADMINISTRATOR -->
+      <div class="women-admin-spotlight reveal">
+        <div class="spotlight-top">
+          <span class="spotlight-badge">👑 Special Role · Student Support &amp; Guidance</span>
+          <span style="font-size:0.8rem;font-weight:700;color:var(--text-muted);">CBIT NSS Executive Body</span>
+        </div>
+        <div class="spotlight-body">
+          <div class="spotlight-avatar">DN</div>
+          <div class="spotlight-info">
+            <p class="role">Women's Administrator</p>
+            <h3 class="name">D. Nomini</h3>
+            <p class="desc">Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
+            <div class="spotlight-actions">
+              <a href="tel:+919676648023" class="btn-contact-pill">📞 +91 96766 48023</a>
+              <a href="mailto:nominiderangula@gmail.com" class="btn-contact-pill">✉️ Email D. Nomini</a>
+              <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PCOD" target="_blank" rel="noopener" class="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-grid stagger-grid">
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">NK</div><div class="member-meta"><div class="role-pill">President</div><div class="name">Nithesh Kumar</div></div></div><div class="member-actions"><a href="tel:+918522992585" class="btn-contact-pill">📞 +91 85229 92585</a><a href="mailto:n.nitheshkumar8106@gmail.com" class="btn-contact-pill">✉️ Email Nithesh</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">BS</div><div class="member-meta"><div class="role-pill">Vice President</div><div class="name">Bandaru Sampath</div></div></div><div class="member-actions"><a href="tel:+917207127045" class="btn-contact-pill">📞 +91 72071 27045</a><a href="mailto:sampathkavali45@gmail.com" class="btn-contact-pill">✉️ Email Sampath</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">KH</div><div class="member-meta"><div class="role-pill">General Secretary</div><div class="name">Kusam Harinya Reddy</div></div></div><div class="member-actions"><a href="tel:+916302898414" class="btn-contact-pill">📞 +91 63028 98414</a><a href="mailto:harinyareddy.k@gmail.com" class="btn-contact-pill">✉️ Email Harinya</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">VA</div><div class="member-meta"><div class="role-pill">Joint Secretary · Documentation</div><div class="name">Veldandi Aishwarya</div></div></div><div class="member-actions"><a href="tel:+917396108692" class="btn-contact-pill">📞 +91 73961 08692</a><a href="mailto:aishwaryaveldandi21@gmail.com" class="btn-contact-pill">✉️ Email Aishwarya</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">SS</div><div class="member-meta"><div class="role-pill">Joint Secretary · Logistics</div><div class="name">Sai Sankeerth Reddy</div></div></div><div class="member-actions"><a href="tel:+919441562832" class="btn-contact-pill">📞 +91 94415 62832</a><a href="mailto:saisankeerthreddy2610@gmail.com" class="btn-contact-pill">✉️ Email Sankeerth</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">MF</div><div class="member-meta"><div class="role-pill">Treasurer</div><div class="name">Mohammad Fasiuddin</div></div></div><div class="member-actions"><a href="tel:+916301948215" class="btn-contact-pill">📞 +91 63019 48215</a><a href="mailto:fasiuddin3558@gmail.com" class="btn-contact-pill">✉️ Email Fasiuddin</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">SP</div><div class="member-meta"><div class="role-pill">Head · External Affairs</div><div class="name">S. Sai Priya</div></div></div><div class="member-actions"><a href="tel:+916309589152" class="btn-contact-pill">📞 +91 63095 89152</a><a href="mailto:10bsaipriya@gmail.com" class="btn-contact-pill">✉️ Email Sai Priya</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">TP</div><div class="member-meta"><div class="role-pill">Events &amp; Outreach Head</div><div class="name">B. Teja Praharsha</div></div></div><div class="member-actions"><a href="tel:+916281011433" class="btn-contact-pill">📞 +91 62810 11433</a><a href="mailto:tejapraharsha23@gmail.com" class="btn-contact-pill">✉️ Email Praharsha</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">SR</div><div class="member-meta"><div class="role-pill">Technical Head</div><div class="name">Vummal Reddy Snehitha Reddy</div></div></div><div class="member-actions"><a href="tel:+917675021038" class="btn-contact-pill">📞 +91 76750 21038</a><a href="mailto:vummalreddysnehitha@gmail.com" class="btn-contact-pill">✉️ Email Snehitha</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">NR</div><div class="member-meta"><div class="role-pill">Design Head</div><div class="name">Budhur Neha Reddy</div></div></div><div class="member-actions"><a href="tel:+919866191349" class="btn-contact-pill">📞 +91 98661 91349</a><a href="mailto:budhurnehareddy@gmail.com" class="btn-contact-pill">✉️ Email Neha</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">VT</div><div class="member-meta"><div class="role-pill">Media Head</div><div class="name">Varun Teja Cherukuthota</div></div></div><div class="member-actions"><a href="tel:+917981467284" class="btn-contact-pill">📞 +91 79814 67284</a><a href="mailto:varuntejacherukuthota.0456@gmail.com" class="btn-contact-pill">✉️ Email Varun Teja</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">PS</div><div class="member-meta"><div class="role-pill">Road Safety Coordinator</div><div class="name">Rakuditi Purna Sandeep</div></div></div><div class="member-actions"><a href="tel:+916303105090" class="btn-contact-pill">📞 +91 63031 05090</a><a href="mailto:purnasandeeprakuditi@gmail.com" class="btn-contact-pill">✉️ Email Sandeep</a></div></div>
+        <div class="member-card reveal"><div class="member-top"><div class="member-avatar">WA</div><div class="member-meta"><div class="role-pill">Anti-Ragging Coordinator</div><div class="name">Shaik Wasim Akram</div></div></div><div class="member-actions"><a href="tel:+919502898222" class="btn-contact-pill">📞 +91 95028 98222</a><a href="mailto:Shaikwasimakram20@gmail.com" class="btn-contact-pill">✉️ Email Wasim</a></div></div>
+      </div>
+    </section>
+    <section id="contact-general" style="padding:2rem 0 5rem;">
+      <div class="heading-box reveal"><span class="section-tag">💌 Reach Out</span><h2 class="section-title">General Inquiries &amp; <span class="accent">Volunteering</span></h2><p class="section-desc">Have a non-anonymous query or want to join CBIT NSS initiatives? Send us a direct message below.</p></div>
+      <div class="contact-form-grid" style="grid-template-columns:1fr;max-width:680px;margin:0 auto;">
+        <div class="form-panel reveal">
+          <h4>Send Us a Direct Message</h4>
+          <form id="gen-contact-form" onsubmit="handleGenContactSubmit(event)">
+            <div class="input-field"><label for="gname">Your Name</label><input type="text" id="gname" placeholder="Enter your full name" required /></div>
+            <div class="input-field"><label for="gemail">Email Address</label><input type="email" id="gemail" placeholder="student@cbit.ac.in" required /></div>
+            <div class="input-field"><label for="gsubject">Topic / Purpose</label><select id="gsubject"><option value="Event Volunteering">Event Volunteering</option><option value="PCOD Drive Support">PCOD Drive Support</option><option value="General Query">General Query</option></select></div>
+            <div class="input-field"><label for="gmsg">Your Message</label><textarea id="gmsg" rows="4" placeholder="How can our team help you?" required></textarea></div>
+            <button type="submit" class="btn-send-general" id="gen-submit-btn">✉️ Send Message to CBIT NSS</button>
+          </form>
+          <div id="gen-success-alert" style="display:none;margin-top:1rem;padding:1rem;background:var(--soft-green-bg);border-radius:var(--r-sm);color:var(--soft-green-text);font-weight:700;">✅ Message Sent Successfully! Our team will respond shortly.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <button class="floating-ask-btn" onclick="openModal()" aria-label="Ask an anonymous question">🌸 Ask Anonymous</button>
+  <div class="modal-overlay" id="anon-modal" onclick="closeModalOnOverlay(event)" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="Close window">✕</button>
+      <span class="modal-badge">🔒 100% Anonymous Window</span>
+      <h3 id="modal-title">Ask the Gynaecologist Anonymously</h3>
+      <p class="desc">Type your personal question below. Our CBIT NSS team will compile all anonymous questions and ask our guest <strong>Gynaecologist live</strong> during World PCOD Day 2026. <strong>No names, emails, or phone numbers are requested!</strong></p>
+      <div class="privacy-notice">🛡️ <strong>100% Confidential:</strong> This window collects ZERO personal info. Your submission cannot be traced to you.</div>
+      <form id="modal-anon-form" onsubmit="handleModalAnonSubmit(event)">
+        <div class="form-group"><label for="modal-q-topic">Select Topic Category (Optional)</label><select id="modal-q-topic" name="category"><option value="General PCOD Doubts">General PCOD &amp; Symptoms</option><option value="Irregular Periods">Irregular Periods &amp; Cycle Pain</option><option value="Acne Weight Issues">Hormonal Acne &amp; Weight Issues</option><option value="Diet Medication">Diet &amp; Medication Doubts</option></select></div>
+        <div class="form-group"><label for="modal-q-message">Your Anonymous Question for the Gynaecologist *</label><textarea id="modal-q-message" name="message" rows="4" placeholder="Type your doubt freely here... e.g. Is it normal to miss periods for 2 months when stressed?" required></textarea></div>
+        <button type="submit" class="btn-submit-modal" id="modal-submit-btn">🌸 Submit Question Anonymously</button>
+      </form>
+      <div class="modal-success-alert" id="modal-success">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">✅</div>
+        <h4 style="font-size:1.1rem;font-weight:800;color:var(--soft-green-text);">Anonymous Question Submitted!</h4>
+        <p style="font-size:0.9rem;color:var(--text-body);margin-top:0.4rem;line-height:1.6;">Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><h4>CBIT NSS — World PCOD Day 2026</h4><p>Organised by CBIT NSS Unit. Empowering women through awareness, care, and community.</p></div>
+        <div class="footer-links"><h5>Quick Nav</h5><ul><li><a href="#about">About PCOD</a></li><li><a href="#symptoms">Symptoms</a></li><li><a href="#myths">Myths vs Facts</a></li></ul></div>
+        <div class="footer-links"><h5>Support</h5><ul><li><a href="#diet">Diet Tips</a></li><li><a href="#resources">Helplines</a></li><li><a href="javascript:void(0)" onclick="openModal()">Ask Anonymous Question</a></li></ul></div>
+        <div class="footer-links"><h5>Helpline</h5><ul><li><a href="tel:1091">Women's Help: 1091</a></li><li><a href="tel:9152987821">iCall: 9152987821</a></li></ul></div>
+      </div>
+      <div class="footer-bar"><div>© 2026 CBIT NSS. All Rights Reserved.</div><div>World PCOD Awareness Day 2026 🌸</div></div>
+    </div>
+  </footer>
+  <script>
+    // PROGRESS BAR
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const s = document.documentElement.scrollTop;
+      const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (s / h) * 100 + '%';
+    }, {passive:true});
+
+    // NAVBAR SCROLLED STATE
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30), {passive:true});
+
+    // SCROLL REVEAL via IntersectionObserver
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
+    }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => revealObs.observe(el));
+
+    // STATS COUNTER with smooth easing
+    let statsTriggered = false;
+    const statsObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !statsTriggered) {
+        statsTriggered = true;
+        document.querySelectorAll('.num-val').forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const duration = 1800;
+          const start = performance.now();
+          function animate(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            counter.textContent = Math.floor(eased * target);
+            if (p < 1) requestAnimationFrame(animate);
+            else { counter.textContent = target; counter.style.animation = 'counter-pop 0.4s ease'; }
+          }
+          requestAnimationFrame(animate);
+        });
+      }
+    }, {threshold: 0.3});
+    const sb = document.getElementById('stats-banner');
+    if (sb) statsObs.observe(sb);
+
+    // MOBILE NAV
+    const mBtn = document.getElementById('mobile-btn');
+    const mDrawer = document.getElementById('mobile-drawer');
+    mBtn.addEventListener('click', () => { mBtn.classList.toggle('active'); mDrawer.classList.toggle('active'); });
+    function closeDrawer() { mBtn.classList.remove('active'); mDrawer.classList.remove('active'); }
+    document.querySelectorAll('.m-link').forEach(l => l.addEventListener('click', closeDrawer));
+
+    // TAB SWITCHER
+    function showTab(tabName, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => { c.classList.remove('active'); c.style.display = 'none'; });
+      btn.classList.add('active');
+      const tab = document.getElementById('tab-' + tabName);
+      tab.style.display = 'block';
+      void tab.offsetWidth;
+      tab.classList.add('active');
+    }
+
+    // QUIZ
+    function toggleCheck(id) { const cb = document.getElementById(id); cb.checked = !cb.checked; }
+    function calculateQuizScore() {
+      const count = ['q1','q2','q3','q4','q5'].filter(id => document.getElementById(id).checked).length;
+      const resBox = document.getElementById('quiz-result-box');
+      const resTitle = document.getElementById('quiz-res-title');
+      const resDesc = document.getElementById('quiz-res-desc');
+      resBox.classList.remove('active'); void resBox.offsetWidth;
+      if (count === 0) {
+        resTitle.textContent = '💚 Low Probability'; resTitle.style.color = '#047857';
+        resDesc.textContent = 'Minimal symptoms selected. Continue maintaining healthy diet, daily walk, and regular sleep habits!';
+        resBox.style.background = '#F0FDF4'; resBox.style.border = '1.5px solid #BBF7D0';
+      } else if (count <= 2) {
+        resTitle.textContent = '💛 Mild Indications'; resTitle.style.color = '#B45309';
+        resDesc.textContent = 'A few common PCOD signs selected. Consider monitoring your cycle patterns and following our recommended daily diet tips.';
+        resBox.style.background = '#FEF3C7'; resBox.style.border = '1.5px solid #FCD34D';
+      } else {
+        resTitle.textContent = '🌸 High Likelihood — Consult a Gynaecologist'; resTitle.style.color = '#DB2777';
+        resDesc.textContent = "You selected 3 or more key PCOD signs. We recommend consulting a healthcare provider or our Women's Administrator D. Nomini for assistance!";
+        resBox.style.background = '#FDF0F6'; resBox.style.border = '1.5px solid #FBCFE8';
+      }
+      resBox.classList.add('active');
+      resBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    // GENERAL CONTACT FORM
+    function handleGenContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('gen-submit-btn');
+      btn.textContent = '⏳ Sending...'; btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '✅ Sent Successfully!';
+        document.getElementById('gen-success-alert').style.display = 'block';
+        setTimeout(() => {
+          btn.textContent = '✉️ Send Message to CBIT NSS'; btn.disabled = false;
+          document.getElementById('gen-success-alert').style.display = 'none';
+          document.getElementById('gen-contact-form').reset();
+        }, 3500);
+      }, 900);
+    }
+
+    // MODAL — double RAF for buttery smooth open
+    const anonModal = document.getElementById('anon-modal');
+    function openModal() {
+      anonModal.style.display = 'flex';
+      requestAnimationFrame(() => requestAnimationFrame(() => anonModal.classList.add('active')));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      anonModal.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { anonModal.style.display = 'none'; }, 400);
+    }
+    function closeModalOnOverlay(e) { if (e.target === anonModal) closeModal(); }
+    anonModal.style.display = 'none';
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && anonModal.classList.contains('active')) closeModal(); });
+
+    // ============================================================
+    // ANONYMOUS QUESTION — Web3Forms (works on Vercel, emails to inbox)
+    // SETUP: Get a FREE access key at https://web3forms.com
+    //        Enter your email → copy the access_key → paste below
+    // ============================================================
+    const WEB3FORMS_KEY = '9530c568-fc97-4250-8b78-3dde99ec83b2';
+
+    async function handleModalAnonSubmit(e) {
+      e.preventDefault();
+      const topic   = document.getElementById('modal-q-topic').value;
+      const message = document.getElementById('modal-q-message').value.trim();
+      if (!message) return;
+
+      const btn = document.getElementById('modal-submit-btn');
+      btn.textContent = '⏳ Submitting...'; btn.disabled = true;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key:  WEB3FORMS_KEY,
+            subject:     `[PCOD Q&A] ${topic}`,
+            from_name:   'CBIT Student (Anonymous)',
+            'Topic':     topic,
+            'Question':  message,
+            'Submitted': new Date().toLocaleString('en-IN', {timeZone:'Asia/Kolkata'})
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('modal-anon-form').style.display = 'none';
+          document.getElementById('modal-success').classList.add('active');
+          setTimeout(() => {
+            closeModal();
+            setTimeout(() => {
+              document.getElementById('modal-anon-form').style.display = 'block';
+              document.getElementById('modal-success').classList.remove('active');
+              document.getElementById('modal-anon-form').reset();
+              btn.textContent = '🌸 Submit Question Anonymously'; btn.disabled = false;
+            }, 450);
+          }, 3000);
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Web3Forms error:', err);
+        btn.textContent = '⚠️ Please try again';
+        btn.style.background = '#B91C1C';
+        setTimeout(() => {
+          btn.textContent = '🌸 Submit Question Anonymously';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
