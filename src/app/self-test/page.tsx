@@ -8,87 +8,56 @@ interface QuizQuestion {
   id: string;
   category: string;
   question: string;
+  description: string;
   options: { label: string; value: string; isFlag?: boolean }[];
 }
 
 const wizardQuestions: QuizQuestion[] = [
   {
     id: 'q1',
-    category: 'Menstrual Pattern',
-    question: 'How would you describe your menstrual cycle regularity over the past 6 months?',
+    category: '1. Menstrual & Ovulatory Pattern',
+    question: 'How would you describe your menstrual cycle regularity over the past 6 to 12 months?',
+    description: 'Cycle length is calculated from the 1st day of one period to the 1st day of the next.',
     options: [
-      { label: 'Regular — predictable cycles every 21–35 days', value: 'regular' },
-      { label: 'Irregular — delayed cycles beyond 35 days or missed months', value: 'irregular', isFlag: true },
+      { label: 'Regular — predictable cycles every 21 to 35 days', value: 'regular' },
+      { label: 'Irregular — delayed cycles longer than 35 days or variable timing', value: 'irregular', isFlag: true },
       { label: 'Absent — no periods for 3 or more consecutive months', value: 'absent', isFlag: true },
     ]
   },
   {
     id: 'q2',
-    category: 'Skin & Hair Signs',
-    question: 'Do you experience persistent jawline acne or unwanted coarse hair growth (chin, upper lip, chest)?',
+    category: '2. Androgenic & Skin Indicators',
+    question: 'Do you experience persistent facial acne or unwanted coarse hair growth?',
+    description: 'Refers to acne along the jawline/chin or hair growth on chin, upper lip, chest, or abdomen.',
     options: [
-      { label: 'Rarely or never', value: 'none' },
-      { label: 'Mild or occasional breakouts', value: 'mild', isFlag: true },
-      { label: 'Persistent or moderate-to-severe facial hair and acne', value: 'severe', isFlag: true },
+      { label: 'Rarely or never — clear skin and normal hair patterns', value: 'none' },
+      { label: 'Mild — occasional jawline breakouts or minor facial hair', value: 'mild', isFlag: true },
+      { label: 'Moderate to Severe — persistent cystic acne or noticeable coarse hair growth', value: 'severe', isFlag: true },
     ]
   },
   {
     id: 'q3',
-    category: 'Metabolic & Energy',
-    question: 'Do you notice unexplained abdominal weight shifts, intense sugar cravings, or severe post-meal fatigue?',
+    category: '3. Metabolic & Glucose Handling',
+    question: 'Do you experience severe post-meal energy crashes, intense sugar cravings, or central weight shifts?',
+    description: 'Insulin resistance can affect individuals of any body weight, including lean individuals.',
     options: [
-      { label: 'No — energy and weight remain stable', value: 'stable' },
-      { label: 'Sometimes — mild energy dips after meals', value: 'sometimes', isFlag: true },
-      { label: 'Frequently — strong cravings and persistent fatigue', value: 'frequent', isFlag: true },
+      { label: 'No — steady daily energy and stable weight balance', value: 'stable' },
+      { label: 'Sometimes — mild energy dips after carbohydrate meals', value: 'sometimes', isFlag: true },
+      { label: 'Frequently — strong sugar cravings, heavy post-meal fatigue, or dark skin folds', value: 'frequent', isFlag: true },
     ]
   },
   {
     id: 'q4',
-    category: 'Emotional Wellbeing',
-    question: 'Do physical symptoms or cycle unpredictability affect your mood, anxiety, or emotional confidence?',
+    category: '4. Emotional Wellbeing & Stress Axis',
+    question: 'Do physical symptoms or cycle unpredictability affect your mood, anxiety, or confidence?',
+    description: 'International guidelines emphasize emotional health as a core component of PMOS.',
     options: [
-      { label: 'Minimal or no impact', value: 'minimal' },
-      { label: 'Moderate impact on confidence or mood', value: 'moderate', isFlag: true },
-      { label: 'Significant emotional stress or persistent anxiety', value: 'significant', isFlag: true },
+      { label: 'Minimal or no impact — feeling emotionally balanced', value: 'minimal' },
+      { label: 'Moderate impact — occasional stress, mood swings, or body confidence worries', value: 'moderate', isFlag: true },
+      { label: 'Significant impact — persistent anxiety, low mood, or severe health-related stress', value: 'significant', isFlag: true },
     ]
   }
 ];
-
-function countFlags(answers: Record<string, string>): number {
-  let flagCount = 0;
-  wizardQuestions.forEach(q => {
-    const answer = answers[q.id];
-    if (!answer) return;
-    const selected = q.options.find(o => o.value === answer);
-    if (selected?.isFlag) flagCount++;
-  });
-  return flagCount;
-}
-
-function getResultTone(flagCount: number): { emoji: string; headline: string; message: string; urgency: 'low' | 'moderate' | 'high' } {
-  if (flagCount === 0) {
-    return {
-      emoji: '🌿',
-      headline: 'Your responses show no significant indicators at this time.',
-      message: 'You appear to have regular cycles and stable wellbeing. Continue supporting your health with balanced nutrition, adequate sleep, and annual well-woman check-ups.',
-      urgency: 'low'
-    };
-  } else if (flagCount <= 2) {
-    return {
-      emoji: '💛',
-      headline: 'You flagged a few indicators worth monitoring.',
-      message: 'Some of your answers suggest mild signs that may be worth discussing with a healthcare professional at your next routine appointment. Early awareness is always beneficial.',
-      urgency: 'moderate'
-    };
-  } else {
-    return {
-      emoji: '🩺',
-      headline: 'Your responses suggest it would be worthwhile consulting a healthcare professional.',
-      message: 'You reported multiple indicators across cycle patterns, skin or hair changes, metabolic energy, or emotional wellbeing. Seeking a clinical evaluation can provide clarity and personalised evidence-based care.',
-      urgency: 'high'
-    };
-  }
-}
 
 export default function SelfTestPage() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -129,63 +98,81 @@ export default function SelfTestPage() {
     setQuizFinished(false);
   };
 
-  const flagCount = countFlags(answers);
-  const resultTone = getResultTone(flagCount);
+  const handlePrint = () => {
+    window.print();
+  };
+
+  // Flag Analysis
+  const flaggedQuestions = wizardQuestions.filter(q => {
+    const ans = answers[q.id];
+    if (!ans) return false;
+    const selected = q.options.find(o => o.value === ans);
+    return selected?.isFlag;
+  });
+
+  const flagCount = flaggedQuestions.length;
+
+  const isCycleFlagged = flaggedQuestions.some(q => q.id === 'q1');
+  const isSkinFlagged = flaggedQuestions.some(q => q.id === 'q2');
+  const isMetabolicFlagged = flaggedQuestions.some(q => q.id === 'q3');
+  const isEmotionalFlagged = flaggedQuestions.some(q => q.id === 'q4');
 
   return (
     <>
       <Navbar />
       <main style={{ paddingTop: '80px' }}>
-        <section id="self-check" style={{ padding: '4rem 0 5rem', background: 'var(--bg-main)' }}>
-          <div className="container" style={{ maxWidth: '780px', margin: '0 auto', padding: '0 1.5rem' }}>
+        <section id="self-check" style={{ padding: '3.5rem 0 5rem', background: 'var(--bg-main)' }}>
+          <div className="container" style={{ maxWidth: '820px', margin: '0 auto', padding: '0 1.5rem' }}>
 
-            {/* Header */}
+            {/* PAGE HEADER */}
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">🔬 Interactive Screening</span>
+              <span className="section-tag">🔬 Interactive Awareness Screening</span>
               <h1 className="section-title">
                 2-Minute <span className="accent">PMOS Self-Check Wizard</span>
               </h1>
               <p className="section-desc">
-                Based on{' '}
-                <em>Journal of Clinical Medicine (2023)</em>{' '}
-                Rotterdam &amp; NIH Diagnostic Criteria for PMOS Phenotypes.
+                Aligned with the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.
               </p>
             </div>
 
-            {/* Non-diagnostic notice */}
-            <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.9rem 1.2rem', borderRadius: 'var(--r-sm)', marginBottom: '2rem', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.6 }}>
-              ⚠️ <strong>This is not a diagnostic test.</strong> No personal data is recorded or stored. This awareness tool is designed to help you reflect on your health patterns and decide whether to seek medical guidance.
+            {/* TOP NOTICE */}
+            <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.95rem 1.3rem', borderRadius: 'var(--r-sm)', marginBottom: '2rem', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.6, boxShadow: 'var(--shadow-soft)' }}>
+              🛡️ <strong>Educational Awareness Tool:</strong> No personal data or answers are stored. This self-check helps you evaluate symptom patterns to prepare for a healthcare consultation.
             </div>
 
-            {/* Wizard Card */}
-            <div style={{ background: '#FFFFFF', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: '2.4rem 2rem', boxShadow: 'var(--shadow-card)' }}>
+            {/* WIZARD CARD */}
+            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: '2.4rem 2rem', boxShadow: 'var(--shadow-card)' }}>
 
               {!quizFinished ? (
                 <div>
-                  {/* Progress header */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem', fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-muted)' }}>
+                  {/* Progress tracker */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem', fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-blue-accent)' }}>
                     <span>{wizardQuestions[currentStep].category}</span>
                     <span>Step {currentStep + 1} of {wizardQuestions.length}</span>
                   </div>
 
-                  <div className="wizard-progress-track">
+                  <div className="wizard-progress-track" style={{ marginBottom: '1.5rem' }}>
                     <div className="wizard-progress-bar" style={{ width: `${((currentStep + 1) / wizardQuestions.length) * 100}%` }}></div>
                   </div>
 
-                  <h2 style={{ fontSize: '1.12rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1.5rem', lineHeight: 1.55 }}>
+                  <h2 style={{ fontSize: '1.18rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem', lineHeight: 1.5 }}>
                     {wizardQuestions[currentStep].question}
                   </h2>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '1.6rem' }}>
+                    {wizardQuestions[currentStep].description}
+                  </p>
 
                   {/* Options */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginBottom: '1.8rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.8rem' }}>
                     {wizardQuestions[currentStep].options.map((opt, idx) => (
                       <button
                         key={idx}
                         className={`wizard-option-btn ${answers[wizardQuestions[currentStep].id] === opt.value ? 'selected' : ''}`}
                         onClick={() => handleOptionSelect(wizardQuestions[currentStep].id, opt.value)}
+                        style={{ textAlign: 'left', padding: '1rem 1.2rem', borderRadius: 'var(--r-md)', fontSize: '0.92rem', fontWeight: 700 }}
                       >
-                        <span>{opt.label}</span>
-                        <span>{answers[wizardQuestions[currentStep].id] === opt.value ? '✓' : ''}</span>
+                        <span style={{ flex: 1 }}>{opt.label}</span>
+                        <span style={{ fontSize: '1.1rem', marginLeft: '0.5rem' }}>{answers[wizardQuestions[currentStep].id] === opt.value ? '✓' : ''}</span>
                       </button>
                     ))}
                   </div>
@@ -195,66 +182,146 @@ export default function SelfTestPage() {
                     <button
                       onClick={handlePrevStep}
                       disabled={currentStep === 0}
-                      style={{ opacity: currentStep === 0 ? 0.4 : 1, cursor: currentStep === 0 ? 'not-allowed' : 'pointer', background: 'transparent', border: '1.5px solid var(--border-light)', padding: '0.65rem 1.2rem', borderRadius: 'var(--r-pill)', fontWeight: 700, color: 'var(--nss-navy)' }}
+                      style={{ opacity: currentStep === 0 ? 0.4 : 1, cursor: currentStep === 0 ? 'not-allowed' : 'pointer', background: 'transparent', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, color: 'var(--nss-navy)' }}
                     >
                       ← Back
                     </button>
                     <button
                       onClick={handleNextStep}
                       disabled={!answers[wizardQuestions[currentStep].id]}
-                      style={{ opacity: !answers[wizardQuestions[currentStep].id] ? 0.5 : 1, cursor: !answers[wizardQuestions[currentStep].id] ? 'not-allowed' : 'pointer', background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.75rem 1.6rem', borderRadius: 'var(--r-pill)', fontWeight: 800 }}
+                      style={{ opacity: !answers[wizardQuestions[currentStep].id] ? 0.5 : 1, cursor: !answers[wizardQuestions[currentStep].id] ? 'not-allowed' : 'pointer', background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.75rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800 }}
                     >
-                      {currentStep === wizardQuestions.length - 1 ? 'See My Summary →' : 'Next →'}
+                      {currentStep === wizardQuestions.length - 1 ? 'View Personalised Summary →' : 'Next →'}
                     </button>
                   </div>
                 </div>
 
               ) : (
-                /* ── Result screen — nuanced based on flag count ── */
-                <div style={{ textAlign: 'center', animation: 'fade-in 0.4s ease' }}>
-                  <span style={{ fontSize: '3.5rem', display: 'block', marginBottom: '0.4rem' }}>{resultTone.emoji}</span>
-                  <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                    Awareness Summary
-                  </span>
+                /* ── ACCURATE PERSONALISED RESULT SCREEN ── */
+                <div style={{ animation: 'fade-in 0.4s ease' }}>
+                  
+                  <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
+                    <span style={{ fontSize: '3.5rem', display: 'block', marginBottom: '0.4rem' }}>
+                      {flagCount === 0 ? '🌿' : flagCount <= 2 ? '💛' : '🩺'}
+                    </span>
+                    <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                      Awareness Summary &amp; Recommendations
+                    </span>
 
-                  <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.5rem', marginBottom: '0.8rem', lineHeight: 1.48 }}>
-                    {resultTone.headline}
-                  </h2>
-
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.68, marginBottom: '1.4rem' }}>
-                    {resultTone.message}
-                  </p>
-
-                  {resultTone.urgency !== 'low' && (
-                    <div style={{ background: 'var(--soft-teal-bg)', padding: '1.2rem 1.4rem', borderRadius: 'var(--r-md)', textAlign: 'left', marginBottom: '1.2rem', border: '1px solid var(--soft-teal-border)' }}>
-                      <h5 style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.5rem' }}>📋 Suggested Next Steps</h5>
-                      <ul style={{ paddingLeft: '1.2rem', fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.7 }}>
-                        <li>Track cycle dates and symptom patterns in a journal or period-tracking app for 2–3 months.</li>
-                        <li>Consult a Gynaecologist or Endocrinologist — mention hormonal, metabolic, and emotional concerns together.</li>
-                        {resultTone.urgency === 'high' && (
-                          <li>Ask about blood evaluations: Free Testosterone, Fasting Insulin, SHBG, TSH, and Lipid Profile.</li>
-                        )}
-                        <li>Discuss sustainable lifestyle adjustments — nutrition, movement, consistent sleep, and stress management.</li>
-                      </ul>
-                    </div>
-                  )}
-
-                  {resultTone.urgency === 'low' && (
-                    <div style={{ background: '#f0fdf4', padding: '1rem 1.4rem', borderRadius: 'var(--r-md)', textAlign: 'left', marginBottom: '1.2rem', border: '1px solid #bbf7d0', fontSize: '0.88rem', color: '#14532d', lineHeight: 1.65 }}>
-                      ✅ Continue supporting your health with balanced whole foods, regular physical activity (150 min/week), consistent sleep, and annual well-woman check-ups with your doctor.
-                    </div>
-                  )}
-
-                  <div style={{ background: 'rgba(124, 92, 252, 0.08)', padding: '0.75rem', borderRadius: 'var(--r-sm)', fontSize: '0.8rem', color: 'var(--nss-navy)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.5 }}>
-                    🛡️ <strong>Important:</strong> This is an awareness tool, not a diagnostic test. No personal data is recorded or stored. Please consult a qualified physician for a clinical evaluation.
+                    <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.4rem', lineHeight: 1.4 }}>
+                      {flagCount === 0 
+                        ? 'No Significant Indicators Flagged'
+                        : flagCount <= 2
+                        ? 'Mild PMOS Indicators Observed'
+                        : 'Multiple PMOS Indicators Flagged'}
+                    </h2>
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
+                      {flagCount === 0
+                        ? 'Your answers indicate stable cycle regularity, clear skin, balanced energy, and emotional wellbeing. Continue supporting your overall health with balanced whole-food nutrition and regular movement.'
+                        : `You flagged ${flagCount} area${flagCount > 1 ? 's' : ''} out of 4 core pillars. Review your category-specific recommendations below.`}
+                    </p>
                   </div>
 
-                  <button
-                    onClick={handleResetQuiz}
-                    style={{ background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.75rem 1.6rem', borderRadius: 'var(--r-pill)', fontWeight: 800, cursor: 'pointer' }}
-                  >
-                    🔄 Retake Awareness Check
-                  </button>
+                  {/* CATEGORY-SPECIFIC TAILORED RECOMMENDATIONS */}
+                  {flagCount > 0 && (
+                    <div style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: 'var(--r-md)', padding: '1.5rem', marginBottom: '1.8rem' }}>
+                      <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        📋 Tailored Clinical Recommendations
+                      </h3>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        {isCycleFlagged && (
+                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
+                            <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
+                              🩸 Menstrual Cycle Care
+                            </strong>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                              Track cycle start dates for 2–3 months using a period-tracking app or calendar. Schedule a consultation with a certified Gynaecologist to evaluate ovulatory health and rule out secondary causes.
+                            </p>
+                          </div>
+                        )}
+
+                        {isSkinFlagged && (
+                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #7C5CFC' }}>
+                            <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
+                              ✨ Androgenic &amp; Skin Care
+                            </strong>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                              Discuss serum free testosterone, DHEAS, and SHBG lab panels with your doctor. Avoid severe restrictive diets; focus on anti-inflammatory nutrition and non-comedogenic dermatological care.
+                            </p>
+                          </div>
+                        )}
+
+                        {isMetabolicFlagged && (
+                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #059669' }}>
+                            <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
+                              ⚡ Metabolic &amp; Glucose Sensitivity Care
+                            </strong>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                              Ask your physician about Fasting Insulin, HbA1c, and Lipid Profile screenings. Emphasize low-glycemic index (Low-GI) complex carbohydrates, high prebiotic fiber, and resistance exercise to boost GLUT-4 cellular insulin sensitivity.
+                            </p>
+                          </div>
+                        )}
+
+                        {isEmotionalFlagged && (
+                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #9333EA' }}>
+                            <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
+                              🧘 Emotional Wellbeing &amp; Stress Axis Care
+                            </strong>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                              Recognize that anxiety and mood swings linked to PMOS are physiological HPA-axis responses — not personal weakness. Prioritize 7–9 hours of circadian sleep, stress-reduction techniques, and peer or professional counseling.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ── PROMINENT MEDICAL DISCLAIMER BOX UNDER RECOMMENDATIONS ── */}
+                  <div style={{ background: '#FFFBEB', border: '1.5px solid #FCD34D', borderRadius: 'var(--r-md)', padding: '1.4rem 1.5rem', marginBottom: '2rem', boxShadow: '0 4px 16px rgba(245, 158, 11, 0.1)' }}>
+                    <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>🛡️</span>
+                      <div>
+                        <h4 style={{ fontSize: '0.96rem', fontWeight: 800, color: '#92400E', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          Medical Disclaimer &amp; Clinical Notice
+                        </h4>
+                        <p style={{ fontSize: '0.86rem', color: '#78350F', lineHeight: 1.65 }}>
+                          This self-check tool is provided <strong>strictly for campus health awareness and education</strong>. It does <strong>NOT</strong> constitute a clinical diagnosis, medical opinion, or personalized treatment plan. Symptoms like cycle delays, acne, or fatigue can result from various underlying factors (including thyroid shifts, stress, or nutritional deficits). <strong>No personal data or answers are stored.</strong> Always consult a qualified healthcare provider (Gynaecologist or Endocrinologist) for an accurate clinical diagnosis and tailored medical care.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* POINTERS TO BRING TO YOUR DOCTOR */}
+                  <div style={{ background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-md)', padding: '1.6rem', marginBottom: '1.8rem' }}>
+                    <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>
+                      📋 Key Pointers to Bring to Your Doctor
+                    </h3>
+                    <ul style={{ paddingLeft: '1.2rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.2rem' }}>
+                      <li><strong>Diagnostic Differential:</strong> &quot;Could my symptoms be caused by thyroid shifts, vitamin deficiencies, or adrenal variation?&quot;</li>
+                      <li><strong>Blood Panel Screening:</strong> &quot;Which blood tests (Free Testosterone, Fasting Insulin, SHBG, Lipid Profile, TSH) should we run?&quot;</li>
+                      <li><strong>Lifestyle &amp; Phenotype Care:</strong> &quot;What evidence-based nutrition or exercise habits suit my specific phenotype?&quot;</li>
+                    </ul>
+                    <div style={{ textAlign: 'center' }}>
+                      <button
+                        onClick={handlePrint}
+                        style={{ background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.7rem 1.5rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.88rem', cursor: 'pointer', border: 'none' }}
+                      >
+                        🖨️ Save / Print Checklist for Appointment
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* ACTION BUTTONS */}
+                  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <button
+                      onClick={handleResetQuiz}
+                      style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.75rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800, cursor: 'pointer', border: 'none' }}
+                    >
+                      🔄 Retake Self-Check
+                    </button>
+                  </div>
+
                 </div>
               )}
 
