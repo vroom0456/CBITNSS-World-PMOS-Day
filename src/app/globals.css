@@ -483,13 +483,17 @@
       #team .section-title { font-size: clamp(22px, 5.5vw, 26px); }
       .section-desc { font-size: 16px; line-height: 1.55; font-weight: 400; color: var(--text-body); }
 
-      /* Stats Banner (48px Spacing, 16px Padding) */
-      #stats-banner { padding: 16px; margin-bottom: 24px; border-radius: 16px; border: 1.5px solid var(--soft-teal-border); }
-      .stats-grid { grid-template-columns: 1fr; gap: 16px; }
-      .stat-box { padding: 16px; border-radius: 14px; background: var(--soft-teal-bg); border: 1px solid var(--soft-teal-border); min-width: 0; }
-      .stat-box .num-val { font-size: 32px; font-weight: 800; }
-      .stat-box .num-unit { font-size: 16px; }
-      .stat-box .stat-lbl { font-size: 13px; line-height: 1.4; font-weight: 500; margin-top: 4px; }
+      /* Stats Banner (Compact Mobile Scaling) */
+      #numbers { padding: 28px 0 !important; }
+      #stats-banner { padding: 12px; margin-bottom: 16px; border-radius: 14px; border: 1px solid var(--soft-teal-border); }
+      .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+      .stat-box { padding: 12px 14px !important; border-radius: 12px; background: var(--soft-teal-bg); border: 1px solid var(--soft-teal-border); min-width: 0; }
+      .stat-box .num-val { font-size: 24px !important; font-weight: 800; line-height: 1.1; color: var(--nss-blue-accent); }
+      .stat-box .num-unit { font-size: 14px; }
+      .stat-box h3 { font-size: 15px !important; margin-top: 4px !important; font-weight: 700; }
+      .stat-box p { font-size: 13px !important; line-height: 1.45 !important; margin-top: 4px !important; }
+      .stat-box .stat-lbl { font-size: 12px; line-height: 1.35; font-weight: 500; margin-top: 2px; }
+      .stat-box .source-trigger-btn { font-size: 12px; padding: 4px 10px; min-height: 32px; margin-top: 6px !important; }
 
       /* Summary Card (16px Padding, 17px H3, 15px Body) */
       .summary-card { padding: 16px; margin-bottom: 24px; border-radius: 16px; }
