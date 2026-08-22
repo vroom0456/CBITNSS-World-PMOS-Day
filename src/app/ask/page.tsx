@@ -137,34 +137,43 @@ export default function AskPage() {
               <p className="section-desc">National helplines for women&apos;s health, emotional stress, and student wellness.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
-              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--border-light)', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ fontSize: '2rem' }}>🏥</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🏥</div>
                 <div>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)' }}>National Women&apos;s Helpline</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', marginTop: '0.2rem', lineHeight: 1.55 }}>
-                    <strong>1091</strong> — Toll-Free 24/7. Government dedicated helpline for women&apos;s health guidance.
+                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>National Women&apos;s Helpline</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
+                    Toll-Free 24/7. Government dedicated helpline for women&apos;s health guidance.
                   </p>
+                  <a href="tel:1091" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                    📞 Call 1091
+                  </a>
                 </div>
               </div>
 
-              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--border-light)', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ fontSize: '2rem' }}>🧠</div>
+              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🧠</div>
                 <div>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)' }}>iCall Mental Health Support</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', marginTop: '0.2rem', lineHeight: 1.55 }}>
-                    <strong>9152987821</strong> — Free counselling for emotional stress and wellbeing concerns.
+                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>iCall Mental Health Support</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
+                    Free counselling for emotional stress and wellbeing concerns.
                   </p>
+                  <a href="tel:9152987821" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                    📞 Call 9152987821
+                  </a>
                 </div>
               </div>
 
-              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--border-light)', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ fontSize: '2rem' }}>🎓</div>
+              <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🎓</div>
                 <div>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)' }}>CBIT NSS Student Support</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', marginTop: '0.2rem', lineHeight: 1.55 }}>
-                    Reach D. Nomini (Women&apos;s Administrator) at <strong>+91 96766 48023</strong> for confidential guidance.
+                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>CBIT NSS Student Support</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
+                    Reach D. Nomini (Women&apos;s Administrator) for confidential campus guidance.
                   </p>
+                  <a href="tel:+919676648023" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                    📞 Call +91 96766 48023
+                  </a>
                 </div>
               </div>
             </div>
