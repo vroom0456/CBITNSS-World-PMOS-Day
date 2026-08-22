@@ -65,8 +65,8 @@ export default function Navbar() {
     <>
       {/* ── MAIN NAV BAR ── */}
       <nav id="navbar" className={scrolled ? 'scrolled' : ''} role="navigation" aria-label="Main Navigation">
-        <Link href="/" className="nav-brand" onClick={closeDrawer}>
-          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={32} height={32} className="nss-logo-img" priority />
+        <Link href="/" className="nav-brand">
+          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={30} height={30} className="nss-logo-img" priority />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
             <span className="subtitle">World PMOS Awareness Day · 2026</span>
@@ -89,17 +89,6 @@ export default function Navbar() {
             </button>
           </li>
         </ul>
-
-        {/* MOBILE HAMBURGER — 3 lines only */}
-        <button
-          className={`mobile-menu-btn ${drawerOpen ? 'active' : ''}`}
-          id="mobile-menu-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded={drawerOpen}
-          onClick={toggleDrawer}
-        >
-          <span></span><span></span><span></span>
-        </button>
       </nav>
 
       {/* ── MOBILE SLIDE-DOWN DRAWER ── */}
@@ -124,7 +113,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ── MOBILE BOTTOM NAV ── */}
+      {/* ── MOBILE BOTTOM NAV — 5 direct tabs ── */}
       <div className="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
         <Link href="/" className={pathname === '/' ? 'active' : ''}>
           <span className="bnav-icon">⌂</span>
@@ -138,14 +127,14 @@ export default function Navbar() {
           <span className="bnav-icon">✓</span>
           <span>Check</span>
         </Link>
+        <Link href="/myths" className={pathname === '/myths' ? 'active' : ''}>
+          <span className="bnav-icon">💡</span>
+          <span>Myths</span>
+        </Link>
         <Link href="/ask" className={pathname === '/ask' ? 'active' : ''}>
           <span className="bnav-icon">💬</span>
           <span>Ask</span>
         </Link>
-        <button onClick={toggleDrawer} aria-label="Open menu">
-          <span className="bnav-icon">☰</span>
-          <span>Menu</span>
-        </button>
       </div>
 
       {/* ── GLOBAL ANONYMOUS MODAL — renders on ALL pages ── */}
