@@ -64,13 +64,13 @@ export default function HomePage() {
               <span>📍 <strong>Venue:</strong> Assembly Hall, CBIT</span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(1.85rem, 5.2vw, 3.6rem)', lineHeight: 1.24, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '840px' }}>
-              Empowering Women&apos;s Health{' '}
-              <span className="accent-text" style={{ color: 'var(--nss-blue-accent)' }}>Through Science &amp; Awareness</span>
+            <h1 style={{ fontSize: 'clamp(1.85rem, 5.2vw, 3.6rem)', lineHeight: 1.24, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '880px' }}>
+              PCOS Uncovered:{' '}
+              <span className="accent-text" style={{ color: 'var(--nss-blue-accent)' }}>Awareness, Understanding and Empowerment</span>
             </h1>
 
-            <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '720px', margin: '0 auto 2rem', textAlign: 'center' }}>
-              Explore the causes, symptoms, health effects, risk reduction, diagnosis and management of Polycystic Ovary Syndrome (PMOS/PCOS).
+            <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '740px', margin: '0 auto 2rem', textAlign: 'center' }}>
+              Polycystic Ovary Syndrome (PCOS) is a common hormonal condition that affects many women and girls, yet it is often misunderstood or left undiagnosed. This World PCOS Day, explore reliable information about its causes, symptoms, health effects, diagnosis and management.
             </p>
 
             {/* HERO BUTTONS — BIG HIGHLIGHTED ASK ANONYMOUSLY BUTTON ABOVE ALL OTHERS */}
