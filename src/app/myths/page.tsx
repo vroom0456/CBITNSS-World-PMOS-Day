@@ -115,19 +115,21 @@ export default function MythsPage() {
               <p className="section-desc">Evidence-based pillars recommended by international endocrine &amp; metabolic guidelines.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+            <div className="row g-4">
               {[
                 { n: '1', title: 'Sustainable Whole-Food Nutrition', body: 'Emphasise low-glycemic index (Low-GI) complex carbs, high prebiotic fibre, and anti-inflammatory healthy fats rather than extreme restrictive diets.' },
                 { n: '2', title: 'Regular Physical Activity', body: 'A blend of resistance training and aerobic exercise enhances GLUT-4 cellular insulin sensitivity and supports cardiorespiratory fitness.' },
                 { n: '3', title: 'Sleep Hygiene & Cortisol Control', body: '7–9 hours of consistent sleep helps regulate the hypothalamic-pituitary-adrenal (HPA) axis and reduces adrenal androgen surges.' },
                 { n: '4', title: 'Individualised Clinical Care', body: 'Working with a physician to evaluate serum markers (insulin sensitivity, androgen levels, thyroid) for tailored care rather than one-size-fits-all plans.' },
               ].map((p, i) => (
-                <div key={i} className="pre-card" style={{ background: '#FFFFFF', padding: '1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--border-light)' }}>
+                <div key={i} className="col-12 col-md-6 col-lg-3">
+                  <div className="pre-card" style={{ background: '#FFFFFF', padding: '1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--border-light)', height: '100%' }}>
                   <div className="pre-num">{p.n}</div>
                   <div className="pre-info">
                     <h5>{p.title}</h5>
                     <p>{p.body}</p>
                   </div>
+                </div>
                 </div>
               ))}
             </div>

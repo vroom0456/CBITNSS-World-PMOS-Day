@@ -159,7 +159,7 @@ export default function SymptomsPage() {
         {/* DOCTOR ADVOCACY BANNER */}
         <section id="doctor" style={{ padding: "3rem 0 4rem", background: "var(--bg-main)" }}>
           <div className="container" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1.5rem" }}>
-            <div className="doctor-advocacy-banner reveal" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", padding: "2rem", borderRadius: "var(--r-lg)", display: "flex", gap: "1.5rem", alignItems: "center" }}>
+            <div className="doctor-advocacy-banner reveal d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", padding: "clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)", borderRadius: "var(--r-lg)" }}>
               <div style={{ fontSize: "2.5rem" }}>💜</div>
               <div>
                 <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--nss-navy)" }}>Remember: You Deserve Proper Medical Care</h4>

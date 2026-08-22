@@ -46,8 +46,8 @@ export default function AboutPage() {
             </div>
 
             {/* SPECIAL SPOTLIGHT: WOMEN'S ADMINISTRATOR */}
-            <div className="women-admin-spotlight reveal" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", borderRadius: "var(--r-lg)", padding: "2rem", marginBottom: "3rem" }}>
-              <div className="spotlight-top" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+            <div className="women-admin-spotlight reveal" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", borderRadius: "var(--r-lg)", padding: "clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)", marginBottom: "3rem" }}>
+              <div className="spotlight-top" style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
                 <span className="spotlight-badge" style={{ background: "var(--nss-blue-accent)", color: "#FFFFFF", padding: "0.3rem 0.9rem", borderRadius: "var(--r-pill)", fontSize: "0.78rem", fontWeight: 800 }}>👑 Special Role · Student Support &amp; Guidance</span>
                 <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-muted)" }}>CBIT NSS Executive Body</span>
               </div>

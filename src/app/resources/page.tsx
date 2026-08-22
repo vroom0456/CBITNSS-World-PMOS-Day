@@ -98,7 +98,8 @@ export default function ResourcesPage() {
               <p className="section-desc">Take awareness offline. Share digital graphics or print posters across campus.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem', alignItems: 'center' }}>
+            <div className="row g-4 align-items-center">
+              <div className="col-12 col-md-6">
               <div style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', padding: '2rem', borderRadius: 'var(--r-lg)', textAlign: 'center', boxShadow: 'var(--shadow-card)' }}>
                 <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }}>📱</span>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)' }}>Offline Awareness QR Code</h3>
@@ -111,7 +112,9 @@ export default function ResourcesPage() {
                   </div>
                 </div>
               </div>
+              </div>
 
+              <div className="col-12 col-md-6">
               <div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1rem' }}>📥 Campaign Downloads</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
@@ -126,6 +129,7 @@ export default function ResourcesPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
               </div>
             </div>
           </div>
