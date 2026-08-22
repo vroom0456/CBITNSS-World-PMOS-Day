@@ -149,6 +149,7 @@ export default function UnderstandPage() {
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                   <strong>Polyendocrine Metabolic Ovarian Syndrome.</strong> Current medical consensus emphasising that endocrine and metabolic features are central — not just the ovaries.
                 </p>
+                </div>
               </div>
 
               <div className="col-12 col-md-6 col-lg-4">
@@ -158,6 +159,7 @@ export default function UnderstandPage() {
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                   <strong>Polycystic Ovary Syndrome.</strong> The traditional term used for decades. Replaced because &quot;cysts&quot; can be misleading and ovaries are not the sole cause.
                 </p>
+                </div>
               </div>
 
               <div className="col-12 col-md-6 col-lg-4">
