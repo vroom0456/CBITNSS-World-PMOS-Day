@@ -496,10 +496,57 @@
        ============================================================ */
     @media (max-width: 768px) {
 
-      /* ── TOUCH FEEDBACK ── */
+      /* ── TOUCH & INTERACTIVE ANIMATIONS ── */
       button:active, .btn-primary-cta:active, .btn-sec-link:active,
-      .btn-contact-pill:active, .tab-btn:active,
-      .quiz-row:active { transform: scale(0.97) !important; }
+      .btn-hero-modal:active, .btn-hero-guide:active,
+      .nav-hub-row:active, .stat-box:active, .symptom-card:active,
+      .pre-card:active, .myth-card:active, .doctor-card:active,
+      .resource-card:active, .member-card:active, .quiz-row:active {
+        transform: scale(0.97) translateZ(0) !important;
+        transition: transform 0.12s var(--ease-out) !important;
+      }
+
+      /* ── MOBILE SCROLL REVEAL ANIMATIONS (HARDWARE-ACCELERATED) ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px) translateZ(0);
+        transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+        will-change: opacity, transform;
+      }
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-16px) translateZ(0);
+        transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+        will-change: opacity, transform;
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(16px) translateZ(0);
+        transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+        will-change: opacity, transform;
+      }
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.95) translateZ(0);
+        transition: opacity 0.45s var(--ease-spring), transform 0.45s var(--ease-spring);
+        will-change: opacity, transform;
+      }
+      .reveal-scale.revealed {
+        opacity: 1;
+        transform: scale(1) translateZ(0);
+      }
+
+      /* Snappy stagger delays on mobile to prevent scrolling past empty space */
+      .stagger-grid .reveal:nth-child(1){transition-delay:0.03s;}
+      .stagger-grid .reveal:nth-child(2){transition-delay:0.06s;}
+      .stagger-grid .reveal:nth-child(3){transition-delay:0.09s;}
+      .stagger-grid .reveal:nth-child(4){transition-delay:0.12s;}
+      .stagger-grid .reveal:nth-child(5){transition-delay:0.15s;}
+      .stagger-grid .reveal:nth-child(6){transition-delay:0.18s;}
 
       /* ── HEADER — 58px compact ── */
       nav {
@@ -533,7 +580,7 @@
         justify-content: center;
         align-items: center;
       }
-      .mobile-menu-btn span { width: 20px; height: 2px; background: var(--nss-navy); border-radius: 2px; }
+      .mobile-menu-btn span { width: 20px; height: 2px; background: var(--nss-navy); border-radius: 2px; transition: transform 0.25s var(--ease-out), opacity 0.2s ease; }
       .mobile-menu-btn::before, .mobile-menu-btn::after { display: none; }
       /* Override previous text-based menu button rule */
       .mobile-menu-btn::before { content: none !important; }
@@ -546,6 +593,9 @@
         gap: 0;
         border-bottom: 1px solid var(--border-light);
         box-shadow: 0 8px 24px rgba(45,27,78,0.08);
+        will-change: transform, opacity;
+        transform: translateY(-100%) translateZ(0);
+        transition: transform 0.32s var(--ease-out), opacity 0.25s ease !important;
       }
       .mobile-nav-drawer a,
       .mobile-nav-drawer .m-link {
@@ -578,14 +628,23 @@
       /* ── PAGE MAIN — 58px header offset ── */
       .page-main { padding-top: 58px !important; }
 
-      /* ── HERO — compact, editorial, left-aligned ── */
+      /* ── HERO — compact, editorial, left-aligned with optimized animations ── */
       #hero {
         padding: 28px 16px 24px;
         text-align: left;
         background: linear-gradient(160deg,#FFFFFF 0%,#EDE8F5 60%,#E8D7EC 100%);
       }
-      #hero::before, #hero::after { display: none; }
-      .hero-sparkle { display: none; }
+      /* Optimized subtle background ambient blobs for mobile */
+      #hero::before, #hero::after {
+        display: block !important;
+        opacity: 0.22;
+        filter: blur(40px);
+        will-change: transform;
+        transform: translateZ(0);
+      }
+      #hero::before { width: 200px; height: 200px; top: -30px; right: -30px; }
+      #hero::after { width: 160px; height: 160px; bottom: -20px; left: -20px; }
+      .hero-sparkle { display: block !important; font-size: 0.85rem; opacity: 0.6; will-change: transform, opacity; }
       .hero-container { align-items: flex-start; }
 
       /* Brand badge */
@@ -599,7 +658,9 @@
         min-height: 26px;
         border: 1px solid var(--soft-teal-border);
         background: rgba(255,255,255,0.9);
-        animation: none;
+        animation: float-badge 4s ease-in-out infinite !important;
+        will-change: transform;
+        transform: translateZ(0);
       }
       .nss-hero-badge img { width: 14px; height: 14px; }
 
@@ -607,8 +668,9 @@
       .hero-event-info {
         font-size: 11px !important;
         margin-bottom: 10px !important;
-        opacity: 1;
-        animation: none;
+        opacity: 0;
+        animation: fade-in 0.5s 0.1s var(--ease-out) forwards !important;
+        will-change: opacity;
         gap: 4px;
         justify-content: flex-start;
       }
@@ -623,8 +685,9 @@
         letter-spacing: -0.025em !important;
         word-break: normal;
         overflow-wrap: break-word;
-        opacity: 1;
-        animation: none;
+        opacity: 0;
+        animation: scale-in 0.55s 0.2s var(--ease-out) forwards !important;
+        will-change: opacity, transform;
       }
 
       /* Desc — 15px, left-aligned */
@@ -636,8 +699,9 @@
         margin: 0 0 18px !important;
         max-width: 100% !important;
         color: var(--text-body);
-        opacity: 1;
-        animation: none;
+        opacity: 0;
+        animation: fade-in 0.55s 0.3s ease forwards !important;
+        will-change: opacity;
       }
 
       /* CTA row — column, left-aligned */
@@ -645,8 +709,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-        opacity: 1;
-        animation: none;
+        opacity: 0;
+        animation: fade-in 0.55s 0.4s ease forwards !important;
+        will-change: opacity;
         width: 100%;
       }
 
