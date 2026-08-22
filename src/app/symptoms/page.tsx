@@ -198,34 +198,38 @@ export default function SymptomsPage() {
           </div>
         </section>
 
-        {/* DIET SECTION */}
+        {/* DIET SECTION WITH ORIGINAL DIET-BOX, EAT, AVOID, FOOD-LIST, FOOD-ITEM CLASSES */}
         <section id="diet" style={{ padding: "3rem 0 4rem" }}>
           <div className="container">
             <div className="heading-box reveal">
               <span className="section-tag">🥗 Nutritional Science</span>
               <h2 className="section-title">Clinical <span className="accent">Dietary Protocols</span></h2>
-              <p className="section-desc">Low-Glycemic Index (Low-GI) &amp; Anti-Inflammatory diet guidelines from recent medical literature.</p>
+              <p className="section-desc">Low-Glycemic Index (Low-GI) &amp; Anti-Inflammatory whole foods to balance blood sugar naturally.</p>
             </div>
             
             <div className="diet-grid">
-              <div className="diet-card eat reveal-left">
-                <h4>✅ Recommended Low-GI &amp; Anti-Inflammatory Foods</h4>
-                <ul className="diet-list">
-                  <li><strong>Low-GI Complex Carbs:</strong> Quinoa, Oats, Ragi, Jowar, Brown Rice (reduces ghrelin &amp; fasting insulin).</li>
-                  <li><strong>High Fiber &amp; Prebiotics:</strong> Broccoli, Spinach, Garlic, Onions, Berries (fuels SCFA-producing gut bacteria).</li>
-                  <li><strong>Omega-3 Healthy Fats:</strong> Flaxseed oil, Walnuts, Chia seeds, Almonds (boosts SHBG synthesis).</li>
-                  <li><strong>Fermented Foods / Probiotics:</strong> Curd, Kefir, Fermented vegetables (enhances *Lactobacillus* diversity).</li>
-                  <li><strong>Anti-Androgenic Drinks:</strong> Spearmint Tea (proven to lower free androgen index).</li>
-                </ul>
+              <div className="diet-box eat reveal-left">
+                <h4>✅ Foods to Eat &amp; Include</h4>
+                <div className="food-list">
+                  <div className="food-item"><span>🥗</span><span>Spinach, Methi &amp; Green Leafy Veggies (Gut Prebiotics)</span></div>
+                  <div className="food-item"><span>🫘</span><span>Lentils, Chickpeas, Sprouts &amp; Millets (Low-GI Carbs)</span></div>
+                  <div className="food-item"><span>🫐</span><span>Fresh Guava, Apples &amp; Berries (Antioxidant Rich)</span></div>
+                  <div className="food-item"><span>🥜</span><span>Almonds, Walnuts &amp; Flaxseeds (Omega-3 Fats)</span></div>
+                  <div className="food-item"><span>🍵</span><span>Spearmint &amp; Cinnamon Tea (Anti-Androgenic)</span></div>
+                  <div className="food-item"><span>🥛</span><span>Probiotic Curd &amp; Kefir (*Lactobacillus* Culture)</span></div>
+                </div>
               </div>
-              <div className="diet-card avoid reveal-right">
-                <h4>❌ Inflammatory Foods to Eliminate / Restrict</h4>
-                <ul className="diet-list">
-                  <li><strong>Saturated Fats:</strong> Deep-fried snacks, excess lard/palm oil (induces LPS-mediated TNF-α &amp; SOCS-3 inflammation).</li>
-                  <li><strong>High Fructose &amp; Refined Sugars:</strong> Packaged juices, sodas, sweets (exacerbates endocrine abnormalities).</li>
-                  <li><strong>High-GI Simple Carbs:</strong> Maida, white bread, pastries, instant noodles (causes acute glycemic &amp; insulin spikes).</li>
-                  <li><strong>Excessive Caffeine:</strong> Limit coffee to 1 cup daily to prevent adrenal cortisol &amp; androgen surges.</li>
-                </ul>
+
+              <div className="diet-box avoid reveal-right">
+                <h4>❌ Foods to Avoid / Limit</h4>
+                <div className="food-list">
+                  <div className="food-item"><span>🍭</span><span>Sugary Sodas, Carbonated Drinks &amp; Packaged Juices</span></div>
+                  <div className="food-item"><span>🍞</span><span>White Maida Bread, Bakery Pastries &amp; Instant Noodles</span></div>
+                  <div className="food-item"><span>🍟</span><span>Deep Fried Junk Food (Saturated Trans-Fats)</span></div>
+                  <div className="food-item"><span>☕</span><span>Excess Coffee / Caffeine (Spikes Adrenal Cortisol)</span></div>
+                  <div className="food-item"><span>🍬</span><span>High Fructose Foods &amp; Refined Sugars</span></div>
+                  <div className="food-item"><span>🥛</span><span>Excess Unfermented Dairy (If Sensitive to Acne)</span></div>
+                </div>
               </div>
             </div>
           </div>
