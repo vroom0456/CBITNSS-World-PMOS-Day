@@ -54,23 +54,23 @@ export default function HomePage() {
           <div className="hero-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="nss-hero-badge" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)' }}>
               <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} priority />
-              CBIT NSS Awareness Campaign 2026
+              CBIT NSS
             </div>
 
             {/* EVENT DETAILS BADGE */}
-            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.6rem 1.5rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '1.2rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)' }}>
-              <span>📅 <strong>Date &amp; Time:</strong> 1st September 2026 · 10:00 AM</span>
-              <span style={{ color: 'var(--nss-blue-accent)' }}>•</span>
+            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--nss-blue-accent)', borderRadius: 'var(--r-pill)', padding: '0.55rem 1.25rem', marginBottom: '1.4rem', display: 'inline-flex', flexWrap: 'wrap', gap: '0.5rem 1rem', justifyContent: 'center', alignItems: 'center', fontSize: '0.85rem', color: 'var(--nss-navy)', fontWeight: 800, boxShadow: 'var(--shadow-soft)', maxWidth: '100%' }}>
+              <span>📅 <strong>Date &amp; Time:</strong> 1st Sept 2026 · 10:00 AM</span>
+              <span style={{ color: 'var(--nss-blue-accent)', display: 'inline-block' }}>•</span>
               <span>📍 <strong>Venue:</strong> Assembly Hall, CBIT</span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(1.9rem, 5.5vw, 3.8rem)', lineHeight: 1.22, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '840px' }}>
-              More Than the Ovaries.{' '}
-              <span className="accent-text" style={{ color: 'var(--nss-blue-accent)' }}>More Than a Period.</span>
+            <h1 style={{ fontSize: 'clamp(1.85rem, 5.2vw, 3.6rem)', lineHeight: 1.24, color: 'var(--nss-navy)', fontWeight: 800, textAlign: 'center', margin: '0 auto 1.2rem', maxWidth: '840px' }}>
+              Empowering Women&apos;s Health{' '}
+              <span className="accent-text" style={{ color: 'var(--nss-blue-accent)' }}>Through Science &amp; Awareness</span>
             </h1>
 
-            <p className="hero-desc" style={{ fontSize: '1.06rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '700px', margin: '0 auto 2rem', textAlign: 'center' }}>
-              <strong>PMOS (Polyendocrine Metabolic Ovarian Syndrome)</strong> — the condition formerly known as PCOS — affects reproductive, endocrine, metabolic, and emotional health in 1 in 8 women worldwide.
+            <p className="hero-desc" style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, maxWidth: '720px', margin: '0 auto 2rem', textAlign: 'center' }}>
+              Join <strong>CBIT NSS</strong> in promoting evidence-based awareness for <strong>Polyendocrine Metabolic Ovarian Syndrome (PMOS)</strong> — formerly PCOS. Empowering young women with clinical knowledge, confidential guidance, and proactive care.
             </p>
 
             {/* HERO BUTTONS — BIG HIGHLIGHTED ASK ANONYMOUSLY BUTTON ABOVE ALL OTHERS */}
