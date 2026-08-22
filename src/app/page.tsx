@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 declare global {
   interface Window {
@@ -103,7 +104,7 @@ export default function Home() {
         } else {
           throw new Error(data.message || 'Submission failed');
         }
-      } catch (_err) {
+      } catch {
         if (btn) {
           btn.textContent = '⚠️ Please try again';
           setTimeout(() => {
@@ -131,7 +132,7 @@ export default function Home() {
           <span className="hero-sparkle">✨</span>
           <span className="hero-sparkle">🌷</span>
           <div className="hero-container">
-            <div className="nss-hero-badge"><img src="/nss-logo.png" alt="CBIT NSS Logo" />CBIT NSS Awareness Campaign 2026</div>
+            <div className="nss-hero-badge"><Image src="/nss-logo.png" alt="CBIT NSS Logo" width={22} height={22} />CBIT NSS Awareness Campaign 2026</div>
             <span className="hero-date">📅 September 1, 2026 · World PCOD &amp; PMOS Day</span>
             <h1>Understanding <span className="accent-text">PCOD &amp; PMOS</span> 🌸</h1>
             <p className="hero-desc">Polycystic Ovarian Disease &amp; PMOS affect 1 in 5 young women. CBIT NSS brings you a clear, easy-to-understand guide and a 100% anonymous Q&amp;A window for your personal health doubts. 💕</p>
