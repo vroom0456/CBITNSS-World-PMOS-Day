@@ -160,7 +160,7 @@ export default function AboutPage() {
                   <div className="input-field"><label htmlFor="gmsg">Your Message</label><textarea id="gmsg" rows={4} placeholder="How can our team help you?" required></textarea></div>
                   <button type="submit" className="btn-send-general" id="gen-submit-btn">✉️ Send Message to CBIT NSS</button>
                 </form>
-                <div id="gen-success-alert" style={{ display: "none", marginTop: "1rem", padding: "1rem", background: "var(--soft-pink-bg)", borderRadius: "var(--r-sm)", color: "var(--espresso-dark)", fontWeight: 700 }}>✅ Message Sent Successfully! Our team will respond shortly.</div>
+                <div id="gen-success-alert" style={{ display: "none", marginTop: "1rem", padding: "1rem", background: "var(--soft-pink-bg)", borderRadius: "var(--r-sm)", color: "var(--nss-teal-dark)", fontWeight: 700 }}>✅ Message Sent Successfully! Our team will respond shortly.</div>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default function AboutPage() {
           </form>
           <div className="modal-success-alert" id="modal-success">
             <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>✅</div>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--espresso-dark)" }}>Anonymous Question Submitted!</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--nss-teal-dark)" }}>Anonymous Question Submitted!</h4>
             <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.4rem", lineHeight: 1.6 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
           </div>
         </div>

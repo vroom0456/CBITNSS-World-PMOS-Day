@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#EEE4DA",
+  themeColor: "#F5EFEB",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakarta.variable}>
       <head>
-        <meta name="theme-color" content="#EEE4DA" />
+        <meta name="theme-color" content="#F5EFEB" />
       </head>
       <body>{children}</body>
     </html>

@@ -190,7 +190,7 @@ export default function SelfTestPage() {
                     key={q.id} 
                     className="quiz-row" 
                     onClick={() => toggleOption(q.id)}
-                    style={{ cursor: 'pointer', userSelect: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.1rem 1.3rem', borderRadius: 'var(--r-sm)', background: checkedItems[q.id] ? 'var(--soft-teal-bg)' : 'rgba(248,239,233,0.6)', margin: '0.6rem 0', transition: 'all 0.2s ease', border: checkedItems[q.id] ? '1.5px solid var(--soft-teal-accent)' : '1px solid var(--border-light)' }}
+                    style={{ cursor: 'pointer', userSelect: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.1rem 1.3rem', borderRadius: 'var(--r-sm)', background: checkedItems[q.id] ? 'var(--soft-teal-bg)' : 'rgba(235,242,245,0.6)', margin: '0.6rem 0', transition: 'all 0.2s ease', border: checkedItems[q.id] ? '1.5px solid var(--soft-teal-accent)' : '1px solid var(--border-light)' }}
                   >
                     <div>
                       <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--soft-teal-accent)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.2rem' }}>{q.category}</span>
@@ -288,7 +288,7 @@ export default function SelfTestPage() {
           </form>
           <div className="modal-success-alert" id="modal-success">
             <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>✅</div>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--espresso-dark)" }}>Anonymous Question Submitted!</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--nss-teal-dark)" }}>Anonymous Question Submitted!</h4>
             <p style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.4rem", lineHeight: 1.6 }}>Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PCOD Day 2026.</p>
           </div>
         </div>
