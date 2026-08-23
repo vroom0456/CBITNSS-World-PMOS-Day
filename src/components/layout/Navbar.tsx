@@ -214,7 +214,7 @@ export default function Navbar() {
           onClick={() => { closeDrawer(); openModal(); }}
           aria-haspopup="dialog"
         >
-          Ask a Doctor Anonymously
+          🌸 Ask an Anonymous Question
         </button>
       </div>
 

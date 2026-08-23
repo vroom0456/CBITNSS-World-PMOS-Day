@@ -54,7 +54,7 @@ export default function HomePage() {
                 style={{ fontSize: '1.05rem', padding: '0.9rem 2.2rem', boxShadow: '0 8px 28px rgba(124, 92, 252, 0.45)' }}
                 aria-haspopup="dialog"
               >
-                🌸 Ask Anonymous Question to Gynaecologist →
+                🌸 Ask an Anonymous Question →
               </button>
             </div>
           </div>
