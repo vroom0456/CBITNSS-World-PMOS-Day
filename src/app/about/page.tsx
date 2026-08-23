@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 02 D. NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
+        {/* ── 02 DERANGULA NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="support-section">
           <div style={{ maxWidth: '880px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -70,13 +70,13 @@ export default function AboutPage() {
                 <div className="spotlight-avatar" aria-hidden="true">DN</div>
                 <div className="spotlight-info">
                   <p className="role">Women&apos;s Administrator</p>
-                  <h3 className="name">D. Nomini</h3>
+                  <h3 className="name">Derangula Nomini</h3>
                   <p className="desc">
                     Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT. For any campus inquiries, health support, or confidential guidance, reach out directly below.
                   </p>
                   <div className="spotlight-actions">
                     <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
-                    <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email D. Nomini</a>
+                    <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email Derangula Nomini</a>
                     <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PMOS" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
                   </div>
                 </div>
@@ -85,30 +85,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 03 TEAM DIRECTORY (SIMPLE CLEAN LIST) ── */}
-        <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="team-section">
-          <div style={{ maxWidth: '780px', margin: '0 auto' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">CBIT NSS Team</span>
-              <h2 id="team-section" className="section-title">Organising Committee</h2>
-              <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
-            </div>
-
-            <div className="team-simple-list-wrap reveal">
-              <ul className="team-simple-list">
-                {allTeamMembers.map((m) => (
-                  <li key={m.id} className="team-simple-item">
-                    <span className="member-name">{m.name}</span>
-                    <span className="member-role">{m.role}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 04 WHY WE BUILT THIS ── */}
-        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="why-section">
+        {/* ── 03 WHY WE BUILT THIS ── */}
+        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="why-section">
           <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
               <span className="section-tag">Why this matters</span>
@@ -125,6 +103,28 @@ export default function AboutPage() {
                   <p className="about-why-body">{w.body}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 04 TEAM DIRECTORY — CORE COMMITTEE (SIMPLE CLEAN LIST) ── */}
+        <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: '#FFFFFF' }} aria-labelledby="team-section">
+          <div style={{ maxWidth: '780px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <span className="section-tag">CBIT NSS Team</span>
+              <h2 id="team-section" className="section-title">Core Committee</h2>
+              <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
+            </div>
+
+            <div className="team-simple-list-wrap reveal">
+              <ul className="team-simple-list">
+                {allTeamMembers.map((m) => (
+                  <li key={m.id} className="team-simple-item">
+                    <span className="member-name">{m.name}</span>
+                    <span className="member-role">{m.role}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

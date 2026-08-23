@@ -208,7 +208,7 @@ export default function AskPage() {
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>CBIT NSS Student Support</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
-                    Reach D. Nomini (Women&apos;s Administrator) for confidential campus guidance.
+                    Reach Derangula Nomini (Women&apos;s Administrator) for confidential campus guidance.
                   </p>
                   <a href="tel:+919676648023" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
                     📞 Call +91 96766 48023
