@@ -639,9 +639,19 @@
         border-radius: 6px; box-shadow: none; animation: none !important;
       }
       .nss-logo-img:hover { transform: none; box-shadow: none; }
-      .brand-text { border-left: 2px solid var(--nss-blue-accent); padding-left: 8px; gap: 0; }
-      .brand-text .title { font-size: 14px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.1; color: var(--nss-navy); }
-      .brand-text .subtitle { display: none !important; }
+      .brand-text { border-left: 2px solid var(--nss-blue-accent); padding-left: 8px; gap: 0; display: flex; flex-direction: column; justify-content: center; }
+      .brand-text .title { font-size: 13.5px !important; font-weight: 800 !important; letter-spacing: -0.01em; line-height: 1.1; color: var(--nss-navy); }
+      .brand-text .subtitle {
+        display: block !important;
+        font-size: 8.5px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.04em !important;
+        color: var(--nss-blue-accent) !important;
+        text-transform: uppercase !important;
+        line-height: 1.1 !important;
+        margin-top: 1px !important;
+        white-space: nowrap !important;
+      }
       .nav-links { display: none !important; }
       .mobile-menu-btn { display: none !important; }
       .mobile-nav-drawer { display: none !important; }
@@ -791,14 +801,30 @@
       /* ─────────────────────────────────────────────────────────
          STATISTICS — ORIGINAL BLOCK BANNER & COMPACT STAT CARDS
       ───────────────────────────────────────────────────────── */
-      #numbers { padding: 36px 16px 32px !important; background: var(--bg-main); }
+      #numbers { padding: 32px 16px 28px !important; background: var(--bg-main); }
       #stats-banner {
         background: var(--card-white) !important;
         border: 1.5px solid var(--soft-teal-border) !important;
         border-radius: 16px !important;
-        padding: 16px !important;
-        margin: 0 0 2rem !important;
+        padding: 14px !important;
+        margin: 0 0 1.5rem !important;
         box-shadow: 0 4px 16px rgba(45,27,78,0.06) !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      #stats-banner .row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 0 !important;
+      }
+      #stats-banner [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex: 1 1 100% !important;
         display: block !important;
       }
       .stat-box {
@@ -813,9 +839,13 @@
         justify-content: center !important;
         box-shadow: none !important;
         margin: 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        animation: none !important;
       }
       .stat-box .num-val {
-        font-size: 26px !important;
+        font-size: 28px !important;
         font-weight: 800 !important;
         color: var(--nss-blue-accent) !important;
         display: block !important;
@@ -824,7 +854,7 @@
         margin-bottom: 4px !important;
       }
       .stat-box h3 {
-        font-size: 14px !important;
+        font-size: 14.5px !important;
         font-weight: 800 !important;
         color: var(--nss-navy) !important;
         margin: 4px 0 !important;
@@ -834,7 +864,7 @@
         font-size: 12.5px !important;
         line-height: 1.5 !important;
         color: var(--text-body) !important;
-        margin: 0 0 8px !important;
+        margin: 0 0 10px !important;
       }
       .stat-box .source-trigger-btn {
         font-size: 11px !important;
