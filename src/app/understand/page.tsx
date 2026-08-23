@@ -206,7 +206,7 @@ export default function UnderstandPage() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-              <Link href="/self-test" style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.94rem', display: 'inline-block' }}>
+              <Link href="/self-test" className="btn-primary-cta">
                 📝 Take the 2-Minute PMOS Self-Check →
               </Link>
             </div>

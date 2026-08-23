@@ -135,7 +135,7 @@ export default function MythsPage() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-              <Link href="/resources" style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.85rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.94rem', display: 'inline-block' }}>
+              <Link href="/resources" className="btn-primary-cta">
                 📚 View Clinical Research &amp; Sources →
               </Link>
             </div>

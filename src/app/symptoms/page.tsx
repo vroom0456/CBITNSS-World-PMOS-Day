@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Link from 'next/link';
 
 declare global {
   interface Window {
@@ -167,6 +168,12 @@ export default function SymptomsPage() {
                   Never hesitate to advocate for your health. If you feel unwell, consult a qualified healthcare provider. Our CBIT NSS team stands with you!
                 </p>
               </div>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+              <Link href="/myths" className="btn-primary-cta">
+                💡 Explore PMOS Myths vs Facts →
+              </Link>
             </div>
           </div>
         </section>
