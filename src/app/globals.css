@@ -1,25 +1,25 @@
 /* Full Original CSS System */
 
 :root {
-  --bg-main: #F5EFEB;            /* Warm Beige Canvas */
-  --card-white: #FFFFFF;         /* Pure White Card Surfaces */
-  --nss-navy: #1F323D;           /* Deep Slate Teal for Primary Headings */
-  --nss-navy-dark: #16242C;      /* Dark Charcoal Slate Teal for Footer & Splash */
-  --nss-blue-accent: #567C8D;    /* Primary Teal Accent */
-  --nss-blue-soft: #E8F0F3;      /* Soft Light Teal Tint Background */
-  --soft-teal-bg: #E8F0F3;
-  --soft-teal-border: #C5D5DC;    /* Soft Slate Teal Border */
-  --soft-teal-accent: #567C8D;    /* Primary Teal Accent */
-  --soft-mint-bg: #E0EBEF;       /* Subtle Mint-Teal Tint */
-  --soft-mint-border: #BCD0D8;
-  --soft-navy-bg: #E8F0F3;
-  --soft-navy-border: #C5D5DC;
-  --soft-navy-text: #1F323D;
+  --bg-main: #F5EFEB;            /* Warm Beige Canvas (#F5EFEB) */
+  --card-white: #FFFFFF;         /* Pure White Card Surfaces (#FFFFFF) */
+  --nss-navy: #567C8D;           /* Primary Teal Theme (#567C8D) */
+  --nss-navy-dark: #3E5B68;      /* Deep Slate Teal for Footer & Contrast */
+  --nss-blue-accent: #567C8D;    /* Primary Teal Accent (#567C8D) */
+  --nss-blue-soft: #EBF2F5;      /* Soft Light Teal Tint Background */
+  --soft-teal-bg: #EBF2F5;
+  --soft-teal-border: #D5E2E8;    /* Soft Teal Border Tint */
+  --soft-teal-accent: #567C8D;    /* Primary Teal Accent (#567C8D) */
+  --soft-mint-bg: #EBF2F5;
+  --soft-mint-border: #D5E2E8;
+  --soft-navy-bg: #EBF2F5;
+  --soft-navy-border: #D5E2E8;
+  --soft-navy-text: #567C8D;
 
-  --text-main: #1F323D;          /* Deep Slate Primary Text */
-  --text-body: #3A4D57;          /* Body Copy Text */
-  --text-muted: #687D88;          /* Subtitles & Muted Labels */
-  --border-light: #DCE5EA;        /* Light Divider Lines & Borders */
+  --text-main: #2C3E49;          /* Deep Slate Body & Heading Text */
+  --text-body: #3E5B68;          /* Body Text */
+  --text-muted: #567C8D;          /* Subtitles & Muted Labels */
+  --border-light: #D5E2E8;        /* Light Divider Lines & Borders */
 
   --shadow-soft: 0 4px 20px rgba(31, 50, 61, 0.05);
   --shadow-card: 0 12px 36px rgba(31, 50, 61, 0.09);
@@ -1670,7 +1670,7 @@ a:focus-visible, button:focus-visible {
   width: 100vw;
   height: 100vh;
   z-index: 999999;
-  background: #16242C;
+  background: #567C8D;
   display: flex;
   align-items: center;
   justify-content: center;
