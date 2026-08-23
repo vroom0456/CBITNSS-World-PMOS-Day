@@ -88,7 +88,6 @@ export default function AboutPage() {
               <div className="spotlight-body">
                 <div className="spotlight-avatar" aria-hidden="true">DN</div>
                 <div className="spotlight-info">
-                  <p className="role">Women&apos;s Administrator</p>
                   <h3 className="name">Derangula Nomini</h3>
                   <p className="desc">
                     Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT. For any campus inquiries, health support, or confidential guidance, reach out directly below.
