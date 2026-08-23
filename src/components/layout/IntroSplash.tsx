@@ -8,26 +8,33 @@ export default function IntroSplash() {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen intro in this tab session
-    const hasSeenIntro = typeof window !== 'undefined' && sessionStorage.getItem('cbit_nss_intro_seen');
-    const params = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-    const forceReplay = params?.get('replayIntro') === 'true';
+    if (typeof window === 'undefined') return;
 
-    if (hasSeenIntro && !forceReplay) {
-      // User has seen intro: do not show again for fast page navigation
+    // Check if this is a browser page reload/refresh or direct initial page visit
+    const navEntries = performance.getEntriesByType('navigation');
+    const isReload = navEntries.length > 0 && (navEntries[0] as PerformanceNavigationTiming).type === 'reload';
+    const hasSeenInSession = sessionStorage.getItem('cbit_nss_intro_seen');
+    const params = new URLSearchParams(window.location.search);
+    const forceReplay = params.get('replayIntro') === 'true';
+
+    // Play intro if page was reloaded/refreshed, forced, or if it's the first visit of the session
+    const shouldPlay = isReload || !hasSeenInSession || forceReplay;
+
+    if (!shouldPlay) {
+      // Skip intro on internal client page switching
       setVisible(false);
       return;
     }
 
-    // First time in session: show intro
+    // Play intro animation
     setVisible(true);
 
-    // Start smooth fade out at 1.1s
+    // Start silky smooth fade out at 1.3s
     const fadeTimer = setTimeout(() => {
       setFading(true);
-    }, 1100);
+    }, 1300);
 
-    // Unmount completely at 1.7s and save session marker
+    // Unmount after 1.1s fade out completes (at 2.4s total)
     const doneTimer = setTimeout(() => {
       setVisible(false);
       try {
@@ -35,7 +42,7 @@ export default function IntroSplash() {
       } catch (e) {
         console.warn('SessionStorage unavailable:', e);
       }
-    }, 1700);
+    }, 2400);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -51,8 +58,8 @@ export default function IntroSplash() {
         <Image
           src="/nss-logo.png"
           alt="CBIT NSS Logo"
-          width={80}
-          height={80}
+          width={88}
+          height={88}
           className="intro-clean-logo"
           priority
         />
