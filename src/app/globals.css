@@ -159,14 +159,14 @@
     /* ── BOTTOM NAV ICON ── */
     .bnav-icon{font-size:18px;line-height:1;display:block;}
 
-    /* ── FOOTER — SOFTENED PALETTE ── */
-    footer{background:linear-gradient(150deg, #4A3B69 0%, #32254D 100%);color:rgba(255,255,255,0.92);padding:60px 5% 28px;border-top:1px solid var(--soft-teal-border);}
+    /* ── FOOTER — MATCHING NAVY THEME ── */
+    footer{background:linear-gradient(150deg, var(--nss-navy) 0%, var(--nss-navy-dark) 100%);color:rgba(255,255,255,0.92);padding:60px 5% 28px;border-top:1px solid rgba(124,92,252,0.25);}
     .footer-inner{display:grid;grid-template-columns:2fr 1.2fr 2fr;gap:2.5rem;margin-bottom:2rem;align-items:start;}
     .footer-brand-row{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem;}
-    .footer-logo{border-radius:50%;border:2px solid rgba(255,255,255,0.2);}
-    .footer-brand-name{font-size:0.95rem;font-weight:800;color:#fff;line-height:1.2;}
-    .footer-brand-sub{font-size:0.72rem;color:rgba(255,255,255,0.7);font-weight:600;letter-spacing:0.04em;}
-    .footer-brand-desc{font-size:0.83rem;line-height:1.65;opacity:0.78;margin-top:0.25rem;}
+    .footer-logo{border-radius:50%;border:2px solid rgba(255,255,255,0.25);}
+    .footer-brand-name{font-size:0.95rem;font-weight:800;color:#fff;line-height:1.1;margin:0;}
+    .footer-brand-sub{font-size:0.72rem;color:rgba(255,255,255,0.75);font-weight:600;letter-spacing:0.03em;margin-top:2px;margin-bottom:0;line-height:1.2;}
+    .footer-brand-desc{font-size:0.83rem;line-height:1.65;opacity:0.78;margin-top:0.4rem;}
     .footer-links-col p.footer-col-heading,.footer-disclaimer p.footer-col-heading{color:#fff;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.85rem;}
     .footer-links-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
     .footer-links-col a{font-size:0.83rem;opacity:0.78;transition:opacity 0.2s ease;}

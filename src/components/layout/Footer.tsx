@@ -13,8 +13,8 @@ export default function Footer() {
           <div className="footer-brand-row">
             <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={28} height={28} className="footer-logo" />
             <div>
-              <p className="footer-brand-name">CBIT NSS</p>
-              <p className="footer-brand-sub">World PMOS Awareness Day 2026</p>
+              <p className="footer-brand-name" style={{ margin: 0, lineHeight: 1.1 }}>CBIT NSS</p>
+              <p className="footer-brand-sub" style={{ margin: 0, marginTop: '2px', lineHeight: 1.15 }}>World PMOS Awareness Day 2026</p>
             </div>
           </div>
           <p className="footer-brand-desc">
