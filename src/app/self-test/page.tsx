@@ -244,7 +244,7 @@ export default function SelfTestPage() {
                         )}
 
                         {isSkinFlagged && (
-                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #7C5CFC' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               ✨ Androgenic &amp; Skin Care
                             </strong>
