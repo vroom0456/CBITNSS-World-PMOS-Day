@@ -4,18 +4,37 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 export default function IntroSplash() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
+    // Check if user has already seen intro in this tab session
+    const hasSeenIntro = typeof window !== 'undefined' && sessionStorage.getItem('cbit_nss_intro_seen');
+    const params = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+    const forceReplay = params?.get('replayIntro') === 'true';
+
+    if (hasSeenIntro && !forceReplay) {
+      // User has seen intro: do not show again for fast page navigation
+      setVisible(false);
+      return;
+    }
+
+    // First time in session: show intro
+    setVisible(true);
+
     // Start smooth fade out at 1.1s
     const fadeTimer = setTimeout(() => {
       setFading(true);
     }, 1100);
 
-    // Unmount completely at 1.7s
+    // Unmount completely at 1.7s and save session marker
     const doneTimer = setTimeout(() => {
       setVisible(false);
+      try {
+        sessionStorage.setItem('cbit_nss_intro_seen', 'true');
+      } catch (e) {
+        console.warn('SessionStorage unavailable:', e);
+      }
     }, 1700);
 
     return () => {
