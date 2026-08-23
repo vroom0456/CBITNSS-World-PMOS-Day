@@ -85,25 +85,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 03 TEAM DIRECTORY (ORGANIZED UNIFIED LIST) ── */}
+        {/* ── 03 TEAM DIRECTORY (SIMPLE CLEAN LIST) ── */}
         <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="team-section">
-          <div style={{ maxWidth: '880px', margin: '0 auto' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div style={{ maxWidth: '780px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <span className="section-tag">CBIT NSS Team</span>
               <h2 id="team-section" className="section-title">Organising Committee</h2>
               <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
             </div>
 
-            <div className="team-list-container reveal" role="list">
-              {allTeamMembers.map((m) => (
-                <div key={m.id} className="team-list-item" role="listitem">
-                  <div className="team-list-user">
-                    <div className="team-list-avatar" aria-hidden="true">{m.initials}</div>
-                    <strong className="team-list-name">{m.name}</strong>
-                  </div>
-                  <span className="team-list-role">{m.role}</span>
-                </div>
-              ))}
+            <div className="team-simple-list-wrap reveal">
+              <ul className="team-simple-list">
+                {allTeamMembers.map((m) => (
+                  <li key={m.id} className="team-simple-item">
+                    <span className="member-name">{m.name}</span>
+                    <span className="member-role">{m.role}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

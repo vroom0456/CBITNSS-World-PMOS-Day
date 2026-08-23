@@ -394,14 +394,14 @@
     .resource-card h5{font-size:0.93rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.3rem;}
     .resource-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
 
-    /* WOMEN ADMIN SPOTLIGHT CARD */
+    /* WOMEN ADMIN SPOTLIGHT CARD — MATCHING SITE THEME */
     .women-admin-spotlight{
-      background: linear-gradient(135deg, #FFF0F5 0%, #F5F3FF 50%, #FFFFFF 100%);
-      border: 2px solid #E879F9;
+      background: linear-gradient(135deg, var(--soft-teal-bg) 0%, #FFFFFF 60%, var(--bg-main) 100%);
+      border: 2px solid var(--soft-teal-border);
       border-radius: var(--r-lg);
       padding: 2.2rem 2.5rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 12px 36px rgba(217, 70, 239, 0.12);
+      box-shadow: var(--shadow-card);
       position: relative;
       overflow: hidden;
       transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease;
@@ -414,11 +414,11 @@
       left: 0;
       width: 6px;
       height: 100%;
-      background: linear-gradient(180deg, #EC4899 0%, #8B5CF6 100%);
+      background: linear-gradient(180deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
     }
     .women-admin-spotlight:hover{
       transform: translateY(-4px);
-      box-shadow: 0 18px 48px rgba(217, 70, 239, 0.22);
+      box-shadow: 0 16px 40px rgba(45, 27, 78, 0.12);
     }
     .spotlight-top{
       display: flex;
@@ -429,7 +429,7 @@
       gap: 0.5rem;
     }
     .spotlight-badge{
-      background: linear-gradient(135deg, #DB2777 0%, #9333EA 100%);
+      background: var(--nss-navy);
       color: #FFFFFF;
       padding: 0.42rem 1.2rem;
       border-radius: var(--r-pill);
@@ -440,7 +440,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 4px 14px rgba(219, 39, 119, 0.3);
+      box-shadow: 0 4px 14px rgba(45, 27, 78, 0.2);
     }
     .spotlight-body{
       display: flex;
@@ -451,7 +451,7 @@
       width: 78px;
       height: 78px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #EC4899 0%, #7C3AED 100%);
+      background: linear-gradient(135deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
       color: #FFFFFF;
       font-size: 1.6rem;
       font-weight: 800;
@@ -459,7 +459,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 8px 22px rgba(236, 72, 153, 0.38);
+      box-shadow: 0 8px 22px rgba(124, 92, 252, 0.3);
       border: 3px solid #FFFFFF;
     }
     .spotlight-info {
@@ -474,7 +474,7 @@
     .spotlight-info p.role {
       font-size: 0.88rem;
       font-weight: 800;
-      color: #BE185D;
+      color: var(--nss-blue-accent);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 0.5rem;
@@ -491,108 +491,80 @@
       flex-wrap: wrap;
     }
     .btn-contact-pill.phone-pill {
-      background: linear-gradient(135deg, #7C3AED, #6D28D9) !important;
+      background: var(--nss-blue-accent) !important;
       color: #FFFFFF !important;
       border: none !important;
       padding: 0.55rem 1.1rem !important;
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3) !important;
+      box-shadow: 0 4px 14px rgba(124, 92, 252, 0.28) !important;
     }
     .btn-contact-pill.phone-pill:hover {
+      background: var(--nss-navy) !important;
       transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.45) !important;
     }
     .btn-contact-pill.email-pill {
-      background: linear-gradient(135deg, #0284C7, #0369A1) !important;
+      background: var(--nss-navy) !important;
       color: #FFFFFF !important;
       border: none !important;
       padding: 0.55rem 1.1rem !important;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+      box-shadow: 0 4px 14px rgba(45, 27, 78, 0.25) !important;
     }
     .btn-contact-pill.email-pill:hover {
+      background: var(--nss-blue-accent) !important;
       transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.45) !important;
     }
     .btn-contact-pill.whatsapp-pill {
-      background: linear-gradient(135deg, #25D366, #16A34A) !important;
+      background: #25D366 !important;
       color: #FFFFFF !important;
       border: none !important;
       padding: 0.55rem 1.1rem !important;
       box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3) !important;
     }
     .btn-contact-pill.whatsapp-pill:hover {
+      background: #16A34A !important;
       transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45) !important;
     }
 
-    /* TEAM DIRECTORY — ORGANIZED UNIFIED LIST */
-    .team-list-container {
+    /* TEAM DIRECTORY — SIMPLE CLEAN LIST */
+    .team-simple-list-wrap {
       background: #FFFFFF;
       border: 1.5px solid var(--border-light);
       border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: 0 10px 32px rgba(45, 27, 78, 0.05);
+      padding: 1.6rem 2.2rem;
+      box-shadow: var(--shadow-card);
     }
-    .team-list-item {
+    .team-simple-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .team-simple-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.1rem 1.6rem;
-      border-bottom: 1px solid #F0EBF8;
-      transition: background 0.2s ease;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.98rem;
     }
-    .team-list-item:last-child {
+    .team-simple-item:last-child {
       border-bottom: none;
     }
-    .team-list-item:hover {
-      background: #F9F7FD;
-    }
-    .team-list-user {
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-    }
-    .team-list-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #7C5CFC, #6D28D9);
-      color: #FFFFFF;
-      font-size: 0.95rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
-    }
-    .team-list-name {
-      font-size: 1.02rem;
+    .team-simple-item .member-name {
       font-weight: 800;
       color: var(--nss-navy);
     }
-    .team-list-role {
-      font-size: 0.76rem;
-      font-weight: 800;
-      color: #7C5CFC;
-      background: #EDE8F5;
-      padding: 0.35rem 0.9rem;
-      border-radius: var(--r-pill);
+    .team-simple-item .member-role {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--nss-blue-accent);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-align: right;
+      letter-spacing: 0.04em;
     }
-    @media(max-width: 650px) {
-      .team-list-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-        padding: 0.95rem 1.2rem;
-      }
-      .team-list-role {
-        align-self: flex-start;
-        font-size: 0.7rem;
-        padding: 0.25rem 0.75rem;
-      }
+    @media (max-width: 650px) {
+      .team-simple-list-wrap { padding: 1.2rem 1.2rem; }
+      .team-simple-item { flex-direction: column; align-items: flex-start; gap: 0.25rem; padding: 0.75rem 0; }
+      .team-simple-item .member-role { font-size: 0.8rem; }
     }
     .member-card{background:var(--card-white);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.1rem 1rem;transition:all 0.35s var(--ease-spring);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-soft);}
     .member-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--nss-navy),var(--soft-teal-accent));transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease-out);}
@@ -1277,17 +1249,17 @@
       .member-meta .role-pill { font-size: 9.5px !important; font-weight: 800 !important; }
       .btn-contact-pill { padding: 0 10px !important; height: 28px !important; font-size: 11px !important; border-radius: 9999px !important; display: inline-flex !important; align-items: center !important; }
       .women-admin-spotlight {
-        background: linear-gradient(135deg, #FFF0F5 0%, #F5F3FF 100%) !important;
-        border: 2px solid #E879F9 !important;
-        border-radius: 18px !important;
-        padding: 20px 16px !important;
+        background: linear-gradient(135deg, var(--soft-teal-bg) 0%, #FFFFFF 100%) !important;
+        border: 1.5px solid var(--soft-teal-border) !important;
+        border-radius: 16px !important;
+        padding: 18px 16px !important;
         margin-bottom: 1.8rem !important;
-        box-shadow: 0 8px 24px rgba(217, 70, 239, 0.15) !important;
+        box-shadow: var(--shadow-card) !important;
       }
       .spotlight-body { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .spotlight-avatar { width: 56px !important; height: 56px !important; font-size: 1.2rem !important; background: linear-gradient(135deg, #EC4899, #7C3AED) !important; color: #FFFFFF !important; }
+      .spotlight-avatar { width: 56px !important; height: 56px !important; font-size: 1.2rem !important; background: linear-gradient(135deg, var(--nss-blue-accent), var(--nss-navy)) !important; color: #FFFFFF !important; }
       .spotlight-info h3.name { font-size: 18px !important; color: var(--nss-navy) !important; }
-      .spotlight-info p.role { font-size: 12px !important; color: #BE185D !important; }
+      .spotlight-info p.role { font-size: 12px !important; color: var(--nss-blue-accent) !important; }
       .spotlight-info p.desc { font-size: 13px !important; line-height: 1.55 !important; }
       .spotlight-actions { flex-direction: column; gap: 8px; width: 100%; }
 
