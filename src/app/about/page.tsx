@@ -53,8 +53,30 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 02 DERANGULA NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
-        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="support-section">
+        {/* ── 02 WHY WE BUILT THIS ── */}
+        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="why-section">
+          <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
+              <span className="section-tag">Why this matters</span>
+              <h2 id="why-section" className="section-title">Why we built this</h2>
+            </div>
+            <div className="stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
+              {[
+                { label: 'Understand', body: 'Medical information about PCOS/PMOS should not require a clinical background to comprehend.' },
+                { label: 'Recognise', body: 'Symptoms deserve attention and care, not dismissal or stigma.' },
+                { label: 'Act', body: 'Awareness should lead to informed conversations with healthcare professionals — not self-diagnosis.' },
+              ].map((w, i) => (
+                <div key={i} className="about-why-card reveal">
+                  <strong className="about-why-label">{w.label}</strong>
+                  <p className="about-why-body">{w.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 03 DERANGULA NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
+        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="support-section">
           <div style={{ maxWidth: '880px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <span className="section-tag">👑 Campus Support &amp; Guidance</span>
@@ -82,28 +104,6 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 03 WHY WE BUILT THIS ── */}
-        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="why-section">
-          <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
-              <span className="section-tag">Why this matters</span>
-              <h2 id="why-section" className="section-title">Why we built this</h2>
-            </div>
-            <div className="stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
-              {[
-                { label: 'Understand', body: 'Medical information about PCOS/PMOS should not require a clinical background to comprehend.' },
-                { label: 'Recognise', body: 'Symptoms deserve attention and care, not dismissal or stigma.' },
-                { label: 'Act', body: 'Awareness should lead to informed conversations with healthcare professionals — not self-diagnosis.' },
-              ].map((w, i) => (
-                <div key={i} className="about-why-card reveal">
-                  <strong className="about-why-label">{w.label}</strong>
-                  <p className="about-why-body">{w.body}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
