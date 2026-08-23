@@ -169,7 +169,7 @@ export default function SelfTestPage() {
                         key={idx}
                         className={`wizard-option-btn ${answers[wizardQuestions[currentStep].id] === opt.value ? 'selected' : ''}`}
                         onClick={() => handleOptionSelect(wizardQuestions[currentStep].id, opt.value)}
-                        style={{ textAlign: 'left', padding: '1rem 1.2rem', borderRadius: 'var(--r-md)', fontSize: '0.92rem', fontWeight: 700 }}
+                        style={{ textAlign: 'left' }}
                       >
                         <span style={{ flex: 1 }}>{opt.label}</span>
                         <span style={{ fontSize: '1.1rem', marginLeft: '0.5rem' }}>{answers[wizardQuestions[currentStep].id] === opt.value ? '✓' : ''}</span>
@@ -180,16 +180,18 @@ export default function SelfTestPage() {
                   {/* Nav buttons */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <button
+                      className="wizard-nav-prev"
                       onClick={handlePrevStep}
                       disabled={currentStep === 0}
-                      style={{ opacity: currentStep === 0 ? 0.4 : 1, cursor: currentStep === 0 ? 'not-allowed' : 'pointer', background: 'transparent', border: '1.5px solid var(--border-light)', padding: '0.7rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 700, color: 'var(--nss-navy)' }}
+                      style={{ opacity: currentStep === 0 ? 0.4 : 1, cursor: currentStep === 0 ? 'not-allowed' : 'pointer' }}
                     >
                       ← Back
                     </button>
                     <button
+                      className="wizard-nav-next"
                       onClick={handleNextStep}
                       disabled={!answers[wizardQuestions[currentStep].id]}
-                      style={{ opacity: !answers[wizardQuestions[currentStep].id] ? 0.5 : 1, cursor: !answers[wizardQuestions[currentStep].id] ? 'not-allowed' : 'pointer', background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.75rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800 }}
+                      style={{ opacity: !answers[wizardQuestions[currentStep].id] ? 0.5 : 1, cursor: !answers[wizardQuestions[currentStep].id] ? 'not-allowed' : 'pointer' }}
                     >
                       {currentStep === wizardQuestions.length - 1 ? 'View Personalised Summary →' : 'Next →'}
                     </button>

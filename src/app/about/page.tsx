@@ -46,21 +46,21 @@ export default function AboutPage() {
             </div>
 
             {/* SPECIAL SPOTLIGHT: WOMEN'S ADMINISTRATOR */}
-            <div className="women-admin-spotlight reveal" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", borderRadius: "var(--r-lg)", padding: "clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)", marginBottom: "3rem" }}>
-              <div className="spotlight-top" style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-                <span className="spotlight-badge" style={{ background: "var(--nss-blue-accent)", color: "#FFFFFF", padding: "0.3rem 0.9rem", borderRadius: "var(--r-pill)", fontSize: "0.78rem", fontWeight: 800 }}>👑 Special Role · Student Support &amp; Guidance</span>
-                <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-muted)" }}>CBIT NSS Executive Body</span>
+            <div className="women-admin-spotlight reveal">
+              <div className="spotlight-top">
+                <span className="spotlight-badge">👑 Lead Student Support &amp; Guidance</span>
+                <span className="spotlight-sub">CBIT NSS Executive Body</span>
               </div>
-              <div className="spotlight-body" style={{ display: "flex", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
-                <div className="spotlight-avatar" style={{ width: "70px", height: "70px", borderRadius: "50%", background: "var(--nss-blue-accent)", color: "#FFFFFF", fontSize: "1.6rem", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>DN</div>
+              <div className="spotlight-body">
+                <div className="spotlight-avatar">DN</div>
                 <div className="spotlight-info">
-                  <p className="role" style={{ fontSize: "0.85rem", fontWeight: 800, color: "var(--nss-blue-accent)", textTransform: "uppercase" }}>Women&apos;s Administrator</p>
-                  <h3 className="name" style={{ fontSize: "1.4rem", fontWeight: 800, color: "var(--nss-navy)" }}>D. Nomini</h3>
-                  <p className="desc" style={{ fontSize: "0.9rem", color: "var(--text-body)", marginTop: "0.2rem" }}>Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
-                  <div className="spotlight-actions" style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+                  <p className="role">Women&apos;s Administrator</p>
+                  <h3 className="name">D. Nomini</h3>
+                  <p className="desc">Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
+                  <div className="spotlight-actions">
                     <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
                     <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email D. Nomini</a>
-                    <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PMOS" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
+                    <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PMOS" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 WhatsApp</a>
                   </div>
                 </div>
               </div>
