@@ -709,65 +709,24 @@
         will-change: opacity;
       }
 
-      /* PRIMARY CTA — one dominant action */
+      /* PRIMARY CTA — highlighted single dominant action */
       .btn-primary-cta {
         display: inline-flex; align-items: center; justify-content: center;
-        gap: 6px; min-height: 44px !important; height: 44px !important;
-        padding: 0 20px !important; font-size: 14px !important;
-        font-weight: 700 !important; letter-spacing: -0.01em;
-        border-radius: 9px !important; width: auto !important;
-        max-width: 100%; align-self: flex-start;
-        background: var(--soft-teal-accent); color: #fff; border: none;
-        box-shadow: 0 3px 12px rgba(124,92,252,0.28) !important;
-        transition: background 0.2s ease, box-shadow 0.2s ease !important;
+        gap: 8px; min-height: 48px !important; height: 48px !important;
+        padding: 0 24px !important; font-size: 15px !important;
+        font-weight: 800 !important; letter-spacing: -0.01em;
+        border-radius: 9999px !important; width: 100% !important;
+        max-width: 100%; align-self: stretch;
+        background: linear-gradient(135deg, var(--soft-teal-accent) 0%, var(--nss-blue-accent) 100%);
+        color: #FFFFFF !important; border: none;
+        box-shadow: 0 4px 18px rgba(124,92,252,0.35) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
         cursor: pointer;
       }
       .btn-primary-cta:hover {
-        background: var(--nss-navy);
-        box-shadow: 0 6px 20px rgba(124,92,252,0.35) !important;
-        transform: none !important;
-      }
-
-      /* SECONDARY LINKS — compact, understated */
-      .hero-sec-links {
-        display: flex; flex-direction: row; gap: 8px;
-        align-items: center; flex-wrap: wrap; justify-content: flex-start;
-      }
-      .btn-sec-link {
-        display: inline-flex; align-items: center;
-        height: 36px !important; min-height: 36px !important;
-        padding: 0 13px !important; font-size: 13px !important;
-        font-weight: 600 !important; border-radius: 7px !important;
-        width: auto !important; color: var(--text-body);
-        background: rgba(255,255,255,0.75) !important;
-        border: 1px solid var(--border-light) !important;
-        transition: background 0.15s ease, border-color 0.15s ease !important;
-        backdrop-filter: none; box-shadow: none !important;
-      }
-      .btn-sec-link:hover {
-        background: var(--soft-mint-bg) !important;
-        border-color: rgba(45,27,78,0.2) !important;
-        transform: none !important;
-      }
-
-      /* Legacy hero button classes */
-      .hero-buttons { flex-direction: column; align-items: flex-start; gap: 10px; opacity: 1; animation: none; width: 100%; }
-      .btn-hero-modal {
-        min-height: 44px !important; height: 44px !important;
-        padding: 0 20px !important; font-size: 14px !important;
-        font-weight: 700 !important; border-radius: 9px !important;
-        width: auto !important; align-self: flex-start;
-        animation: none !important; transform: none !important;
-      }
-      .btn-hero-modal:hover { transform: none !important; }
-      .btn-hero-guide {
-        height: 36px !important; min-height: 36px !important;
-        padding: 0 13px !important; font-size: 13px !important;
-        border-radius: 7px !important; width: auto !important;
-        background: transparent !important;
-        border: 1px solid var(--border-light) !important;
-        color: var(--text-body) !important;
-        box-shadow: none !important; transform: none !important;
+        background: linear-gradient(135deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
+        box-shadow: 0 6px 24px rgba(124,92,252,0.45) !important;
+        transform: translateY(-1px) !important;
       }
 
       /* ── EMERGENCY STRIP — ultra-compact ── */
@@ -781,7 +740,6 @@
 
       /* ─────────────────────────────────────────────────────────
          SECTIONS — 40–48px spacing, 16px padding
-         No arbitrary 80–120px gaps
       ───────────────────────────────────────────────────────── */
       .section { padding: 40px 16px; }
       .container { padding-inline: 0; }
@@ -803,41 +761,38 @@
       .section-desc { font-size: 14px !important; line-height: 1.55; color: var(--text-body); margin-top: 4px; }
 
       /* ─────────────────────────────────────────────────────────
-         STATISTICS — editorial composition
-         Numbers 28–30px · Labels 13–14px
-         Horizontal row layout: number | text
+         STATISTICS — COMPACT CARD BLOCKS
       ───────────────────────────────────────────────────────── */
       #numbers { padding: 36px 16px 32px !important; background: var(--bg-main); }
-      #numbers .row { display: block; margin: 0; }
-      #numbers .col-12 { padding: 0; }
       #stats-banner {
-        background: transparent !important;
-        border: none !important; padding: 0 !important;
-        margin: 0 !important; box-shadow: none !important;
-        border-radius: 0 !important;
+        display: flex !important; flex-direction: column !important; gap: 12px !important;
+        background: transparent !important; border: none !important; padding: 0 !important;
+        margin: 0 !important; box-shadow: none !important; border-radius: 0 !important;
       }
       .stat-box {
-        display: flex !important; flex-direction: row !important;
-        align-items: center !important; gap: 16px !important;
-        padding: 16px 0 !important; border: none !important;
-        border-bottom: 1px solid var(--border-light) !important;
-        border-radius: 0 !important; background: transparent !important;
-        box-shadow: none !important; transition: none !important;
-        min-width: 0; text-align: left;
+        display: flex !important; flex-direction: column !important;
+        align-items: flex-start !important; gap: 4px !important;
+        padding: 16px !important; border: 1.5px solid var(--soft-teal-border) !important;
+        border-radius: 12px !important; background: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(45,27,78,0.04) !important;
+        min-width: 0; text-align: left !important;
       }
-      .stat-box:hover { transform: none !important; box-shadow: none !important; }
-      .stat-box:last-child { border-bottom: none !important; }
-      .stat-box .stat-icon { display: none !important; }
       .stat-box .num-val {
-        font-size: 30px !important; font-weight: 800; line-height: 1;
-        color: var(--nss-blue-accent); flex-shrink: 0;
-        min-width: 72px; display: block; letter-spacing: -0.02em;
+        font-size: 26px !important; font-weight: 800 !important; line-height: 1.1 !important;
+        color: var(--nss-blue-accent) !important; display: block; letter-spacing: -0.02em !important;
+        margin-bottom: 2px !important;
       }
-      .stat-box .num-unit { font-size: 20px !important; font-weight: 800; color: var(--nss-blue-accent); }
-      .stat-box h3 { font-size: 14px !important; font-weight: 700; color: var(--nss-navy); margin: 0 !important; line-height: 1.2; }
-      .stat-box p { font-size: 12px !important; line-height: 1.42 !important; color: var(--text-muted); margin: 0 !important; }
-      .stat-box .stat-lbl { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
-      .stat-box .source-trigger-btn { font-size: 10px; padding: 2px 7px; min-height: 24px; margin-top: 4px; border-radius: 5px; margin-left: 0; }
+      .stat-box h3, .stat-box .stat-label {
+        font-size: 14px !important; font-weight: 800 !important; color: var(--nss-navy) !important;
+        margin: 0 0 2px !important; line-height: 1.25 !important;
+      }
+      .stat-box p, .stat-box .stat-desc {
+        font-size: 12.5px !important; line-height: 1.5 !important; color: var(--text-body) !important;
+        margin: 0 0 6px !important;
+      }
+      .stat-box .source-trigger-btn {
+        font-size: 11px; padding: 3px 9px; min-height: 26px; border-radius: 6px; margin-left: 0;
+      }
 
       /* ─────────────────────────────────────────────────────────
          CAMPAIGN NAV HUB — editorial navigation rows
