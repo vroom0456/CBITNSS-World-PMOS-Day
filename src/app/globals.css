@@ -394,134 +394,88 @@
     .resource-card h5{font-size:0.93rem;font-weight:800;color:var(--nss-navy);margin-bottom:0.3rem;}
     .resource-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
 
-    /* WOMEN ADMIN SPOTLIGHT CARD — MATCHING SITE THEME */
+    /* WOMEN ADMIN SPOTLIGHT CARD */
     .women-admin-spotlight{
-      background: linear-gradient(135deg, var(--soft-teal-bg) 0%, #FFFFFF 60%, var(--bg-main) 100%);
+      background: linear-gradient(135deg, #E6F7F9 0%, #FFFFFF 100%);
       border: 2px solid var(--soft-teal-border);
       border-radius: var(--r-lg);
       padding: 2.2rem 2.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-card);
+      margin-bottom: 2.8rem;
+      box-shadow: 0 10px 32px rgba(15,56,84,0.10);
       position: relative;
       overflow: hidden;
       transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease;
       text-align: left;
     }
-    .women-admin-spotlight::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
-    }
     .women-admin-spotlight:hover{
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(45, 27, 78, 0.12);
+      box-shadow: 0 16px 40px rgba(15,56,84,0.16);
     }
     .spotlight-top{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
     .spotlight-badge{
-      background: var(--nss-navy);
-      color: #FFFFFF;
-      padding: 0.42rem 1.2rem;
+      background: var(--soft-teal-accent);
+      color: #fff;
+      padding: 0.35rem 1.1rem;
       border-radius: var(--r-pill);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 4px 14px rgba(45, 27, 78, 0.2);
     }
     .spotlight-body{
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 1.8rem;
     }
     .spotlight-avatar{
-      width: 78px;
-      height: 78px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
-      color: #FFFFFF;
-      font-size: 1.6rem;
-      font-weight: 800;
+      background: linear-gradient(135deg, var(--soft-teal-accent), var(--nss-navy));
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(15,56,84,0.30);
       flex-shrink: 0;
-      box-shadow: 0 8px 22px rgba(124, 92, 252, 0.3);
-      border: 3px solid #FFFFFF;
+      border: 3px solid #fff;
     }
-    .spotlight-info {
-      flex: 1;
-    }
-    .spotlight-info h3.name {
-      font-size: 1.45rem;
+    .spotlight-info h3.name{
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--nss-navy);
       margin-bottom: 0.2rem;
     }
-    .spotlight-info p.role {
+    .spotlight-info p.role{
       font-size: 0.88rem;
       font-weight: 800;
-      color: var(--nss-blue-accent);
+      color: var(--soft-teal-accent);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
-    .spotlight-info p.desc {
-      font-size: 0.94rem;
+    .spotlight-info p.desc{
+      font-size: 0.92rem;
       color: var(--text-body);
       line-height: 1.65;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
-    .spotlight-actions {
+    .spotlight-actions{
       display: flex;
       gap: 0.8rem;
       flex-wrap: wrap;
-    }
-    .btn-contact-pill.phone-pill {
-      background: var(--nss-blue-accent) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-      padding: 0.55rem 1.1rem !important;
-      box-shadow: 0 4px 14px rgba(124, 92, 252, 0.28) !important;
-    }
-    .btn-contact-pill.phone-pill:hover {
-      background: var(--nss-navy) !important;
-      transform: translateY(-2px) scale(1.03) !important;
-    }
-    .btn-contact-pill.email-pill {
-      background: var(--nss-navy) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-      padding: 0.55rem 1.1rem !important;
-      box-shadow: 0 4px 14px rgba(45, 27, 78, 0.25) !important;
-    }
-    .btn-contact-pill.email-pill:hover {
-      background: var(--nss-blue-accent) !important;
-      transform: translateY(-2px) scale(1.03) !important;
-    }
-    .btn-contact-pill.whatsapp-pill {
-      background: #25D366 !important;
-      color: #FFFFFF !important;
-      border: none !important;
-      padding: 0.55rem 1.1rem !important;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3) !important;
-    }
-    .btn-contact-pill.whatsapp-pill:hover {
-      background: #16A34A !important;
-      transform: translateY(-2px) scale(1.03) !important;
     }
 
     /* TEAM DIRECTORY — SIMPLE CLEAN LIST */
