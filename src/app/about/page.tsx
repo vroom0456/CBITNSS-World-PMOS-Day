@@ -6,24 +6,22 @@ import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 
 const allTeamMembers = [
-  { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK', phone: '+91 85229 92585', tel: '+918522992585', email: 'n.nitheshkumar8106@gmail.com' },
-  { id: 'bs', name: 'Bandaru Sampath', role: 'Vice President', initials: 'BS', phone: '+91 72071 27045', tel: '+917207127045', email: 'sampathkavali45@gmail.com' },
-  { id: 'kh', name: 'Kusam Harinya Reddy', role: 'General Secretary', initials: 'KH', phone: '+91 63028 98414', tel: '+916302898414', email: 'harinyareddy.k@gmail.com' },
-  { id: 'va', name: 'Veldandi Aishwarya', role: 'Joint Secretary · Documentation', initials: 'VA', phone: '+91 73961 08692', tel: '+917396108692', email: 'aishwaryaveldandi21@gmail.com' },
-  { id: 'ss', name: 'Sai Sankeerth Reddy', role: 'Joint Secretary · Logistics', initials: 'SS', phone: '+91 94415 62832', tel: '+919441562832', email: 'saisankeerthreddy2610@gmail.com' },
-  { id: 'mf', name: 'Mohammad Fasiuddin', role: 'Treasurer', initials: 'MF', phone: '+91 63019 48215', tel: '+916301948215', email: 'fasiuddin3558@gmail.com' },
-  { id: 'sp', name: 'S. Sai Priya', role: 'Head · External Affairs', initials: 'SP', phone: '+91 63095 89152', tel: '+916309589152', email: '10bsaipriya@gmail.com' },
-  { id: 'tp', name: 'B. Teja Praharsha', role: 'Events & Outreach Head', initials: 'TP', phone: '+91 62810 11433', tel: '+916281011433', email: 'tejapraharsha23@gmail.com' },
-  { id: 'sr', name: 'Vummal Reddy Snehitha Reddy', role: 'Technical Head', initials: 'SR', phone: '+91 76750 21038', tel: '+917675021038', email: 'vummalreddysnehitha@gmail.com' },
-  { id: 'nr', name: 'Budhur Neha Reddy', role: 'Design Head', initials: 'NR', phone: '+91 98661 91349', tel: '+919866191349', email: 'budhurnehareddy@gmail.com' },
-  { id: 'vt', name: 'Varun Teja Cherukuthota', role: 'Media Head', initials: 'VT', phone: '+91 79814 67284', tel: '+917981467284', email: 'varuntejacherukuthota.0456@gmail.com' },
-  { id: 'ps', name: 'Rakuditi Purna Sandeep', role: 'Road Safety Coordinator', initials: 'PS', phone: '+91 63031 05090', tel: '+916303105090', email: 'purnasandeeprakuditi@gmail.com' },
-  { id: 'wa', name: 'Shaik Wasim Akram', role: 'Anti-Ragging Coordinator', initials: 'WA', phone: '+91 95028 98222', tel: '+919502898222', email: 'Shaikwasimakram20@gmail.com' },
+  { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK' },
+  { id: 'bs', name: 'Bandaru Sampath', role: 'Vice President', initials: 'BS' },
+  { id: 'kh', name: 'Kusam Harinya Reddy', role: 'General Secretary', initials: 'KH' },
+  { id: 'va', name: 'Veldandi Aishwarya', role: 'Joint Secretary · Documentation', initials: 'VA' },
+  { id: 'ss', name: 'Sai Sankeerth Reddy', role: 'Joint Secretary · Logistics', initials: 'SS' },
+  { id: 'mf', name: 'Mohammad Fasiuddin', role: 'Treasurer', initials: 'MF' },
+  { id: 'sp', name: 'S. Sai Priya', role: 'Head · External Affairs', initials: 'SP' },
+  { id: 'tp', name: 'B. Teja Praharsha', role: 'Events & Outreach Head', initials: 'TP' },
+  { id: 'sr', name: 'Vummal Reddy Snehitha Reddy', role: 'Technical Head', initials: 'SR' },
+  { id: 'nr', name: 'Budhur Neha Reddy', role: 'Design Head', initials: 'NR' },
+  { id: 'vt', name: 'Varun Teja Cherukuthota', role: 'Media Head', initials: 'VT' },
+  { id: 'ps', name: 'Rakuditi Purna Sandeep', role: 'Road Safety Coordinator', initials: 'PS' },
+  { id: 'wa', name: 'Shaik Wasim Akram', role: 'Anti-Ragging Coordinator', initials: 'WA' },
 ];
 
 export default function AboutPage() {
-  const [openMemberId, setOpenMemberId] = useState<string | null>(null);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -35,10 +33,6 @@ export default function AboutPage() {
     reveals.forEach(r => observer.observe(r));
     return () => observer.disconnect();
   }, []);
-
-  const toggleMember = (id: string) => {
-    setOpenMemberId(prev => (prev === id ? null : id));
-  };
 
   return (
     <>
@@ -58,26 +52,28 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 02 D. NOMINI — TOP EXECUTIVE SPOTLIGHT ── */}
-        <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: '#FFFFFF' }} aria-labelledby="support-section">
-          <div style={{ maxWidth: '840px', margin: '0 auto' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
-              <span className="section-tag">👑 Student Support &amp; Guidance</span>
+        {/* ── 02 D. NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
+        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="support-section">
+          <div style={{ maxWidth: '880px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <span className="section-tag">👑 Campus Support &amp; Guidance</span>
               <h2 id="support-section" className="section-title">Women&apos;s Administrator</h2>
-              <p className="section-desc">CBIT NSS Executive Body — Leading female student support &amp; personal guidance.</p>
+              <p className="section-desc">CBIT NSS Executive Body — Exclusive campus contact for female student support &amp; confidential personal guidance.</p>
             </div>
             
             <div className="women-admin-spotlight reveal">
               <div className="spotlight-top">
-                <span className="spotlight-badge">👑 Special Role · Student Support</span>
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)' }}>CBIT Executive Body</span>
+                <span className="spotlight-badge">👑 Primary Contact · Student Support</span>
+                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-navy)' }}>CBIT NSS Executive Body</span>
               </div>
               <div className="spotlight-body">
                 <div className="spotlight-avatar" aria-hidden="true">DN</div>
                 <div className="spotlight-info">
                   <p className="role">Women&apos;s Administrator</p>
                   <h3 className="name">D. Nomini</h3>
-                  <p className="desc">Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT.</p>
+                  <p className="desc">
+                    Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT. For any campus inquiries, health support, or confidential guidance, reach out directly below.
+                  </p>
                   <div className="spotlight-actions">
                     <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
                     <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email D. Nomini</a>
@@ -89,124 +85,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 03 TEAM DIRECTORY (UNIFIED LIST WITH DROPDOWN CONTACT INFO) ── */}
+        {/* ── 03 TEAM DIRECTORY (UNIFIED GRID WITHOUT DIRECT CONTACTS) ── */}
         <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="team-section">
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <span className="section-tag">CBIT NSS Team</span>
               <h2 id="team-section" className="section-title">Organising Committee</h2>
-              <p className="section-desc">Click on any team member to view their direct contact information.</p>
+              <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }} role="list">
-              {allTeamMembers.map((m) => {
-                const isOpen = openMemberId === m.id;
-                return (
-                  <div
-                    key={m.id}
-                    className={`member-dropdown-card ${isOpen ? 'open' : ''}`}
-                    style={{
-                      background: '#FFFFFF',
-                      border: '1.5px solid var(--border-light)',
-                      borderRadius: 'var(--r-md)',
-                      overflow: 'hidden',
-                      transition: 'all 0.25s ease',
-                      boxShadow: isOpen ? 'var(--shadow-card)' : 'var(--shadow-soft)',
-                    }}
-                    role="listitem"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => toggleMember(m.id)}
-                      aria-expanded={isOpen}
-                      style={{
-                        width: '100%',
-                        padding: '1.1rem 1.4rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        background: 'transparent',
-                        border: 'none',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        gap: '1rem'
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div
-                          style={{
-                            width: '42px',
-                            height: '42px',
-                            borderRadius: '50%',
-                            background: 'var(--soft-mint-bg)',
-                            color: 'var(--nss-navy)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '0.92rem',
-                            fontWeight: 800,
-                            flexShrink: 0,
-                            border: '2px solid var(--nss-blue-accent)'
-                          }}
-                        >
-                          {m.initials}
-                        </div>
-                        <div>
-                          <span style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.1rem' }}>
-                            {m.role}
-                          </span>
-                          <strong style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', display: 'block' }}>
-                            {m.name}
-                          </strong>
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: '0.85rem',
-                          color: 'var(--nss-blue-accent)',
-                          fontWeight: 800,
-                          transition: 'transform 0.25s ease',
-                          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
-                        }}
-                        aria-hidden="true"
-                      >
-                        ▼
-                      </span>
-                    </button>
-
-                    {/* DROPDOWN CONTACT INFO */}
-                    {isOpen && (
-                      <div
-                        style={{
-                          padding: '0.8rem 1.4rem 1.2rem',
-                          borderTop: '1px solid var(--border-light)',
-                          background: 'var(--soft-teal-bg)',
-                          display: 'flex',
-                          gap: '0.75rem',
-                          flexWrap: 'wrap',
-                          alignItems: 'center',
-                          animation: 'fade-in 0.25s ease'
-                        }}
-                      >
-                        <a
-                          href={`tel:${m.tel}`}
-                          className="btn-contact-pill"
-                          style={{ background: '#FFFFFF', padding: '0.45rem 0.95rem', fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-navy)', borderRadius: '9999px', border: '1px solid var(--soft-teal-border)' }}
-                        >
-                          📞 {m.phone}
-                        </a>
-                        <a
-                          href={`mailto:${m.email}`}
-                          className="btn-contact-pill"
-                          style={{ background: 'var(--nss-navy)', padding: '0.45rem 0.95rem', fontSize: '0.82rem', fontWeight: 800, color: '#FFFFFF', borderRadius: '9999px' }}
-                        >
-                          ✉️ Email {m.name.split(' ')[0]}
-                        </a>
-                      </div>
-                    )}
+            <div className="team-grid stagger-grid" role="list">
+              {allTeamMembers.map((m) => (
+                <div key={m.id} className="member-card reveal" role="listitem">
+                  <div className="member-top">
+                    <div className="member-avatar" aria-hidden="true">{m.initials}</div>
+                    <div className="member-meta">
+                      <span className="role-pill">{m.role}</span>
+                      <strong className="name">{m.name}</strong>
+                    </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>

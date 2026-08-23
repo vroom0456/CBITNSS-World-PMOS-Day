@@ -395,34 +395,44 @@
     .resource-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
 
     /* WOMEN ADMIN SPOTLIGHT CARD */
+    /* WOMEN ADMIN SPOTLIGHT CARD */
     .women-admin-spotlight{
-      background: linear-gradient(135deg, #EBF2F5 0%, #FFFFFF 100%);
+      background: linear-gradient(135deg, #F0F7F9 0%, #FFFFFF 60%, #F5FAFC 100%);
       border: 2px solid var(--soft-teal-border);
       border-radius: var(--r-lg);
       padding: 2.2rem 2.5rem;
-      margin-bottom: 2.8rem;
-      box-shadow: 0 10px 32px rgba(58,43,39,0.08);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 32px rgba(15,56,84,0.08);
       position: relative;
       overflow: hidden;
       transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease;
       text-align: left;
     }
+    .women-admin-spotlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, #F59E0B 0%, var(--soft-teal-accent) 100%);
+    }
     .women-admin-spotlight:hover{
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15,56,84,0.16);
+      box-shadow: 0 16px 40px rgba(15,56,84,0.14);
     }
     .spotlight-top{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
     .spotlight-badge{
-      background: var(--soft-teal-accent);
-      color: #fff;
-      padding: 0.35rem 1.1rem;
+      background: linear-gradient(135deg, #D97706, #F59E0B);
+      color: #FFFFFF;
+      padding: 0.38rem 1.1rem;
       border-radius: var(--r-pill);
       font-size: 0.76rem;
       font-weight: 800;
@@ -431,29 +441,33 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      box-shadow: 0 3px 10px rgba(217,119,6,0.22);
     }
     .spotlight-body{
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 1.8rem;
     }
     .spotlight-avatar{
-      width: 72px;
-      height: 72px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--soft-teal-accent), var(--nss-navy));
-      color: #fff;
-      background: #F59E0B;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       color: #FFFFFF;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.32);
+      border: 3px solid #FFFFFF;
+    }
+    .spotlight-info {
+      flex: 1;
     }
     .spotlight-info h3.name {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--nss-navy);
       margin-bottom: 0.2rem;
@@ -464,13 +478,13 @@
       color: #D97706;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
     .spotlight-info p.desc {
-      font-size: 0.9rem;
+      font-size: 0.93rem;
       color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
     }
     .spotlight-actions {
       display: flex;
@@ -483,8 +497,9 @@
       border-color: #25D366 !important;
     }
     @media(max-width:650px){
-      .spotlight-body{ flex-direction: column; text-align: center; }
-      .spotlight-actions{ justify-content: center; }
+      .spotlight-body{ flex-direction: column; align-items: center; text-align: center; }
+      .spotlight-actions{ justify-content: center; width: 100%; flex-direction: column; }
+      .spotlight-actions .btn-contact-pill { justify-content: center; width: 100%; }
     }
 
     /* TEAM — Compact, Sized Down Cards */
