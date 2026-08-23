@@ -136,12 +136,12 @@ export default function SelfTestPage() {
             </div>
 
             {/* TOP NOTICE */}
-            <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.95rem 1.3rem', borderRadius: 'var(--r-sm)', marginBottom: '2rem', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.6, boxShadow: 'var(--shadow-soft)' }}>
+            <div className="quiz-top-notice" style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.95rem 1.3rem', borderRadius: 'var(--r-sm)', marginBottom: '2rem', fontSize: '0.88rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.6, boxShadow: 'var(--shadow-soft)' }}>
               🛡️ <strong>Educational Awareness Tool:</strong> No personal data or answers are stored. This self-check helps you evaluate symptom patterns to prepare for a healthcare consultation.
             </div>
 
             {/* WIZARD CARD */}
-            <div style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: '2.4rem 2rem', boxShadow: 'var(--shadow-card)' }}>
+            <div className={`wizard-card ${quizFinished ? 'quiz-results-mode' : ''}`}>
 
               {!quizFinished ? (
                 <div>
@@ -224,14 +224,14 @@ export default function SelfTestPage() {
 
                   {/* CATEGORY-SPECIFIC TAILORED RECOMMENDATIONS */}
                   {flagCount > 0 && (
-                    <div style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: 'var(--r-md)', padding: '1.5rem', marginBottom: '1.8rem' }}>
+                    <div className="result-block-box result-recommendations-box">
                       <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         📋 Tailored Clinical Recommendations
                       </h3>
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {isCycleFlagged && (
-                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               🩸 Menstrual Cycle Care
                             </strong>
@@ -242,7 +242,7 @@ export default function SelfTestPage() {
                         )}
 
                         {isSkinFlagged && (
-                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #7C5CFC' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #7C5CFC' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               ✨ Androgenic &amp; Skin Care
                             </strong>
@@ -253,7 +253,7 @@ export default function SelfTestPage() {
                         )}
 
                         {isMetabolicFlagged && (
-                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #059669' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #059669' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               ⚡ Metabolic &amp; Glucose Sensitivity Care
                             </strong>
@@ -264,7 +264,7 @@ export default function SelfTestPage() {
                         )}
 
                         {isEmotionalFlagged && (
-                          <div style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #9333EA' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #9333EA' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               🧘 Emotional Wellbeing &amp; Stress Axis Care
                             </strong>
@@ -278,7 +278,7 @@ export default function SelfTestPage() {
                   )}
 
                   {/* ── PROMINENT MEDICAL DISCLAIMER BOX UNDER RECOMMENDATIONS ── */}
-                  <div style={{ background: '#FFFBEB', border: '1.5px solid #FCD34D', borderRadius: 'var(--r-md)', padding: '1.4rem 1.5rem', marginBottom: '2rem', boxShadow: '0 4px 16px rgba(245, 158, 11, 0.1)' }}>
+                  <div className="result-disclaimer-box">
                     <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>🛡️</span>
                       <div>
@@ -293,7 +293,7 @@ export default function SelfTestPage() {
                   </div>
 
                   {/* POINTERS TO BRING TO YOUR DOCTOR */}
-                  <div style={{ background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-md)', padding: '1.6rem', marginBottom: '1.8rem' }}>
+                  <div className="result-block-box result-pointers-box">
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>
                       📋 Key Pointers to Bring to Your Doctor
                     </h3>

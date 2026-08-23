@@ -51,7 +51,7 @@ export default function AskPage() {
         <section style={{ padding: '3rem 0 4rem', background: '#FFFFFF' }}>
           <div className="container" style={{ maxWidth: '780px', margin: '0 auto', padding: '0 1.5rem' }}>
             
-            <div style={{ background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-lg)', padding: 'clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)', boxShadow: 'var(--shadow-card)' }}>
+            <div className="ask-form-card">
               
               <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
                 <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }}>🔒</span>
@@ -61,7 +61,7 @@ export default function AskPage() {
                 </p>
               </div>
 
-              <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.85rem 1.2rem', borderRadius: 'var(--r-sm)', marginBottom: '1.8rem', fontSize: '0.86rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.55 }}>
+              <div className="ask-notice-box" style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.85rem 1.2rem', borderRadius: 'var(--r-sm)', marginBottom: '1.8rem', fontSize: '0.86rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.55 }}>
                 🛡️ <strong>Educational Notice:</strong> Doctor responses provide general medical awareness and guidance — they do not replace in-person clinical diagnosis or emergency care.
               </div>
 

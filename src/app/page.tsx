@@ -87,15 +87,15 @@ export default function HomePage() {
               <p className="section-desc">Sourced from the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.</p>
             </div>
 
-            <div className="row g-4" id="stats-banner">
+            <div id="stats-banner">
               {[
                 { num: '1 in 8', label: 'Reproductive Age Women', desc: 'Affects up to 13% of women worldwide, making it the most prevalent hormonal condition.', src: 'Monash Guideline 2023', srcDesc: 'Epidemiology data from 2023 International Evidence-Based Guideline for the Assessment and Management of PCOS/PMOS.' },
                 { num: '170M+', label: 'Worldwide Impact', desc: 'Over 170 million individuals globally experience reproductive, metabolic, or emotional symptoms.', src: 'WHO & Monash Data 2026', srcDesc: 'Global burden statistics published by WHO and Monash University international research consensus.' },
                 { num: '2026', label: 'Terminology Update', desc: 'International consensus renamed the condition "PMOS" to reflect multi-system metabolic and endocrine health.', src: '2026 PMOS Nomenclature Consensus', srcDesc: 'International terminology update clarifying that ovaries are not the sole origin of the condition.' },
               ].map((s, i) => (
-                <div key={i} className="col-12 col-md-4">
-                  <div className="stat-box reveal h-100">
-                    <span className="num-val">{s.num}</span>
+                <div key={i} className="stat-box reveal">
+                  <span className="num-val">{s.num}</span>
+                  <div className="stat-box-text">
                     <h3>{s.label}</h3>
                     <p>{s.desc}</p>
                     <button className="source-trigger-btn" onClick={() => openSourceModal(s.src, s.srcDesc)}>
@@ -117,7 +117,7 @@ export default function HomePage() {
               <p className="section-desc">Each topic has its own dedicated page.</p>
             </div>
 
-            <div className="row g-4">
+            <div className="nav-hub-grid">
               {[
                 { num: '01', icon: '🔬', tag: 'Medical Guide',   title: 'Understand PMOS & 4 Pillars',    desc: 'Why the name changed from PCOS to PMOS and the four multi-system health pillars.', link: '/understand' },
                 { num: '02', icon: '🩺', tag: 'Symptom Care',    title: 'Symptoms & Clinical Care',        desc: 'Evidence-based symptoms, exercise response, gut microbiome and lab evaluations.', link: '/symptoms' },
@@ -126,24 +126,18 @@ export default function HomePage() {
                 { num: '05', icon: '🌸', tag: 'Student Privacy', title: 'Ask a Doctor Anonymously',       desc: '100% anonymous medical doubt submission answered live by certified gynaecologists.', link: '/ask' },
                 { num: '06', icon: '📚', tag: 'Campus Kit',      title: 'Research & Campus Kit',          desc: 'Monash citations, printable posters and the offline QR reference kit.', link: '/resources' },
               ].map((card, idx) => (
-                <div key={idx} className="col-12 col-md-6 col-lg-4">
-                  <Link href={card.link} className="nav-hub-row reveal h-100">
-                    {/* Desktop: icon+tag visible. Mobile: hidden via CSS */}
-                    <span className="nhr-icon">{card.icon}</span>
-                    <span className="nhr-tag">{card.tag}</span>
-
-                    {/* Always visible */}
-                    <div className="nhr-content">
-                      <span className="nhr-num">{card.num}</span>
-                      <div className="nhr-text">
-                        <strong className="nhr-title">{card.title}</strong>
-                        <span className="nhr-desc">{card.desc}</span>
-                      </div>
+                <a key={idx} href={card.link} className="nav-hub-row reveal">
+                  <span className="nhr-icon">{card.icon}</span>
+                  <span className="nhr-tag">{card.tag}</span>
+                  <div className="nhr-content">
+                    <span className="nhr-num">{card.num}</span>
+                    <div className="nhr-text">
+                      <strong className="nhr-title">{card.title}</strong>
+                      <span className="nhr-desc">{card.desc}</span>
                     </div>
-
-                    <span className="nhr-arrow" aria-hidden>›</span>
-                  </Link>
-                </div>
+                  </div>
+                  <span className="nhr-arrow" aria-hidden>›</span>
+                </a>
               ))}
             </div>
           </div>
