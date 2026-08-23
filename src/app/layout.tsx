@@ -39,6 +39,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+import IntroSplash from "@/components/layout/IntroSplash";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,7 +51,10 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#F5EFEB" />
       </head>
-      <body>{children}</body>
+      <body>
+        <IntroSplash />
+        {children}
+      </body>
     </html>
   );
 }
