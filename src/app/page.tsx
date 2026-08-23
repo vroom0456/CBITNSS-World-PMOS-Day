@@ -49,14 +49,13 @@ export default function HomePage() {
             </p>
 
             <div className="hero-cta-row">
-              <button
+              <Link
+                href="/ask"
                 className="btn-primary-cta"
-                onClick={() => window.dispatchEvent(new Event('openModal'))}
-                style={{ fontSize: '1.05rem', padding: '0.9rem 2.2rem', boxShadow: '0 8px 28px rgba(124, 92, 252, 0.45)' }}
-                aria-haspopup="dialog"
+                style={{ fontSize: '1.05rem', padding: '0.9rem 2.2rem', boxShadow: '0 8px 28px rgba(86, 124, 141, 0.35)' }}
               >
-                🌸 Ask an Anonymous Question →
-              </button>
+                Ask an Anonymous Question →
+              </Link>
             </div>
           </div>
         </section>
@@ -176,13 +175,12 @@ export default function HomePage() {
               <p className="section-desc" style={{ marginBottom: '2rem', maxWidth: '500px', margin: '0 auto 2rem' }}>
                 Submit anonymously. Your question will be compiled and presented to a medical panel at World PMOS Day 2026.
               </p>
-              <button
+              <Link
+                href="/ask"
                 className="btn-primary-cta"
-                onClick={() => window.dispatchEvent(new Event('openModal'))}
-                aria-haspopup="dialog"
               >
                 Ask anonymously →
-              </button>
+              </Link>
             </div>
           </div>
         </section>
