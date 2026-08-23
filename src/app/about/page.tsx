@@ -9,6 +9,7 @@ const allTeamMembers = [
   { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK' },
   { id: 'bs', name: 'Bandaru Sampath', role: 'Vice President', initials: 'BS' },
   { id: 'kh', name: 'Kusam Harinya Reddy', role: 'General Secretary', initials: 'KH' },
+  { id: 'dn', name: 'Derangula Nomini', role: "Women's Administrator", initials: 'DN' },
   { id: 'va', name: 'Veldandi Aishwarya', role: 'Joint Secretary · Documentation', initials: 'VA' },
   { id: 'ss', name: 'Sai Sankeerth Reddy', role: 'Joint Secretary · Logistics', initials: 'SS' },
   { id: 'mf', name: 'Mohammad Fasiuddin', role: 'Treasurer', initials: 'MF' },
