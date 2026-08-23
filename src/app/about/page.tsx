@@ -85,10 +85,6 @@ export default function AboutPage() {
             </div>
             
             <div className="women-admin-spotlight reveal">
-              <div className="spotlight-top">
-                <span className="spotlight-badge">👑 Primary Contact · Student Support</span>
-                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-navy)' }}>CBIT NSS Executive Body</span>
-              </div>
               <div className="spotlight-body">
                 <div className="spotlight-avatar" aria-hidden="true">DN</div>
                 <div className="spotlight-info">
