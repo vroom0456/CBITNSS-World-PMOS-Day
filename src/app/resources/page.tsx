@@ -147,7 +147,7 @@ export default function ResourcesPage() {
             <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.7 }}>{selectedSourceContent}</p>
             <button
               onClick={() => setSourceDrawerOpen(false)}
-              style={{ marginTop: '1.5rem', background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.65rem 1.4rem', borderRadius: 'var(--r-pill)', fontWeight: 800, width: '100%' }}
+              className="btn-modal-close-action"
             >
               Close Citation
             </button>

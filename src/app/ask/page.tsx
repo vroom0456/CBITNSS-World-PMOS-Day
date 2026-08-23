@@ -100,8 +100,9 @@ export default function AskPage() {
 
                   <button
                     type="submit"
+                    className="btn-send-general"
                     disabled={submitting}
-                    style={{ width: '100%', background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.95rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.96rem', cursor: submitting ? 'not-allowed' : 'pointer', border: 'none' }}
+                    style={{ cursor: submitting ? 'not-allowed' : 'pointer' }}
                   >
                     {submitting ? '⏳ Submitting Anonymously...' : '🌸 Submit Question Anonymously'}
                   </button>
@@ -117,7 +118,8 @@ export default function AskPage() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    style={{ background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.75rem 1.6rem', borderRadius: 'var(--r-pill)', fontWeight: 800, cursor: 'pointer' }}
+                    className="btn-secondary-action"
+                    style={{ cursor: 'pointer' }}
                   >
                     🌸 Submit Another Doubt
                   </button>

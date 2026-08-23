@@ -999,12 +999,36 @@
       .myth-body-content { font-size: 13px; padding-top: 12px; margin-top: 10px; line-height: 1.55; }
 
       /* ─────────────────────────────────────────────────────────
-         FORMS & BUTTON RATIOS — compact 38–40px heights
+         FORMS & BUTTON RATIOS — compact 36–40px heights on ALL pages
       ───────────────────────────────────────────────────────── */
-      .btn-send-general, .btn-submit-modal, .btn-calc-quiz {
-        min-height: 40px !important; height: 40px !important;
-        border-radius: 20px !important; font-size: 13.5px !important;
-        font-weight: 700 !important; width: 100%;
+      .btn-send-general,
+      .btn-submit-modal,
+      .btn-calc-quiz,
+      .btn-secondary-action,
+      .btn-modal-close-action {
+        min-height: 40px !important;
+        height: 40px !important;
+        padding: 0 16px !important;
+        font-size: 13.5px !important;
+        font-weight: 700 !important;
+        border-radius: 20px !important;
+        width: 100% !important;
+        border: none !important;
+      }
+
+      .btn-print-action,
+      .btn-retake-action,
+      .btn-sec-link {
+        min-height: 36px !important;
+        height: 36px !important;
+        padding: 0 14px !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        border-radius: 18px !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       /* Footer links — visible on mobile in grid */

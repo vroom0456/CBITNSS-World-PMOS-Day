@@ -307,7 +307,8 @@ export default function SelfTestPage() {
                     <div style={{ textAlign: 'center' }}>
                       <button
                         onClick={handlePrint}
-                        style={{ background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.7rem 1.5rem', borderRadius: 'var(--r-pill)', fontWeight: 800, fontSize: '0.88rem', cursor: 'pointer', border: 'none' }}
+                        className="btn-print-action"
+                        style={{ cursor: 'pointer' }}
                       >
                         🖨️ Save / Print Checklist for Appointment
                       </button>
@@ -318,7 +319,8 @@ export default function SelfTestPage() {
                   <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <button
                       onClick={handleResetQuiz}
-                      style={{ background: 'var(--nss-blue-accent)', color: '#FFFFFF', padding: '0.75rem 1.8rem', borderRadius: 'var(--r-pill)', fontWeight: 800, cursor: 'pointer', border: 'none' }}
+                      className="btn-retake-action"
+                      style={{ cursor: 'pointer' }}
                     >
                       🔄 Retake Self-Check
                     </button>
