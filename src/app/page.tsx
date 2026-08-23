@@ -96,21 +96,25 @@ export default function HomePage() {
               <p className="section-desc">Sourced from the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.</p>
             </div>
 
-            <div id="stats-banner" className="stats-cards-grid">
-              {[
-                { num: '1 in 8', label: 'Reproductive Age Women', desc: 'Affects up to 13% of women worldwide, making it the most prevalent hormonal condition.', src: 'Monash Guideline 2023', srcDesc: 'Epidemiology data from 2023 International Evidence-Based Guideline for the Assessment and Management of PCOS/PMOS.' },
-                { num: '170M+', label: 'Worldwide Impact', desc: 'Over 170 million individuals globally experience reproductive, metabolic, or emotional symptoms.', src: 'WHO & Monash Data 2026', srcDesc: 'Global burden statistics published by WHO and Monash University international research consensus.' },
-                { num: '2026', label: 'Terminology Update', desc: 'International consensus renamed the condition "PMOS" to reflect multi-system metabolic and endocrine health.', src: '2026 PMOS Nomenclature Consensus', srcDesc: 'International terminology update clarifying that ovaries are not the sole origin of the condition.' },
-              ].map((s, i) => (
-                <div key={i} className="stat-box reveal">
-                  <span className="num-val">{s.num}</span>
-                  <h3 className="stat-label">{s.label}</h3>
-                  <p className="stat-desc">{s.desc}</p>
-                  <button className="source-trigger-btn" onClick={() => openSourceModal(s.src, s.srcDesc)}>
-                    ⓘ Sources
-                  </button>
-                </div>
-              ))}
+            <div id="stats-banner">
+              <div className="row g-3 g-md-4">
+                {[
+                  { num: '1 in 8', label: 'Reproductive Age Women', desc: 'Affects up to 13% of women worldwide, making it the most prevalent hormonal condition.', src: 'Monash Guideline 2023', srcDesc: 'Epidemiology data from 2023 International Evidence-Based Guideline for the Assessment and Management of PCOS/PMOS.' },
+                  { num: '170M+', label: 'Worldwide Impact', desc: 'Over 170 million individuals globally experience reproductive, metabolic, or emotional symptoms.', src: 'WHO & Monash Data 2026', srcDesc: 'Global burden statistics published by WHO and Monash University international research consensus.' },
+                  { num: '2026', label: 'Terminology Update', desc: 'International consensus renamed the condition "PMOS" to reflect multi-system metabolic and endocrine health.', src: '2026 PMOS Nomenclature Consensus', srcDesc: 'International terminology update clarifying that ovaries are not the sole origin of the condition.' },
+                ].map((s, i) => (
+                  <div key={i} className="col-12 col-md-4">
+                    <div className="stat-box reveal h-100">
+                      <span className="num-val">{s.num}</span>
+                      <h3>{s.label}</h3>
+                      <p>{s.desc}</p>
+                      <button className="source-trigger-btn" onClick={() => openSourceModal(s.src, s.srcDesc)}>
+                        ⓘ Sources
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
