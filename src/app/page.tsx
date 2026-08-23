@@ -34,7 +34,8 @@ export default function HomePage() {
             </div>
 
             <h1 id="hero-heading" className="hero-h1">
-              Understanding <span className="accent-text">PCOD &amp; PMOS</span> 🌸
+              Understanding<br />
+              <span className="accent-text">PCOD &amp; PMOS</span> 🌸
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
