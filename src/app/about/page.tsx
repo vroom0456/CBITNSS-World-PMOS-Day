@@ -75,8 +75,8 @@ export default function AboutPage() {
                     Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT. For any campus inquiries, health support, or confidential guidance, reach out directly below.
                   </p>
                   <div className="spotlight-actions">
-                    <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
-                    <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill">✉️ Email D. Nomini</a>
+                    <a href="tel:+919676648023" className="btn-contact-pill phone-pill">📞 +91 96766 48023</a>
+                    <a href="mailto:nominiderangula@gmail.com" className="btn-contact-pill email-pill">✉️ Email D. Nomini</a>
                     <a href="https://wa.me/919676648023?text=Hi%20Nomini,%20I%20have%20a%20query%20regarding%20PMOS" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
                   </div>
                 </div>

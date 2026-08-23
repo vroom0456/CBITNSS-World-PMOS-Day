@@ -395,14 +395,13 @@
     .resource-card p{font-size:0.84rem;color:var(--text-body);line-height:1.62;}
 
     /* WOMEN ADMIN SPOTLIGHT CARD */
-    /* WOMEN ADMIN SPOTLIGHT CARD */
     .women-admin-spotlight{
-      background: linear-gradient(135deg, #F0F7F9 0%, #FFFFFF 60%, #F5FAFC 100%);
-      border: 2px solid var(--soft-teal-border);
+      background: linear-gradient(135deg, #FFF0F5 0%, #F5F3FF 50%, #FFFFFF 100%);
+      border: 2px solid #E879F9;
       border-radius: var(--r-lg);
       padding: 2.2rem 2.5rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 10px 32px rgba(15,56,84,0.08);
+      box-shadow: 0 12px 36px rgba(217, 70, 239, 0.12);
       position: relative;
       overflow: hidden;
       transition: transform 0.35s var(--ease-spring), box-shadow 0.3s ease;
@@ -413,13 +412,13 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 5px;
+      width: 6px;
       height: 100%;
-      background: linear-gradient(180deg, #F59E0B 0%, var(--soft-teal-accent) 100%);
+      background: linear-gradient(180deg, #EC4899 0%, #8B5CF6 100%);
     }
     .women-admin-spotlight:hover{
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15,56,84,0.14);
+      box-shadow: 0 18px 48px rgba(217, 70, 239, 0.22);
     }
     .spotlight-top{
       display: flex;
@@ -430,18 +429,18 @@
       gap: 0.5rem;
     }
     .spotlight-badge{
-      background: linear-gradient(135deg, #D97706, #F59E0B);
+      background: linear-gradient(135deg, #DB2777 0%, #9333EA 100%);
       color: #FFFFFF;
-      padding: 0.38rem 1.1rem;
+      padding: 0.42rem 1.2rem;
       border-radius: var(--r-pill);
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 3px 10px rgba(217,119,6,0.22);
+      box-shadow: 0 4px 14px rgba(219, 39, 119, 0.3);
     }
     .spotlight-body{
       display: flex;
@@ -449,39 +448,39 @@
       gap: 1.8rem;
     }
     .spotlight-avatar{
-      width: 76px;
-      height: 76px;
+      width: 78px;
+      height: 78px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      background: linear-gradient(135deg, #EC4899 0%, #7C3AED 100%);
       color: #FFFFFF;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.32);
+      box-shadow: 0 8px 22px rgba(236, 72, 153, 0.38);
       border: 3px solid #FFFFFF;
     }
     .spotlight-info {
       flex: 1;
     }
     .spotlight-info h3.name {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: var(--nss-navy);
       margin-bottom: 0.2rem;
     }
     .spotlight-info p.role {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-weight: 800;
-      color: #D97706;
+      color: #BE185D;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 0.5rem;
     }
     .spotlight-info p.desc {
-      font-size: 0.93rem;
+      font-size: 0.94rem;
       color: var(--text-body);
       line-height: 1.65;
       margin-bottom: 1.2rem;
@@ -491,15 +490,38 @@
       gap: 0.8rem;
       flex-wrap: wrap;
     }
-    .whatsapp-pill {
-      background: #25D366 !important;
+    .btn-contact-pill.phone-pill {
+      background: linear-gradient(135deg, #7C3AED, #6D28D9) !important;
       color: #FFFFFF !important;
-      border-color: #25D366 !important;
+      border: none !important;
+      padding: 0.55rem 1.1rem !important;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3) !important;
     }
-    @media(max-width:650px){
-      .spotlight-body{ flex-direction: column; align-items: center; text-align: center; }
-      .spotlight-actions{ justify-content: center; width: 100%; flex-direction: column; }
-      .spotlight-actions .btn-contact-pill { justify-content: center; width: 100%; }
+    .btn-contact-pill.phone-pill:hover {
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.45) !important;
+    }
+    .btn-contact-pill.email-pill {
+      background: linear-gradient(135deg, #0284C7, #0369A1) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      padding: 0.55rem 1.1rem !important;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+    }
+    .btn-contact-pill.email-pill:hover {
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.45) !important;
+    }
+    .btn-contact-pill.whatsapp-pill {
+      background: linear-gradient(135deg, #25D366, #16A34A) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      padding: 0.55rem 1.1rem !important;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3) !important;
+    }
+    .btn-contact-pill.whatsapp-pill:hover {
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45) !important;
     }
 
     /* TEAM — Compact, Sized Down Cards */
@@ -1187,19 +1209,19 @@
       .member-meta .role-pill { font-size: 9.5px !important; font-weight: 800 !important; }
       .btn-contact-pill { padding: 0 10px !important; height: 28px !important; font-size: 11px !important; border-radius: 9999px !important; display: inline-flex !important; align-items: center !important; }
       .women-admin-spotlight {
-        background: linear-gradient(135deg, #FFFFFF 0%, #FFFBEB 100%) !important;
-        border: 1.5px solid #F59E0B !important;
-        border-radius: 14px !important;
-        padding: 16px !important;
+        background: linear-gradient(135deg, #FFF0F5 0%, #F5F3FF 100%) !important;
+        border: 2px solid #E879F9 !important;
+        border-radius: 18px !important;
+        padding: 20px 16px !important;
         margin-bottom: 1.8rem !important;
-        box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1) !important;
+        box-shadow: 0 8px 24px rgba(217, 70, 239, 0.15) !important;
       }
-      .spotlight-body { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .spotlight-avatar { width: 46px !important; height: 46px !important; font-size: 1.1rem !important; }
-      .spotlight-info h3.name { font-size: 16px !important; }
-      .spotlight-info p.role { font-size: 11px !important; color: #D97706 !important; }
-      .spotlight-info p.desc { font-size: 12.5px !important; line-height: 1.5 !important; }
-      .spotlight-actions { flex-direction: column; gap: 6px; width: 100%; }
+      .spotlight-body { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .spotlight-avatar { width: 56px !important; height: 56px !important; font-size: 1.2rem !important; background: linear-gradient(135deg, #EC4899, #7C3AED) !important; color: #FFFFFF !important; }
+      .spotlight-info h3.name { font-size: 18px !important; color: var(--nss-navy) !important; }
+      .spotlight-info p.role { font-size: 12px !important; color: #BE185D !important; }
+      .spotlight-info p.desc { font-size: 13px !important; line-height: 1.55 !important; }
+      .spotlight-actions { flex-direction: column; gap: 8px; width: 100%; }
 
       /* ── WIZARD & CHECK PAGE BUTTONS (SCALED RATIOS) ── */
       .wizard-option-btn { padding: 10px 12px !important; min-height: 40px !important; font-size: 13px !important; font-weight: 600 !important; border-radius: 8px !important; }
