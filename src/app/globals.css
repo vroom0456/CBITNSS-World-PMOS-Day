@@ -524,8 +524,76 @@
       box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45) !important;
     }
 
-    /* TEAM — Compact, Sized Down Cards */
-    .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%, 210px),1fr));gap:1rem;margin-top:1rem;text-align:left;}
+    /* TEAM DIRECTORY — ORGANIZED UNIFIED LIST */
+    .team-list-container {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: 0 10px 32px rgba(45, 27, 78, 0.05);
+    }
+    .team-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.6rem;
+      border-bottom: 1px solid #F0EBF8;
+      transition: background 0.2s ease;
+    }
+    .team-list-item:last-child {
+      border-bottom: none;
+    }
+    .team-list-item:hover {
+      background: #F9F7FD;
+    }
+    .team-list-user {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .team-list-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7C5CFC, #6D28D9);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+    }
+    .team-list-name {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--nss-navy);
+    }
+    .team-list-role {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #7C5CFC;
+      background: #EDE8F5;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--r-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: right;
+    }
+    @media(max-width: 650px) {
+      .team-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.95rem 1.2rem;
+      }
+      .team-list-role {
+        align-self: flex-start;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.75rem;
+      }
+    }
     .member-card{background:var(--card-white);border:1.5px solid var(--border-light);border-radius:var(--r-md);padding:1.1rem 1rem;transition:all 0.35s var(--ease-spring);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-soft);}
     .member-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--nss-navy),var(--soft-teal-accent));transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease-out);}
     .member-card:hover{transform:translateY(-5px);border-color:rgba(86,124,141,0.25);box-shadow:0 8px 24px rgba(45,48,146,0.08);}

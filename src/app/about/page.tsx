@@ -85,25 +85,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 03 TEAM DIRECTORY (UNIFIED GRID WITHOUT DIRECT CONTACTS) ── */}
+        {/* ── 03 TEAM DIRECTORY (ORGANIZED UNIFIED LIST) ── */}
         <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="team-section">
-          <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '880px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <span className="section-tag">CBIT NSS Team</span>
               <h2 id="team-section" className="section-title">Organising Committee</h2>
               <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
             </div>
 
-            <div className="team-grid stagger-grid" role="list">
+            <div className="team-list-container reveal" role="list">
               {allTeamMembers.map((m) => (
-                <div key={m.id} className="member-card reveal" role="listitem">
-                  <div className="member-top">
-                    <div className="member-avatar" aria-hidden="true">{m.initials}</div>
-                    <div className="member-meta">
-                      <span className="role-pill">{m.role}</span>
-                      <strong className="name">{m.name}</strong>
-                    </div>
+                <div key={m.id} className="team-list-item" role="listitem">
+                  <div className="team-list-user">
+                    <div className="team-list-avatar" aria-hidden="true">{m.initials}</div>
+                    <strong className="team-list-name">{m.name}</strong>
                   </div>
+                  <span className="team-list-role">{m.role}</span>
                 </div>
               ))}
             </div>
