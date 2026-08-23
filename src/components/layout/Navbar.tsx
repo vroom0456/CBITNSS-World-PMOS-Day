@@ -113,7 +113,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ── MOBILE BOTTOM NAV — 5 direct tabs ── */}
+      {/* ── MOBILE BOTTOM NAV — 6 direct tabs ── */}
       <div className="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
         <Link href="/" className={pathname === '/' ? 'active' : ''}>
           <span className="bnav-icon">⌂</span>
@@ -134,6 +134,10 @@ export default function Navbar() {
         <Link href="/ask" className={pathname === '/ask' ? 'active' : ''}>
           <span className="bnav-icon">💬</span>
           <span>Ask</span>
+        </Link>
+        <Link href="/about" className={pathname === '/about' ? 'active' : ''}>
+          <span className="bnav-icon">👥</span>
+          <span>About</span>
         </Link>
       </div>
 

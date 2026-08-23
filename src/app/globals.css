@@ -1232,18 +1232,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 2px;
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 600;
   text-decoration: none;
   background: transparent;
   border: none;
-  padding: 6px 4px;
+  padding: 5px 2px;
   border-radius: 0;
-  /* Full 44px interaction target */
+  /* Full interaction target */
   min-height: 44px;
-  min-width: 56px;
+  min-width: 44px;
   flex: 1;
   cursor: pointer;
   letter-spacing: 0.01em;
