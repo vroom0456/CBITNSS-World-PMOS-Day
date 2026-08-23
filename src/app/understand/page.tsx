@@ -175,9 +175,9 @@ export default function UnderstandPage() {
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="support-heading">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">04 — Supporting someone</span>
-              <h2 id="support-heading" className="section-title">How to support <span className="accent">someone with PCOS</span></h2>
-              <p className="section-desc">Empathetic, evidence-informed support from those around them matters.</p>
+              <span className="section-tag">04 — Care &amp; Support</span>
+              <h2 id="support-heading" className="section-title">For People Who <span className="accent">Care About Women</span></h2>
+              <p className="section-desc">Empathetic, evidence-informed support from partners, family, friends and colleagues matters.</p>
             </div>
 
             <div style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '2rem 1.8rem' }}>

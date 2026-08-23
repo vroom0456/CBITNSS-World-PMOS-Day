@@ -34,8 +34,7 @@ export default function HomePage() {
             </div>
 
             <h1 id="hero-heading" className="hero-h1">
-              Your health deserves<br />
-              to be <span className="accent-text">understood.</span>
+              Understanding <span className="accent-text">PCOD &amp; PMOS</span> 🌸
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
@@ -45,16 +44,18 @@ export default function HomePage() {
             </div>
 
             <p className="hero-desc">
-              Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal conditions affecting women — yet often misunderstood or undiagnosed. This World PMOS Day, explore reliable, evidence-based information about causes, symptoms and care.
+              Polycystic Ovary Syndrome (PCOS/PCOD) affects 1 in 5 young women. CBIT NSS brings you a clear, evidence-backed guide and an anonymous Q&amp;A window for your personal health doubts.
             </p>
 
             <div className="hero-cta-row">
-              <Link href="/understand" className="btn-primary-cta">
-                Understand PMOS →
-              </Link>
-              <Link href="/self-test" className="btn-sec-link">
-                2-min self-check →
-              </Link>
+              <button
+                className="btn-primary-cta"
+                onClick={() => window.dispatchEvent(new Event('openModal'))}
+                style={{ fontSize: '1.05rem', padding: '0.9rem 2.2rem', boxShadow: '0 8px 28px rgba(124, 92, 252, 0.45)' }}
+                aria-haspopup="dialog"
+              >
+                🌸 Ask Anonymous Question to Gynaecologist →
+              </button>
             </div>
           </div>
         </section>
@@ -64,7 +65,7 @@ export default function HomePage() {
           <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 5%' }}>
             <div className="heading-box reveal" style={{ maxWidth: '680px', margin: '0 auto 3rem' }}>
               <span className="section-tag">The condition</span>
-              <h2 id="what-is-pmos" className="section-title">What is <span className="accent">PMOS?</span></h2>
+              <h2 id="what-is-pmos" className="section-title">What is <span className="accent">PCOD &amp; PMOS?</span></h2>
               <p className="section-desc">
                 Our campaign uses the name PMOS to reflect the multi-system nature of Polycystic Ovary Syndrome — a condition affecting hormones, metabolism, and emotional wellbeing, not just the ovaries.
               </p>
@@ -98,7 +99,7 @@ export default function HomePage() {
             <div className="heading-box reveal" style={{ maxWidth: '680px', margin: '0 auto 2.5rem' }}>
               <span className="section-tag">Symptoms</span>
               <h2 id="symptoms-overview" className="section-title">It doesn&apos;t look the <span className="accent">same for everyone.</span></h2>
-              <p className="section-desc">PCOS/PMOS is highly individual. Common patterns include:</p>
+              <p className="section-desc">PCOS/PCOD is highly individual. Common patterns include:</p>
             </div>
 
             <div className="home-symptoms-row stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 180px), 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -158,8 +159,8 @@ export default function HomePage() {
               <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 600 }}>
                 Not a diagnosis. No personal data stored.
               </p>
-              <Link href="/self-test" className="btn-primary-cta">
-                Start the self-check →
+              <Link href="/self-test" className="btn-sec-link">
+                Start the 2-min self-check →
               </Link>
             </div>
           </div>

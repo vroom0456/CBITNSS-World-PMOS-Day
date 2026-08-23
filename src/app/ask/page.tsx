@@ -180,7 +180,7 @@ export default function AskPage() {
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Toll-Free 24/7. Government dedicated helpline for women&apos;s health guidance.
                   </p>
-                  <a href="tel:1091" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                  <a href="tel:1091" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
                     📞 Call 1091
                   </a>
                 </div>
@@ -195,7 +195,7 @@ export default function AskPage() {
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Free counselling for emotional stress and wellbeing concerns.
                   </p>
-                  <a href="tel:9152987821" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                  <a href="tel:9152987821" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
                     📞 Call 9152987821
                   </a>
                 </div>
@@ -210,7 +210,7 @@ export default function AskPage() {
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Reach D. Nomini (Women&apos;s Administrator) for confidential campus guidance.
                   </p>
-                  <a href="tel:+919676648023" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--soft-teal-bg)', color: 'var(--nss-blue-accent)', padding: '6px 14px', borderRadius: '9999px', fontWeight: 800, fontSize: '16px', textDecoration: 'none', minHeight: '44px' }}>
+                  <a href="tel:+919676648023" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
                     📞 Call +91 96766 48023
                   </a>
                 </div>

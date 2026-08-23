@@ -159,8 +159,8 @@
     /* ── BOTTOM NAV ICON ── */
     .bnav-icon{font-size:18px;line-height:1;display:block;}
 
-    /* ── FOOTER — NEW CLASSES ── */
-    footer{background:var(--nss-navy);color:rgba(255,255,255,0.85);padding:60px 5% 28px;}
+    /* ── FOOTER — SOFTENED PALETTE ── */
+    footer{background:linear-gradient(150deg, #4A3B69 0%, #32254D 100%);color:rgba(255,255,255,0.92);padding:60px 5% 28px;border-top:1px solid var(--soft-teal-border);}
     .footer-inner{display:grid;grid-template-columns:2fr 1.2fr 2fr;gap:2.5rem;margin-bottom:2rem;align-items:start;}
     .footer-brand-row{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem;}
     .footer-logo{border-radius:50%;border:2px solid rgba(255,255,255,0.2);}
