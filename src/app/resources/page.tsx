@@ -40,7 +40,7 @@ export default function ResourcesPage() {
               Research &amp; <span className="accent">Resources</span>
             </h1>
             <p className="section-desc" style={{ maxWidth: '720px', margin: '0 auto' }}>
-              Access international clinical research citations powering this campaign, downloadable campus posters, factsheets, and offline QR codes.
+              Clinical research citations informing this campaign, alongside downloadable campus posters and offline QR codes.
             </p>
           </div>
         </section>
@@ -60,19 +60,19 @@ export default function ResourcesPage() {
                   title: '2023 International Evidence-Based Guideline — Monash University',
                   sub: 'Published in European Journal of Endocrinology & Human Reproduction.',
                   src: '2023 Monash Guideline',
-                  srcDesc: 'Comprehensive international consensus guideline covering assessment, epidemiology (1 in 8 women), lifestyle, and emotional care.'
+                  srcDesc: 'Comprehensive international consensus guideline covering PCOS assessment, epidemiology (estimated 1 in 8 women affected), lifestyle recommendations, and emotional wellbeing as a core care component.'
                 },
                 {
                   title: 'Journal of Clinical Medicine (2023) — Singh et al.',
-                  sub: 'Etiology, Current Management & Gut-Axis Therapeutics in PMOS/PCOS.',
+                  sub: 'Etiology, Current Management & Gut-Axis Therapeutics in PCOS.',
                   src: 'Journal of Clinical Medicine 2023',
-                  srcDesc: 'Review covering 4 Rotterdam phenotypes, gut microbiome dysbiosis (DOGMA theory), inositols (40:1 MI:DCI ratio), and GLUT-4 exercise response.'
+                  srcDesc: 'Review covering the four Rotterdam PCOS phenotypes, gut microbiome research (DOGMA theory), inositol supplementation (40:1 MI:DCI ratio evidence), and exercise-induced metabolic benefit in PCOS.'
                 },
                 {
-                  title: '2026 International Terminology Consensus',
-                  sub: 'Multi-center agreement updating PCOS to PMOS (Polyendocrine Metabolic Ovarian Syndrome).',
-                  src: '2026 PMOS Consensus',
-                  srcDesc: 'Consensus paper explaining the rationale for replacing PCOS with PMOS to accurately reflect metabolic and endocrine factors.'
+                  title: 'Campaign Terminology Note — CBIT NSS',
+                  sub: 'Why this campaign uses the name PMOS.',
+                  src: 'PMOS Campaign Note',
+                  srcDesc: 'This campaign uses the term PMOS (Polyendocrine Metabolic Ovarian Syndrome) to reflect the multi-system nature of the condition, drawing on researchers\' calls for more accurate and holistic terminology. PCOS remains the standard clinical term in international guidelines. If your doctor uses PCOS or PCOD, that is the medically recognised term.'
                 }
               ].map((r, i) => (
                 <div key={i} style={{ background: 'var(--soft-teal-bg)', padding: '1.4rem 1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--soft-teal-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -12,6 +12,8 @@ export default function Navbar() {
   const [modalSubmitting, setModalSubmitting] = useState(false);
   const [modalSubmitted, setModalSubmitted] = useState(false);
   const pathname = usePathname();
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const toggleDrawer = () => setDrawerOpen(prev => !prev);
   const closeDrawer = () => setDrawerOpen(false);
@@ -20,6 +22,8 @@ export default function Navbar() {
     setModalOpen(true);
     setModalSubmitted(false);
     document.body.style.overflow = 'hidden';
+    // Focus first focusable element in modal after animation
+    setTimeout(() => closeButtonRef.current?.focus(), 50);
   };
 
   const closeModal = () => {
@@ -36,6 +40,7 @@ export default function Navbar() {
     const handler = () => openModal();
     window.addEventListener('openModal', handler);
     return () => window.removeEventListener('openModal', handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -46,6 +51,27 @@ export default function Navbar() {
 
   // Close drawer on route change
   useEffect(() => { setDrawerOpen(false); }, [pathname]);
+
+  // Keyboard: Escape closes modal and drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (modalOpen) closeModal();
+        if (drawerOpen) closeDrawer();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [modalOpen, drawerOpen]);
+
+  // Lock body scroll when drawer is open on mobile
+  useEffect(() => {
+    if (drawerOpen) {
+      document.body.style.overflow = 'hidden';
+    } else if (!modalOpen) {
+      document.body.style.overflow = '';
+    }
+  }, [drawerOpen, modalOpen]);
 
   const handleModalSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,88 +87,132 @@ export default function Navbar() {
     }, 900);
   };
 
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/understand', label: 'Understand' },
+    { href: '/symptoms', label: 'Symptoms' },
+    { href: '/self-test', label: 'Self-Check' },
+    { href: '/myths', label: 'Myths' },
+    { href: '/ask', label: 'Ask' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/about', label: 'About' },
+  ];
+
   return (
     <>
       {/* ── MAIN NAV BAR ── */}
       <nav id="navbar" className={scrolled ? 'scrolled' : ''} role="navigation" aria-label="Main Navigation">
-        <Link href="/" className="nav-brand">
+        <Link href="/" className="nav-brand" aria-label="CBIT NSS — Home">
           <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={30} height={30} className="nss-logo-img" priority />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
-            <span className="subtitle">World PMOS Awareness Day · 2026</span>
+            <span className="subtitle">World PMOS Day · 2026</span>
           </div>
         </Link>
 
         {/* DESKTOP NAV LINKS */}
         <ul className="nav-links" role="list">
-          <li><Link href="/" className={pathname === '/' ? 'active' : ''}>Home</Link></li>
-          <li><Link href="/understand" className={pathname === '/understand' ? 'active' : ''}>Understand</Link></li>
-          <li><Link href="/symptoms" className={pathname === '/symptoms' ? 'active' : ''}>Symptoms</Link></li>
-          <li><Link href="/self-test" className={pathname === '/self-test' ? 'active' : ''}>Self-Check</Link></li>
-          <li><Link href="/myths" className={pathname === '/myths' ? 'active' : ''}>Myths</Link></li>
-          <li><Link href="/ask" className={pathname === '/ask' ? 'active' : ''}>Ask</Link></li>
-          <li><Link href="/resources" className={pathname === '/resources' ? 'active' : ''}>Resources</Link></li>
-          <li><Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link></li>
+          {navLinks.map(link => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={pathname === link.href ? 'active' : ''}
+                aria-current={pathname === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
           <li>
-            <button className="nav-btn-modal" onClick={openModal}>
+            <button className="nav-btn-modal" onClick={openModal} aria-haspopup="dialog">
               Ask Anonymous
             </button>
           </li>
         </ul>
+
+        {/* MOBILE HAMBURGER */}
+        <button
+          className={`mobile-menu-btn${drawerOpen ? ' active' : ''}`}
+          onClick={toggleDrawer}
+          aria-label={drawerOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={drawerOpen}
+          aria-controls="mobile-drawer"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
       </nav>
 
       {/* ── MOBILE SLIDE-DOWN DRAWER ── */}
+      {/* Overlay backdrop */}
+      {drawerOpen && (
+        <div
+          className="drawer-backdrop"
+          onClick={closeDrawer}
+          aria-hidden="true"
+        />
+      )}
       <div
-        className={`mobile-nav-drawer ${drawerOpen ? 'active' : ''}`}
+        className={`mobile-nav-drawer${drawerOpen ? ' active' : ''}`}
         id="mobile-drawer"
+        role="dialog"
+        aria-label="Navigation menu"
+        aria-modal="false"
         aria-hidden={!drawerOpen}
       >
-        <Link href="/" className="m-link" onClick={closeDrawer}>Home</Link>
-        <Link href="/understand" className="m-link" onClick={closeDrawer}>Understand PMOS</Link>
-        <Link href="/symptoms" className="m-link" onClick={closeDrawer}>Symptoms &amp; Care</Link>
-        <Link href="/self-test" className="m-link" onClick={closeDrawer}>2-Min Self-Check</Link>
-        <Link href="/myths" className="m-link" onClick={closeDrawer}>Myths vs Facts</Link>
-        <Link href="/ask" className="m-link" onClick={closeDrawer}>Ask Doctor</Link>
-        <Link href="/resources" className="m-link" onClick={closeDrawer}>Research &amp; Resources</Link>
-        <Link href="/about" className="m-link" onClick={closeDrawer}>NSS Team</Link>
+        {navLinks.map(link => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`m-link${pathname === link.href ? ' active' : ''}`}
+            onClick={closeDrawer}
+            aria-current={pathname === link.href ? 'page' : undefined}
+          >
+            {link.label}
+            <span aria-hidden="true">›</span>
+          </Link>
+        ))}
         <button
           className="drawer-ask-btn"
           onClick={() => { closeDrawer(); openModal(); }}
+          aria-haspopup="dialog"
         >
           Ask a Doctor Anonymously
         </button>
       </div>
 
       {/* ── MOBILE BOTTOM NAV — 6 direct tabs ── */}
-      <div className="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
-        <Link href="/" className={pathname === '/' ? 'active' : ''}>
-          <span className="bnav-icon">⌂</span>
+      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+        <Link href="/" className={pathname === '/' ? 'active' : ''} aria-current={pathname === '/' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">⌂</span>
           <span>Home</span>
         </Link>
-        <Link href="/understand" className={pathname === '/understand' ? 'active' : ''}>
-          <span className="bnav-icon">📖</span>
+        <Link href="/understand" className={pathname === '/understand' ? 'active' : ''} aria-current={pathname === '/understand' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">📖</span>
           <span>Learn</span>
         </Link>
-        <Link href="/self-test" className={pathname === '/self-test' ? 'active' : ''}>
-          <span className="bnav-icon">✓</span>
+        <Link href="/self-test" className={pathname === '/self-test' ? 'active' : ''} aria-current={pathname === '/self-test' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">✓</span>
           <span>Check</span>
         </Link>
-        <Link href="/myths" className={pathname === '/myths' ? 'active' : ''}>
-          <span className="bnav-icon">💡</span>
+        <Link href="/myths" className={pathname === '/myths' ? 'active' : ''} aria-current={pathname === '/myths' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">💡</span>
           <span>Myths</span>
         </Link>
-        <Link href="/ask" className={pathname === '/ask' ? 'active' : ''}>
-          <span className="bnav-icon">💬</span>
+        <Link href="/ask" className={pathname === '/ask' ? 'active' : ''} aria-current={pathname === '/ask' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">💬</span>
           <span>Ask</span>
         </Link>
-        <Link href="/about" className={pathname === '/about' ? 'active' : ''}>
-          <span className="bnav-icon">👥</span>
+        <Link href="/about" className={pathname === '/about' ? 'active' : ''} aria-current={pathname === '/about' ? 'page' : undefined}>
+          <span className="bnav-icon" aria-hidden="true">👥</span>
           <span>About</span>
         </Link>
-      </div>
+      </nav>
 
       {/* ── GLOBAL ANONYMOUS MODAL — renders on ALL pages ── */}
       <div
+        ref={modalRef}
         className={`modal-overlay${modalOpen ? ' active' : ''}`}
         role="dialog"
         aria-modal="true"
@@ -152,57 +222,60 @@ export default function Navbar() {
       >
         <div className="modal-window" onClick={e => e.stopPropagation()}>
           <button
+            ref={closeButtonRef}
             className="modal-close-btn"
             onClick={closeModal}
-            aria-label="Close"
+            aria-label="Close dialog"
           >✕</button>
 
           {!modalSubmitted ? (
             <>
-              <span className="modal-badge">🔒 100% Student Confidentiality</span>
-              <h3 id="global-modal-title">Ask a Doctor Anonymously</h3>
+              <span className="modal-badge">Anonymous Submission</span>
+              <h3 id="global-modal-title">Ask a Doctor</h3>
               <p className="desc">
-                Do <strong>NOT</strong> include your name, email, phone, or student ID. All questions are compiled by CBIT NSS and answered live by certified medical professionals.
+                Do <strong>not</strong> include your name, phone, or student ID. Questions are compiled by CBIT NSS and presented to a medical panel at World PMOS Day 2026.
               </p>
               <div className="privacy-notice">
-                🛡️ <strong>Educational Notice:</strong> Responses provide general awareness only and do not constitute personal medical diagnosis or emergency care.
+                <strong>Educational notice:</strong> Responses provide general awareness only and do not constitute personal medical advice or diagnosis.
               </div>
-              <form onSubmit={handleModalSubmit} id="global-anon-form">
+              <form onSubmit={handleModalSubmit} id="global-anon-form" noValidate>
                 <div className="form-group">
-                  <label htmlFor="modal-category">Select Category (Optional)</label>
+                  <label htmlFor="modal-category">Category (optional)</label>
                   <select id="modal-category" name="category">
-                    <option value="General PMOS Doubts">General PMOS &amp; Symptoms</option>
+                    <option value="General PMOS Doubts">General PCOS / PMOS &amp; Symptoms</option>
                     <option value="Irregular Periods">Irregular Periods &amp; Cycle Pain</option>
-                    <option value="Acne Weight Issues">Hormonal Acne &amp; Weight Shifts</option>
+                    <option value="Acne Weight Issues">Hormonal Acne &amp; Weight Changes</option>
                     <option value="Emotional Wellbeing">Emotional Wellbeing &amp; Stress</option>
-                    <option value="Diet Lifestyle">Diet &amp; Lifestyle Doubts</option>
+                    <option value="Diet Lifestyle">Diet &amp; Lifestyle</option>
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="modal-message">Your Question for the Doctor *</label>
+                  <label htmlFor="modal-message">Your question <span aria-hidden="true">*</span><span className="sr-only">(required)</span></label>
                   <textarea
                     id="modal-message"
                     name="message"
                     rows={4}
-                    placeholder="Type your doubt freely here... e.g. Is it normal to miss periods for 2 months when stressed?"
+                    placeholder="Type your question freely — e.g. Is it normal to miss periods for 2 months when stressed?"
                     required
+                    aria-required="true"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   className="btn-submit-modal"
                   disabled={modalSubmitting}
+                  aria-live="polite"
                 >
-                  {modalSubmitting ? '⏳ Submitting...' : '🌸 Submit Question Anonymously'}
+                  {modalSubmitting ? 'Submitting…' : 'Submit anonymously'}
                 </button>
               </form>
             </>
           ) : (
-            <div className="modal-success-alert" style={{ display: 'block' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }}>✅</div>
-              <h4 style={{ fontSize: '1rem', fontWeight: 800 }}>Anonymous Question Submitted!</h4>
+            <div className="modal-success-alert" style={{ display: 'block' }} role="status" aria-live="polite">
+              <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }} aria-hidden="true">✅</div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 800 }}>Question submitted</h4>
               <p style={{ fontSize: '0.9rem', marginTop: '0.4rem', lineHeight: 1.6 }}>
-                Thank you! Your doubt has been recorded. Our CBIT NSS team will ask the Gynaecologist live during World PMOS Day 2026.
+                Thank you. Your question has been recorded and will be compiled for the medical panel at World PMOS Day 2026.
               </p>
             </div>
           )}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
@@ -8,13 +8,12 @@ import Link from 'next/link';
 declare global {
   interface Window {
     showTab: (tabName: string, btn: HTMLElement) => void;
-    closeModal: () => void;
-    closeModalOnOverlay: (e: React.SyntheticEvent) => void;
-    handleModalAnonSubmit: (e: React.SyntheticEvent) => void;
   }
 }
 
 export default function SymptomsPage() {
+  const [scienceOpen, setScienceOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -22,134 +21,199 @@ export default function SymptomsPage() {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('revealed');
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(r => observer.observe(r));
 
     window.showTab = function(tabName, btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c => { c.classList.remove('active'); (c as HTMLElement).style.display = 'none'; });
+      document.querySelectorAll('.tab-content').forEach(c => {
+        c.classList.remove('active');
+        (c as HTMLElement).style.display = 'none';
+      });
       btn.classList.add('active');
       const tab = document.getElementById('tab-' + tabName);
-      if(tab) {
+      if (tab) {
         tab.style.display = 'block';
         void tab.offsetWidth;
         tab.classList.add('active');
       }
     };
+
+    return () => observer.disconnect();
   }, []);
 
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '80px' }}>
-        {/* SYMPTOMS SECTION */}
-        <section id="symptoms" style={{ padding: "3rem 0 4rem", background: "var(--bg-main)" }}>
-          <div className="container" style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 1.5rem" }}>
-            <div className="heading-box reveal" style={{ textAlign: "center", marginBottom: "2rem" }}>
-              <span className="section-tag">🩺 Symptom Identification</span>
-              <h2 className="section-title">Common <span className="accent">PMOS Symptoms</span></h2>
-              <p className="section-desc">Symptoms vary widely between individuals. Every body is unique.</p>
-            </div>
+      <main className="page-main">
 
-            <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '1rem 1.4rem', borderRadius: 'var(--r-sm)', marginBottom: '2.5rem', fontSize: '0.9rem', color: 'var(--nss-navy)', fontWeight: 600 }}>
-              ⚠️ <strong>Non-Diagnostic Disclaimer:</strong> Having these symptoms does not mean you have PMOS. Other conditions can cause similar symptoms. Always consult a qualified physician for evaluation.
+        {/* HEADER */}
+        <section style={{ padding: 'clamp(3rem, 8vw, 5rem) 5% clamp(1.5rem, 4vw, 2.5rem)', background: 'var(--bg-main)', textAlign: 'center' }} aria-labelledby="symptoms-heading">
+          <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+            <span className="section-tag reveal">Symptoms</span>
+            <h1 id="symptoms-heading" className="section-title reveal" style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)', marginTop: '0.75rem', marginBottom: '1rem' }}>
+              Symptoms &amp; <span className="accent">What May Help</span>
+            </h1>
+            <p className="section-desc reveal" style={{ maxWidth: '600px', margin: '0 auto' }}>
+              PCOS/PMOS symptoms vary widely between individuals. This page outlines common patterns and evidence-informed approaches that a healthcare provider may discuss with you.
+            </p>
+          </div>
+        </section>
+
+        {/* NON-DIAGNOSTIC DISCLAIMER */}
+        <div style={{ padding: '0 5% 0', background: 'var(--bg-main)' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', paddingBottom: '1rem' }}>
+            <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '1rem 1.4rem', borderRadius: 'var(--r-sm)', fontSize: '0.9rem', color: 'var(--nss-navy)', fontWeight: 600 }} role="note">
+              <strong>Not diagnostic:</strong> Having these symptoms does not mean you have PCOS/PMOS. Many conditions can cause similar patterns. Always consult a qualified physician for an accurate evaluation.
+            </div>
+          </div>
+        </div>
+
+        {/* SYMPTOMS GRID */}
+        <section id="symptoms" style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="common-symptoms-heading">
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <span className="section-tag">Common patterns</span>
+              <h2 id="common-symptoms-heading" className="section-title">Common <span className="accent">PCOS symptoms</span></h2>
+              <p className="section-desc">Every body is unique — not everyone experiences all of these.</p>
             </div>
 
             <div className="symptoms-grid stagger-grid">
-              <div className="symptom-card reveal"><div className="sym-icon">🩸</div><h4>Irregular Periods</h4><p>Cycles longer than 35 days, variable cycle length, or occasional missed periods.</p></div>
-              <div className="symptom-card reveal"><div className="sym-icon">⚖️</div><h4>Metabolic / Insulin Shifts</h4><p>Targeted weight changes or insulin resistance regardless of body weight.</p></div>
-              <div className="symptom-card reveal"><div className="sym-icon">✨</div><h4>Hormonal Acne</h4><p>Persistent jawline acne driven by free androgen levels.</p></div>
-              <div className="symptom-card reveal"><div className="sym-icon">💇‍♀️</div><h4>Excess Hair / Hair Thinning</h4><p>Coarse facial/body hair growth (hirsutism) or scalp hair thinning.</p></div>
-              <div className="symptom-card reveal"><div className="sym-icon">😴</div><h4>Fatigue &amp; Low-Grade Inflammation</h4><p>Persistent energy dips, post-meal fatigue, or systemic inflammation markers.</p></div>
-              <div className="symptom-card reveal"><div className="sym-icon">🌙</div><h4>Acanthosis Nigricans</h4><p>Dark velvety skin pigmentation on neck folds, armpits, or knuckles.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">🩸</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Irregular periods</h3><p>Cycles longer than 35 days, variable cycle length, or occasionally missed periods.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">⚖️</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Metabolic changes</h3><p>Weight shifts or insulin-related changes, occurring at any body weight.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">✨</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hormonal acne</h3><p>Persistent breakouts — often along the jawline — driven by androgen levels.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">💇</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hair changes</h3><p>Coarse facial or body hair growth (hirsutism), or scalp hair thinning.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">😴</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Fatigue</h3><p>Persistent energy dips or post-meal fatigue, which may be related to insulin sensitivity.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">🌙</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Skin pigmentation</h3><p>Dark, velvety patches on neck folds, armpits or knuckles (acanthosis nigricans).</p></div>
             </div>
           </div>
         </section>
 
-        {/* CLINICAL MANAGEMENT PROTOCOL */}
-        <section id="precautions" style={{ padding: "3rem 0 4rem", background: "var(--card-white)" }}>
-          <div className="container" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1.5rem" }}>
-            <div className="heading-box reveal" style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-              <span className="section-tag">🔬 Clinical Evidence</span>
-              <h2 className="section-title">Evidence-Based <span className="accent">Management Protocol</span></h2>
-              <p className="section-desc">Recommendations synthesized from clinical trials published in international guidelines.</p>
+        {/* WHAT MAY HELP */}
+        <section id="care" style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="care-heading">
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <span className="section-tag">Evidence-informed care</span>
+              <h2 id="care-heading" className="section-title">What <span className="accent">may help</span></h2>
+              <p className="section-desc">
+                These approaches are based on published guidelines and should be discussed with your healthcare provider — not used as a self-treatment plan.
+              </p>
             </div>
-            
-            <div className="tab-buttons reveal" style={{ display: "flex", gap: "0.8rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "2rem" }}>
-              <button className="tab-btn active" onClick={(e) => window.showTab('daily', e.currentTarget)}>🌅 Exercise &amp; Movement</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('microbiome', e.currentTarget)}>🦠 Gut Microbiome Care</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('medical', e.currentTarget)}>💊 Inositols &amp; Clinical Checks</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('emotional', e.currentTarget)}>🧘 Emotional Wellbeing</button>
+
+            <div className="tab-buttons reveal" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }} role="tablist" aria-label="Care areas">
+              <button className="tab-btn active" onClick={(e) => window.showTab('daily', e.currentTarget)} role="tab" aria-selected="true" aria-controls="tab-daily">Exercise &amp; Movement</button>
+              <button className="tab-btn" onClick={(e) => window.showTab('nutrition', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-nutrition">Nutrition</button>
+              <button className="tab-btn" onClick={(e) => window.showTab('medical', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-medical">Medical evaluation</button>
+              <button className="tab-btn" onClick={(e) => window.showTab('emotional', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-emotional">Emotional wellbeing</button>
             </div>
 
             {/* TAB 1: EXERCISE */}
-            <div className="tab-content active" id="tab-daily">
+            <div className="tab-content active" id="tab-daily" role="tabpanel">
               <div className="precautions-list">
                 <div className="pre-card">
-                  <div className="pre-num">1</div>
+                  <div className="pre-num" aria-hidden="true">1</div>
                   <div className="pre-info">
-                    <h5>Resistance &amp; Aerobic Exercise</h5>
-                    <p>Clinical trials show regular exercise enhances GLUT-4 glucose transporter expression, supporting fasting insulin sensitivity and cardiorespiratory fitness.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Regular physical activity</h3>
+                    <p>A mix of resistance and aerobic exercise can support insulin sensitivity and overall cardiovascular health. Even 30 minutes of moderate movement most days has shown benefit in research.</p>
                   </div>
                 </div>
                 <div className="pre-card">
-                  <div className="pre-num">2</div>
+                  <div className="pre-num" aria-hidden="true">2</div>
                   <div className="pre-info">
-                    <h5>Circadian Sleep &amp; Cortisol Regulation</h5>
-                    <p>7–9 hours of restorative sleep regulates the HPA axis and reduces hypercortisolemia, supporting natural adrenal health.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Consistent sleep</h3>
+                    <p>7–9 hours of regular sleep supports hormonal balance and helps reduce stress-related androgen fluctuations. Consistent sleep and wake times are particularly beneficial.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* TAB 2: GUT MICROBIOME */}
-            <div className="tab-content" id="tab-microbiome" style={{ display: "none" }}>
+            {/* TAB 2: NUTRITION */}
+            <div className="tab-content" id="tab-nutrition" style={{ display: 'none' }} role="tabpanel">
               <div className="precautions-list">
                 <div className="pre-card">
-                  <div className="pre-num">1</div>
+                  <div className="pre-num" aria-hidden="true">1</div>
                   <div className="pre-info">
-                    <h5>Probiotic &amp; Prebiotic Support</h5>
-                    <p>Supports gut microbial diversity, short-chain fatty acid (SCFA) production, and gut epithelial barrier integrity, which may help reduce systemic inflammation in PMOS.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Balanced, whole-food nutrition</h3>
+                    <p>Emphasise vegetables, whole grains, legumes and healthy fats. Avoiding highly processed foods and excess sugar is generally beneficial for metabolic health in PCOS.</p>
+                  </div>
+                </div>
+                <div className="pre-card">
+                  <div className="pre-num" aria-hidden="true">2</div>
+                  <div className="pre-info">
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Gut health support</h3>
+                    <p>Probiotic and prebiotic foods (yoghurt, fermented foods, fibre-rich vegetables) may support gut microbial diversity and reduce systemic inflammation — though evidence is still emerging.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* TAB 3: INOSITOLS & MEDICAL */}
-            <div className="tab-content" id="tab-medical" style={{ display: "none" }}>
+            {/* TAB 3: MEDICAL */}
+            <div className="tab-content" id="tab-medical" style={{ display: 'none' }} role="tabpanel">
               <div className="precautions-list">
                 <div className="pre-card">
-                  <div className="pre-num">1</div>
+                  <div className="pre-num" aria-hidden="true">1</div>
                   <div className="pre-info">
-                    <h5>Myo-Inositol &amp; D-Chiro-Inositol (40:1 Ratio)</h5>
-                    <p>Supports intracellular insulin messenger signaling to help regulate ovulation rates and glucose transport.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Clinical evaluation</h3>
+                    <p>A doctor may recommend blood tests to evaluate hormone levels, insulin sensitivity, thyroid function and lipid profile. An ultrasound may also be part of the diagnostic process.</p>
                   </div>
                 </div>
                 <div className="pre-card">
-                  <div className="pre-num">2</div>
+                  <div className="pre-num" aria-hidden="true">2</div>
                   <div className="pre-info">
-                    <h5>Clinical Lab Evaluation</h5>
-                    <p>Comprehensive physician screening: Free Testosterone, Fasting Insulin, SHBG, Lipid Profile, and TSH.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Supplements to discuss with your doctor</h3>
+                    <p>Some evidence supports inositol supplementation (myo-inositol and D-chiro-inositol) for supporting insulin sensitivity and ovulatory function. Always consult a doctor before starting supplements.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* TAB 4: EMOTIONAL WELLBEING */}
-            <div className="tab-content" id="tab-emotional" style={{ display: "none" }}>
+            {/* TAB 4: EMOTIONAL */}
+            <div className="tab-content" id="tab-emotional" style={{ display: 'none' }} role="tabpanel">
               <div className="precautions-list">
                 <div className="pre-card">
-                  <div className="pre-num">1</div>
+                  <div className="pre-num" aria-hidden="true">1</div>
                   <div className="pre-info">
-                    <h5>Emotional Wellbeing &amp; Body Confidence</h5>
-                    <p>International guidelines highlight emotional wellbeing as a core pillar of PMOS care. Mindfulness, therapy, and peer support reduce chronic stress and improve quality of life.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Emotional wellbeing</h3>
+                    <p>International guidelines recognise emotional health as a core component of PCOS care. Mindfulness, counselling, and peer support can help reduce chronic stress and improve quality of life.</p>
                   </div>
                 </div>
                 <div className="pre-card">
-                  <div className="pre-num">2</div>
+                  <div className="pre-num" aria-hidden="true">2</div>
                   <div className="pre-info">
-                    <h5>Reducing Stigma &amp; Seeking Support</h5>
-                    <p>Acknowledging emotional challenges as physiological — not personal weakness — encourages seeking support from healthcare professionals and trusted individuals.</p>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Reducing stigma</h3>
+                    <p>Anxiety, mood shifts and body image concerns are real physiological responses — not personal weakness. Seeking support from healthcare professionals and trusted people is a sign of strength.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* PROGRESSIVE DISCLOSURE: SCIENCE */}
+            <div style={{ marginTop: '2rem', borderTop: '1px solid var(--border-light)', paddingTop: '1.5rem' }}>
+              <button
+                onClick={() => setScienceOpen(v => !v)}
+                aria-expanded={scienceOpen}
+                aria-controls="science-panel"
+                style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 700, color: 'var(--nss-blue-accent)', padding: 0 }}
+              >
+                <span>{scienceOpen ? '▲' : '▼'}</span>
+                <span>Want to understand the underlying science?</span>
+              </button>
+              <div id="science-panel" hidden={!scienceOpen}>
+                <div style={{ marginTop: '1.2rem', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-md)', padding: '1.5rem' }}>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>Detailed mechanisms — for the scientifically curious</p>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.2rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.65 }}>
+                    <li><strong>Insulin signalling:</strong> In PCOS, GLUT-4 glucose transporter expression in muscle cells can be reduced, impairing cellular insulin uptake. This contributes to compensatory hyperinsulinaemia, which stimulates ovarian androgen production.</li>
+                    <li><strong>HPA axis &amp; cortisol:</strong> Chronic stress activates the hypothalamic-pituitary-adrenal (HPA) axis, elevating cortisol. Elevated cortisol can increase adrenal androgen production and disrupt ovulatory cycles.</li>
+                    <li><strong>Gut microbiome:</strong> Emerging research (the DOGMA theory) suggests dysbiosis of gut microbiota may reduce short-chain fatty acid (SCFA) production and compromise gut epithelial barrier integrity, potentially contributing to systemic inflammation in PCOS.</li>
+                    <li><strong>Inositol mechanisms:</strong> Myo-inositol and D-chiro-inositol (in a 40:1 ratio) act as insulin second messengers. Supplementation may support intracellular insulin signalling and help regulate ovulation in some individuals.</li>
+                  </ul>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '1rem', fontStyle: 'italic' }}>
+                    Source: Singh et al., Journal of Clinical Medicine (2023). These mechanisms are an active area of research — speak to a clinician for personalised guidance.
+                  </p>
+                  <div style={{ textAlign: 'right', marginTop: '1rem' }}>
+                    <Link href="/resources" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--nss-blue-accent)', textDecoration: 'underline' }}>
+                      View clinical citations →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -158,27 +222,27 @@ export default function SymptomsPage() {
         </section>
 
         {/* DOCTOR ADVOCACY BANNER */}
-        <section id="doctor" style={{ padding: "3rem 0 4rem", background: "var(--bg-main)" }}>
-          <div className="container" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1.5rem" }}>
-            <div className="doctor-advocacy-banner reveal d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start" style={{ background: "#FFFFFF", border: "1.5px solid var(--soft-teal-border)", padding: "clamp(1.5rem, 5vw, 2.4rem) clamp(1.2rem, 5vw, 2rem)", borderRadius: "var(--r-lg)" }}>
-              <div style={{ fontSize: "2.5rem" }}>💜</div>
+        <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="care-cta">
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div className="doctor-advocacy-banner reveal" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)', padding: 'clamp(1.5rem, 5vw, 2.4rem)', borderRadius: 'var(--r-lg)', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+              <div style={{ fontSize: '2.5rem', flexShrink: 0 }} aria-hidden="true">💜</div>
               <div>
-                <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--nss-navy)" }}>Remember: You Deserve Proper Medical Care</h4>
-                <p style={{ fontSize: "0.92rem", color: "var(--text-body)", marginTop: "0.3rem", lineHeight: 1.6 }}>
-                  Never hesitate to advocate for your health. If you feel unwell, consult a qualified healthcare provider. Our CBIT NSS team stands with you!
+                <h2 id="care-cta" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.3rem' }}>You deserve proper medical care</h2>
+                <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                  If symptoms are affecting your daily life, consult a qualified healthcare provider. This page is educational — not a replacement for clinical care.
                 </p>
               </div>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
               <Link href="/myths" className="btn-primary-cta">
-                💡 Explore PMOS Myths vs Facts →
+                Explore myths vs facts →
               </Link>
             </div>
           </div>
         </section>
-      </main>
 
+      </main>
       <Footer />
     </>
   );

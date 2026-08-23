@@ -32,17 +32,17 @@ export default function AskPage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '80px' }}>
+      <main className="page-main">
 
         {/* HEADER */}
         <section style={{ padding: '3.5rem 0 2rem', background: 'var(--bg-main)' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-            <span className="section-tag">🌸 Anonymous Student Guidance</span>
+            <span className="section-tag">Anonymous questions</span>
             <h1 className="section-title">
               Ask a Doctor <span className="accent">Anonymously</span>
             </h1>
-            <p className="section-desc" style={{ maxWidth: '720px', margin: '0 auto' }}>
-              Submit your personal health doubt freely. All questions are compiled anonymously by CBIT NSS and answered live by certified Gynaecologists during World PMOS Day 2026.
+            <p className="section-desc" style={{ maxWidth: '640px', margin: '0 auto' }}>
+              Submit your question without sharing any personal details. Questions are compiled by CBIT NSS and presented to a medical panel at World PMOS Day 2026.
             </p>
           </div>
         </section>
@@ -54,10 +54,10 @@ export default function AskPage() {
             <div className="ask-form-card">
               
               <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
-                <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }}>🔒</span>
-                <span className="modal-badge">100% Student Confidentiality Guaranteed</span>
+                <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }} aria-hidden="true">🛡️</span>
+                <span className="modal-badge">Anonymous submission</span>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.6rem', lineHeight: 1.65 }}>
-                  Do <strong>NOT</strong> include your name, email, phone number, or student ID. Your question remains completely anonymous.
+                  Do <strong>not</strong> include your name, email, phone or student ID. Questions are collected anonymously and compiled by the CBIT NSS team.
                 </p>
               </div>
 
@@ -104,7 +104,7 @@ export default function AskPage() {
                     disabled={submitting}
                     style={{ cursor: submitting ? 'not-allowed' : 'pointer' }}
                   >
-                    {submitting ? '⏳ Submitting Anonymously...' : '🌸 Submit Question Anonymously'}
+                  {submitting ? 'Submitting…' : 'Submit question anonymously'}
                   </button>
                 </form>
               ) : (
@@ -114,14 +114,14 @@ export default function AskPage() {
                     Anonymous Question Submitted!
                   </h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-                    Thank you! Your doubt has been recorded. Our CBIT NSS team will compile it for the panel of Gynaecologists during World PMOS Awareness Day 2026.
+                    Thank you. Your question has been recorded and will be compiled for the medical panel at World PMOS Day 2026.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="btn-secondary-action"
                     style={{ cursor: 'pointer' }}
                   >
-                    🌸 Submit Another Doubt
+                    Submit another question
                   </button>
                 </div>
               )}

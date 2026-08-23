@@ -120,18 +120,18 @@ export default function SelfTestPage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '80px' }}>
-        <section id="self-check" style={{ padding: '3.5rem 0 5rem', background: 'var(--bg-main)' }}>
+      <main className="page-main">
+        <section id="self-check" style={{ padding: 'clamp(3rem, 8vw, 5rem) 5% clamp(2rem, 5vw, 4rem)', background: 'var(--bg-main)' }}>
           <div className="container" style={{ maxWidth: '820px', margin: '0 auto', padding: '0 1.5rem' }}>
 
             {/* PAGE HEADER */}
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">🔬 Interactive Awareness Screening</span>
+              <span className="section-tag">Awareness screening</span>
               <h1 className="section-title">
-                2-Minute <span className="accent">PMOS Self-Check Wizard</span>
+                2-Minute <span className="accent">PCOS Self-Check</span>
               </h1>
               <p className="section-desc">
-                Aligned with the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.
+                An educational awareness tool informed by the 2023 International PCOS Guidelines (Monash University).
               </p>
             </div>
 
@@ -212,15 +212,15 @@ export default function SelfTestPage() {
 
                     <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.4rem', lineHeight: 1.4 }}>
                       {flagCount === 0 
-                        ? 'No Significant Indicators Flagged'
+                        ? 'No notable patterns identified'
                         : flagCount <= 2
-                        ? 'Mild PMOS Indicators Observed'
-                        : 'Multiple PMOS Indicators Flagged'}
+                        ? 'Some patterns worth discussing'
+                        : 'Several patterns worth discussing with a doctor'}
                     </h2>
                     <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
                       {flagCount === 0
-                        ? 'Your answers indicate stable cycle regularity, clear skin, balanced energy, and emotional wellbeing. Continue supporting your overall health with balanced whole-food nutrition and regular movement.'
-                        : `You flagged ${flagCount} area${flagCount > 1 ? 's' : ''} out of 4 core pillars. Review your category-specific recommendations below.`}
+                        ? 'Your answers suggest broadly regular patterns across cycle, skin, energy and mood. Keep supporting your health with balanced nutrition, regular movement and adequate sleep.'
+                        : `You noted ${flagCount} area${flagCount > 1 ? 's' : ''} that may be worth mentioning at your next healthcare appointment. See suggested conversation starters below.`}
                     </p>
                   </div>
 
@@ -228,7 +228,7 @@ export default function SelfTestPage() {
                   {flagCount > 0 && (
                     <div className="result-block-box result-recommendations-box">
                       <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        📋 Tailored Clinical Recommendations
+                        Conversation starters for your doctor
                       </h3>
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -268,10 +268,10 @@ export default function SelfTestPage() {
                         {isEmotionalFlagged && (
                           <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #9333EA' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
-                              🧘 Emotional Wellbeing &amp; Stress Axis Care
+                              Emotional wellbeing &amp; stress
                             </strong>
                             <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
-                              Recognize that anxiety and mood swings linked to PMOS are physiological HPA-axis responses — not personal weakness. Prioritize 7–9 hours of circadian sleep, stress-reduction techniques, and peer or professional counseling.
+                              Anxiety and mood changes linked to PCOS are physiological responses — not personal weakness. Consistent sleep, stress-reduction practices and peer or professional support can help. Mention these to your doctor or a counsellor.
                             </p>
                           </div>
                         )}
@@ -297,12 +297,12 @@ export default function SelfTestPage() {
                   {/* POINTERS TO BRING TO YOUR DOCTOR */}
                   <div className="result-block-box result-pointers-box">
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>
-                      📋 Key Pointers to Bring to Your Doctor
+                      Questions to bring to your doctor
                     </h3>
                     <ul style={{ paddingLeft: '1.2rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.2rem' }}>
-                      <li><strong>Diagnostic Differential:</strong> &quot;Could my symptoms be caused by thyroid shifts, vitamin deficiencies, or adrenal variation?&quot;</li>
-                      <li><strong>Blood Panel Screening:</strong> &quot;Which blood tests (Free Testosterone, Fasting Insulin, SHBG, Lipid Profile, TSH) should we run?&quot;</li>
-                      <li><strong>Lifestyle &amp; Phenotype Care:</strong> &quot;What evidence-based nutrition or exercise habits suit my specific phenotype?&quot;</li>
+                      <li>&quot;Could these symptoms be caused by thyroid issues, vitamin deficiencies or stress?&quot;</li>
+                      <li>&quot;Which tests would you recommend — hormone levels, insulin, thyroid (TSH)?&quot;</li>
+                      <li>&quot;What lifestyle changes would you recommend for my specific situation?&quot;</li>
                     </ul>
                     <div style={{ textAlign: 'center' }}>
                       <button

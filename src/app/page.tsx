@@ -1,15 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HomePage() {
-  const [sourceDrawerOpen, setSourceDrawerOpen] = useState(false);
-  const [selectedSourceTitle, setSelectedSourceTitle] = useState('');
-  const [selectedSourceContent, setSelectedSourceContent] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,145 +20,188 @@ export default function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  const openSourceModal = (title: string, content: string) => {
-    setSelectedSourceTitle(title);
-    setSelectedSourceContent(content);
-    setSourceDrawerOpen(true);
-  };
-
   return (
     <>
       <Navbar />
       <main className="page-main">
 
         {/* ─── 1. HERO ─── */}
-        <section id="hero">
+        <section id="hero" aria-labelledby="hero-heading">
           <div className="hero-container">
-            {/* Brand badge */}
             <div className="nss-hero-badge">
-              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={18} height={18} priority />
-              <span>CBIT NSS</span>
+              <Image src="/nss-logo.png" alt="" width={18} height={18} aria-hidden="true" priority />
+              <span>CBIT NSS · World PMOS Day 2026</span>
             </div>
 
-            <h1 className="hero-h1">
-              PCOS Uncovered:{' '}
-              <span className="accent-text">Awareness, Understanding &amp; Empowerment</span>
+            <h1 id="hero-heading" className="hero-h1">
+              Your health deserves<br />
+              to be <span className="accent-text">understood.</span>
             </h1>
 
-            {/* Event info — placed neatly below title */}
-            <div className="hero-event-info">
-              <span>📅 1st Sept 2026 · 10:00 AM</span>
-              <span className="hero-event-sep">·</span>
-              <span>📍 Assembly Hall, CBIT</span>
+            <div className="hero-event-info" aria-label="Event details">
+              <span>1 Sept 2026 · 10:00 AM</span>
+              <span className="hero-event-sep" aria-hidden="true">·</span>
+              <span>Assembly Hall, CBIT</span>
             </div>
 
             <p className="hero-desc">
-              Polycystic Ovary Syndrome (PCOS) is a common hormonal condition affecting millions — yet often misunderstood or undiagnosed. This World PCOS Day, explore reliable information about causes, symptoms, diagnosis and management.
+              Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal conditions affecting women — yet often misunderstood or undiagnosed. This World PMOS Day, explore reliable, evidence-based information about causes, symptoms and care.
             </p>
 
-            {/* CTA Row — Highlighted Single Primary Action */}
             <div className="hero-cta-row">
+              <Link href="/understand" className="btn-primary-cta">
+                Understand PMOS →
+              </Link>
+              <Link href="/self-test" className="btn-sec-link">
+                2-min self-check →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 2. WHAT IS PMOS? ─── */}
+        <section className="section" aria-labelledby="what-is-pmos">
+          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 5%' }}>
+            <div className="heading-box reveal" style={{ maxWidth: '680px', margin: '0 auto 3rem' }}>
+              <span className="section-tag">The condition</span>
+              <h2 id="what-is-pmos" className="section-title">What is <span className="accent">PMOS?</span></h2>
+              <p className="section-desc">
+                Our campaign uses the name PMOS to reflect the multi-system nature of Polycystic Ovary Syndrome — a condition affecting hormones, metabolism, and emotional wellbeing, not just the ovaries.
+              </p>
+            </div>
+
+            <div className="home-pillars-grid stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.2rem' }}>
+              {[
+                { label: 'Hormonal', desc: 'Androgen and pituitary signalling shifts that affect cycles, skin and hair.' },
+                { label: 'Metabolic', desc: 'Insulin sensitivity and glucose regulation, regardless of body weight.' },
+                { label: 'Reproductive', desc: 'Cycle regularity, ovulation patterns and follicle development.' },
+                { label: 'Emotional', desc: 'Mood, anxiety and body confidence — recognised as a core component by international guidelines.' },
+              ].map((p, i) => (
+                <div key={i} className="pillar-item reveal">
+                  <strong className="pillar-label">{p.label}</strong>
+                  <p className="pillar-desc">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+              <Link href="/understand" className="btn-sec-link">
+                Explore the full guide →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 3. SYMPTOMS OVERVIEW ─── */}
+        <section className="section section-alt" aria-labelledby="symptoms-overview">
+          <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 5%' }}>
+            <div className="heading-box reveal" style={{ maxWidth: '680px', margin: '0 auto 2.5rem' }}>
+              <span className="section-tag">Symptoms</span>
+              <h2 id="symptoms-overview" className="section-title">It doesn&apos;t look the <span className="accent">same for everyone.</span></h2>
+              <p className="section-desc">PCOS/PMOS is highly individual. Common patterns include:</p>
+            </div>
+
+            <div className="home-symptoms-row stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 180px), 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+              {[
+                { icon: '🩸', label: 'Irregular periods' },
+                { icon: '✨', label: 'Hormonal acne' },
+                { icon: '💇', label: 'Hair changes' },
+                { icon: '⚖️', label: 'Metabolic shifts' },
+                { icon: '😴', label: 'Fatigue' },
+                { icon: '🌙', label: 'Mood & wellbeing' },
+              ].map((s, i) => (
+                <div key={i} className="home-symptom-chip reveal" aria-label={s.label}>
+                  <span className="home-symptom-icon" aria-hidden="true">{s.icon}</span>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center' }}>
+              <Link href="/symptoms" className="btn-sec-link">
+                Explore symptoms &amp; care →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 4. MYTH TEASER ─── */}
+        <section className="section" aria-labelledby="myth-teaser">
+          <div className="container" style={{ maxWidth: '720px', margin: '0 auto', padding: '0 5%' }}>
+            <div className="reveal" style={{ textAlign: 'center' }}>
+              <span className="section-tag">Myth or fact?</span>
+              <h2 id="myth-teaser" className="section-title" style={{ marginBottom: '1.5rem' }}>
+                &ldquo;PCOS means you can&apos;t get pregnant.&rdquo;
+              </h2>
+              <div className="myth-verdict-badge" aria-label="This is a myth">
+                MYTH
+              </div>
+              <p className="section-desc" style={{ marginTop: '1.2rem', marginBottom: '2rem' }}>
+                With appropriate lifestyle support and medical guidance, most people with PCOS can conceive. Ovulation may be irregular, but healthy eggs remain present.
+              </p>
+              <Link href="/myths" className="btn-sec-link">
+                See more myths vs facts →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 5. SELF-CHECK CTA ─── */}
+        <section className="section section-alt" aria-labelledby="self-check-cta">
+          <div className="container" style={{ maxWidth: '760px', margin: '0 auto', padding: '0 5%', textAlign: 'center' }}>
+            <div className="reveal">
+              <span className="section-tag">Awareness tool</span>
+              <h2 id="self-check-cta" className="section-title">Not sure what your<br />symptoms might mean?</h2>
+              <p className="section-desc" style={{ marginBottom: '0.75rem', maxWidth: '520px', margin: '0 auto 1rem' }}>
+                A 2-minute educational questionnaire to help you recognise patterns and prepare for a healthcare conversation.
+              </p>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 600 }}>
+                Not a diagnosis. No personal data stored.
+              </p>
+              <Link href="/self-test" className="btn-primary-cta">
+                Start the self-check →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 6. ASK A DOCTOR ─── */}
+        <section className="section" aria-labelledby="ask-cta">
+          <div className="container" style={{ maxWidth: '720px', margin: '0 auto', padding: '0 5%', textAlign: 'center' }}>
+            <div className="reveal">
+              <span className="section-tag">Questions</span>
+              <h2 id="ask-cta" className="section-title">Questions you were<br />afraid to ask?</h2>
+              <p className="section-desc" style={{ marginBottom: '2rem', maxWidth: '500px', margin: '0 auto 2rem' }}>
+                Submit anonymously. Your question will be compiled and presented to a medical panel at World PMOS Day 2026.
+              </p>
               <button
                 className="btn-primary-cta"
                 onClick={() => window.dispatchEvent(new Event('openModal'))}
+                aria-haspopup="dialog"
               >
-                🌸 Ask a Doctor Anonymously →
+                Ask anonymously →
               </button>
             </div>
           </div>
         </section>
 
-        {/* ─── 2. STATISTICS ─── */}
-        <section id="numbers">
-          <div className="container">
-            <div className="heading-box reveal">
-              <span className="section-tag">Global Statistics</span>
-              <h2 className="section-title">PMOS <span className="accent">By The Numbers</span></h2>
-              <p className="section-desc">Sourced from the <em>2023 &amp; 2026 International Evidence-Based Guidelines (Monash)</em>.</p>
-            </div>
-
-            <div id="stats-banner">
-              <div className="row g-3 g-md-4">
-                {[
-                  { num: '1 in 8', label: 'Reproductive Age Women', desc: 'Affects up to 13% of women worldwide, making it the most prevalent hormonal condition.', src: 'Monash Guideline 2023', srcDesc: 'Epidemiology data from 2023 International Evidence-Based Guideline for the Assessment and Management of PCOS/PMOS.' },
-                  { num: '170M+', label: 'Worldwide Impact', desc: 'Over 170 million individuals globally experience reproductive, metabolic, or emotional symptoms.', src: 'WHO & Monash Data 2026', srcDesc: 'Global burden statistics published by WHO and Monash University international research consensus.' },
-                  { num: '2026', label: 'Terminology Update', desc: 'International consensus renamed the condition "PMOS" to reflect multi-system metabolic and endocrine health.', src: '2026 PMOS Nomenclature Consensus', srcDesc: 'International terminology update clarifying that ovaries are not the sole origin of the condition.' },
-                ].map((s, i) => (
-                  <div key={i} className="col-12 col-md-4">
-                    <div className="stat-box reveal h-100">
-                      <span className="num-val">{s.num}</span>
-                      <h3>{s.label}</h3>
-                      <p>{s.desc}</p>
-                      <button className="source-trigger-btn" onClick={() => openSourceModal(s.src, s.srcDesc)}>
-                        ⓘ Sources
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── 3. CAMPAIGN NAV HUB ─── */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="heading-box reveal">
-              <span className="section-tag">Explore</span>
-              <h2 className="section-title">Campaign <span className="accent">Sections</span></h2>
-              <p className="section-desc">Each topic has its own dedicated page.</p>
-            </div>
-
-            <div className="nav-hub-grid">
-              {[
-                { num: '01', icon: '🔬', tag: 'Medical Guide',   title: 'Understand PMOS & 4 Pillars',    desc: 'Why the name changed from PCOS to PMOS and the four multi-system health pillars.', link: '/understand' },
-                { num: '02', icon: '🩺', tag: 'Symptom Care',    title: 'Symptoms & Clinical Care',        desc: 'Evidence-based symptoms, exercise response, gut microbiome and lab evaluations.', link: '/symptoms' },
-                { num: '03', icon: '📝', tag: 'Interactive Tool', title: '2-Minute Self-Check Wizard',     desc: 'A brief awareness questionnaire with tailored results and doctor pointers.', link: '/self-test' },
-                { num: '04', icon: '💡', tag: 'Science Check',   title: 'Myths vs Facts & Care',          desc: 'Debunking fertility, diet, and weight myths with evidence-backed guidance.', link: '/myths' },
-                { num: '05', icon: '🌸', tag: 'Student Privacy', title: 'Ask a Doctor Anonymously',       desc: '100% anonymous medical doubt submission answered live by certified gynaecologists.', link: '/ask' },
-                { num: '06', icon: '📚', tag: 'Campus Kit',      title: 'Research & Campus Kit',          desc: 'Monash citations, printable posters and the offline QR reference kit.', link: '/resources' },
-              ].map((card, idx) => (
-                <a key={idx} href={card.link} className="nav-hub-row reveal">
-                  <span className="nhr-icon">{card.icon}</span>
-                  <span className="nhr-tag">{card.tag}</span>
-                  <div className="nhr-content">
-                    <span className="nhr-num">{card.num}</span>
-                    <div className="nhr-text">
-                      <strong className="nhr-title">{card.title}</strong>
-                      <span className="nhr-desc">{card.desc}</span>
-                    </div>
-                  </div>
-                  <span className="nhr-arrow" aria-hidden>›</span>
-                </a>
-              ))}
+        {/* ─── 7. CBIT NSS ATTRIBUTION ─── */}
+        <section className="section section-alt" aria-labelledby="about-cta">
+          <div className="container" style={{ maxWidth: '720px', margin: '0 auto', padding: '0 5%', textAlign: 'center' }}>
+            <div className="reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem' }}>
+              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={52} height={52} style={{ borderRadius: '50%' }} />
+              <h2 id="about-cta" className="section-title" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)' }}>Built by CBIT NSS</h2>
+              <p className="section-desc" style={{ maxWidth: '480px' }}>
+                A student-led initiative dedicated to making women&apos;s health information clear, credible and accessible.
+              </p>
+              <Link href="/about" className="btn-sec-link">
+                Meet the team →
+              </Link>
             </div>
           </div>
         </section>
 
       </main>
-
-      {/* SOURCE DRAWER */}
-      {sourceDrawerOpen && (
-        <div
-          className="modal-overlay active"
-          style={{ display: 'flex' }}
-          onClick={() => setSourceDrawerOpen(false)}
-        >
-          <div className="modal-window" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setSourceDrawerOpen(false)}>✕</button>
-            <span className="modal-badge">📚 Citation Source</span>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>{selectedSourceTitle}</h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.65 }}>{selectedSourceContent}</p>
-            <button
-              onClick={() => setSourceDrawerOpen(false)}
-              style={{ marginTop: '1.5rem', background: 'var(--nss-navy)', color: '#FFFFFF', padding: '0.65rem 1.4rem', borderRadius: '10px', fontWeight: 800, width: '100%', cursor: 'pointer', border: 'none' }}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
       <Footer />
     </>
   );
