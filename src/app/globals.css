@@ -704,45 +704,45 @@
       #hero {
         min-height: unset !important;
         height: auto !important;
-        padding: 24px 16px 20px;
-        text-align: left;
-        background: linear-gradient(155deg, #FFFFFF 0%, #EDE8F5 58%, #E8D7EC 100%);
+        padding: 44px 20px 36px;
+        text-align: center;
+        background: linear-gradient(160deg, #FFFFFF 0%, #F5EFEB 60%, #EBF2F5 100%);
         position: relative;
         overflow: hidden;
       }
       #hero::before {
-        width: 160px; height: 160px;
-        top: -30px; right: -40px;
-        opacity: 0.1; filter: blur(40px);
+        width: 200px; height: 200px;
+        top: -40px; right: -50px;
+        opacity: 0.12; filter: blur(45px);
         animation: none !important; will-change: auto;
       }
       #hero::after {
-        width: 140px; height: 140px;
-        bottom: -20px; left: -40px;
-        opacity: 0.08; filter: blur(36px);
+        width: 180px; height: 180px;
+        bottom: -30px; left: -50px;
+        opacity: 0.1; filter: blur(40px);
         animation: none !important; will-change: auto;
       }
       .hero-sparkle { display: none !important; }
-      .hero-container { align-items: flex-start; gap: 0; }
+      .hero-container { align-items: center; text-align: center; gap: 0; }
 
       /* Campaign identity badge */
       .nss-hero-badge {
-        display: inline-flex; align-items: center; gap: 5px;
-        background: rgba(255,255,255,0.88);
-        border: 1px solid var(--soft-teal-border);
-        padding: 3px 9px 3px 7px; border-radius: 6px;
-        font-size: 11px; font-weight: 700; color: var(--nss-navy);
-        margin-bottom: 8px; box-shadow: none; animation: none !important;
-        letter-spacing: 0.02em; text-transform: uppercase;
+        display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(255,255,255,0.92);
+        border: 1.5px solid var(--soft-teal-border);
+        padding: 6px 14px; border-radius: 9999px;
+        font-size: 12px; font-weight: 800; color: var(--nss-navy);
+        margin: 0 auto 16px; box-shadow: 0 4px 14px rgba(31,50,61,0.06);
+        letter-spacing: 0.04em; text-transform: uppercase;
       }
-      .nss-hero-badge img { width: 14px; height: 14px; border-radius: 3px; }
+      .nss-hero-badge img { width: 18px; height: 18px; border-radius: 50%; }
 
-      /* H1 — scaled down ratio for mobile */
+      /* H1 — spacious typography for mobile */
       .hero-h1, #hero h1 {
-        font-size: clamp(22px, 6.5vw, 27px) !important;
-        line-height: 1.15 !important; font-weight: 800 !important;
-        letter-spacing: -0.018em !important; text-align: left !important;
-        color: var(--nss-navy); margin-bottom: 8px !important;
+        font-size: clamp(24px, 7.2vw, 32px) !important;
+        line-height: 1.3 !important; font-weight: 800 !important;
+        letter-spacing: -0.015em !important; text-align: center !important;
+        color: var(--nss-navy); margin-bottom: 16px !important;
         word-break: normal; overflow-wrap: break-word; max-width: 100%;
         opacity: 0; animation: scale-in 0.4s 0.1s var(--ease-out) forwards !important;
         will-change: opacity, transform;
@@ -751,13 +751,13 @@
 
       /* Event info — prominent badge pill below H1 title */
       .hero-event-info {
-        display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px;
-        background: rgba(124, 92, 252, 0.08);
-        border: 1px solid rgba(124, 92, 252, 0.22);
-        padding: 5px 12px; border-radius: 8px;
-        font-size: 12.5px !important; font-weight: 700 !important;
+        display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px;
+        background: rgba(86, 124, 141, 0.12);
+        border: 1.5px solid rgba(86, 124, 141, 0.28);
+        padding: 7px 16px; border-radius: 9999px;
+        font-size: 13px !important; font-weight: 700 !important;
         color: var(--nss-navy) !important;
-        margin-bottom: 12px !important; justify-content: flex-start;
+        margin: 0 auto 20px !important; justify-content: center;
         opacity: 0; animation: fade-in 0.4s 0.15s var(--ease-out) forwards !important;
         will-change: opacity;
       }
@@ -766,40 +766,40 @@
 
       /* Body description */
       .hero-desc {
-        font-size: 13.5px !important; line-height: 1.5 !important;
+        font-size: 14.5px !important; line-height: 1.65 !important;
         font-weight: 400 !important; color: var(--text-body) !important;
-        text-align: left !important; margin: 0 0 16px !important;
-        max-width: 100% !important; opacity: 0;
+        text-align: center !important; margin: 0 auto 24px !important;
+        max-width: 92% !important; opacity: 0;
         animation: fade-in 0.4s 0.2s ease forwards !important;
         will-change: opacity;
       }
 
-      /* CTA row — compact, well-proportioned button */
+      /* CTA row — spacious, prominent centered button */
       .hero-cta-row {
-        display: flex; flex-direction: column; align-items: flex-start;
-        gap: 8px; width: 100%; opacity: 0;
+        display: flex; flex-direction: column; align-items: center;
+        gap: 12px; width: 100%; opacity: 0;
         animation: fade-in 0.4s 0.25s ease forwards !important;
         will-change: opacity;
       }
 
-      /* PRIMARY CTA — scaled button ratio */
+      /* PRIMARY CTA — spacious button ratio */
       .btn-primary-cta {
         display: inline-flex !important; align-items: center !important; justify-content: center !important;
-        gap: 6px; min-height: 44px !important; height: auto !important;
-        padding: 0.65rem 1.4rem !important; font-size: 13.5px !important;
+        gap: 8px; min-height: 48px !important; height: auto !important;
+        padding: 0.85rem 1.8rem !important; font-size: 15px !important;
         font-weight: 800 !important; letter-spacing: -0.01em;
-        border-radius: 9999px !important; width: auto !important;
-        max-width: 100%; align-self: center; text-decoration: none !important;
-        background: linear-gradient(135deg, var(--soft-teal-accent) 0%, var(--nss-blue-accent) 100%);
+        border-radius: 9999px !important; width: 100% !important;
+        max-width: 320px; align-self: center; text-decoration: none !important;
+        background: var(--soft-teal-accent);
         color: #FFFFFF !important; border: none;
-        box-shadow: 0 4px 16px rgba(124,92,252,0.32) !important;
+        box-shadow: 0 6px 20px rgba(86,124,141,0.35) !important;
         transition: transform 0.15s ease, box-shadow 0.15s ease !important;
         cursor: pointer;
       }
       .btn-primary-cta:hover, .btn-primary-cta:active {
-        background: linear-gradient(135deg, var(--nss-blue-accent) 0%, var(--nss-navy) 100%);
-        box-shadow: 0 6px 22px rgba(124,92,252,0.42) !important;
-        transform: translateY(-1px) !important;
+        background: var(--nss-navy);
+        box-shadow: 0 8px 24px rgba(86,124,141,0.45) !important;
+        transform: translateY(-2px) !important;
       }
 
       /* ── EMERGENCY STRIP — ultra-compact ── */
