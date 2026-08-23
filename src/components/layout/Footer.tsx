@@ -22,18 +22,18 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links — hidden on mobile, shown on desktop */}
+        {/* Links column */}
         <div className="footer-links-col">
-          <p className="footer-col-heading">Explore</p>
-          <ul>
+          <p className="footer-col-heading">Explore Pages</p>
+          <ul className="footer-nav-list">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/understand">Understand PMOS</Link></li>
-            <li><Link href="/symptoms">Symptoms</Link></li>
-            <li><Link href="/self-test">Self-Check</Link></li>
+            <li><Link href="/symptoms">Symptoms &amp; Care</Link></li>
+            <li><Link href="/self-test">Self-Check Wizard</Link></li>
             <li><Link href="/myths">Myths vs Facts</Link></li>
-            <li><Link href="/ask">Ask Doctor</Link></li>
-            <li><Link href="/resources">Resources</Link></li>
-            <li><Link href="/about">About</Link></li>
+            <li><Link href="/ask">Ask a Doctor</Link></li>
+            <li><Link href="/resources">Campus Kit</Link></li>
+            <li><Link href="/about">About Us &amp; NSS Team</Link></li>
           </ul>
         </div>
 
