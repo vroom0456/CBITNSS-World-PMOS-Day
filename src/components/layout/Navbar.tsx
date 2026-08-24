@@ -214,7 +214,7 @@ export default function Navbar() {
           className="drawer-ask-btn"
           onClick={closeDrawer}
         >
-          🌸 Ask an Anonymous Question
+          Ask an Anonymous Question →
         </Link>
       </div>
 
