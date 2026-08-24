@@ -188,7 +188,7 @@ export default function MythsPage() {
                       </div>
 
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0, marginTop: '0.2rem' }}>
-                        <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--soft-teal-accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                        <span className="d-none d-sm-inline" style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--soft-teal-accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                           {isExpanded ? 'Hide' : 'Tap to reveal'}
                         </span>
                         <span

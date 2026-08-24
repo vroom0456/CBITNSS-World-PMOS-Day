@@ -1700,7 +1700,7 @@
   align-items: flex-start;
   justify-content: space-between;
   text-align: left;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .myth-num-badge {
