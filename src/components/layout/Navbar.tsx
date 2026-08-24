@@ -270,33 +270,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── MOBILE BOTTOM NAV — 6 direct tabs ── */}
-      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-        <Link href="/" className={pathname === '/' ? 'active' : ''} aria-current={pathname === '/' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">⌂</span>
-          <span>Home</span>
-        </Link>
-        <Link href="/understand" className={pathname === '/understand' ? 'active' : ''} aria-current={pathname === '/understand' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">📖</span>
-          <span>Learn</span>
-        </Link>
-        <Link href="/self-test" className={pathname === '/self-test' ? 'active' : ''} aria-current={pathname === '/self-test' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">✓</span>
-          <span>Check</span>
-        </Link>
-        <Link href="/myths" className={pathname === '/myths' ? 'active' : ''} aria-current={pathname === '/myths' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">💡</span>
-          <span>Myths</span>
-        </Link>
-        <Link href="/ask" className={pathname === '/ask' ? 'active' : ''} aria-current={pathname === '/ask' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">💬</span>
-          <span>Ask</span>
-        </Link>
-        <Link href="/about" className={pathname === '/about' ? 'active' : ''} aria-current={pathname === '/about' ? 'page' : undefined}>
-          <span className="bnav-icon" aria-hidden="true">👥</span>
-          <span>About</span>
-        </Link>
-      </nav>
+
 
       {/* ── GLOBAL ANONYMOUS MODAL — renders on ALL pages ── */}
       <div
