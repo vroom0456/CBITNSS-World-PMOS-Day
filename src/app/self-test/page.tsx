@@ -155,15 +155,15 @@ export default function SelfTestPage() {
                     <div className="wizard-progress-bar" style={{ width: `${((currentStep + 1) / wizardQuestions.length) * 100}%` }}></div>
                   </div>
 
-                  <h2 style={{ fontSize: '1.18rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem', lineHeight: 1.5 }}>
+                  <h2 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.3rem', lineHeight: 1.45 }}>
                     {wizardQuestions[currentStep].question}
                   </h2>
-                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '1.6rem' }}>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '1.2rem' }}>
                     {wizardQuestions[currentStep].description}
                   </p>
 
                   {/* Options */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.8rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.6rem' }}>
                     {wizardQuestions[currentStep].options.map((opt, idx) => (
                       <button
                         key={idx}

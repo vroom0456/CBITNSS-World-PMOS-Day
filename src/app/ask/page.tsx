@@ -116,17 +116,17 @@ export default function AskPage() {
                     </select>
                   </div>
 
-                  <div style={{ marginBottom: '1.5rem' }}>
+                  <div style={{ marginBottom: '1.2rem' }}>
                     <label htmlFor="q-message" style={{ display: 'block', fontSize: '0.88rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>
                       Your Question for the Doctor *
                     </label>
                     <textarea
                       id="q-message"
                       name="message"
-                      rows={5}
+                      rows={4}
                       placeholder="Type your doubt freely here... e.g. Is it normal to miss periods for 2 months when stressed about exams?"
                       required
-                      style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: 'var(--r-sm)', border: '1.5px solid var(--border-light)', fontSize: '0.92rem', color: 'var(--nss-navy)', background: '#FFFFFF', fontFamily: 'inherit', resize: 'vertical' }}
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--r-sm)', border: '1.5px solid var(--border-light)', fontSize: '0.92rem', color: 'var(--nss-navy)', background: '#FFFFFF', fontFamily: 'inherit', resize: 'vertical' }}
                     ></textarea>
                   </div>
 
