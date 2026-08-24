@@ -29,7 +29,7 @@ export default function HomePage() {
         <section id="hero" aria-labelledby="hero-heading">
           <div className="hero-container">
             <div className="nss-hero-badge">
-              <Image src="/nss-logo.png" alt="" width={18} height={18} aria-hidden="true" priority />
+              <Image src="/nss-logo.png" alt="" width={80} height={80} aria-hidden="true" priority unoptimized />
               <span>CBIT NSS · World PMOS Day 2026</span>
             </div>
 
@@ -102,7 +102,7 @@ export default function HomePage() {
               <p className="section-desc">PCOS/PCOD is highly individual. Common patterns include:</p>
             </div>
 
-            <div className="home-symptoms-row stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 180px), 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+            <div className="home-symptoms-grid stagger-grid">
               {[
                 { icon: '🩸', label: 'Irregular periods' },
                 { icon: '✨', label: 'Hormonal acne' },
@@ -189,7 +189,7 @@ export default function HomePage() {
         <section className="section section-alt" aria-labelledby="about-cta">
           <div className="container" style={{ maxWidth: '720px', margin: '0 auto', padding: '0 5%', textAlign: 'center' }}>
             <div className="reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem' }}>
-              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={52} height={52} style={{ borderRadius: '50%' }} />
+              <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={200} height={200} style={{ width: '96px', height: '96px', borderRadius: '50%', border: '3.5px solid #567C8D', boxShadow: '0 10px 30px rgba(86, 124, 141, 0.25), 0 0 25px rgba(86, 124, 141, 0.35)', marginBottom: '0.4rem' }} unoptimized />
               <h2 id="about-cta" className="section-title" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)' }}>Built by CBIT NSS</h2>
               <p className="section-desc" style={{ maxWidth: '480px' }}>
                 A student-led initiative dedicated to making women&apos;s health information clear, credible and accessible.

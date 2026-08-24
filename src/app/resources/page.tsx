@@ -107,7 +107,7 @@ export default function ResourcesPage() {
                   Scan to share this educational microsite directly on WhatsApp or Instagram.
                 </p>
                 <div style={{ background: 'var(--bg-main)', padding: '1rem', borderRadius: '16px', display: 'inline-block', border: '1px solid var(--border-light)' }}>
-                  <div style={{ width: '130px', height: '130px', background: 'var(--nss-navy)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 800, fontSize: '0.8rem', textAlign: 'center' }}>
+                  <div style={{ width: '130px', height: '130px', background: 'var(--nss-navy)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 800, fontSize: '0.8rem', textAlign: 'center' }}>
                     SCAN FOR<br />PMOS 2026
                   </div>
                 </div>

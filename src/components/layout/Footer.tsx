@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="footer-brand">
           <div className="footer-brand-row">
-            <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={28} height={28} className="footer-logo" />
+            <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="footer-logo" unoptimized />
             <div>
               <p className="footer-brand-name" style={{ margin: 0, lineHeight: 1.1 }}>CBIT NSS</p>
               <p className="footer-brand-sub" style={{ margin: 0, marginTop: '2px', lineHeight: 1.15 }}>World PMOS Awareness Day 2026</p>

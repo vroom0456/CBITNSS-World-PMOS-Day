@@ -62,6 +62,7 @@ export default function IntroSplash() {
           height={88}
           className="intro-clean-logo"
           priority
+          unoptimized
         />
         <div className="intro-clean-text">
           <h2 className="intro-clean-title">CBIT NSS</h2>

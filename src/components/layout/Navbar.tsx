@@ -139,7 +139,7 @@ export default function Navbar() {
       {/* ── MAIN NAV BAR ── */}
       <nav id="navbar" className={scrolled ? 'scrolled' : ''} role="navigation" aria-label="Main Navigation">
         <Link href="/" className="nav-brand" aria-label="CBIT NSS — Home">
-          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={30} height={30} className="nss-logo-img" priority />
+          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={120} height={120} className="nss-logo-img" priority unoptimized />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
             <span className="subtitle">World PMOS Day · 2026</span>
@@ -160,9 +160,9 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <button className="nav-btn-modal" onClick={openModal} aria-haspopup="dialog">
+            <Link href="/ask" className="nav-btn-modal">
               Ask Anonymous
-            </button>
+            </Link>
           </li>
         </ul>
 
@@ -209,13 +209,13 @@ export default function Navbar() {
             <span aria-hidden="true">›</span>
           </Link>
         ))}
-        <button
+        <Link
+          href="/ask"
           className="drawer-ask-btn"
-          onClick={() => { closeDrawer(); openModal(); }}
-          aria-haspopup="dialog"
+          onClick={closeDrawer}
         >
           🌸 Ask an Anonymous Question
-        </button>
+        </Link>
       </div>
 
       {/* ── MOBILE BOTTOM NAV — 6 direct tabs ── */}

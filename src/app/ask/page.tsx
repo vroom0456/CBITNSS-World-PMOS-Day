@@ -173,7 +173,7 @@ export default function AskPage() {
 
             <div className="row g-3">
               <div className="col-12 col-md-6 col-lg-4">
-                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
+                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
                 <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🏥</div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>National Women&apos;s Helpline</h4>
@@ -188,7 +188,7 @@ export default function AskPage() {
               </div>
 
               <div className="col-12 col-md-6 col-lg-4">
-                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
+                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
                 <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🧠</div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>iCall Mental Health Support</h4>
@@ -203,7 +203,7 @@ export default function AskPage() {
               </div>
 
               <div className="col-12 col-md-6 col-lg-4">
-                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
+                <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
                 <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🎓</div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>CBIT NSS Student Support</h4>

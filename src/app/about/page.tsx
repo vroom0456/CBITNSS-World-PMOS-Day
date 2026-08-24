@@ -106,7 +106,7 @@ export default function AboutPage() {
         {/* ── 04 CBIT NSS ABOUT ── */}
         <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: '#FFFFFF', textAlign: 'center' }} aria-labelledby="nss-section">
           <div style={{ maxWidth: '560px', margin: '0 auto' }} className="reveal">
-            <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={60} height={60} style={{ borderRadius: '50%', marginBottom: '1rem' }} />
+            <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={200} height={200} style={{ width: '96px', height: '96px', borderRadius: '50%', border: '3.5px solid #567C8D', boxShadow: '0 10px 30px rgba(86, 124, 141, 0.25), 0 0 25px rgba(86, 124, 141, 0.35)', marginBottom: '1rem' }} unoptimized />
             <h2 id="nss-section" className="section-title" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.8rem)' }}>CBIT NSS</h2>
             <p className="section-desc" style={{ marginBottom: '0' }}>
               The National Service Scheme at Chaitanya Bharathi Institute of Technology, Hyderabad. Student-led social service since its founding, covering health awareness, road safety, and community engagement.

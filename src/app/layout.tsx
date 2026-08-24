@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "World PMOS Day 2026 | CBIT NSS Health Awareness Campaign",
   description:
     "A student-led health awareness campaign by CBIT NSS on Polycystic Ovary Syndrome (PCOS/PMOS). Explore evidence-based information on symptoms, self-awareness tools, and anonymous questions for our live medical panel.",
+  icons: {
+    icon: "/nss-logo.png",
+    shortcut: "/nss-logo.png",
+    apple: "/nss-logo.png",
+  },
   keywords: [
     "PCOD",
     "PCOS",
