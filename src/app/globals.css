@@ -79,9 +79,9 @@
     #progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--nss-blue-accent),var(--soft-teal-accent));z-index:10000;width:0%;transition:width 0.08s linear;border-radius:0 2px 2px 0;}
 
     /* NAVBAR */
-    nav{position:fixed;top:0;left:0;right:0;z-index:10000;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 5%;background:rgba(249,248,252,0.94);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid #E6E0F0;box-shadow:0 1px 20px rgba(45,27,78,0.05);transition:opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;}
-    nav.hidden-nav{opacity:0;pointer-events:none;}
-    nav.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 24px rgba(58,43,39,0.08);}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:10000;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 5%;background:rgba(249,248,252,0.94);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid #E6E0F0;box-shadow:0 1px 20px rgba(45,27,78,0.05);transition:opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;}
+    #navbar.hidden-nav{opacity:0;pointer-events:none;}
+    #navbar.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 24px rgba(58,43,39,0.08);}
     .nav-brand{display:flex;align-items:center;gap:0.9rem;}
     .nss-logo-img{width:58px;height:58px;border-radius:50%;border:2px solid #567C8D;object-fit:contain;box-shadow:0 4px 18px rgba(86,124,141,0.20);transition:transform 0.45s var(--ease-spring),box-shadow 0.3s ease;flex-shrink:0;}
     .nss-logo-img:hover{transform:scale(1.1) rotate(6deg);box-shadow:0 8px 28px rgba(86,124,141,0.30);}
