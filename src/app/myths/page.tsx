@@ -5,41 +5,113 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 
-const mythsList = [
+export interface MythItem {
+  id: string;
+  num: string;
+  category: string;
+  myth: string;
+  fact: string;
+  why: string;
+  evidenceTitle: string;
+  evidenceUrl: string;
+}
+
+const mythsList: MythItem[] = [
   {
     id: 'm1',
-    myth: 'PCOS means you can never get pregnant.',
-    fact: 'Most people with PCOS can conceive, naturally or with medical support.',
-    details: 'Ovulation may be irregular, but healthy eggs are usually present. With appropriate lifestyle support and medical guidance, many people with PCOS conceive without difficulty. Speak to a gynaecologist to understand your individual situation.'
+    num: '01',
+    category: 'FERTILITY',
+    myth: 'PMOS means you can never get pregnant.',
+    fact: 'PMOS does not mean infertility.',
+    why: 'PMOS can make ovulation irregular, which may make conception more difficult for some people. However, many people with PMOS can become pregnant, with or without evidence-based medical treatment.',
+    evidenceTitle: 'International PMOS Guideline 2026 (Fertility & Ovulation Assessment)',
+    evidenceUrl: '/resources#citations'
   },
   {
     id: 'm2',
-    myth: 'PCOS is only about the ovaries and reproductive health.',
-    fact: 'PCOS is a multi-system condition involving hormones, metabolism, and emotional wellbeing.',
-    details: 'While reproductive symptoms are common, metabolic features (insulin sensitivity, lipid balance) and emotional wellbeing are equally central — and equally deserving of care. International guidelines now recognise all three as core components.'
+    num: '02',
+    category: 'OVARIES & DIAGNOSIS',
+    myth: 'You need ovarian cysts to have PMOS.',
+    fact: 'Despite the historical name, ovarian cysts are not required for diagnosis.',
+    why: 'The small fluid-filled follicles seen on ultrasound are immature follicles — not true cysts. Diagnosis relies on a combination of irregular cycles, clinical/biochemical androgen signs, and ultrasound findings according to the International PMOS criteria.',
+    evidenceTitle: 'Monash International PMOS Diagnostic Criteria Update 2026',
+    evidenceUrl: '/resources#citations'
   },
   {
     id: 'm3',
-    myth: 'Everyone with PCOS has exactly the same symptoms.',
-    fact: 'PCOS is highly individual. Symptoms vary considerably between people.',
-    details: 'One person may experience acne and mood changes; another may only notice cycle delays. There is no single typical presentation. This is why a clinical evaluation — not self-diagnosis — is important.'
+    num: '03',
+    category: 'DIAGNOSIS',
+    myth: 'Irregular periods automatically mean PMOS.',
+    fact: 'Irregular periods can have many underlying causes.',
+    why: 'Menstrual delays can stem from thyroid dysfunction, hyperprolactinaemia, severe stress, or nutritional deficits. PMOS diagnosis requires a structured clinical assessment to rule out secondary causes rather than evaluating one symptom alone.',
+    evidenceTitle: 'International PMOS Guideline 2026 (Differential Diagnosis Protocol)',
+    evidenceUrl: '/resources#citations'
   },
   {
     id: 'm4',
-    myth: 'PCOS can be fully reversed by a 7-day diet or herbal tea.',
-    fact: 'There is no quick fix. PCOS is managed through sustainable, long-term healthy habits.',
-    details: 'Sustainable nutrition, regular physical activity, consistent sleep and appropriate medical support can significantly improve symptoms over time. Extreme or rapid interventions are not supported by clinical evidence and may be harmful.'
+    num: '04',
+    category: 'BODY TYPE & WEIGHT',
+    myth: 'You can tell whether someone has PMOS just by looking at them.',
+    fact: 'PMOS affects individuals across all body types and physical appearances.',
+    why: 'PMOS occurs across all body sizes. Having a lower body weight does not rule out PMOS, and weight should not be used alone to determine whether someone has the condition.',
+    evidenceTitle: 'Monash International PMOS Guideline 2026 (Weight Stigma & Inclusive Care)',
+    evidenceUrl: '/resources#citations'
   },
   {
     id: 'm5',
-    myth: 'PCOS only affects people with higher body weight.',
-    fact: 'PCOS occurs across all body types, including lean individuals.',
-    details: 'Body weight is not a diagnostic requirement. Lean PCOS, often driven by stress, adrenal or genetic factors, requires equal clinical attention. Assuming weight is the cause can delay appropriate care.'
+    num: '05',
+    category: 'SYSTEMIC HEALTH',
+    myth: 'PMOS is just a fertility or reproductive problem.',
+    fact: 'PMOS can affect reproductive, metabolic, psychological and broader long-term health.',
+    why: 'PMOS can involve hormonal balance, glucose sensitivity, cardiovascular health, sleep patterns, and emotional wellbeing. Symptoms and long-term health considerations vary significantly between individuals.',
+    evidenceTitle: 'International PMOS Guideline 2026 (Multidisciplinary & Psychological Care)',
+    evidenceUrl: '/resources#citations'
+  },
+  {
+    id: 'm6',
+    num: '06',
+    category: 'TREATMENT & CURES',
+    myth: 'A 7-day diet or herbal tea can cure PMOS.',
+    fact: 'There is no proven quick cure for PMOS.',
+    why: 'Management is individualized and may include healthy lifestyle behaviours, symptom-specific treatment and medical care. Sustainable, long-term habits are far more effective and safer than unproven rapid detoxes or extreme restrictive diets.',
+    evidenceTitle: 'Monash International PMOS Guideline 2026 (Lifestyle & Evidence-Based Therapy)',
+    evidenceUrl: '/resources#citations'
+  },
+  {
+    id: 'm7',
+    num: '07',
+    category: 'PHARMACOTHERAPY',
+    myth: 'Oral contraceptive pills are the only treatment for PMOS.',
+    fact: 'Treatment is multidimensional and tailored to your individual health goals.',
+    why: 'While oral contraceptives can help manage cycle regularity and androgenic symptoms for some, treatment options also include metabolic therapies (such as metformin), lifestyle interventions, dermatological care, and fertility support depending on personal needs.',
+    evidenceTitle: 'International PMOS Guideline 2026 (Pharmacological Management Options)',
+    evidenceUrl: '/resources#citations'
+  },
+  {
+    id: 'm8',
+    num: '08',
+    category: 'AGE & DEMOGRAPHICS',
+    myth: 'PMOS only develops after pregnancy or later in adult life.',
+    fact: 'PMOS commonly manifests during adolescence around the onset of puberty.',
+    why: 'Hormonal and metabolic features often appear during teenage years. Early awareness and adolescent-specific diagnostic guidelines ensure young women receive supportive care without premature misdiagnosis.',
+    evidenceTitle: 'International PMOS Guideline 2026 (Adolescent Diagnostic Algorithms)',
+    evidenceUrl: '/resources#citations'
+  },
+  {
+    id: 'm9',
+    num: '09',
+    category: 'MENTAL HEALTH',
+    myth: 'Mood swings and anxiety in PMOS are just personal weakness.',
+    fact: 'Psychological distress in PMOS is a physiological and biological reality.',
+    why: 'Hormonal fluctuations, insulin resistance, and systemic inflammation contribute directly to elevated anxiety and depressive symptoms. International guidelines recommend routine emotional wellbeing screening as part of standard PMOS care.',
+    evidenceTitle: 'Monash International PMOS Guideline 2026 (Mental Health & Quality of Life)',
+    evidenceUrl: '/resources#citations'
   }
 ];
 
 export default function MythsPage() {
   const [expandedMyth, setExpandedMyth] = useState<string | null>(null);
+  const [exploredIds, setExploredIds] = useState<string[]>([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,6 +127,9 @@ export default function MythsPage() {
 
   const toggleMyth = (id: string) => {
     setExpandedMyth(prev => prev === id ? null : id);
+    if (!exploredIds.includes(id)) {
+      setExploredIds(prev => [...prev, id]);
+    }
   };
 
   return (
@@ -62,88 +137,161 @@ export default function MythsPage() {
       <Navbar />
       <main className="page-main">
 
-        {/* HEADER */}
+        {/* ── 01 HEADER ── */}
         <section style={{ padding: 'clamp(3rem, 8vw, 5rem) 5% clamp(1.5rem, 4vw, 2.5rem)', background: 'var(--bg-main)', textAlign: 'center' }} aria-labelledby="myths-heading">
-          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-            <span className="section-tag reveal">Common misconceptions</span>
+          <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+            <span className="section-tag reveal">Evidence-based clarifications</span>
             <h1 id="myths-heading" className="section-title reveal" style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)', marginTop: '0.75rem', marginBottom: '1rem' }}>
               Myths vs <span className="accent">Facts</span>
             </h1>
-            <p className="section-desc reveal" style={{ maxWidth: '580px', margin: '0 auto' }}>
-              Common misunderstandings about PCOS — addressed with evidence from international medical research.
+            <p className="section-desc reveal" style={{ maxWidth: '600px', margin: '0 auto' }}>
+              Common misconceptions about PMOS (previously called PCOS) — addressed with evidence from the 2026 Monash International PMOS Guidelines.
             </p>
           </div>
         </section>
 
-        {/* MYTHS ACCORDION */}
+        {/* ── 02 INTERACTIVE MYTHS ACCORDION + MYTH METER ── */}
         <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5% clamp(2.5rem, 6vw, 4rem)', background: '#FFFFFF' }} aria-labelledby="myths-list-heading">
-          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-            <h2 id="myths-list-heading" className="sr-only">List of myths and facts</h2>
-            <div
-              style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}
-              role="list"
-            >
-              {mythsList.map(m => (
-                <div
-                  key={m.id}
-                  className="myth-card-expandable"
-                  role="listitem"
-                >
-                  <button
-                    className="myth-expand-btn"
-                    onClick={() => toggleMyth(m.id)}
-                    aria-expanded={expandedMyth === m.id}
-                    aria-controls={`myth-body-${m.id}`}
-                    id={`myth-trigger-${m.id}`}
-                  >
-                    <div style={{ textAlign: 'left' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.25rem' }}>
-                        Common myth
-                      </span>
-                      <span style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', lineHeight: 1.45 }}>
-                        {m.myth}
-                      </span>
-                    </div>
-                    <span
-                      style={{ fontSize: '1rem', color: 'var(--nss-blue-accent)', flexShrink: 0, marginLeft: '0.8rem', transition: 'transform 0.25s ease', transform: expandedMyth === m.id ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                      aria-hidden="true"
-                    >
-                      ▼
-                    </span>
-                  </button>
+          <div style={{ maxWidth: '840px', margin: '0 auto' }}>
 
+            {/* MYTH METER PROGRESS TRACKER */}
+            <div className="myth-meter-box reveal" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  Interactive Myth Meter
+                </span>
+                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-navy)' }}>
+                  {String(exploredIds.length).padStart(2, '0')} / {String(mythsList.length).padStart(2, '0')} Misconceptions Explored
+                </span>
+              </div>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', margin: 0 }}>
+                Tap each card below to reveal the clinical facts and evidence.
+              </p>
+              <div className="myth-meter-dots">
+                {mythsList.map((m) => (
                   <div
-                    id={`myth-body-${m.id}`}
-                    role="region"
-                    aria-labelledby={`myth-trigger-${m.id}`}
-                    hidden={expandedMyth !== m.id}
+                    key={m.id}
+                    className={`myth-dot ${exploredIds.includes(m.id) ? 'active' : ''}`}
+                    title={`Myth ${m.num}: ${m.category}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <h2 id="myths-list-heading" className="sr-only">List of PMOS myths and facts</h2>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }} role="list">
+              {mythsList.map(m => {
+                const isExpanded = expandedMyth === m.id;
+                const isExplored = exploredIds.includes(m.id);
+
+                return (
+                  <div
+                    key={m.id}
+                    className={`myth-card-expandable ${isExpanded ? 'is-expanded' : ''}`}
+                    role="listitem"
                   >
-                    <div className="myth-body-content">
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#166534', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.4rem' }}>
-                        Medical evidence
-                      </span>
-                      <p style={{ fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '0.5rem', lineHeight: 1.55 }}>{m.fact}</p>
-                      <p style={{ color: 'var(--text-body)', fontSize: '0.88rem', lineHeight: 1.65 }}>{m.details}</p>
-                    </div>
+                    <button
+                      className="myth-expand-btn"
+                      onClick={() => toggleMyth(m.id)}
+                      aria-expanded={isExpanded}
+                      aria-controls={`myth-body-${m.id}`}
+                      id={`myth-trigger-${m.id}`}
+                    >
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.45rem', flexWrap: 'wrap' }}>
+                          <span className="myth-num-badge">{m.num} / {String(mythsList.length).padStart(2, '0')}</span>
+                          <span className="myth-category-chip">{m.category}</span>
+                          {isExplored && (
+                            <span style={{ fontSize: '0.68rem', fontWeight: 800, color: '#059669', background: '#ECFDF5', padding: '0.15rem 0.5rem', borderRadius: '9999px' }}>
+                              ✓ Explored
+                            </span>
+                          )}
+                        </div>
+
+                        <span style={{ fontSize: '0.74rem', fontWeight: 800, color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.2rem' }}>
+                          ❌ MYTH
+                        </span>
+                        <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', lineHeight: 1.4, margin: 0 }}>
+                          &ldquo;{m.myth}&rdquo;
+                        </h3>
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0, marginTop: '0.2rem' }}>
+                        <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--soft-teal-accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          {isExpanded ? 'Hide' : 'Tap to reveal'}
+                        </span>
+                        <span
+                          style={{ fontSize: '0.9rem', color: 'var(--soft-teal-accent)', transition: 'transform 0.25s ease', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        >
+                          ▼
+                        </span>
+                      </div>
+                    </button>
+
+                    {isExpanded && (
+                      <div
+                        id={`myth-body-${m.id}`}
+                        role="region"
+                        aria-labelledby={`myth-trigger-${m.id}`}
+                      >
+                        <div className="myth-body-content">
+                          <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#059669', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.35rem' }}>
+                            ✓ CLINICAL FACT
+                          </span>
+                          <p style={{ fontWeight: 800, color: 'var(--nss-navy)', fontSize: '1.02rem', marginBottom: '0.6rem', lineHeight: 1.5 }}>
+                            {m.fact}
+                          </p>
+
+                          <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.3rem' }}>
+                            WHY IT MATTERS &amp; MEDICAL EVIDENCE
+                          </span>
+                          <p style={{ color: 'var(--text-body)', fontSize: '0.88rem', lineHeight: 1.65, marginBottom: '1.1rem' }}>
+                            {m.why}
+                          </p>
+
+                          {/* EVIDENCE & ANONYMOUS ACTION ROW */}
+                          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center', paddingTop: '0.6rem', borderTop: '1px dashed var(--border-light)' }}>
+                            <Link href={m.evidenceUrl} className="myth-evidence-link">
+                              🔗 {m.evidenceTitle} ↗
+                            </Link>
+                            <Link href="/ask" className="myth-action-link">
+                              💬 Still unsure? Ask anonymously →
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* RESEARCH CTA */}
-        <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: 'var(--bg-main)', textAlign: 'center' }} aria-labelledby="myths-cta">
-          <div style={{ maxWidth: '600px', margin: '0 auto' }} className="reveal">
-            <h2 id="myths-cta" className="section-title" style={{ fontSize: 'clamp(1.3rem, 3.5vw, 2rem)', marginBottom: '0.75rem' }}>
-              Want to go deeper?
+        {/* ── 03 RECAP & SEAMLESS LEARNING JOURNEY ── */}
+        <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)', textAlign: 'center' }} aria-labelledby="myths-journey-heading">
+          <div style={{ maxWidth: '720px', margin: '0 auto' }} className="reveal">
+            <span className="section-tag">Key takeaway</span>
+            <h2 id="myths-journey-heading" className="section-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)', marginBottom: '0.75rem' }}>
+              What should you remember?
             </h2>
-            <p className="section-desc" style={{ marginBottom: '2rem' }}>
-              View the clinical citations and research that inform this campaign.
+            <p className="section-desc" style={{ maxWidth: '580px', margin: '0 auto 2rem' }}>
+              PMOS is common, manageable, and highly individual. Understanding evidence-backed facts empowers you to have clearer, more productive conversations with your healthcare provider.
             </p>
-            <Link href="/resources" className="btn-primary-cta">
-              Research &amp; sources →
-            </Link>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/ask" className="btn-primary-cta">
+                Ask an Anonymous Question →
+              </Link>
+              <Link href="/self-test" className="btn-sec-link">
+                2-Minute Self-Check Tool →
+              </Link>
+              <Link href="/resources" className="btn-sec-link">
+                Research &amp; Clinical Citations →
+              </Link>
+            </div>
           </div>
         </section>
 

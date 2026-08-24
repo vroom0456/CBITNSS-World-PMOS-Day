@@ -1635,37 +1635,140 @@
   box-shadow: var(--shadow-card);
 }
 
-/* EXPANDABLE MYTH CARDS */
+/* EXPANDABLE MYTH CARDS & INTERACTIVE MYTH METER */
+.myth-meter-box {
+  background: linear-gradient(135deg, var(--soft-teal-bg) 0%, #FFFFFF 100%);
+  border: 1.5px solid var(--soft-teal-border);
+  border-radius: 28px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2.2rem;
+  box-shadow: 0 4px 20px rgba(86, 124, 141, 0.08);
+}
+
+.myth-meter-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.myth-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border-light);
+  transition: all 0.3s var(--ease-spring);
+}
+
+.myth-dot.active {
+  background: var(--soft-teal-accent);
+  transform: scale(1.25);
+  box-shadow: 0 0 10px rgba(86, 124, 141, 0.45);
+}
+
 .myth-card-expandable {
   background: var(--card-white);
   border: 1.5px solid var(--border-light);
-  border-radius: var(--r-md);
-  padding: 1.4rem 1.6rem;
-  cursor: pointer;
-  transition: all 0.3s var(--ease-spring);
+  border-radius: 28px;
+  padding: 1.6rem 1.8rem;
+  transition: all 0.35s var(--ease-spring);
   box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .myth-card-expandable:hover {
   border-color: var(--nss-blue-accent);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 30px rgba(31, 50, 61, 0.08);
 }
 
-.myth-header-row {
+.myth-card-expandable.is-expanded {
+  border-color: var(--soft-teal-accent);
+  background: #FFFFFF;
+  box-shadow: 0 12px 36px rgba(86, 124, 141, 0.12);
+}
+
+.myth-expand-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  text-align: left;
   gap: 1rem;
 }
 
+.myth-num-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--nss-blue-accent);
+  background: rgba(86, 124, 141, 0.1);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-pill);
+  letter-spacing: 0.06em;
+}
+
+.myth-category-chip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .myth-body-content {
-  margin-top: 1rem;
-  padding-top: 0.9rem;
+  margin-top: 1.2rem;
+  padding-top: 1.1rem;
   border-top: 1px solid var(--border-light);
   font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.65;
   animation: fade-in 0.3s ease;
+}
+
+.myth-evidence-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--soft-teal-accent);
+  text-decoration: none;
+  padding: 0.4rem 0.95rem;
+  background: var(--soft-teal-bg);
+  border-radius: var(--r-pill);
+  transition: all 0.25s var(--ease-spring);
+  border: 1px solid var(--soft-teal-border);
+}
+
+.myth-evidence-link:hover {
+  background: var(--nss-navy);
+  color: #FFFFFF !important;
+  border-color: var(--nss-navy);
+  transform: translateY(-2px);
+}
+
+.myth-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-body);
+  text-decoration: none;
+  padding: 0.4rem 0.95rem;
+  background: var(--bg-main);
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-light);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.myth-action-link:hover {
+  color: var(--nss-navy);
+  border-color: var(--nss-navy);
+  transform: translateY(-2px);
 }
 
 /* VISUAL TIMELINE */
