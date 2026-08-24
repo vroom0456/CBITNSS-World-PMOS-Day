@@ -1055,15 +1055,15 @@
          CARDS — only when genuinely necessary
          14–16px padding, 10–14px radius, no heavy shadow
       ───────────────────────────────────────────────────────── */
-      .summary-card, .quiz-card, .form-panel, .women-admin-spotlight {
-        padding: 16px !important; border-radius: 12px !important;
-        box-shadow: 0 1px 6px rgba(45,27,78,0.05) !important;
-        border: 1px solid var(--border-light) !important;
+      .summary-card, .quiz-card, .form-panel, .women-admin-spotlight, .ask-form-card, .wizard-card {
+        padding: 18px 16px !important; border-radius: 24px !important;
+        box-shadow: 0 4px 16px rgba(45,27,78,0.05) !important;
+        border: 1.5px solid var(--border-light) !important;
       }
       .symptom-card, .pre-card, .myth-card, .doctor-card,
-      .resource-card, .diet-box, .about-box {
-        padding: 14px !important; border-radius: 10px !important;
-        box-shadow: none !important;
+      .resource-card, .diet-box, .about-box, .recommendation-item, .myth-card-expandable {
+        padding: 16px !important; border-radius: 20px !important;
+        box-shadow: 0 2px 10px rgba(45,27,78,0.04) !important;
       }
       .summary-card h3, .symptom-card h4, .pre-info h5, .doctor-card h5,
       .resource-card h5, .diet-box h4, .about-box h4, .quiz-card h3, .form-panel h4 {
@@ -1283,18 +1283,21 @@
       /* ── WIZARD & CHECK PAGE BUTTONS (SCALED RATIOS) ── */
       .wizard-option-btn { padding: 10px 12px !important; min-height: 40px !important; font-size: 13px !important; font-weight: 600 !important; border-radius: 8px !important; }
       .wizard-nav-prev {
-        height: 36px !important; min-height: 36px !important;
-        padding: 0 14px !important; font-size: 12.5px !important;
-        font-weight: 700 !important; border-radius: 18px !important;
+        height: auto !important; min-height: 42px !important;
+        padding: 0.5rem 1.1rem !important; font-size: 13px !important;
+        font-weight: 700 !important; border-radius: 9999px !important;
         color: var(--nss-navy) !important; border: 1.5px solid var(--border-light) !important;
-        background: transparent !important;
+        background: #FFFFFF !important; flex-shrink: 0 !important; white-space: nowrap !important;
+        display: inline-flex !important; align-items: center !important; justify-content: center !important;
       }
       .wizard-nav-next {
-        height: 36px !important; min-height: 36px !important;
-        padding: 0 16px !important; font-size: 13px !important;
-        font-weight: 800 !important; border-radius: 18px !important;
-        color: #FFFFFF !important; background: var(--nss-blue-accent) !important;
-        border: none !important;
+        height: auto !important; min-height: 42px !important;
+        padding: 0.5rem 1.1rem !important; font-size: 13px !important;
+        font-weight: 800 !important; border-radius: 9999px !important;
+        color: #FFFFFF !important; background: var(--soft-teal-accent) !important;
+        border: none !important; flex: 1 !important;
+        display: inline-flex !important; align-items: center !important; justify-content: center !important;
+        text-align: center !important; line-height: 1.2 !important;
       }
 
       /* ── CONTACT FORM ── */

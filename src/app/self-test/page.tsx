@@ -178,7 +178,7 @@ export default function SelfTestPage() {
                   </div>
 
                   {/* Nav buttons */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div className="wizard-nav-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
                     <button
                       className="wizard-nav-prev"
                       onClick={handlePrevStep}
@@ -193,31 +193,38 @@ export default function SelfTestPage() {
                       disabled={!answers[wizardQuestions[currentStep].id]}
                       style={{ opacity: !answers[wizardQuestions[currentStep].id] ? 0.5 : 1, cursor: !answers[wizardQuestions[currentStep].id] ? 'not-allowed' : 'pointer' }}
                     >
-                      {currentStep === wizardQuestions.length - 1 ? 'View Personalised Summary →' : 'Next →'}
+                      {currentStep === wizardQuestions.length - 1 ? (
+                        <>
+                          <span className="d-none d-sm-inline">View Personalised Summary →</span>
+                          <span className="d-inline d-sm-none">View Summary →</span>
+                        </>
+                      ) : (
+                        'Next →'
+                      )}
                     </button>
                   </div>
                 </div>
 
               ) : (
-                /* ── ACCURATE PERSONALISED RESULT SCREEN ── */
+                /* ── ACCURATE PERSONALISED RESULT SCREEN (STREAMLINED & ELEGANT) ── */
                 <div style={{ animation: 'fade-in 0.4s ease' }}>
                   
-                  <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
-                    <span style={{ fontSize: '3.5rem', display: 'block', marginBottom: '0.4rem' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <span style={{ fontSize: '3rem', display: 'block', marginBottom: '0.4rem' }}>
                       {flagCount === 0 ? '🌿' : flagCount <= 2 ? '💛' : '🩺'}
                     </span>
-                    <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                    <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                       Awareness Summary &amp; Recommendations
                     </span>
 
-                    <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.4rem', lineHeight: 1.4 }}>
+                    <h2 style={{ fontSize: 'clamp(1.2rem, 3.5vw, 1.5rem)', fontWeight: 800, color: 'var(--nss-navy)', marginTop: '0.35rem', lineHeight: 1.35 }}>
                       {flagCount === 0 
                         ? 'No notable patterns identified'
                         : flagCount <= 2
                         ? 'Some patterns worth discussing'
                         : 'Several patterns worth discussing with a doctor'}
                     </h2>
-                    <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65, maxWidth: '580px', margin: '0.4rem auto 0' }}>
                       {flagCount === 0
                         ? 'Your answers suggest broadly regular patterns across cycle, skin, energy and mood. Keep supporting your health with balanced nutrition, regular movement and adequate sleep.'
                         : `You noted ${flagCount} area${flagCount > 1 ? 's' : ''} that may be worth mentioning at your next healthcare appointment. See suggested conversation starters below.`}
@@ -226,52 +233,52 @@ export default function SelfTestPage() {
 
                   {/* CATEGORY-SPECIFIC TAILORED RECOMMENDATIONS */}
                   {flagCount > 0 && (
-                    <div className="result-block-box result-recommendations-box">
+                    <div style={{ marginBottom: '2rem' }}>
                       <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         Conversation starters for your doctor
                       </h3>
 
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                         {isCycleFlagged && (
-                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: '18px', borderLeft: '4px solid var(--nss-blue-accent)', border: '1px solid var(--border-light)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               🩸 Menstrual Cycle Care
                             </strong>
-                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
                               Track cycle start dates for 2–3 months using a period-tracking app or calendar. Schedule a consultation with a certified Gynaecologist to evaluate ovulatory health and rule out secondary causes.
                             </p>
                           </div>
                         )}
 
                         {isSkinFlagged && (
-                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid var(--nss-blue-accent)' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: '18px', borderLeft: '4px solid var(--nss-blue-accent)', border: '1px solid var(--border-light)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               ✨ Androgenic &amp; Skin Care
                             </strong>
-                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
                               Discuss serum free testosterone, DHEAS, and SHBG lab panels with your doctor. Avoid severe restrictive diets; focus on anti-inflammatory nutrition and non-comedogenic dermatological care.
                             </p>
                           </div>
                         )}
 
                         {isMetabolicFlagged && (
-                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #059669' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: '18px', borderLeft: '4px solid #059669', border: '1px solid var(--border-light)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
                               ⚡ Metabolic &amp; Glucose Sensitivity Care
                             </strong>
-                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
                               Ask your physician about Fasting Insulin, HbA1c, and Lipid Profile screenings. Emphasize low-glycemic index (Low-GI) complex carbohydrates, high prebiotic fiber, and resistance exercise to boost GLUT-4 cellular insulin sensitivity.
                             </p>
                           </div>
                         )}
 
                         {isEmotionalFlagged && (
-                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: 'var(--r-sm)', borderLeft: '4px solid #9333EA' }}>
+                          <div className="recommendation-item" style={{ background: '#FFFFFF', padding: '1rem 1.2rem', borderRadius: '18px', borderLeft: '4px solid #9333EA', border: '1px solid var(--border-light)' }}>
                             <strong style={{ color: 'var(--nss-navy)', fontSize: '0.92rem', display: 'block', marginBottom: '0.2rem' }}>
-                              Emotional wellbeing &amp; stress
+                              🧠 Emotional wellbeing &amp; stress
                             </strong>
-                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
-                              Anxiety and mood changes linked to PCOS are physiological responses — not personal weakness. Consistent sleep, stress-reduction practices and peer or professional support can help. Mention these to your doctor or a counsellor.
+                            <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
+                              Anxiety and mood changes linked to PMOS are physiological responses — not personal weakness. Consistent sleep, stress-reduction practices and peer or professional support can help. Mention these to your doctor or a counsellor.
                             </p>
                           </div>
                         )}
@@ -279,27 +286,27 @@ export default function SelfTestPage() {
                     </div>
                   )}
 
-                  {/* ── PROMINENT MEDICAL DISCLAIMER BOX UNDER RECOMMENDATIONS ── */}
-                  <div className="result-disclaimer-box">
-                    <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>🛡️</span>
+                  {/* ── PROMINENT MEDICAL DISCLAIMER NOTICE ── */}
+                  <div style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: '20px', padding: '1.2rem 1.4rem', marginBottom: '2rem' }}>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: '1.4rem', lineHeight: 1, flexShrink: 0 }}>🛡️</span>
                       <div>
-                        <h4 style={{ fontSize: '0.96rem', fontWeight: 800, color: '#92400E', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                        <h4 style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                           Medical Disclaimer &amp; Clinical Notice
                         </h4>
-                        <p style={{ fontSize: '0.86rem', color: '#78350F', lineHeight: 1.65 }}>
-                          This self-check tool is provided <strong>strictly for campus health awareness and education</strong>. It does <strong>NOT</strong> constitute a clinical diagnosis, medical opinion, or personalized treatment plan. Symptoms like cycle delays, acne, or fatigue can result from various underlying factors (including thyroid shifts, stress, or nutritional deficits). <strong>No personal data or answers are stored.</strong> Always consult a qualified healthcare provider (Gynaecologist or Endocrinologist) for an accurate clinical diagnosis and tailored medical care.
+                        <p style={{ fontSize: '0.84rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
+                          This self-check tool is provided <strong>strictly for campus health awareness and education</strong>. It does <strong>NOT</strong> constitute a clinical diagnosis, medical opinion, or personalized treatment plan. Symptoms like cycle delays, acne, or fatigue can result from various underlying factors. <strong>No personal data or answers are stored.</strong> Always consult a qualified healthcare provider for clinical evaluation.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* POINTERS TO BRING TO YOUR DOCTOR */}
-                  <div className="result-block-box result-pointers-box">
-                    <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>
+                  <div style={{ marginBottom: '2rem' }}>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.6rem' }}>
                       Questions to bring to your doctor
                     </h3>
-                    <ul style={{ paddingLeft: '1.2rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.2rem' }}>
+                    <ul style={{ paddingLeft: '1.2rem', fontSize: '0.86rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: '1.2rem' }}>
                       <li>&quot;Could these symptoms be caused by thyroid issues, vitamin deficiencies or stress?&quot;</li>
                       <li>&quot;Which tests would you recommend — hormone levels, insulin, thyroid (TSH)?&quot;</li>
                       <li>&quot;What lifestyle changes would you recommend for my specific situation?&quot;</li>

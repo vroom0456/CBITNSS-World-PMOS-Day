@@ -150,40 +150,15 @@ export default function MythsPage() {
           </div>
         </section>
 
-        {/* ── 02 INTERACTIVE MYTHS ACCORDION + MYTH METER ── */}
+        {/* ── 02 INTERACTIVE MYTHS ACCORDION ── */}
         <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5% clamp(2.5rem, 6vw, 4rem)', background: '#FFFFFF' }} aria-labelledby="myths-list-heading">
-          <div style={{ maxWidth: '840px', margin: '0 auto' }}>
-
-            {/* MYTH METER PROGRESS TRACKER */}
-            <div className="myth-meter-box reveal" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                  Interactive Myth Meter
-                </span>
-                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--nss-navy)' }}>
-                  {String(exploredIds.length).padStart(2, '0')} / {String(mythsList.length).padStart(2, '0')} Misconceptions Explored
-                </span>
-              </div>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-body)', margin: 0 }}>
-                Tap each card below to reveal the clinical facts and evidence.
-              </p>
-              <div className="myth-meter-dots">
-                {mythsList.map((m) => (
-                  <div
-                    key={m.id}
-                    className={`myth-dot ${exploredIds.includes(m.id) ? 'active' : ''}`}
-                    title={`Myth ${m.num}: ${m.category}`}
-                  />
-                ))}
-              </div>
-            </div>
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
 
             <h2 id="myths-list-heading" className="sr-only">List of PMOS myths and facts</h2>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }} role="list">
               {mythsList.map(m => {
                 const isExpanded = expandedMyth === m.id;
-                const isExplored = exploredIds.includes(m.id);
 
                 return (
                   <div
@@ -199,17 +174,12 @@ export default function MythsPage() {
                       id={`myth-trigger-${m.id}`}
                     >
                       <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.45rem', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                           <span className="myth-num-badge">{m.num} / {String(mythsList.length).padStart(2, '0')}</span>
                           <span className="myth-category-chip">{m.category}</span>
-                          {isExplored && (
-                            <span style={{ fontSize: '0.68rem', fontWeight: 800, color: '#059669', background: '#ECFDF5', padding: '0.15rem 0.5rem', borderRadius: '9999px' }}>
-                              ✓ Explored
-                            </span>
-                          )}
                         </div>
 
-                        <span style={{ fontSize: '0.74rem', fontWeight: 800, color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.2rem' }}>
+                        <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '0.2rem' }}>
                           ❌ MYTH
                         </span>
                         <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--nss-navy)', lineHeight: 1.4, margin: 0 }}>
