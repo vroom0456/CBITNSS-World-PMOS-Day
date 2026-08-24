@@ -172,7 +172,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── MAIN NAV BAR ── */}
-      <nav id="navbar" className={scrolled ? 'scrolled' : ''} role="navigation" aria-label="Main Navigation">
+      <nav id="navbar" className={`${scrolled ? 'scrolled' : ''} ${drawerOpen ? 'hidden-nav' : ''}`} role="navigation" aria-label="Main Navigation">
         <Link href="/" className="nav-brand" aria-label="CBIT NSS — Home">
           <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={120} height={120} className="nss-logo-img" priority unoptimized />
           <div className="brand-text">
@@ -232,6 +232,22 @@ export default function Navbar() {
         aria-modal="false"
         aria-hidden={!drawerOpen}
       >
+        <div className="drawer-header">
+          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="drawer-logo" unoptimized />
+          <div className="drawer-brand-text">
+            <span className="title">CBIT NSS</span>
+            <span className="subtitle">World PMOS Day · 2026</span>
+          </div>
+          <button
+            className="drawer-close-btn"
+            onClick={closeDrawer}
+            aria-label="Close navigation menu"
+          >
+            ×
+          </button>
+        </div>
+        
+        <div className="drawer-links-scroll">
         {navLinks.map(link => (
           <Link
             key={link.href}
@@ -244,13 +260,14 @@ export default function Navbar() {
             <span aria-hidden="true">›</span>
           </Link>
         ))}
-        <Link
-          href="/ask"
-          className="drawer-ask-btn"
-          onClick={closeDrawer}
-        >
-          Ask an Anonymous Question →
-        </Link>
+          <Link
+            href="/ask"
+            className="drawer-ask-btn"
+            onClick={closeDrawer}
+          >
+            Ask Anonymous
+          </Link>
+        </div>
       </div>
 
       {/* ── MOBILE BOTTOM NAV — 6 direct tabs ── */}
