@@ -40,7 +40,6 @@ export default function Navbar() {
     const handler = () => openModal();
     window.addEventListener('openModal', handler);
     return () => window.removeEventListener('openModal', handler);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -50,7 +49,7 @@ export default function Navbar() {
   }, []);
 
   // Close drawer on route change
-  useEffect(() => { setDrawerOpen(false); }, [pathname]);
+  useEffect(() => { setTimeout(() => setDrawerOpen(false), 0); }, [pathname]);
 
   // Keyboard: Escape closes modal and drawer
   useEffect(() => {

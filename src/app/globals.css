@@ -204,8 +204,6 @@
     .drawer-ask-btn{display:flex;align-items:center;justify-content:center;background:var(--nss-blue-accent);color:#fff;font-size:13.5px;font-weight:700;min-height:42px;border-radius:var(--r-pill);margin-top:0.6rem;padding:0 1rem;border:none;cursor:pointer;width:100%;transition:background 0.2s ease;text-decoration:none;}
     .drawer-ask-btn:hover{background:var(--nss-navy);}
 
-    /* ── BOTTOM NAV ICON ── */
-    .bnav-icon{font-size:18px;line-height:1;display:block;}
 
     /* ── FOOTER — SOFT LIGHTER TEAL THEME ── */
     footer{background:var(--soft-teal-bg);color:var(--nss-navy);padding:60px 5% 28px;border-top:2px solid var(--soft-teal-border);}
@@ -224,17 +222,6 @@
     .footer-bar-links{display:flex;gap:0.5rem;align-items:center;}
     .footer-bar-links a:hover{color:var(--soft-teal-accent);}
 
-    /* HERO old (keep for compatibility) */
-
-    .btn-hero-modal{background:var(--soft-teal-accent);color:#fff;padding:0.88rem 2rem;border-radius:var(--r-pill);font-weight:800;font-size:0.98rem;box-shadow:0 6px 24px rgba(86,124,141,0.38);transition:all 0.35s var(--ease-spring);display:inline-flex;align-items:center;gap:0.45rem;}
-    .btn-hero-modal:hover{background:var(--nss-navy);transform:translateY(-4px) scale(1.04);box-shadow:0 14px 36px rgba(86,124,141,0.52);}
-    .btn-hero-guide{background:rgba(255,255,255,0.85);color:var(--nss-navy);border:2px solid var(--border-light);padding:0.88rem 2rem;border-radius:var(--r-pill);font-weight:700;font-size:0.98rem;transition:all 0.3s var(--ease-spring);backdrop-filter:blur(8px);}
-    .btn-hero-guide:hover{background:var(--soft-mint-bg);transform:translateY(-3px);border-color:var(--nss-navy);box-shadow:0 8px 24px rgba(86,124,141,0.16);}
-    .hero-sparkle{position:absolute;pointer-events:none;z-index:0;font-size:1.2rem;}
-    .hero-sparkle:nth-child(1){top:15%;left:8%;animation:sparkle 3.5s 0s ease-in-out infinite,floatYSlow 5s 0s ease-in-out infinite;}
-    .hero-sparkle:nth-child(2){top:20%;right:12%;animation:sparkle 3.5s 0.8s ease-in-out infinite,floatYSlow 6s 0.5s ease-in-out infinite;}
-    .hero-sparkle:nth-child(3){bottom:25%;left:15%;animation:sparkle 3.5s 1.4s ease-in-out infinite,floatY 4s 1s ease-in-out infinite;}
-    .hero-sparkle:nth-child(4){bottom:30%;right:8%;animation:sparkle 3.5s 0.4s ease-in-out infinite,floatYSlow 7s 0.2s ease-in-out infinite;}
 
     /* EMERGENCY STRIP */
     .emergency-strip{background:var(--nss-blue-soft);border-top:1px solid var(--soft-teal-border);border-bottom:1px solid var(--soft-teal-border);padding:0.75rem 5%;display:flex;align-items:center;justify-content:center;gap:1rem;font-size:0.88rem;color:var(--nss-navy);flex-wrap:wrap;}
@@ -645,7 +632,6 @@
       --mob-h-btn: 44px;
       --mob-h-btn-sm: 38px;
       --mob-h-nav: 56px;
-      --mob-h-bnav: 52px;
     }
 
     @media (max-width: 768px) {
@@ -658,7 +644,7 @@
 
       /* ── TOUCH PRESS STATES (tactile, not heavy) ── */
       button:active, .btn-primary-cta:active, .btn-sec-link:active,
-      .btn-hero-modal:active, .btn-hero-guide:active,
+      .strip-pill:active, .btn-contact-pill:active,
       .nav-hub-row:active, .stat-box:active, .symptom-card:active,
       .pre-card:active, .myth-card:active, .doctor-card:active,
       .resource-card:active, .member-card:active, .quiz-row:active {
@@ -774,7 +760,7 @@
         opacity: 0.15; filter: blur(40px);
         animation: hero-blob 15s ease-in-out infinite reverse !important;
       }
-      .hero-sparkle { display: none !important; }
+
       .hero-container { align-items: center; text-align: center; gap: 0; }
 
       /* Campaign identity badge */

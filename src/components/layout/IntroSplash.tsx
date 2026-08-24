@@ -22,12 +22,12 @@ export default function IntroSplash() {
 
     if (!shouldPlay) {
       // Skip intro on internal client page switching
-      setVisible(false);
+      setTimeout(() => setVisible(false), 0);
       return;
     }
 
     // Play intro animation
-    setVisible(true);
+    setTimeout(() => setVisible(true), 0);
 
     // Start silky smooth fade out at 1.3s
     const fadeTimer = setTimeout(() => {
