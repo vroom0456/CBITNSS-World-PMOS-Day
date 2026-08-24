@@ -117,7 +117,7 @@
     .drawer-brand-text{display:flex;flex-direction:column;}
     .drawer-brand-text .title{font-size:1.1rem;font-weight:800;color:var(--nss-navy);line-height:1.15;}
     .drawer-brand-text .subtitle{font-size:0.6rem;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.08em;}
-    .drawer-close-btn{position:absolute;right:1.25rem;top:2rem;width:34px;height:34px;border-radius:50%;background:var(--bg-main);border:1px solid var(--border-light);font-size:1.4rem;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--nss-navy);cursor:pointer;transition:transform 0.3s var(--ease-spring), background 0.3s ease;}
+    .drawer-close-btn{position:absolute;right:1.25rem;top:50%;margin-top:-18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.7);border:1px solid rgba(86,124,141,0.2);font-size:1.6rem;font-weight:400;line-height:1;display:flex;align-items:center;justify-content:center;color:var(--nss-navy);cursor:pointer;transition:transform 0.3s var(--ease-spring), background 0.3s ease;backdrop-filter:blur(8px);}
     .drawer-close-btn:hover{background:var(--soft-teal-bg);transform:rotate(90deg) scale(1.1);}
     
     .drawer-links-scroll{padding:1.5rem 1.25rem 2rem;display:flex;flex-direction:column;gap:0.5rem;overflow-y:auto;flex:1;}
