@@ -73,6 +73,41 @@ export default function Navbar() {
     }
   }, [drawerOpen, modalOpen]);
 
+  // Swipe to open/close drawer on mobile
+  useEffect(() => {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX;
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    };
+
+    const handleSwipeGesture = () => {
+      // Swipe Left: Open Drawer
+      if (touchStartX - touchEndX > minSwipeDistance) {
+        setDrawerOpen(true);
+      }
+      // Swipe Right: Close Drawer
+      if (touchEndX - touchStartX > minSwipeDistance) {
+        setDrawerOpen(false);
+      }
+    };
+
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchend', onTouchEnd);
+    };
+  }, []);
+
   const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setModalSubmitting(true);
