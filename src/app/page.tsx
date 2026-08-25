@@ -39,7 +39,7 @@ export default function HomePage() {
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
-              <span>27 August 2026 · 2:00 PM Onwards</span>
+              <span>27 August 2026 · 2:00 PM</span>
               <span className="hero-event-sep" aria-hidden="true">·</span>
               <span>Assembly Hall, CBIT</span>
             </div>
