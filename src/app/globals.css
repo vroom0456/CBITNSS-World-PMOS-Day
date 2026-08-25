@@ -310,30 +310,19 @@
     }
     .speaker-glow-backdrop {
       position: absolute;
-      width: 380px;
-      height: 380px;
+      width: 440px;
+      height: 440px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(86, 124, 141, 0.22) 0%, rgba(245, 239, 235, 0.08) 55%, transparent 75%);
-      filter: blur(35px);
-      top: 45%;
+      background: radial-gradient(circle, rgba(86, 124, 141, 0.08) 0%, rgba(86, 124, 141, 0.02) 50%, transparent 75%);
+      filter: blur(55px);
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
       pointer-events: none;
-      animation: hero-blob 14s ease-in-out infinite;
     }
     .speaker-glow-secondary {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(248, 225, 205, 0.35) 0%, transparent 70%);
-      filter: blur(25px);
-      top: 65%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      pointer-events: none;
+      display: none;
     }
     .speaker-photo-cutout {
       position: relative;
@@ -343,22 +332,22 @@
       height: auto;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 16px 36px rgba(12, 43, 64, 0.16));
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 95%);
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 95%);
+      filter: drop-shadow(0 14px 32px rgba(12, 43, 64, 0.12));
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 0) 96%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 0) 96%);
       transition: transform 0.4s var(--ease-spring), filter 0.4s ease;
     }
     .speaker-photo-cutout:hover {
       transform: scale(1.02) translateY(-3px);
-      filter: drop-shadow(0 22px 46px rgba(12, 43, 64, 0.22));
+      filter: drop-shadow(0 20px 42px rgba(12, 43, 64, 0.18));
     }
     .speaker-bottom-fade {
       position: absolute;
       bottom: 0;
       left: -20%;
       right: -20%;
-      height: 110px;
-      background: linear-gradient(to top, #F5EFEB 0%, rgba(245, 239, 235, 0.9) 45%, transparent 100%);
+      height: 100px;
+      background: linear-gradient(to top, #FAF8F5 0%, rgba(250, 248, 245, 0.8) 50%, transparent 100%);
       z-index: 3;
       pointer-events: none;
     }
@@ -390,22 +379,18 @@
         margin: 0 auto -2.2rem !important;
       }
       .speaker-glow-backdrop {
-        width: 260px;
-        height: 260px;
-        max-width: 80vw;
-        max-height: 80vw;
+        width: 280px;
+        height: 280px;
+        max-width: 85vw;
+        max-height: 85vw;
         left: 50% !important;
-        top: 45% !important;
+        top: 50% !important;
         transform: translate(-50%, -50%) !important;
+        filter: blur(45px);
+        background: radial-gradient(circle, rgba(86, 124, 141, 0.09) 0%, rgba(86, 124, 141, 0.02) 55%, transparent 75%) !important;
       }
       .speaker-glow-secondary {
-        width: 200px;
-        height: 200px;
-        max-width: 70vw;
-        max-height: 70vw;
-        left: 50% !important;
-        top: 55% !important;
-        transform: translate(-50%, -50%) !important;
+        display: none !important;
       }
       .speaker-photo-cutout {
         max-width: 260px !important;
@@ -425,7 +410,7 @@
         left: -100px;
         right: -100px;
         height: 48px;
-        background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+        background: linear-gradient(to top, #FAF8F5 0%, rgba(250, 248, 245, 0.75) 50%, transparent 100%);
         z-index: 3;
         pointer-events: none;
       }
@@ -936,12 +921,13 @@
          Hierarchy: badge → event → H1 → body → CTA
       ───────────────────────────────────────────────────────── */
       /* ─────────────────────────────────────────────────────────
-         HERO — compact, scaled for mobile
+         HERO — compact, scaled for mobile with balanced vertical rhythm
+         Hierarchy: badge → event → H1 → body → CTA
       ───────────────────────────────────────────────────────── */
       #hero {
         min-height: unset !important;
         height: auto !important;
-        padding: 44px 20px 36px;
+        padding: clamp(42px, 6.5vw, 54px) 20px clamp(44px, 6.5vw, 56px) !important;
         text-align: center;
         background: linear-gradient(160deg, #FFFFFF 0%, #FAF8F5 50%, #F5EFEB 100%);
         position: relative;
@@ -969,17 +955,19 @@
         border: 1.5px solid var(--soft-teal-border);
         padding: 4px 11px; border-radius: 9999px;
         font-size: 11px; font-weight: 800; color: var(--nss-navy);
-        margin: 0 auto 10px; box-shadow: 0 4px 14px rgba(31,50,61,0.06);
+        margin: 0 auto clamp(20px, 3.2vw, 26px) !important;
+        box-shadow: 0 4px 14px rgba(31,50,61,0.06);
         letter-spacing: 0.04em; text-transform: uppercase;
       }
       .nss-hero-badge img { width: 16px; height: 16px; border-radius: 50%; }
 
       /* H1 — compact typography for mobile */
       .hero-h1, #hero h1 {
-        font-size: clamp(20px, 6vw, 26px) !important;
-        line-height: 1.25 !important; font-weight: 800 !important;
+        font-size: clamp(22px, 6.5vw, 30px) !important;
+        line-height: 1.22 !important; font-weight: 800 !important;
         letter-spacing: -0.015em !important; text-align: center !important;
-        color: var(--nss-navy); margin-bottom: 10px !important;
+        color: var(--nss-navy);
+        margin-bottom: clamp(20px, 3.2vw, 26px) !important;
         word-break: normal; overflow-wrap: break-word; max-width: 100%;
         opacity: 0; animation: scale-in 0.4s 0.1s var(--ease-out) forwards !important;
         will-change: opacity, transform;
@@ -991,10 +979,10 @@
         display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px;
         background: rgba(86, 124, 141, 0.12);
         border: 1.5px solid rgba(86, 124, 141, 0.28);
-        padding: 4px 12px; border-radius: 9999px;
-        font-size: 11.5px !important; font-weight: 700 !important;
+        padding: 5px 13px; border-radius: 9999px;
+        font-size: clamp(11.5px, 3.2vw, 13px) !important; font-weight: 700 !important;
         color: var(--nss-navy) !important;
-        margin: 0 auto 12px !important; justify-content: center;
+        margin: 0 auto clamp(22px, 4vw, 28px) !important; justify-content: center;
         opacity: 0; animation: fade-in 0.4s 0.15s var(--ease-out) forwards !important;
         will-change: opacity;
       }
@@ -1003,10 +991,12 @@
 
       /* Body description */
       .hero-desc {
-        font-size: 13.5px !important; line-height: 1.55 !important;
+        font-size: clamp(13.5px, 3.6vw, 15px) !important;
+        line-height: 1.6 !important;
         font-weight: 400 !important; color: var(--text-body) !important;
-        text-align: center !important; margin: 0 auto 16px !important;
-        max-width: 90% !important; opacity: 0;
+        text-align: center !important;
+        margin: 0 auto clamp(26px, 4.5vw, 34px) !important;
+        max-width: min(520px, 92%) !important; opacity: 0;
         animation: fade-in 0.4s 0.2s ease forwards !important;
         will-change: opacity;
       }
