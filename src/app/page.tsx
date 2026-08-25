@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="hero-container">
             <div className="nss-hero-badge">
               <Image src="/nss-logo.png" alt="" width={80} height={80} aria-hidden="true" priority unoptimized />
-              <span>CBIT NSS · Knowledge Beyond Symptoms 2026</span>
+              <span>CBIT NSS · PMOS Awareness 2026</span>
             </div>
 
             <h1 id="hero-heading" className="hero-h1">

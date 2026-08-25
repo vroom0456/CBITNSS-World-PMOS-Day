@@ -1002,6 +1002,8 @@
         margin: 0 auto clamp(20px, 3.2vw, 26px) !important;
         box-shadow: 0 4px 14px rgba(31,50,61,0.06);
         letter-spacing: 0.04em; text-transform: uppercase;
+        white-space: nowrap !important;
+        max-width: 100% !important;
       }
       .nss-hero-badge img { width: 16px; height: 16px; border-radius: 50%; }
 
