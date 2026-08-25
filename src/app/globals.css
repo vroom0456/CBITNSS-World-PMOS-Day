@@ -257,49 +257,49 @@
     .speaker-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       background: rgba(86, 124, 141, 0.08);
       border: 1px solid rgba(86, 124, 141, 0.22);
       color: var(--nss-navy);
-      padding: 0.3rem 0.95rem;
+      padding: 0.24rem 0.75rem;
       border-radius: var(--r-pill);
-      font-size: 0.75rem;
+      font-size: 0.70rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
     .speaker-sparkle {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .speaker-name {
-      font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+      font-size: clamp(1.4rem, 2.8vw, 1.95rem);
       font-weight: 800;
       color: var(--nss-navy);
       background: linear-gradient(135deg, #0C2B40 0%, #567C8D 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.18;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.35rem;
       letter-spacing: -0.01em;
     }
     .speaker-title {
-      font-size: 0.95rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: var(--soft-teal-accent);
-      line-height: 1.45;
-      margin-bottom: 0.8rem;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
     }
     .speaker-title .title-sep {
       color: var(--text-muted);
       margin: 0 0.3rem;
     }
     .speaker-bio {
-      font-size: 0.92rem;
+      font-size: 0.85rem;
       color: var(--text-body);
-      line-height: 1.68;
-      margin-bottom: 0.85rem;
-      max-width: 500px;
+      line-height: 1.62;
+      margin-bottom: 0.75rem;
+      max-width: 480px;
     }
     .speaker-image-wrapper {
       position: relative;
@@ -406,24 +406,31 @@
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
+        font-size: 0.68rem !important;
+        padding: 0.2rem 0.65rem !important;
+        margin-bottom: 0.5rem !important;
       }
       .speaker-name {
         width: 100% !important;
         text-align: center !important;
         margin-inline: auto !important;
+        font-size: clamp(1.2rem, 4.5vw, 1.45rem) !important;
+        margin-bottom: 0.3rem !important;
       }
       .speaker-title {
         width: 100% !important;
         text-align: center !important;
         margin-inline: auto !important;
+        font-size: 0.78rem !important;
+        margin-bottom: 0.5rem !important;
       }
       .speaker-bio {
         width: 100% !important;
-        max-width: 335px !important;
-        margin: 0 auto 0.85rem !important;
+        max-width: 325px !important;
+        margin: 0 auto 0.7rem !important;
         text-align: center !important;
-        line-height: 1.62 !important;
-        font-size: 13.5px !important;
+        line-height: 1.58 !important;
+        font-size: 12.5px !important;
       }
       .speaker-glow-backdrop, .speaker-glow-secondary {
         display: none !important;
