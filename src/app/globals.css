@@ -369,7 +369,7 @@
       }
       .speaker-container {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
         text-align: center;
         align-items: center;
         padding: 0 5%;
@@ -411,8 +411,12 @@
         max-width: 260px !important;
         margin: 0 auto !important;
         display: block !important;
+        transform: translateX(10.15%) !important;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 98%);
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 98%);
+      }
+      .speaker-photo-cutout:hover {
+        transform: translateX(10.15%) scale(1.02) translateY(-3px) !important;
       }
       .speaker-bottom-fade {
         display: block;
