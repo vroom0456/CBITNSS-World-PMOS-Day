@@ -175,7 +175,7 @@ export default function Navbar() {
           <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={120} height={120} className="nss-logo-img" priority unoptimized />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
-            <span className="subtitle">Knowledge Beyond Symptoms</span>
+            <span className="subtitle">Knowledge Beyond Symptoms 2026</span>
           </div>
         </Link>
 
@@ -235,7 +235,7 @@ export default function Navbar() {
             <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="drawer-logo" unoptimized />
             <div className="drawer-brand-text">
               <span className="title">CBIT NSS</span>
-              <span className="subtitle">Knowledge Beyond Symptoms</span>
+              <span className="subtitle">Knowledge Beyond Symptoms 2026</span>
             </div>
           </Link>
           <button
