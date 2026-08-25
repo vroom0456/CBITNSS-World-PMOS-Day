@@ -1494,43 +1494,43 @@
 
       /* ─────────────────────────────────────────────────────────
          FOOTER — compact, content-driven, intentional closing
-         Bottom padding accounts for floating elements & safe-area
+         Matches exact target mobile spacing specifications
       ───────────────────────────────────────────────────────── */
       footer {
-        padding: 32px 16px 20px !important;
-        padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+        padding: 36px 16px 32px !important;
+        padding-bottom: calc(32px + env(safe-area-inset-bottom)) !important;
       }
       .footer-inner {
         display: flex !important; flex-direction: column !important;
-        gap: 16px !important; margin-bottom: 14px !important;
+        gap: 0 !important; margin-bottom: 0 !important;
         grid-template-columns: unset !important;
       }
       .footer-brand { margin-bottom: 0; }
-      .footer-brand-row { margin-bottom: 6px; gap: 8px; align-items: center; }
-      .footer-logo { width: 36px !important; height: 36px !important; }
-      .footer-brand-name { font-size: 14.5px !important; font-weight: 800 !important; color: var(--nss-navy) !important; }
-      .footer-brand-sub { font-size: 10.5px !important; font-weight: 800 !important; color: var(--soft-teal-accent) !important; letter-spacing: 0.03em !important; }
-      .footer-brand-desc { font-size: 12.5px !important; line-height: 1.55 !important; opacity: 0.82 !important; margin-top: 4px !important; max-width: 520px !important; color: var(--text-body) !important; }
+      .footer-brand-row { margin-bottom: 16px !important; gap: 10px; align-items: center; }
+      .footer-logo { width: 38px !important; height: 38px !important; }
+      .footer-brand-name { font-size: 15px !important; font-weight: 800 !important; color: var(--nss-navy) !important; }
+      .footer-brand-sub { font-size: 11px !important; font-weight: 800 !important; color: var(--soft-teal-accent) !important; letter-spacing: 0.03em !important; }
+      .footer-brand-desc { font-size: 12.5px !important; line-height: 1.55 !important; opacity: 0.82 !important; margin-top: 0 !important; margin-bottom: 0 !important; max-width: 520px !important; color: var(--text-body) !important; }
       .footer-links-col { display: none !important; }
       /* Disclaimer — show on mobile, compact */
       .footer-disclaimer {
         display: block !important;
         border-top: 1px solid rgba(86, 124, 141, 0.16) !important;
-        padding-top: 14px !important;
-        margin-top: 0 !important;
+        margin-top: 24px !important;
+        padding-top: 20px !important;
       }
-      .footer-disclaimer .footer-col-heading { font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; margin-bottom: 5px !important; color: var(--nss-navy) !important; opacity: 0.85 !important; }
+      .footer-disclaimer .footer-col-heading { font-size: 10.5px !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; margin-bottom: 16px !important; color: var(--nss-navy) !important; opacity: 0.85 !important; }
       .footer-disclaimer-text { font-size: 11.5px !important; line-height: 1.55 !important; opacity: 0.8 !important; color: var(--text-body) !important; }
       .footer-bar {
         border-top: 1px solid rgba(86, 124, 141, 0.16) !important;
-        padding-top: 12px !important;
-        margin-top: 14px !important;
+        margin-top: 24px !important;
+        padding-top: 20px !important;
         display: flex !important; flex-direction: column !important;
         justify-content: center !important; align-items: center !important;
-        gap: 6px !important; font-size: 10.5px !important; opacity: 0.8 !important;
+        gap: 12px !important; font-size: 11px !important; opacity: 0.82 !important;
         text-align: center !important; color: var(--text-muted) !important;
       }
-      .footer-bar-links { font-size: 10.5px !important; gap: 8px !important; justify-content: center !important; font-weight: 600 !important; }
+      .footer-bar-links { font-size: 11px !important; gap: 8px !important; justify-content: center !important; font-weight: 600 !important; }
 
       /* ── WIZARD / SELF-CHECK ── */
       .wizard-option-btn { padding: 12px 14px; min-height: 52px; font-size: 14px; border-radius: 10px; border-width: 1.5px; }
