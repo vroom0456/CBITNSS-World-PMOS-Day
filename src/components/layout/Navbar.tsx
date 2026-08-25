@@ -88,12 +88,12 @@ export default function Navbar() {
     };
 
     const handleSwipeGesture = () => {
-      // Swipe Left: Open Drawer
-      if (touchStartX - touchEndX > minSwipeDistance) {
+      // Swipe Left near right edge: Open Drawer
+      if (touchStartX - touchEndX > minSwipeDistance && touchStartX > window.innerWidth - 45) {
         setDrawerOpen(true);
       }
-      // Swipe Right: Close Drawer
-      if (touchEndX - touchStartX > minSwipeDistance) {
+      // Swipe Right when drawer is open: Close Drawer
+      if (touchEndX - touchStartX > minSwipeDistance && drawerOpen) {
         setDrawerOpen(false);
       }
     };
@@ -231,11 +231,13 @@ export default function Navbar() {
         aria-hidden={!drawerOpen}
       >
         <div className="drawer-header">
-          <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="drawer-logo" unoptimized />
-          <div className="drawer-brand-text">
-            <span className="title">CBIT NSS</span>
-            <span className="subtitle">World PMOS Day · 2026</span>
-          </div>
+          <Link href="/" onClick={closeDrawer} className="drawer-brand-link" aria-label="CBIT NSS — Home">
+            <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="drawer-logo" unoptimized />
+            <div className="drawer-brand-text">
+              <span className="title">CBIT NSS</span>
+              <span className="subtitle">World PMOS Day · 2026</span>
+            </div>
+          </Link>
           <button
             className="drawer-close-btn"
             onClick={closeDrawer}

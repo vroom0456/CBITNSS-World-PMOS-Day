@@ -110,6 +110,7 @@
     .drawer-backdrop{position:fixed;inset:0;top:0;background:rgba(12,43,64,0.35);z-index:9998;backdrop-filter:blur(4px);animation:backdropFade 0.4s ease forwards;}
     
     .drawer-header{padding:1.6rem 1.25rem 1.2rem;display:flex;align-items:center;gap:0.8rem;border-bottom:1px solid rgba(86,124,141,0.15);position:relative;background:rgba(255,255,255,0.5);}
+    .drawer-brand-link{display:flex;align-items:center;gap:0.8rem;text-decoration:none;color:inherit;}
     .drawer-logo{width:46px;height:46px;border-radius:50%;object-fit:contain;box-shadow:0 4px 12px rgba(86,124,141,0.15);}
     .drawer-brand-text{display:flex;flex-direction:column;}
     .drawer-brand-text .title{font-size:1.1rem;font-weight:800;color:var(--nss-navy);line-height:1.15;}
