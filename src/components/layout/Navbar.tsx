@@ -88,12 +88,12 @@ export default function Navbar() {
     };
 
     const handleSwipeGesture = () => {
-      // Swipe Left near right edge: Open Drawer
-      if (touchStartX - touchEndX > minSwipeDistance && touchStartX > window.innerWidth - 45) {
+      // Swipe Left: Open Drawer
+      if (touchStartX - touchEndX > minSwipeDistance) {
         setDrawerOpen(true);
       }
-      // Swipe Right when drawer is open: Close Drawer
-      if (touchEndX - touchStartX > minSwipeDistance && drawerOpen) {
+      // Swipe Right: Close Drawer
+      if (touchEndX - touchStartX > minSwipeDistance) {
         setDrawerOpen(false);
       }
     };
