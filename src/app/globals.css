@@ -232,8 +232,8 @@
     /* ─── SPEAKER SPOTLIGHT SECTION ─── */
     .speaker-section {
       padding: 50px 5% 0;
-      background: radial-gradient(circle at 10% 50%, rgba(86, 124, 141, 0.12) 0%, transparent 55%),
-                  radial-gradient(circle at 90% 50%, rgba(86, 124, 141, 0.10) 0%, transparent 55%),
+      background: radial-gradient(ellipse 70% 85% at 0% 50%, rgba(86, 124, 141, 0.18) 0%, rgba(86, 124, 141, 0.05) 50%, transparent 75%),
+                  radial-gradient(ellipse 70% 85% at 100% 50%, rgba(86, 124, 141, 0.15) 0%, rgba(86, 124, 141, 0.04) 50%, transparent 75%),
                   linear-gradient(180deg, #FAF8F5 0%, #FFFFFF 40%, #F5EFEB 100%);
       border-bottom: 1px solid rgba(86, 124, 141, 0.1);
       position: relative;
@@ -345,8 +345,8 @@
     .speaker-bottom-fade {
       position: absolute;
       bottom: 0;
-      left: -30%;
-      right: -30%;
+      left: -50%;
+      right: -50%;
       height: 110px;
       background: linear-gradient(to top, #F5EFEB 0%, rgba(245, 239, 235, 0.9) 45%, transparent 100%);
       z-index: 3;
