@@ -1493,39 +1493,44 @@
       .doctor-advocacy-banner p { font-size: 13px; }
 
       /* ─────────────────────────────────────────────────────────
-         FOOTER — compact, informative
-         Bottom padding accounts for bottom nav bar
+         FOOTER — compact, content-driven, intentional closing
+         Bottom padding accounts for floating elements & safe-area
       ───────────────────────────────────────────────────────── */
       footer {
-        padding: 36px 16px 20px;
-        padding-bottom: calc(64px + env(safe-area-inset-bottom));
+        padding: 32px 16px 20px !important;
+        padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
       }
       .footer-inner {
         display: flex !important; flex-direction: column !important;
-        gap: 20px !important; margin-bottom: 16px !important;
+        gap: 16px !important; margin-bottom: 14px !important;
         grid-template-columns: unset !important;
       }
       .footer-brand { margin-bottom: 0; }
-      .footer-brand-row { margin-bottom: 8px; gap: 8px; }
-      .footer-brand-name { font-size: 14px; font-weight: 700; }
-      .footer-brand-sub { font-size: 10px; letter-spacing: 0.02em; }
-      .footer-brand-desc { font-size: 12px; line-height: 1.5; opacity: 0.75; margin-top: 4px; }
+      .footer-brand-row { margin-bottom: 6px; gap: 8px; align-items: center; }
+      .footer-logo { width: 36px !important; height: 36px !important; }
+      .footer-brand-name { font-size: 14.5px !important; font-weight: 800 !important; color: var(--nss-navy) !important; }
+      .footer-brand-sub { font-size: 10.5px !important; font-weight: 800 !important; color: var(--soft-teal-accent) !important; letter-spacing: 0.03em !important; }
+      .footer-brand-desc { font-size: 12.5px !important; line-height: 1.55 !important; opacity: 0.82 !important; margin-top: 4px !important; max-width: 520px !important; color: var(--text-body) !important; }
       .footer-links-col { display: none !important; }
       /* Disclaimer — show on mobile, compact */
       .footer-disclaimer {
         display: block !important;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 16px;
+        border-top: 1px solid rgba(86, 124, 141, 0.16) !important;
+        padding-top: 14px !important;
+        margin-top: 0 !important;
       }
-      .footer-disclaimer .footer-col-heading { font-size: 9px; letter-spacing: 0.1em; margin-bottom: 6px; opacity: 0.6; }
-      .footer-disclaimer-text { font-size: 11px; line-height: 1.5; opacity: 0.65; }
+      .footer-disclaimer .footer-col-heading { font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; margin-bottom: 5px !important; color: var(--nss-navy) !important; opacity: 0.85 !important; }
+      .footer-disclaimer-text { font-size: 11.5px !important; line-height: 1.55 !important; opacity: 0.8 !important; color: var(--text-body) !important; }
       .footer-bar {
-        border-top: 1px solid rgba(255,255,255,0.08);
-        padding-top: 12px; flex-direction: row;
-        justify-content: space-between; align-items: center;
-        flex-wrap: wrap; gap: 4px; font-size: 10px; opacity: 0.55;
+        border-top: 1px solid rgba(86, 124, 141, 0.16) !important;
+        padding-top: 12px !important;
+        margin-top: 14px !important;
+        display: flex !important; flex-direction: column !important;
+        justify-content: center !important; align-items: center !important;
+        gap: 6px !important; font-size: 10.5px !important; opacity: 0.8 !important;
+        text-align: center !important; color: var(--text-muted) !important;
       }
-      .footer-bar-links { font-size: 10px; gap: 6px; }
+      .footer-bar-links { font-size: 10.5px !important; gap: 8px !important; justify-content: center !important; font-weight: 600 !important; }
 
       /* ── WIZARD / SELF-CHECK ── */
       .wizard-option-btn { padding: 12px 14px; min-height: 52px; font-size: 14px; border-radius: 10px; border-width: 1.5px; }
@@ -1546,26 +1551,22 @@
     /* ── 390px–430px — 20px horizontal page padding ── */
     @media (min-width: 390px) and (max-width: 768px) {
       nav { padding-left: 20px; padding-right: 20px; }
-      #hero { padding: 36px 20px 32px; }
-      .section { padding: 40px 20px; }
-      #numbers { padding: 36px 20px 32px !important; }
-      footer { padding: 36px 20px 20px; padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+      .section { padding: 36px 20px; }
+      #numbers { padding: 32px 20px !important; }
     }
 
     /* ── Small phones: 320–389px — 16px horizontal page padding ── */
     @media (max-width: 389px) {
       nav { padding-left: 16px; padding-right: 16px; }
-      #hero { padding: 28px 16px 28px; }
       .section { padding: 32px 16px; }
       #numbers { padding: 28px 16px 24px !important; }
       .hero-h1, #hero h1 {
-        font-size: clamp(25px, 7.5vw, 29px) !important;
-        line-height: 1.07 !important;
+        font-size: clamp(21px, 6.8vw, 26px) !important;
+        line-height: 1.2 !important;
       }
       .section-title { font-size: clamp(20px, 5.5vw, 23px) !important; }
       .team-grid { grid-template-columns: 1fr; }
-      footer { padding: 28px 16px 16px; padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-      .btn-primary-cta { padding: 0 16px !important; font-size: 13.5px !important; }
+      .btn-primary-cta { padding: 0.75rem 1.25rem !important; min-height: 46px !important; font-size: 14px !important; }
       .btn-sec-link { padding: 0 11px !important; font-size: 12px !important; }
     }
 
