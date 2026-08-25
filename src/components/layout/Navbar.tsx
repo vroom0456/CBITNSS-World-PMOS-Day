@@ -163,7 +163,6 @@ export default function Navbar() {
     { href: '/symptoms', label: 'Symptoms' },
     { href: '/self-test', label: 'Self-Check' },
     { href: '/myths', label: 'Myths' },
-    { href: '/ask', label: 'Ask' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'About' },
   ];
@@ -202,7 +201,7 @@ export default function Navbar() {
 
         {/* MOBILE HAMBURGER */}
         <button
-          className={`mobile-menu-btn${drawerOpen ? ' active' : ''}`}
+          className="mobile-menu-btn"
           onClick={toggleDrawer}
           aria-label={drawerOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={drawerOpen}
@@ -242,7 +241,10 @@ export default function Navbar() {
             onClick={closeDrawer}
             aria-label="Close navigation menu"
           >
-            ×
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </button>
         </div>
         
