@@ -1318,29 +1318,9 @@
         justify-content: center !important;
       }
 
-      /* Footer links — visible on mobile in grid */
+      /* Footer links — hidden on mobile for compact layout */
       .footer-links-col {
-        display: block !important;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 14px;
-        margin-top: 8px;
-      }
-      .footer-links-col .footer-col-heading {
-        font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
-        margin-bottom: 8px; opacity: 0.7; text-transform: uppercase;
-      }
-      .footer-nav-list {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px 12px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        list-style: none !important;
-      }
-      .footer-nav-list li a {
-        font-size: 12px !important;
-        color: rgba(255,255,255,0.82) !important;
-        text-decoration: none !important;
+        display: none !important;
       }
 
       /* ── TABS — horizontally scrollable, compact ── */
