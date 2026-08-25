@@ -48,7 +48,7 @@ export default function AboutPage() {
               Making women&apos;s health<br />easier to <span className="accent">understand.</span>
             </h1>
             <p className="section-desc reveal" style={{ maxWidth: '540px', margin: '0 auto' }}>
-              World PMOS Day 2026 is a student-led awareness initiative by CBIT NSS, dedicated to making reliable information about Polycystic Ovary Syndrome (PCOS/PMOS) accessible, non-stigmatising and actionable for young women.
+              &ldquo;Knowledge Beyond Symptoms&rdquo; is a student-led PMOS awareness initiative by CBIT NSS, dedicated to making reliable information about Polycystic Ovary Syndrome (PCOS/PMOS) accessible, non-stigmatising and actionable for young women.
             </p>
           </div>
         </section>

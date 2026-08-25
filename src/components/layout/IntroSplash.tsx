@@ -66,7 +66,7 @@ export default function IntroSplash() {
         />
         <div className="intro-clean-text">
           <h2 className="intro-clean-title">CBIT NSS</h2>
-          <p className="intro-clean-sub">World PMOS Day 2026</p>
+          <p className="intro-clean-sub">Knowledge Beyond Symptoms 2026</p>
         </div>
       </div>
     </div>

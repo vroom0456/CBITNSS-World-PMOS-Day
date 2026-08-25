@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="hero-container">
             <div className="nss-hero-badge">
               <Image src="/nss-logo.png" alt="" width={80} height={80} aria-hidden="true" priority unoptimized />
-              <span>CBIT NSS · World PMOS Day 2026</span>
+              <span>CBIT NSS · Knowledge Beyond Symptoms 2026</span>
             </div>
 
             <h1 id="hero-heading" className="hero-h1">
@@ -80,7 +80,7 @@ export default function HomePage() {
 
             <div className="speaker-content reveal-right">
               <div className="speaker-eyebrow">
-                <span>PMOS Awareness Session by</span>
+                <span>Knowledge Beyond Symptoms Session by</span>
               </div>
               <h2 className="speaker-name">
                 Dr. Sindura Ganga
@@ -89,7 +89,7 @@ export default function HomePage() {
                 MBBS, MS <span className="title-sep">|</span> Consultant OBGYN &amp; Laparoscopic Surgeon
               </p>
               <p className="speaker-bio">
-                Leading the medical expert panel for World PMOS Day 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
+                Leading the medical expert panel for Knowledge Beyond Symptoms 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
               </p>
               <div style={{ marginTop: '1.2rem' }}>
                 <Link
@@ -217,7 +217,7 @@ export default function HomePage() {
               <span className="section-tag">Questions</span>
               <h2 id="ask-cta" className="section-title">Questions you were<br />afraid to ask?</h2>
               <p className="section-desc" style={{ marginBottom: '2rem', maxWidth: '500px', margin: '0 auto 2rem' }}>
-                Submit anonymously. Your question will be compiled and presented to a medical panel at World PMOS Day 2026.
+                Submit anonymously. Your question will be compiled and presented to a medical panel at Knowledge Beyond Symptoms 2026.
               </p>
               <Link
                 href="/ask"

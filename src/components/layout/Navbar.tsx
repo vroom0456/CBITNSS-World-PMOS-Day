@@ -124,7 +124,7 @@ export default function Navbar() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: `[World PMOS Day Q&A] ${category}`,
+          subject: `[Knowledge Beyond Symptoms Q&A] ${category}`,
           from_name: 'CBIT Student (Anonymous)',
           Category: category,
           Question: message,
@@ -175,7 +175,7 @@ export default function Navbar() {
           <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={120} height={120} className="nss-logo-img" priority unoptimized />
           <div className="brand-text">
             <span className="title">CBIT NSS</span>
-            <span className="subtitle">World PMOS Day · 2026</span>
+            <span className="subtitle">Knowledge Beyond Symptoms · 2026</span>
           </div>
         </Link>
 
@@ -235,7 +235,7 @@ export default function Navbar() {
             <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="drawer-logo" unoptimized />
             <div className="drawer-brand-text">
               <span className="title">CBIT NSS</span>
-              <span className="subtitle">World PMOS Day · 2026</span>
+              <span className="subtitle">Knowledge Beyond Symptoms · 2026</span>
             </div>
           </Link>
           <button
@@ -298,7 +298,7 @@ export default function Navbar() {
               <span className="modal-badge">Anonymous Submission</span>
               <h3 id="global-modal-title">Ask a Doctor</h3>
               <p className="desc">
-                Do <strong>not</strong> include your name, phone, or student ID. Questions are compiled by CBIT NSS and presented to a medical panel at World PMOS Day 2026.
+                Do <strong>not</strong> include your name, phone, or student ID. Questions are compiled by CBIT NSS and presented to a medical panel at Knowledge Beyond Symptoms 2026.
               </p>
               <div className="privacy-notice">
                 <strong>Educational notice:</strong> Responses provide general awareness only and do not constitute personal medical advice or diagnosis.
@@ -340,7 +340,7 @@ export default function Navbar() {
               <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }} aria-hidden="true">✅</div>
               <h4 style={{ fontSize: '1rem', fontWeight: 800 }}>Question submitted</h4>
               <p style={{ fontSize: '0.9rem', marginTop: '0.4rem', lineHeight: 1.6 }}>
-                Thank you. Your question has been recorded and will be compiled for the medical panel at World PMOS Day 2026.
+                Thank you. Your question has been recorded and will be compiled for the medical panel at Knowledge Beyond Symptoms 2026.
               </p>
             </div>
           )}

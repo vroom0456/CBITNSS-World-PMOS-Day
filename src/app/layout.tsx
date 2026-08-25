@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "World PMOS Day 2026 | CBIT NSS Health Awareness Campaign",
+  title: "Knowledge Beyond Symptoms | CBIT NSS Health Awareness Campaign",
   description:
     "A student-led health awareness campaign by CBIT NSS on Polycystic Ovary Syndrome (PCOS/PMOS). Explore evidence-based information on symptoms, self-awareness tools, and anonymous questions for our live medical panel.",
   icons: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "PCOD",
     "PCOS",
     "PMOS",
-    "World PCOS Day",
+    "Knowledge Beyond Symptoms",
     "CBIT NSS",
     "Women Health",
     "Gynaecology",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "student health awareness",
   ],
   openGraph: {
-    title: "World PMOS Day 2026 | CBIT NSS",
+    title: "Knowledge Beyond Symptoms | CBIT NSS",
     description:
       "Student-led awareness campaign on women's hormonal and metabolic health. Understand PCOS/PMOS, explore common symptoms, and ask questions anonymously.",
     type: "website",

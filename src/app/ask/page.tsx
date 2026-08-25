@@ -37,7 +37,7 @@ export default function AskPage() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: `[World PMOS Day Q&A] ${category}`,
+          subject: `[Knowledge Beyond Symptoms Q&A] ${category}`,
           from_name: 'CBIT Student (Anonymous)',
           Category: category,
           Question: message,
@@ -74,7 +74,7 @@ export default function AskPage() {
               Ask a Doctor <span className="accent">Anonymously</span>
             </h1>
             <p className="section-desc" style={{ maxWidth: '640px', margin: '0 auto' }}>
-              Submit your question without sharing any personal details. Questions are compiled by CBIT NSS and presented to a medical panel at World PMOS Day 2026.
+              Submit your question without sharing any personal details. Questions are compiled by CBIT NSS and presented to a medical panel at Knowledge Beyond Symptoms 2026.
             </p>
           </div>
         </section>
@@ -146,7 +146,7 @@ export default function AskPage() {
                     Anonymous Question Submitted!
                   </h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-                    Thank you. Your question has been recorded and will be compiled for the medical panel at World PMOS Day 2026.
+                    Thank you. Your question has been recorded and will be compiled for the medical panel at Knowledge Beyond Symptoms 2026.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}

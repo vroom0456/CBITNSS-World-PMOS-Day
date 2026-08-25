@@ -14,7 +14,7 @@ export default function Footer() {
             <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={80} height={80} className="footer-logo" unoptimized />
             <div>
               <p className="footer-brand-name" style={{ margin: 0, lineHeight: 1.1 }}>CBIT NSS</p>
-              <p className="footer-brand-sub" style={{ margin: 0, marginTop: '2px', lineHeight: 1.15 }}>World PMOS Awareness Day 2026</p>
+              <p className="footer-brand-sub" style={{ margin: 0, marginTop: '2px', lineHeight: 1.15 }}>Knowledge Beyond Symptoms 2026</p>
             </div>
           </div>
           <p className="footer-brand-desc">
@@ -48,7 +48,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="footer-bar">
-        <span>© 2026 CBIT NSS. World PMOS Awareness Campaign.</span>
+        <span>CBIT NSS · Knowledge Beyond Symptoms Campaign</span>
         <div className="footer-bar-links">
           <Link href="/resources">Sources</Link>
           <span>·</span>
