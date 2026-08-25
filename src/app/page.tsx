@@ -34,8 +34,8 @@ export default function HomePage() {
             </div>
 
             <h1 id="hero-heading" className="hero-h1">
-              Understanding<br />
-              <span className="accent-text">PCOD &amp; PMOS</span>
+              KNOWLEDGE<br />
+              <span className="accent-text">BEYOND SYMPTOMS</span>
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
@@ -56,6 +56,50 @@ export default function HomePage() {
               >
                 Ask an Anonymous Question →
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 1.5 KEYNOTE SPEAKER SPOTLIGHT ─── */}
+        <section id="speaker-spotlight" className="speaker-section" aria-label="PMOS Awareness Session Speaker">
+          <div className="speaker-container">
+            <div className="speaker-image-wrapper reveal-left">
+              <div className="speaker-glow-backdrop" aria-hidden="true" />
+              <div className="speaker-glow-secondary" aria-hidden="true" />
+              <Image
+                src="/dr-sindura-ganga.png"
+                alt="Dr. Sindura Ganga - Consultant OBGYN & Laparoscopic Surgeon"
+                width={520}
+                height={580}
+                className="speaker-photo-cutout"
+                priority
+                unoptimized
+              />
+              <div className="speaker-bottom-fade" aria-hidden="true" />
+            </div>
+
+            <div className="speaker-content reveal-right">
+              <div className="speaker-eyebrow">
+                <span>PMOS Awareness Session by</span>
+              </div>
+              <h2 className="speaker-name">
+                Dr. Sindura Ganga
+              </h2>
+              <p className="speaker-title">
+                MBBS, MS <span className="title-sep">|</span> Consultant OBGYN &amp; Laparoscopic Surgeon
+              </p>
+              <p className="speaker-bio">
+                Leading the medical expert panel for World PMOS Day 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
+              </p>
+              <div style={{ marginTop: '1.2rem' }}>
+                <Link
+                  href="/ask"
+                  className="btn-primary-cta"
+                  style={{ fontSize: '0.86rem', padding: '0.65rem 1.4rem' }}
+                >
+                  Ask Dr. Sindura an Anonymous Question →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
