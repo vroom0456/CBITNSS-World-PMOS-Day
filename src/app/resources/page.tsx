@@ -30,7 +30,7 @@ export default function ResourcesPage() {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: '80px' }}>
+      <main className="page-main">
 
         {/* HEADER */}
         <section style={{ padding: '3.5rem 0 2rem', background: 'var(--bg-main)' }}>

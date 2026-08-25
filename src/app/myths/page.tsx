@@ -193,7 +193,7 @@ export default function MythsPage() {
                           {/* EVIDENCE & ANONYMOUS ACTION ROW */}
                           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center', paddingTop: '0.6rem', borderTop: '1px dashed var(--border-light)' }}>
                             <Link href={m.evidenceUrl} className="myth-evidence-link">
-                              🔗 {m.evidenceTitle} ↗
+                              🔗 {m.evidenceTitle}
                             </Link>
                             <Link href="/ask" className="myth-action-link">
                               💬 Still unsure? Ask anonymously →

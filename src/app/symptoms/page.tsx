@@ -13,6 +13,7 @@ declare global {
 
 export default function SymptomsPage() {
   const [scienceOpen, setScienceOpen] = useState(false);
+  const [careTab, setCareTab] = useState<'daily' | 'nutrition' | 'medical' | 'emotional'>('daily');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,21 +24,6 @@ export default function SymptomsPage() {
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(r => observer.observe(r));
-
-    window.showTab = function(tabName, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c => {
-        c.classList.remove('active');
-        (c as HTMLElement).style.display = 'none';
-      });
-      btn.classList.add('active');
-      const tab = document.getElementById('tab-' + tabName);
-      if (tab) {
-        tab.style.display = 'block';
-        void tab.offsetWidth;
-        tab.classList.add('active');
-      }
-    };
 
     return () => observer.disconnect();
   }, []);
@@ -101,91 +87,99 @@ export default function SymptomsPage() {
             </div>
 
             <div className="tab-buttons reveal" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }} role="tablist" aria-label="Care areas">
-              <button className="tab-btn active" onClick={(e) => window.showTab('daily', e.currentTarget)} role="tab" aria-selected="true" aria-controls="tab-daily">Exercise &amp; Movement</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('nutrition', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-nutrition">Nutrition</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('medical', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-medical">Medical evaluation</button>
-              <button className="tab-btn" onClick={(e) => window.showTab('emotional', e.currentTarget)} role="tab" aria-selected="false" aria-controls="tab-emotional">Emotional wellbeing</button>
+              <button className={`tab-btn ${careTab === 'daily' ? 'active' : ''}`} onClick={() => setCareTab('daily')} role="tab" aria-selected={careTab === 'daily'} aria-controls="tab-daily">Exercise &amp; Movement</button>
+              <button className={`tab-btn ${careTab === 'nutrition' ? 'active' : ''}`} onClick={() => setCareTab('nutrition')} role="tab" aria-selected={careTab === 'nutrition'} aria-controls="tab-nutrition">Nutrition</button>
+              <button className={`tab-btn ${careTab === 'medical' ? 'active' : ''}`} onClick={() => setCareTab('medical')} role="tab" aria-selected={careTab === 'medical'} aria-controls="tab-medical">Medical evaluation</button>
+              <button className={`tab-btn ${careTab === 'emotional' ? 'active' : ''}`} onClick={() => setCareTab('emotional')} role="tab" aria-selected={careTab === 'emotional'} aria-controls="tab-emotional">Emotional wellbeing</button>
             </div>
 
             {/* TAB 1: EXERCISE */}
-            <div className="tab-content active" id="tab-daily" role="tabpanel">
-              <div className="precautions-list">
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">1</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Regular physical activity</h3>
-                    <p>A mix of resistance and aerobic exercise can support insulin sensitivity and overall cardiovascular health. Even 30 minutes of moderate movement most days has shown benefit in research.</p>
+            {careTab === 'daily' && (
+              <div className="tab-content active" id="tab-daily" role="tabpanel">
+                <div className="precautions-list">
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">1</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Regular physical activity</h3>
+                      <p>A mix of resistance and aerobic exercise can support insulin sensitivity and overall cardiovascular health. Even 30 minutes of moderate movement most days has shown benefit in research.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">2</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Consistent sleep</h3>
-                    <p>7–9 hours of regular sleep supports hormonal balance and helps reduce stress-related androgen fluctuations. Consistent sleep and wake times are particularly beneficial.</p>
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">2</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Consistent sleep</h3>
+                      <p>7–9 hours of regular sleep supports hormonal balance and helps reduce stress-related androgen fluctuations. Consistent sleep and wake times are particularly beneficial.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* TAB 2: NUTRITION */}
-            <div className="tab-content" id="tab-nutrition" style={{ display: 'none' }} role="tabpanel">
-              <div className="precautions-list">
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">1</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Balanced, whole-food nutrition</h3>
-                    <p>Emphasise vegetables, whole grains, legumes and healthy fats. Avoiding highly processed foods and excess sugar is generally beneficial for metabolic health in PCOS.</p>
+            {careTab === 'nutrition' && (
+              <div className="tab-content active" id="tab-nutrition" role="tabpanel">
+                <div className="precautions-list">
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">1</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Balanced, whole-food nutrition</h3>
+                      <p>Emphasise vegetables, whole grains, legumes and healthy fats. Avoiding highly processed foods and excess sugar is generally beneficial for metabolic health in PCOS.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">2</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Gut health support</h3>
-                    <p>Probiotic and prebiotic foods (yoghurt, fermented foods, fibre-rich vegetables) may support gut microbial diversity and reduce systemic inflammation — though evidence is still emerging.</p>
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">2</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Gut health support</h3>
+                      <p>Probiotic and prebiotic foods (yoghurt, fermented foods, fibre-rich vegetables) may support gut microbial diversity and reduce systemic inflammation — though evidence is still emerging.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* TAB 3: MEDICAL */}
-            <div className="tab-content" id="tab-medical" style={{ display: 'none' }} role="tabpanel">
-              <div className="precautions-list">
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">1</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Clinical evaluation</h3>
-                    <p>A doctor may recommend blood tests to evaluate hormone levels, insulin sensitivity, thyroid function and lipid profile. An ultrasound may also be part of the diagnostic process.</p>
+            {careTab === 'medical' && (
+              <div className="tab-content active" id="tab-medical" role="tabpanel">
+                <div className="precautions-list">
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">1</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Clinical evaluation</h3>
+                      <p>A doctor may recommend blood tests to evaluate hormone levels, insulin sensitivity, thyroid function and lipid profile. An ultrasound may also be part of the diagnostic process.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">2</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Supplements to discuss with your doctor</h3>
-                    <p>Some evidence supports inositol supplementation (myo-inositol and D-chiro-inositol) for supporting insulin sensitivity and ovulatory function. Always consult a doctor before starting supplements.</p>
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">2</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Supplements to discuss with your doctor</h3>
+                      <p>Some evidence supports inositol supplementation (myo-inositol and D-chiro-inositol) for supporting insulin sensitivity and ovulatory function. Always consult a doctor before starting supplements.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* TAB 4: EMOTIONAL */}
-            <div className="tab-content" id="tab-emotional" style={{ display: 'none' }} role="tabpanel">
-              <div className="precautions-list">
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">1</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Emotional wellbeing</h3>
-                    <p>International guidelines recognise emotional health as a core component of PCOS care. Mindfulness, counselling, and peer support can help reduce chronic stress and improve quality of life.</p>
+            {careTab === 'emotional' && (
+              <div className="tab-content active" id="tab-emotional" role="tabpanel">
+                <div className="precautions-list">
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">1</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Emotional wellbeing</h3>
+                      <p>International guidelines recognise emotional health as a core component of PCOS care. Mindfulness, counselling, and peer support can help reduce chronic stress and improve quality of life.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="pre-card">
-                  <div className="pre-num" aria-hidden="true">2</div>
-                  <div className="pre-info">
-                    <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Reducing stigma</h3>
-                    <p>Anxiety, mood shifts and body image concerns are real physiological responses — not personal weakness. Seeking support from healthcare professionals and trusted people is a sign of strength.</p>
+                  <div className="pre-card">
+                    <div className="pre-num" aria-hidden="true">2</div>
+                    <div className="pre-info">
+                      <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Reducing stigma</h3>
+                      <p>Anxiety, mood shifts and body image concerns are real physiological responses — not personal weakness. Seeking support from healthcare professionals and trusted people is a sign of strength.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* PROGRESSIVE DISCLOSURE: SCIENCE */}
             <div style={{ marginTop: '2rem', borderTop: '1px solid var(--border-light)', paddingTop: '1.5rem' }}>
