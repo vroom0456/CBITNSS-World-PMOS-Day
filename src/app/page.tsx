@@ -91,13 +91,25 @@ export default function HomePage() {
               <p className="speaker-bio">
                 Leading the medical expert panel for Knowledge Beyond Symptoms 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
               </p>
-              <div style={{ marginTop: '0.85rem' }}>
+              <div style={{ marginTop: '0.75rem', width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Link
                   href="/ask"
                   className="btn-primary-cta"
-                  style={{ fontSize: '0.80rem', padding: '0.48rem 1.15rem', minHeight: '38px' }}
+                  style={{
+                    fontSize: '0.78rem',
+                    padding: '0.4rem 1.0rem',
+                    minHeight: '34px',
+                    height: 'auto',
+                    width: 'auto',
+                    maxWidth: '100%',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    fontWeight: 700
+                  }}
                 >
-                  Ask Dr. Sindura an Anonymous Question →
+                  Ask Dr. Sindura an Anonymous Question
                 </Link>
               </div>
             </div>
