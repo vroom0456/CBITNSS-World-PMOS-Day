@@ -91,14 +91,14 @@ export default function HomePage() {
               <p className="speaker-bio">
                 Leading the medical expert panel for Knowledge Beyond Symptoms 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
               </p>
-              <div style={{ marginTop: '0.75rem', width: '100%', display: 'flex', justifyContent: 'center' }}>
+              <div className="speaker-cta-wrap" style={{ marginTop: '1.25rem', width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
                 <Link
                   href="/ask"
                   className="btn-primary-cta"
                   style={{
-                    fontSize: '0.78rem',
-                    padding: '0.4rem 1.0rem',
-                    minHeight: '34px',
+                    fontSize: '0.92rem',
+                    padding: '0.75rem 1.6rem',
+                    minHeight: '44px',
                     height: 'auto',
                     width: 'auto',
                     maxWidth: '100%',
@@ -106,6 +106,7 @@ export default function HomePage() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     textAlign: 'center',
+                    whiteSpace: 'nowrap',
                     fontWeight: 700
                   }}
                 >
