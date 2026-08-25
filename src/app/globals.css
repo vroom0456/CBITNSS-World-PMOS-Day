@@ -87,7 +87,7 @@
     .nss-logo-img:hover{transform:scale(1.1) rotate(6deg);box-shadow:0 8px 28px rgba(86,124,141,0.30);}
     .brand-text{display:flex;flex-direction:column;text-align:left;border-left:3px solid var(--nss-blue-accent);padding-left:0.8rem;}
     .brand-text .title{font-size:1.25rem;font-weight:800;color:var(--nss-navy);line-height:1.1;letter-spacing:-0.01em;}
-    .brand-text .subtitle{font-size:0.68rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:1px;}
+    .brand-text .subtitle{font-size:0.62rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-top:2px;white-space:nowrap;}
     .nav-links{display:flex;gap:1.4rem;align-items:center;list-style:none;margin:0;padding:0;}
     .nav-links li{display:flex;align-items:center;}
     .nav-links a:not(.nav-btn-modal){font-size:0.86rem;font-weight:700;color:var(--text-body);transition:color 0.22s ease;position:relative;padding-bottom:2px;}
@@ -114,7 +114,7 @@
     .drawer-logo{width:46px;height:46px;border-radius:50%;object-fit:contain;box-shadow:0 4px 12px rgba(86,124,141,0.15);}
     .drawer-brand-text{display:flex;flex-direction:column;}
     .drawer-brand-text .title{font-size:1.1rem;font-weight:800;color:var(--nss-navy);line-height:1.15;}
-    .drawer-brand-text .subtitle{font-size:0.6rem;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.08em;}
+    .drawer-brand-text .subtitle{font-size:0.56rem;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.04em;margin-top:2px;white-space:nowrap;}
     .drawer-close-btn{position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:0;background:transparent;border:none;padding:0;display:flex;align-items:center;justify-content:center;color:var(--nss-navy);cursor:pointer;}
     .drawer-close-btn:hover{color:var(--soft-teal-accent);}
     
