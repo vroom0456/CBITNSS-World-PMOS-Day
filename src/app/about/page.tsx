@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
+import { IconPhone, IconMail, IconMessage } from '@/components/ui/Icons';
 
 const allTeamMembers = [
   { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK' },
@@ -93,9 +94,9 @@ export default function AboutPage() {
                     Dedicated campus administrator leading female student support, health awareness drives, and confidential personal guidance at CBIT. For any campus inquiries, health support, or confidential guidance, reach out directly below.
                   </p>
                   <div className="spotlight-actions">
-                    <a href="tel:+919676648023" className="btn-contact-pill">📞 +91 96766 48023</a>
-                    <a href="mailto:nominiderangula@gmail.com?subject=Query%20Regarding%20World%20PMOS%20Day%20%2F%20CBIT%20NSS&body=Hello%20Nomini%2C%0A%0AI%20am%20reaching%20out%20regarding%20the%20World%20PMOS%20Day%20initiative%20by%20CBIT%20NSS.%20%0A%0A%5BWrite%20your%20query%20here%5D%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D%0A%5BYour%20Roll%20Number%5D" className="btn-contact-pill">✉️ Email Derangula Nomini</a>
-                    <a href="https://wa.me/919676648023?text=Hello%20Nomini%2C%20%F0%9F%91%8B%0AI%20am%20reaching%20out%20regarding%20the%20World%20PMOS%20Day%20initiative%20by%20CBIT%20NSS.%20I%20have%20a%20query%20about%3A%0A%5BType%20your%20question%20here%5D%0AThanks!%20%E2%9C%A8" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill">💬 Connect on WhatsApp</a>
+                    <a href="tel:+919676648023" className="btn-contact-pill"><IconPhone size={14} /> +91 96766 48023</a>
+                    <a href="mailto:nominiderangula@gmail.com?subject=Query%20Regarding%20World%20PMOS%20Day%20%2F%20CBIT%20NSS&body=Hello%20Nomini%2C%0A%0AI%20am%20reaching%20out%20regarding%20the%20World%20PMOS%20Day%20initiative%20by%20CBIT%20NSS.%20%0A%0A%5BWrite%20your%20query%20here%5D%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D%0A%5BYour%20Roll%20Number%5D" className="btn-contact-pill"><IconMail size={14} /> Email Derangula Nomini</a>
+                    <a href="https://wa.me/919676648023?text=Hello%20Nomini%2C%20%F0%9F%91%8B%0AI%20am%20reaching%20out%20regarding%20the%20World%20PMOS%20Day%20initiative%20by%20CBIT%20NSS.%20I%20have%20a%20query%20about%3A%0A%5BType%20your%20question%20here%5D%0AThanks!%20%E2%9C%A8" target="_blank" rel="noopener noreferrer" className="btn-contact-pill whatsapp-pill"><IconMessage size={14} /> Connect on WhatsApp</a>
                   </div>
                 </div>
               </div>

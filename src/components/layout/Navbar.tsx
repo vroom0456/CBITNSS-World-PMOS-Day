@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { IconCheckCircle } from '@/components/ui/Icons';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -355,7 +356,9 @@ export default function Navbar() {
             </>
           ) : (
             <div className="modal-success-alert" style={{ display: 'block' }} role="status" aria-live="polite">
-              <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }} aria-hidden="true">✅</div>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.6rem', color: 'var(--soft-teal-accent)' }} aria-hidden="true">
+                <IconCheckCircle size={44} />
+              </div>
               <h4 style={{ fontSize: '1rem', fontWeight: 800 }}>Question submitted</h4>
               <p style={{ fontSize: '0.9rem', marginTop: '0.4rem', lineHeight: 1.6 }}>
                 Thank you. Your question has been recorded and will be compiled for the medical panel at Knowledge Beyond Symptoms 2026.

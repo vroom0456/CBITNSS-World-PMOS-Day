@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { IconBloodDrop, IconSparkle, IconHairThinning, IconScaleBalance, IconSleepFatigue, IconPigmentationMoon } from '@/components/ui/Icons';
 import Link from 'next/link';
 
 declare global {
@@ -65,12 +66,12 @@ export default function SymptomsPage() {
             </div>
 
             <div className="symptoms-grid stagger-grid">
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">🩸</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Irregular periods</h3><p>Cycles longer than 35 days, variable cycle length, or occasionally missed periods.</p></div>
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">⚖️</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Metabolic changes</h3><p>Weight shifts or insulin-related changes, occurring at any body weight.</p></div>
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">✨</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hormonal acne</h3><p>Persistent breakouts — often along the jawline — driven by androgen levels.</p></div>
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">💇</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hair changes</h3><p>Coarse facial or body hair growth (hirsutism), or scalp hair thinning.</p></div>
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">😴</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Fatigue</h3><p>Persistent energy dips or post-meal fatigue, which may be related to insulin sensitivity.</p></div>
-              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true">🌙</div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Skin pigmentation</h3><p>Dark, velvety patches on neck folds, armpits or knuckles (acanthosis nigricans).</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconBloodDrop size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Irregular periods</h3><p>Cycles longer than 35 days, variable cycle length, or occasionally missed periods.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconScaleBalance size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Metabolic changes</h3><p>Weight shifts or insulin-related changes, occurring at any body weight.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconSparkle size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hormonal acne</h3><p>Persistent breakouts — often along the jawline — driven by androgen levels.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconHairThinning size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Hair changes</h3><p>Coarse facial or body hair growth (hirsutism), or scalp hair thinning.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconSleepFatigue size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Fatigue</h3><p>Persistent energy dips or post-meal fatigue, which may be related to insulin sensitivity.</p></div>
+              <div className="symptom-card reveal"><div className="symptom-icon" aria-hidden="true"><IconPigmentationMoon size={24} color="var(--soft-teal-accent)" /></div><h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem' }}>Skin pigmentation</h3><p>Dark, velvety patches on neck folds, armpits or knuckles (acanthosis nigricans).</p></div>
             </div>
           </div>
         </section>

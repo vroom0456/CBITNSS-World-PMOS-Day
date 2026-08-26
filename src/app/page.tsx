@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { EVENT_INFO } from '@/constants/event';
+import { IconBloodDrop, IconSparkle, IconHairThinning, IconScaleBalance, IconSleepFatigue, IconPigmentationMoon } from '@/components/ui/Icons';
 
 export default function HomePage() {
 
@@ -148,12 +149,12 @@ export default function HomePage() {
 
             <div className="home-symptoms-grid stagger-grid">
               {[
-                { icon: '🩸', label: 'Irregular periods' },
-                { icon: '✨', label: 'Hormonal acne' },
-                { icon: '💇', label: 'Hair changes' },
-                { icon: '⚖️', label: 'Metabolic shifts' },
-                { icon: '😴', label: 'Fatigue' },
-                { icon: '🌙', label: 'Mood & wellbeing' },
+                { icon: <IconBloodDrop size={20} color="var(--soft-teal-accent)" />, label: 'Irregular periods' },
+                { icon: <IconSparkle size={20} color="var(--soft-teal-accent)" />, label: 'Hormonal acne' },
+                { icon: <IconHairThinning size={20} color="var(--soft-teal-accent)" />, label: 'Hair changes' },
+                { icon: <IconScaleBalance size={20} color="var(--soft-teal-accent)" />, label: 'Metabolic shifts' },
+                { icon: <IconSleepFatigue size={20} color="var(--soft-teal-accent)" />, label: 'Fatigue' },
+                { icon: <IconPigmentationMoon size={20} color="var(--soft-teal-accent)" />, label: 'Mood & wellbeing' },
               ].map((s, i) => (
                 <div key={i} className="home-symptom-chip reveal" aria-label={s.label}>
                   <span className="home-symptom-icon" aria-hidden="true">{s.icon}</span>

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { IconCheckCircle, IconPhone } from '@/components/ui/Icons';
 
 export default function AskPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -144,7 +145,9 @@ export default function AskPage() {
                 </form>
               ) : (
                 <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-                  <span style={{ fontSize: '3.5rem', display: 'block', marginBottom: '0.5rem' }}>✅</span>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.8rem', color: 'var(--soft-teal-accent)' }}>
+                    <IconCheckCircle size={54} />
+                  </div>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.6rem' }}>
                     Anonymous Question Submitted!
                   </h3>
@@ -177,14 +180,16 @@ export default function AskPage() {
             <div className="row g-3">
               <div className="col-12 col-md-6 col-lg-4">
                 <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
-                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🏥</div>
+                <div style={{ flexShrink: 0, color: 'var(--soft-teal-accent)' }}>
+                  <IconPhone size={24} />
+                </div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>National Women&apos;s Helpline</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Toll-Free 24/7. Government dedicated helpline for women&apos;s health guidance.
                   </p>
                   <a href="tel:1091" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
-                    📞 Call 1091
+                    <IconPhone size={14} /> Call 1091
                   </a>
                 </div>
               </div>
@@ -192,14 +197,16 @@ export default function AskPage() {
 
               <div className="col-12 col-md-6 col-lg-4">
                 <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
-                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🧠</div>
+                <div style={{ flexShrink: 0, color: 'var(--soft-teal-accent)' }}>
+                  <IconPhone size={24} />
+                </div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>iCall Mental Health Support</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Free counselling for emotional stress and wellbeing concerns.
                   </p>
                   <a href="tel:9152987821" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
-                    📞 Call 9152987821
+                    <IconPhone size={14} /> Call 9152987821
                   </a>
                 </div>
               </div>
@@ -207,14 +214,16 @@ export default function AskPage() {
 
               <div className="col-12 col-md-6 col-lg-4">
                 <div className="resource-card reveal" style={{ background: '#FFFFFF', padding: '18px 20px', borderRadius: '24px', border: '1.5px solid var(--border-light)', display: 'flex', gap: '12px', alignItems: 'center', height: '100%' }}>
-                <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>🎓</div>
+                <div style={{ flexShrink: 0, color: 'var(--soft-teal-accent)' }}>
+                  <IconPhone size={24} />
+                </div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--nss-navy)', marginBottom: '4px' }}>CBIT NSS Student Support</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-body)', lineHeight: 1.5, marginBottom: '6px' }}>
                     Reach Derangula Nomini (Women&apos;s Administrator) for confidential campus guidance.
                   </p>
                   <a href="tel:+919676648023" className="btn-contact-pill" style={{ marginTop: '0.4rem' }}>
-                    📞 Call +91 96766 48023
+                    <IconPhone size={14} /> Call +91 96766 48023
                   </a>
                 </div>
               </div>
