@@ -25,9 +25,9 @@ const mythsList: MythItem[] = [
   },
   {
     id: 'm2',
-    myth: 'PMOS is defined by three core components: hormones, metabolism, and emotional wellbeing.',
-    fact: 'PMOS is a complex condition that can affect reproductive, metabolic, psychological and other aspects of health.',
-    why: 'Its effects can vary considerably from person to person, which is why care should be individualized. International guidelines also highlight cardiovascular, dermatological, and sleep-related features.',
+    myth: 'PMOS only affects your periods.',
+    fact: 'PMOS can affect reproductive health, androgen-related symptoms, metabolic health and emotional wellbeing. Symptoms vary widely between individuals.',
+    why: 'Its effects can vary considerably from person to person. International guidelines emphasize that PMOS involves multiple interconnected body systems, which is why care should be individualized.',
     evidenceTitle: '2026 International PMOS Guideline ↗',
     evidenceUrl: '/resources#citations'
   },

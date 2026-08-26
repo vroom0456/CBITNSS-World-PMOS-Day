@@ -138,6 +138,9 @@ export default function AskPage() {
                   >
                   {submitting ? 'Submitting…' : 'Submit question anonymously'}
                   </button>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.75rem', marginBottom: 0 }}>
+                    Please don&apos;t include identifying or highly personal information in your question.
+                  </p>
                 </form>
               ) : (
                 <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>

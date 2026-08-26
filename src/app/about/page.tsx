@@ -1,9 +1,16 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
+
+const campaignLeadership = [
+  { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK' },
+  { id: 'bs', name: 'Bandaru Sampath', role: 'Vice President', initials: 'BS' },
+  { id: 'kh', name: 'Kusam Harinya Reddy', role: 'General Secretary', initials: 'KH' },
+  { id: 'dn', name: 'Derangula Nomini', role: "Women's Administrator", initials: 'DN' },
+];
 
 const allTeamMembers = [
   { id: 'nk', name: 'Nithesh Kumar', role: 'President', initials: 'NK' },
@@ -23,6 +30,8 @@ const allTeamMembers = [
 ];
 
 export default function AboutPage() {
+  const [showFullCommittee, setShowFullCommittee] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -48,12 +57,12 @@ export default function AboutPage() {
               Making women&apos;s health<br />easier to <span className="accent">understand.</span>
             </h1>
             <p className="section-desc reveal" style={{ maxWidth: '540px', margin: '0 auto' }}>
-              &ldquo;Knowledge Beyond Symptoms&rdquo; is a student-led PMOS awareness initiative by CBIT NSS, dedicated to making reliable information about Polycystic Ovary Syndrome (PCOS/PMOS) accessible, non-stigmatising and actionable for young women.
+              &ldquo;Knowledge Beyond Symptoms&rdquo; is a student-led PMOS awareness initiative by CBIT NSS, dedicated to making reliable information about Polyendocrine Metabolic Ovarian Syndrome (PMOS) accessible, non-stigmatising and actionable for young women.
             </p>
           </div>
         </section>
 
-        {/* ── 02 WHY WE BUILT THIS ── */}
+        {/* ── 02 WHY WE BUILT THIS — UNDERSTAND / RECOGNISE / ACT ── */}
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="why-section">
           <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
@@ -62,7 +71,7 @@ export default function AboutPage() {
             </div>
             <div className="stagger-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
               {[
-                { label: 'Understand', body: 'Medical information about PCOS/PMOS should not require a clinical background to comprehend.' },
+                { label: 'Understand', body: 'Medical information about PMOS should not require a clinical background to comprehend.' },
                 { label: 'Recognise', body: 'Symptoms deserve attention and care, not dismissal or stigma.' },
                 { label: 'Act', body: 'Awareness should lead to informed conversations with healthcare professionals — not self-diagnosis.' },
               ].map((w, i) => (
@@ -75,7 +84,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 03 DERANGULA NOMINI — TOP EXECUTIVE SPOTLIGHT & EXCLUSIVE CAMPUS CONTACT ── */}
+        {/* ── 03 DERANGULA NOMINI — WOMEN'S ADMINISTRATOR SPOTLIGHT ── */}
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="support-section">
           <div style={{ maxWidth: '880px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -103,36 +112,64 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 04 CBIT NSS ABOUT ── */}
-        <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: '#FFFFFF', textAlign: 'center' }} aria-labelledby="nss-section">
+        {/* ── 04 CAMPAIGN LEADERSHIP & COLLAPSIBLE CORE COMMITTEE ── */}
+        <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: '#FFFFFF' }} aria-labelledby="team-section">
+          <div style={{ maxWidth: '880px', margin: '0 auto' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <span className="section-tag">Leadership</span>
+              <h2 id="team-section" className="section-title">Campaign Leadership</h2>
+              <p className="section-desc">Key student leadership steering the Knowledge Beyond Symptoms campaign.</p>
+            </div>
+
+            {/* CAMPAIGN LEADERSHIP PROMINENT CARDS */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.2rem', marginBottom: '2.5rem' }}>
+              {campaignLeadership.map((m) => (
+                <div key={m.id} className="reveal" style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: 'var(--r-md)', padding: '1.4rem', textAlign: 'center' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--nss-navy)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, margin: '0 auto 0.8rem' }}>{m.initials}</div>
+                  <h3 style={{ fontSize: '1.02rem', fontWeight: 800, color: 'var(--nss-navy)', margin: '0 0 0.2rem' }}>{m.name}</h3>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--nss-blue-accent)' }}>{m.role}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* COLLAPSIBLE CORE COMMITTEE TOGGLE */}
+            <div style={{ textAlign: 'center' }}>
+              <button
+                onClick={() => setShowFullCommittee(v => !v)}
+                className="btn-sec-link"
+                aria-expanded={showFullCommittee}
+                aria-controls="core-committee-list"
+              >
+                {showFullCommittee ? 'Hide Full Committee ▲' : 'View CBIT NSS Core Committee ↓'}
+              </button>
+            </div>
+
+            {showFullCommittee && (
+              <div id="core-committee-list" style={{ marginTop: '2rem' }}>
+                <div className="team-simple-list-wrap">
+                  <ul className="team-simple-list">
+                    {allTeamMembers.map((m) => (
+                      <li key={m.id} className="team-simple-item">
+                        <span className="member-name">{m.name}</span>
+                        <span className="member-role">{m.role}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </section>
+
+        {/* ── 05 CBIT NSS ORGANISATION ── */}
+        <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: 'var(--bg-main)', textAlign: 'center' }} aria-labelledby="nss-section">
           <div style={{ maxWidth: '560px', margin: '0 auto' }} className="reveal">
             <Image src="/nss-logo.png" alt="CBIT NSS Logo" width={200} height={200} style={{ width: '96px', height: '96px', borderRadius: '50%', border: '3.5px solid #567C8D', boxShadow: '0 10px 30px rgba(86, 124, 141, 0.25), 0 0 25px rgba(86, 124, 141, 0.35)', marginBottom: '1rem' }} unoptimized />
             <h2 id="nss-section" className="section-title" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.8rem)' }}>CBIT NSS</h2>
             <p className="section-desc" style={{ marginBottom: '0' }}>
-              The National Service Scheme at Chaitanya Bharathi Institute of Technology, Hyderabad. Student-led social service since its founding, covering health awareness, road safety, and community engagement.
+              The National Service Scheme at Chaitanya Bharathi Institute of Technology, Hyderabad. Student-led social service covering health awareness, road safety, and community engagement.
             </p>
-          </div>
-        </section>
-
-        {/* ── 05 TEAM DIRECTORY — CORE COMMITTEE (SIMPLE CLEAN LIST) ── */}
-        <section id="team" style={{ padding: 'clamp(2.5rem, 6vw, 4.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="team-section">
-          <div style={{ maxWidth: '780px', margin: '0 auto' }}>
-            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">CBIT NSS Team</span>
-              <h2 id="team-section" className="section-title">Core Committee</h2>
-              <p className="section-desc">The dedicated student leaders of CBIT NSS guiding campus health &amp; awareness initiatives.</p>
-            </div>
-
-            <div className="team-simple-list-wrap reveal">
-              <ul className="team-simple-list">
-                {allTeamMembers.map((m) => (
-                  <li key={m.id} className="team-simple-item">
-                    <span className="member-name">{m.name}</span>
-                    <span className="member-role">{m.role}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </section>
 

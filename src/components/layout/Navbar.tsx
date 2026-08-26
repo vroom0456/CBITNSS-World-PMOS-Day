@@ -348,6 +348,9 @@ export default function Navbar() {
                 >
                   {modalSubmitting ? 'Submitting…' : 'Submit anonymously'}
                 </button>
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.6rem', marginBottom: 0 }}>
+                  Please don&apos;t include identifying or highly personal information in your question.
+                </p>
               </form>
             </>
           ) : (

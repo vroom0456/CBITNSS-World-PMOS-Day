@@ -10,30 +10,29 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Knowledge Beyond Symptoms | CBIT NSS Health Awareness Campaign",
+  title: "World PMOS Day 2026 | CBIT NSS",
   description:
-    "A student-led health awareness campaign by CBIT NSS on Polycystic Ovary Syndrome (PCOS/PMOS). Explore evidence-based information on symptoms, self-awareness tools, and anonymous questions for our live medical panel.",
+    "An educational PMOS awareness campaign by CBIT NSS empowering young women with evidence-informed health information on Polyendocrine Metabolic Ovarian Syndrome (PMOS).",
   icons: {
     icon: "/nss-logo.png",
     shortcut: "/nss-logo.png",
     apple: "/nss-logo.png",
   },
   keywords: [
-    "PCOD",
-    "PCOS",
+    "World PMOS Day",
     "PMOS",
+    "PCOS",
+    "PCOD",
     "Knowledge Beyond Symptoms",
     "CBIT NSS",
     "Women Health",
-    "Gynaecology",
-    "Hyderabad Health Awareness",
-    "hormonal health",
-    "student health awareness",
+    "Hormonal Health Awareness",
+    "Hyderabad Student Health",
   ],
   openGraph: {
-    title: "Knowledge Beyond Symptoms | CBIT NSS",
+    title: "World PMOS Day 2026 | CBIT NSS",
     description:
-      "Student-led awareness campaign on women's hormonal and metabolic health. Understand PCOS/PMOS, explore common symptoms, and ask questions anonymously.",
+      "Educational PMOS awareness campaign empowering young women with evidence-informed health information. Organised by CBIT NSS.",
     type: "website",
   },
 };

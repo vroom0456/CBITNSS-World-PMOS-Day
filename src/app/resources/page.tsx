@@ -27,6 +27,33 @@ export default function ResourcesPage() {
     setSourceDrawerOpen(true);
   };
 
+  const recommendedSources = [
+    {
+      title: '1. International PMOS Guideline',
+      sub: 'Monash University / International Evidence-Based Consensus',
+      desc: 'International evidence-based guidance on assessment and management of PMOS.',
+      url: 'https://www.monash.edu/medicine/sphpm/mchri/pcos/guideline'
+    },
+    {
+      title: '2. PMOS Naming / International Consensus',
+      sub: '2026 Medical Literature Update',
+      desc: 'Evidence behind the 2026 terminology update from PCOS to PMOS.',
+      url: 'https://www.ncbi.nlm.nih.gov/pmc/'
+    },
+    {
+      title: '3. NHS (National Health Service)',
+      sub: 'Patient & Health Education Portal',
+      desc: 'Accessible patient-focused information about symptoms, diagnosis and treatment.',
+      url: 'https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/'
+    },
+    {
+      title: '4. Mayo Clinic',
+      sub: 'Clinical & Patient Care Overview',
+      desc: 'General medical information about symptoms, diagnosis and treatment.',
+      url: 'https://www.mayoclinic.org/diseases-conditions/pcos/symptoms-causes/syc-20353416'
+    }
+  ];
+
   return (
     <>
       <Navbar />
@@ -40,16 +67,50 @@ export default function ResourcesPage() {
               Research &amp; <span className="accent">Resources</span>
             </h1>
             <p className="section-desc" style={{ maxWidth: '720px', margin: '0 auto' }}>
-              Clinical research citations and evidence-backed medical literature informing this initiative.
+              Clinical research citations and authoritative evidence-backed medical literature informing this initiative.
             </p>
           </div>
         </section>
 
-        {/* CLINICAL CITATIONS SECTION */}
-        <section style={{ padding: '3rem 0 5rem', background: '#FFFFFF' }}>
+        {/* RECOMMENDED SOURCES SECTION */}
+        <section style={{ padding: '3rem 0 3.5rem', background: '#FFFFFF' }}>
           <div className="container" style={{ maxWidth: '950px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">🔬 Clinical Evidence</span>
+              <span className="section-tag">🌐 Authoritative Portals</span>
+              <h2 className="section-title">Recommended <span className="accent">Sources</span></h2>
+              <p className="section-desc">Trusted international medical guidelines and health organizations.</p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))', gap: '1.2rem', justifyContent: 'center' }}>
+              {recommendedSources.map((s, idx) => (
+                <div key={idx} className="reveal" style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: 'var(--r-md)', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <strong style={{ color: 'var(--nss-navy)', fontSize: '1.02rem', display: 'block', marginBottom: '0.2rem' }}>{s.title}</strong>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.6rem' }}>{s.sub}</span>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+                  </div>
+                  <div style={{ marginTop: '1.2rem' }}>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-sec-link"
+                      style={{ fontSize: '0.82rem', padding: '0.45rem 1rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                    >
+                      Visit Official Portal ↗
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CLINICAL CITATIONS SECTION */}
+        <section id="citations" style={{ padding: '2rem 0 5rem', background: 'var(--bg-main)' }}>
+          <div className="container" style={{ maxWidth: '950px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <span className="section-tag">🔬 Clinical Literature</span>
               <h2 className="section-title">Research &amp; <span className="accent">Clinical Citations</span></h2>
               <p className="section-desc">The medical evidence base powering this awareness campaign.</p>
             </div>
@@ -60,22 +121,22 @@ export default function ResourcesPage() {
                   title: '2023 International Evidence-Based Guideline — Monash University',
                   sub: 'Published in European Journal of Endocrinology & Human Reproduction.',
                   src: '2023 Monash Guideline',
-                  srcDesc: 'Comprehensive international consensus guideline covering PCOS assessment, epidemiology (estimated 1 in 8 women affected), lifestyle recommendations, and emotional wellbeing as a core care component.'
+                  srcDesc: 'Comprehensive international consensus guideline covering PMOS assessment, epidemiology (estimated 1 in 8 women affected), lifestyle recommendations, and emotional wellbeing as a core care component.'
                 },
                 {
                   title: 'Journal of Clinical Medicine (2023) — Singh et al.',
-                  sub: 'Etiology, Current Management & Gut-Axis Therapeutics in PCOS.',
+                  sub: 'Etiology, Current Management & Gut-Axis Therapeutics in PMOS.',
                   src: 'Journal of Clinical Medicine 2023',
-                  srcDesc: 'Review covering the four Rotterdam PCOS phenotypes, gut microbiome research (DOGMA theory), inositol supplementation (40:1 MI:DCI ratio evidence), and exercise-induced metabolic benefit in PCOS.'
+                  srcDesc: 'Review covering Rotterdam criteria phenotypes, gut microbiome research, cellular second messengers, and exercise-induced metabolic benefit in PMOS.'
                 }
               ].map((r, i) => (
-                <div key={i} style={{ background: 'var(--soft-teal-bg)', padding: '1.4rem 1.6rem', borderRadius: 'var(--r-md)', border: '1px solid var(--soft-teal-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div key={i} className="reveal" style={{ background: '#FFFFFF', padding: '1.4rem 1.6rem', borderRadius: 'var(--r-md)', border: '1.5px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                   <div>
                     <strong style={{ color: 'var(--nss-navy)', display: 'block', fontSize: '0.96rem' }}>{r.title}</strong>
                     <span style={{ fontSize: '0.84rem', color: 'var(--text-body)' }}>{r.sub}</span>
                   </div>
                   <button className="source-trigger-btn" onClick={() => openSourceModal(r.src, r.srcDesc)}>
-                    Read Abstract ⓘ
+                    Read Summary ⓘ
                   </button>
                 </div>
               ))}
@@ -90,7 +151,7 @@ export default function ResourcesPage() {
         <div className="modal-overlay active" style={{ display: 'flex' }} onClick={() => setSourceDrawerOpen(false)}>
           <div className="modal-window" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={() => setSourceDrawerOpen(false)}>✕</button>
-            <span className="modal-badge">📚 Citation Source</span>
+            <span className="modal-badge">📚 Citation Summary</span>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.8rem' }}>{selectedSourceTitle}</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.7 }}>{selectedSourceContent}</p>
             <button

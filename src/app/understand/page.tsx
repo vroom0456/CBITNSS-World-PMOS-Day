@@ -38,22 +38,19 @@ export default function UnderstandPage() {
           </div>
         </section>
 
-        {/* WHAT IS PCOS/PMOS? */}
+        {/* WHAT IS PMOS / PCOS? */}
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: '#FFFFFF' }} aria-labelledby="what-is-heading">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ marginBottom: '2rem' }}>
               <span className="section-tag">01 — What is it?</span>
-              <h2 id="what-is-heading" className="section-title">A common, often<br />misunderstood condition</h2>
+              <h2 id="what-is-heading" className="section-title">PMOS / PCOS</h2>
             </div>
             <div className="reveal" style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.8 }}>
-              <p style={{ marginBottom: '1rem' }}>
-                Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal conditions affecting women of reproductive age, estimated to affect around 1 in 8 women worldwide based on the 2023 International Evidence-Based Guideline (Monash University).
+              <p style={{ marginBottom: '1.2rem' }}>
+                Polyendocrine Metabolic Ovarian Syndrome (PMOS) is the updated name for the condition previously known as Polycystic Ovary Syndrome (PCOS). The name was updated in 2026 to better reflect the condition&apos;s broader hormonal, metabolic and reproductive effects.
               </p>
-              <p style={{ marginBottom: '1rem' }}>
-                Despite its name, PCOS affects far more than the ovaries. It involves interconnected hormonal, metabolic and emotional systems — which is why our campaign uses the name <strong>PMOS (Polyendocrine Metabolic Ovarian Syndrome)</strong> to reflect this broader understanding, drawing on calls from researchers for more accurate terminology.
-              </p>
-              <p>
-                The terms PCOS, PCOD and PMOS are often used interchangeably — we explain the differences in context below.
+              <p style={{ marginBottom: '1.2rem' }}>
+                PMOS affects around 1 in 8 women worldwide based on international evidence-based guidelines. It is a multi-system condition that involves interconnected endocrine, metabolic and emotional factors rather than purely ovarian features.
               </p>
             </div>
           </div>
@@ -64,44 +61,44 @@ export default function UnderstandPage() {
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <span className="section-tag">02 — Terminology</span>
-              <h2 id="terminology-heading" className="section-title">PCOS, PCOD &amp; PMOS —<br /><span className="accent">what&apos;s the difference?</span></h2>
-              <p className="section-desc">Different names, same underlying condition — used in different contexts.</p>
+              <h2 id="terminology-heading" className="section-title">Understanding the <span className="accent">Terminology</span></h2>
+              <p className="section-desc">Understanding historical names and clinical terminology.</p>
             </div>
 
             <div className="row g-4">
               <div className="col-12 col-md-4">
+                <div style={{ background: 'var(--soft-teal-bg)', border: '1.5px solid var(--soft-teal-border)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Current terminology (2026)</span>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PMOS</h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
+                    <strong>Polyendocrine Metabolic Ovarian Syndrome.</strong> The updated international clinical name reflecting multi-system hormonal and metabolic health.
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-4">
                 <div style={{ background: '#FFFFFF', border: '1.5px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>International clinical term</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Former clinical name</span>
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PCOS</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
-                    <strong>Polycystic Ovary Syndrome.</strong> The standard clinical term used in international guidelines (Monash 2023, ESHRE/ASRM). The term most commonly recognised by doctors worldwide.
+                    <strong>Polycystic Ovary Syndrome.</strong> The former clinical name used in historical literature and previous international guidelines.
                   </p>
                 </div>
               </div>
 
               <div className="col-12 col-md-4">
                 <div style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Common regional term (South Asia)</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Regional usage</span>
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PCOD</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
-                    <strong>Polycystic Ovarian Disease.</strong> Frequently used in clinical conversations across India and South Asia. Refers to the same spectrum of symptoms as PCOS.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-12 col-md-4">
-                <div style={{ background: 'var(--soft-teal-bg)', border: '1.5px solid var(--soft-teal-border)', padding: '1.8rem', borderRadius: 'var(--r-md)', height: '100%' }}>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--nss-blue-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>Our campaign name</span>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)' }}>PMOS</h3>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', marginTop: '0.4rem', lineHeight: 1.65 }}>
-                    <strong>Polyendocrine Metabolic Ovarian Syndrome.</strong> The name used by our campaign to reflect the multi-system — hormonal, metabolic, ovarian, and emotional — nature of the condition. Inspired by researchers&apos; calls for more accurate terminology.
+                    <strong>Polycystic Ovarian Disease.</strong> A commonly used term in South Asia, but it is not the current international clinical name for the condition.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="reveal" style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-md)', padding: '1.2rem 1.5rem', marginTop: '1.5rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.65 }}>
-              <strong style={{ color: 'var(--nss-navy)' }}>Note:</strong> If your doctor uses PCOS or PCOD, that is the medically recognised term. PMOS is the framing used by our campaign to emphasise the broader health picture. All three terms refer to the same underlying condition.
+              <strong style={{ color: 'var(--nss-navy)' }}>What about PCOD?</strong> PCOD (Polycystic Ovarian Disease) is a commonly used term in South Asia, but it is not the current international clinical name for the condition. If you see PCOD used online or in conversation, the current international terminology is PMOS.
             </div>
           </div>
         </section>

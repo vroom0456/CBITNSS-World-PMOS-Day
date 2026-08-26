@@ -50,7 +50,7 @@ export default function SymptomsPage() {
         <div style={{ padding: '0 5% 0', background: 'var(--bg-main)' }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto', paddingBottom: '1rem' }}>
             <div style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '1rem 1.4rem', borderRadius: 'var(--r-sm)', fontSize: '0.9rem', color: 'var(--nss-navy)', fontWeight: 600 }} role="note">
-              <strong>Not diagnostic:</strong> Having these symptoms does not mean you have PCOS/PMOS. Many conditions can cause similar patterns. Always consult a qualified physician for an accurate evaluation.
+              <strong>Educational Notice:</strong> Having these symptoms does not mean you have PMOS. Symptoms can have many possible causes. A healthcare professional can help determine what may be contributing to them.
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function SymptomsPage() {
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <span className="section-tag">Common patterns</span>
-              <h2 id="common-symptoms-heading" className="section-title">Common <span className="accent">PCOS symptoms</span></h2>
+              <h2 id="common-symptoms-heading" className="section-title">Common <span className="accent">PMOS symptoms</span></h2>
               <p className="section-desc">Every body is unique — not everyone experiences all of these.</p>
             </div>
 
@@ -108,7 +108,7 @@ export default function SymptomsPage() {
                     <div className="pre-num" aria-hidden="true">2</div>
                     <div className="pre-info">
                       <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Consistent sleep</h3>
-                      <p>7–9 hours of regular sleep supports hormonal balance and helps reduce stress-related androgen fluctuations. Consistent sleep and wake times are particularly beneficial.</p>
+                      <p>Regular, adequate sleep supports overall health and wellbeing and may be an important part of healthy lifestyle habits.</p>
                     </div>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function SymptomsPage() {
                     <div className="pre-num" aria-hidden="true">1</div>
                     <div className="pre-info">
                       <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Balanced, whole-food nutrition</h3>
-                      <p>Emphasise vegetables, whole grains, legumes and healthy fats. Avoiding highly processed foods and excess sugar is generally beneficial for metabolic health in PCOS.</p>
+                      <p>A balanced eating pattern and regular physical activity can support overall metabolic health. Individual needs vary, so consider discussing nutrition with a qualified healthcare professional.</p>
                     </div>
                   </div>
                   <div className="pre-card">
@@ -152,7 +152,7 @@ export default function SymptomsPage() {
                     <div className="pre-num" aria-hidden="true">2</div>
                     <div className="pre-info">
                       <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Supplements to discuss with your doctor</h3>
-                      <p>Some evidence supports inositol supplementation (myo-inositol and D-chiro-inositol) for supporting insulin sensitivity and ovulatory function. Always consult a doctor before starting supplements.</p>
+                      <p>Some people may discuss inositol with their healthcare professional. Evidence for benefits varies, and supplementation should be individualised.</p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function SymptomsPage() {
                     <div className="pre-num" aria-hidden="true">1</div>
                     <div className="pre-info">
                       <h3 style={{ fontSize: '0.98rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.35rem' }}>Emotional wellbeing</h3>
-                      <p>International guidelines recognise emotional health as a core component of PCOS care. Mindfulness, counselling, and peer support can help reduce chronic stress and improve quality of life.</p>
+                      <p>International guidelines recognise emotional health as a core component of PMOS care. Mindfulness, counselling, and peer support can help reduce chronic stress and improve quality of life.</p>
                     </div>
                   </div>
                   <div className="pre-card">
@@ -196,10 +196,10 @@ export default function SymptomsPage() {
                 <div style={{ marginTop: '1.2rem', background: 'var(--soft-teal-bg)', border: '1px solid var(--soft-teal-border)', borderRadius: 'var(--r-md)', padding: '1.5rem' }}>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>Detailed mechanisms — for the scientifically curious</p>
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.2rem', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.65 }}>
-                    <li><strong>Insulin signalling:</strong> In PCOS, GLUT-4 glucose transporter expression in muscle cells can be reduced, impairing cellular insulin uptake. This contributes to compensatory hyperinsulinaemia, which stimulates ovarian androgen production.</li>
+                    <li><strong>Insulin signalling:</strong> In PMOS, GLUT-4 glucose transporter expression in muscle cells can be reduced, impairing cellular insulin uptake. This contributes to compensatory hyperinsulinaemia, which stimulates ovarian androgen production.</li>
                     <li><strong>HPA axis &amp; cortisol:</strong> Chronic stress activates the hypothalamic-pituitary-adrenal (HPA) axis, elevating cortisol. Elevated cortisol can increase adrenal androgen production and disrupt ovulatory cycles.</li>
-                    <li><strong>Gut microbiome:</strong> Emerging research (the DOGMA theory) suggests dysbiosis of gut microbiota may reduce short-chain fatty acid (SCFA) production and compromise gut epithelial barrier integrity, potentially contributing to systemic inflammation in PCOS.</li>
-                    <li><strong>Inositol mechanisms:</strong> Myo-inositol and D-chiro-inositol (in a 40:1 ratio) act as insulin second messengers. Supplementation may support intracellular insulin signalling and help regulate ovulation in some individuals.</li>
+                    <li><strong>Gut microbiome:</strong> Emerging research suggests dysbiosis of gut microbiota may reduce short-chain fatty acid (SCFA) production and compromise gut epithelial barrier integrity, potentially contributing to systemic inflammation in PMOS.</li>
+                    <li><strong>Inositol mechanisms:</strong> Inositol acts as a cellular second messenger. Evidence for benefits varies, and supplementation should be individualised with a healthcare professional.</li>
                   </ul>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '1rem', fontStyle: 'italic' }}>
                     Source: Singh et al., Journal of Clinical Medicine (2023). These mechanisms are an active area of research — speak to a clinician for personalised guidance.

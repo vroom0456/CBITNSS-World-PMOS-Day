@@ -6,6 +6,8 @@ import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { EVENT_INFO } from '@/constants/event';
+
 export default function HomePage() {
 
   useEffect(() => {
@@ -39,13 +41,13 @@ export default function HomePage() {
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
-              <span>27 August 2026 · 10:00 AM</span>
+              <span>{EVENT_INFO.FULL_TIME_STR}</span>
               <span className="hero-event-sep" aria-hidden="true">·</span>
-              <span>Assembly Hall, CBIT</span>
+              <span>{EVENT_INFO.LOCATION}</span>
             </div>
 
             <p className="hero-desc">
-              Polycystic Ovary Syndrome (PCOS/PCOD) affects 1 in 5 young women. CBIT NSS brings you a clear, evidence-backed guide and an anonymous Q&amp;A window for your personal health doubts.
+              PMOS affects around 1 in 8 women worldwide. CBIT NSS brings you a clear, evidence-informed guide to understanding the condition, recognising symptoms and knowing when to seek professional care.
             </p>
 
             <div className="hero-cta-row">
@@ -88,7 +90,7 @@ export default function HomePage() {
                 MBBS, MS <span className="title-sep">|</span> Consultant OBGYN &amp; Laparoscopic Surgeon
               </p>
               <p className="speaker-bio">
-                Leading the medical expert panel for Knowledge Beyond Symptoms 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PCOS management, and adolescent wellbeing.
+                Leading the medical expert panel for Knowledge Beyond Symptoms 2026 at CBIT. Delivering evidence-backed guidance on hormonal health, PMOS management, and adolescent wellbeing.
               </p>
               <div className="speaker-cta-wrap" style={{ marginTop: '1.25rem', width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
                 <Link
@@ -107,9 +109,9 @@ export default function HomePage() {
           <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 5%' }}>
             <div className="heading-box reveal" style={{ maxWidth: '680px', margin: '0 auto 3rem' }}>
               <span className="section-tag">The condition</span>
-              <h2 id="what-is-pmos" className="section-title">What is <span className="accent">PCOD &amp; PMOS?</span></h2>
+              <h2 id="what-is-pmos" className="section-title">What is <span className="accent">PMOS / PCOS?</span></h2>
               <p className="section-desc">
-                Our campaign uses the name PMOS to reflect the multi-system nature of Polycystic Ovary Syndrome — a condition affecting hormones, metabolism, and emotional wellbeing, not just the ovaries.
+                Polyendocrine Metabolic Ovarian Syndrome (PMOS) is the updated name for the condition previously known as PCOS, reflecting its broader hormonal, metabolic and reproductive effects.
               </p>
             </div>
 
