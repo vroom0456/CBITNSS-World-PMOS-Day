@@ -177,7 +177,6 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/understand', label: 'Understand' },
     { href: '/symptoms', label: 'Symptoms' },
-    { href: '/self-test', label: 'Self-Check' },
     { href: '/myths', label: 'Myths' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'About' },

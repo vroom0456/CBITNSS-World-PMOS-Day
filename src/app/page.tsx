@@ -39,7 +39,7 @@ export default function HomePage() {
             </h1>
 
             <div className="hero-event-info" aria-label="Event details">
-              <span>27 August 2026 · 11:00 AM</span>
+              <span>27 August 2026 · 10:00 AM</span>
               <span className="hero-event-sep" aria-hidden="true">·</span>
               <span>Assembly Hall, CBIT</span>
             </div>
@@ -184,25 +184,6 @@ export default function HomePage() {
               </p>
               <Link href="/myths" className="btn-sec-link">
                 See more myths vs facts →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── 5. SELF-CHECK CTA ─── */}
-        <section className="section section-alt" aria-labelledby="self-check-cta">
-          <div className="container" style={{ maxWidth: '760px', margin: '0 auto', padding: '0 5%', textAlign: 'center' }}>
-            <div className="reveal">
-              <span className="section-tag">Awareness tool</span>
-              <h2 id="self-check-cta" className="section-title">Not sure what your<br />symptoms might mean?</h2>
-              <p className="section-desc" style={{ marginBottom: '0.75rem', maxWidth: '520px', margin: '0 auto 1rem' }}>
-                A 2-minute educational questionnaire to help you recognise patterns and prepare for a healthcare conversation.
-              </p>
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 600 }}>
-                Not a diagnosis. No personal data stored.
-              </p>
-              <Link href="/self-test" className="btn-sec-link">
-                Start the 2-min self-check →
               </Link>
             </div>
           </div>

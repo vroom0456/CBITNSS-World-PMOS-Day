@@ -200,8 +200,8 @@ export default function UnderstandPage() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-              <Link href="/self-test" className="btn-primary-cta">
-                Take the 2-minute self-check →
+              <Link href="/symptoms" className="btn-primary-cta">
+                Explore symptoms &amp; care →
               </Link>
             </div>
           </div>

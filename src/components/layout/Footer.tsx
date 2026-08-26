@@ -29,7 +29,6 @@ export default function Footer() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/understand">Understand PMOS</Link></li>
             <li><Link href="/symptoms">Symptoms &amp; Care</Link></li>
-            <li><Link href="/self-test">Self-Check Wizard</Link></li>
             <li><Link href="/myths">Myths vs Facts</Link></li>
             <li><Link href="/ask">Ask a Doctor</Link></li>
             <li><Link href="/resources">Campus Kit</Link></li>

@@ -224,9 +224,6 @@ export default function MythsPage() {
               <Link href="/ask" className="btn-primary-cta">
                 Ask an Anonymous Question →
               </Link>
-              <Link href="/self-test" className="btn-sec-link">
-                2-Minute Self-Check Tool →
-              </Link>
               <Link href="/resources" className="btn-sec-link">
                 Research &amp; Clinical Citations →
               </Link>
