@@ -72,28 +72,36 @@ export default function Navbar() {
     }
   }, [drawerOpen, modalOpen]);
 
-  // Swipe to open/close drawer on mobile
+  // Swipe to close drawer on mobile (prevents accidental trigger while scrolling down)
   useEffect(() => {
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
     const minSwipeDistance = 50;
 
     const onTouchStart = (e: TouchEvent) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     };
 
     const onTouchEnd = (e: TouchEvent) => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       handleSwipeGesture();
     };
 
     const handleSwipeGesture = () => {
-      // Swipe Left: Open Drawer
-      if (touchStartX - touchEndX > minSwipeDistance) {
-        setDrawerOpen(true);
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+
+      // Ignore if vertical movement is dominant (user is scrolling up or down)
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        return;
       }
-      // Swipe Right: Close Drawer
-      if (touchEndX - touchStartX > minSwipeDistance) {
+
+      // Swipe Right to close drawer when it is currently open
+      if (drawerOpen && deltaX > minSwipeDistance) {
         setDrawerOpen(false);
       }
     };
@@ -105,7 +113,7 @@ export default function Navbar() {
       window.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('touchend', onTouchEnd);
     };
-  }, []);
+  }, [drawerOpen]);
 
   const handleModalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
