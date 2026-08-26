@@ -1600,34 +1600,7 @@
       .footer-logo { width: 38px !important; height: 38px !important; }
       .footer-brand-name { font-size: 15px !important; font-weight: 800 !important; color: var(--nss-navy) !important; }
       .footer-brand-sub { font-size: 11px !important; font-weight: 800 !important; color: var(--soft-teal-accent) !important; letter-spacing: 0.03em !important; }
-      .footer-links-col {
-        display: block !important;
-        border-top: 1px solid rgba(86, 124, 141, 0.16) !important;
-        margin-top: 24px !important;
-        padding-top: 20px !important;
-      }
-      .footer-links-col .footer-col-heading {
-        font-size: 11px !important;
-        font-weight: 800 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.1em !important;
-        margin-bottom: 12px !important;
-        color: var(--nss-navy) !important;
-      }
-      .footer-nav-list {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px 16px !important;
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-      .footer-nav-list li a {
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        color: var(--text-main) !important;
-        text-decoration: none !important;
-      }
+      .footer-links-col { display: none !important; }
       /* Disclaimer — show on mobile, compact */
       .footer-disclaimer {
         display: block !important;
