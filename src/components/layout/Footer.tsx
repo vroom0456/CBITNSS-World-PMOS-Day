@@ -27,12 +27,12 @@ export default function Footer() {
           <p className="footer-col-heading">Explore Pages</p>
           <ul className="footer-nav-list">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/understand">Understand PMOS</Link></li>
-            <li><Link href="/symptoms">Symptoms &amp; Care</Link></li>
-            <li><Link href="/myths">Myths vs Facts</Link></li>
-            <li><Link href="/ask">Ask a Doctor</Link></li>
-            <li><Link href="/resources">Campus Kit</Link></li>
-            <li><Link href="/about">About Us &amp; NSS Team</Link></li>
+            <li><Link href="/understand">Understand</Link></li>
+            <li><Link href="/symptoms">Symptoms</Link></li>
+            <li><Link href="/myths">Myths</Link></li>
+            <li><Link href="/resources">Resources</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/ask">Ask Anonymous</Link></li>
           </ul>
         </div>
 
