@@ -72,13 +72,14 @@ export default function Navbar() {
     }
   }, [drawerOpen, modalOpen]);
 
-  // Swipe to close drawer on mobile (prevents accidental trigger while scrolling down)
+  // Swipe to open/close drawer on mobile with vertical scroll protection
   useEffect(() => {
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
-    const minSwipeDistance = 50;
+    const minHorizontalSwipe = 40;
+    const maxVerticalDrift = 35;
 
     const onTouchStart = (e: TouchEvent) => {
       touchStartX = e.changedTouches[0].screenX;
@@ -95,13 +96,18 @@ export default function Navbar() {
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
 
-      // Ignore if vertical movement is dominant (user is scrolling up or down)
-      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      // Ignore if user was scrolling up or down (vertical movement is significant or dominant)
+      if (Math.abs(deltaY) > maxVerticalDrift || Math.abs(deltaY) * 1.5 > Math.abs(deltaX)) {
         return;
       }
 
-      // Swipe Right to close drawer when it is currently open
-      if (drawerOpen && deltaX > minSwipeDistance) {
+      // Swipe Left: Open Drawer
+      if (!drawerOpen && deltaX < -minHorizontalSwipe) {
+        setDrawerOpen(true);
+      }
+
+      // Swipe Right: Close Drawer
+      if (drawerOpen && deltaX > minHorizontalSwipe) {
         setDrawerOpen(false);
       }
     };
