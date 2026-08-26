@@ -78,17 +78,15 @@ export default function Navbar() {
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
-    const minHorizontalSwipe = 40;
-    const maxVerticalDrift = 35;
 
     const onTouchStart = (e: TouchEvent) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
     };
 
     const onTouchEnd = (e: TouchEvent) => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
+      touchEndX = e.changedTouches[0].clientX;
+      touchEndY = e.changedTouches[0].clientY;
       handleSwipeGesture();
     };
 
@@ -96,19 +94,23 @@ export default function Navbar() {
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
 
-      // Ignore if user was scrolling up or down (vertical movement is significant or dominant)
-      if (Math.abs(deltaY) > maxVerticalDrift || Math.abs(deltaY) * 1.5 > Math.abs(deltaX)) {
+      // ── IF DRAWER IS OPEN: SWIPE RIGHT CLOSES DRAWER IMMEDIATELY ──
+      if (drawerOpen) {
+        if (deltaX > 25 && deltaX > Math.abs(deltaY)) {
+          setDrawerOpen(false);
+        }
         return;
       }
 
-      // Swipe Left: Open Drawer
-      if (!drawerOpen && deltaX < -minHorizontalSwipe) {
-        setDrawerOpen(true);
+      // ── IF DRAWER IS CLOSED: SWIPE LEFT OPENS DRAWER (PROTECTING VERTICAL SCROLL) ──
+      // Ignore if user is scrolling up/down on the page
+      if (Math.abs(deltaY) > 35 || Math.abs(deltaY) * 1.3 > Math.abs(deltaX)) {
+        return;
       }
 
-      // Swipe Right: Close Drawer
-      if (drawerOpen && deltaX > minHorizontalSwipe) {
-        setDrawerOpen(false);
+      // Swipe Left to open drawer
+      if (deltaX < -35) {
+        setDrawerOpen(true);
       }
     };
 
