@@ -147,7 +147,7 @@ export default function ResourcesPage() {
         {/* HEADER */}
         <section style={{ padding: '3.5rem 0 2rem', background: 'var(--bg-main)' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-            <span className="section-tag">📚 Clinical Evidence Base</span>
+            <span className="section-tag">Clinical Evidence Base</span>
             <h1 className="section-title">
               Research &amp; <span className="accent">Resources</span>
             </h1>
@@ -161,7 +161,7 @@ export default function ResourcesPage() {
         <section style={{ padding: '3rem 0 3.5rem', background: '#FFFFFF' }}>
           <div className="container" style={{ maxWidth: '950px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">🌐 Authoritative Portals</span>
+              <span className="section-tag">Authoritative Portals</span>
               <h2 className="section-title">Recommended <span className="accent">Sources</span></h2>
               <p className="section-desc">Trusted international medical guidelines and health organizations.</p>
             </div>
@@ -195,7 +195,7 @@ export default function ResourcesPage() {
         <section id="citations" style={{ padding: '2rem 0 5rem', background: 'var(--bg-main)' }}>
           <div className="container" style={{ maxWidth: '950px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">🔬 Clinical Literature</span>
+              <span className="section-tag">Clinical Literature</span>
               <h2 className="section-title">Research &amp; <span className="accent">Clinical Citations</span></h2>
               <p className="section-desc">Click any paper below to view detailed clinical abstract summaries, key findings, and medical evidence.</p>
             </div>
@@ -213,7 +213,7 @@ export default function ResourcesPage() {
                     style={{ fontSize: '0.84rem', padding: '0.5rem 1.1rem', flexShrink: 0 }}
                     onClick={() => openSourceModal(c)}
                   >
-                    Read Full Abstract 📖
+                    Read Full Abstract
                   </button>
                 </div>
               ))}
@@ -228,7 +228,7 @@ export default function ResourcesPage() {
         <div className="modal-overlay active" style={{ display: 'flex' }} onClick={() => setSourceDrawerOpen(false)}>
           <div className="modal-window" style={{ maxWidth: '680px', padding: '2.4rem 2rem' }} onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={() => setSourceDrawerOpen(false)}>✕</button>
-            <span className="modal-badge">🔬 Peer-Reviewed Clinical Abstract</span>
+            <span className="modal-badge">Peer-Reviewed Clinical Abstract</span>
             
             <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.4rem', lineHeight: 1.35 }}>
               {selectedCitation.title}

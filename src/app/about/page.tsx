@@ -79,7 +79,7 @@ export default function AboutPage() {
         <section style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="support-section">
           <div style={{ maxWidth: '880px', margin: '0 auto' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">👑 Campus Support &amp; Guidance</span>
+              <span className="section-tag">Campus Support &amp; Guidance</span>
               <h2 id="support-section" className="section-title">Women&apos;s Administrator</h2>
               <p className="section-desc">CBIT NSS Executive Body — Exclusive campus contact for female student support &amp; confidential personal guidance.</p>
             </div>

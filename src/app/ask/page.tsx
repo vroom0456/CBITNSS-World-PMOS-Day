@@ -169,8 +169,8 @@ export default function AskPage() {
         <section style={{ padding: '4rem 0', background: 'var(--bg-main)' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem' }}>
             <div className="heading-box reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag">📞 Support Resources</span>
-              <h2 className="section-title">Verified <span className="accent">Helplines &amp; Support</span></h2>
+              <span className="section-tag">Support Resources</span>
+              <h2 className="section-title">Helplines &amp; <span className="accent">Support Services</span></h2>
               <p className="section-desc">National helplines for women&apos;s health, emotional stress, and student wellness.</p>
             </div>
 
