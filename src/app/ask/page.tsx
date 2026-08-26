@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { IconCheckCircle, IconPhone } from '@/components/ui/Icons';
+import { IconCheckCircle, IconPhone, IconShield } from '@/components/ui/Icons';
 
 export default function AskPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -86,17 +86,24 @@ export default function AskPage() {
             
             <div className="ask-form-card">
               
-              <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
-                <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '0.4rem' }} aria-hidden="true">🛡️</span>
-                <span className="modal-badge">Anonymous submission</span>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.6rem', lineHeight: 1.65 }}>
-                  Do <strong>not</strong> include your name, email, phone or student ID. Questions are collected anonymously and compiled by the CBIT NSS team.
-                </p>
+              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.6rem', color: 'var(--soft-teal-accent)' }} aria-hidden="true">
+                <IconShield size={48} />
               </div>
+              <h2 id="ask-heading" className="section-title" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', marginBottom: '0.6rem' }}>
+                Ask a Question <span className="accent">Anonymously</span>
+              </h2>
+              <p className="section-desc" style={{ maxWidth: '580px', margin: '0 auto', fontSize: '0.94rem' }}>
+                Submit your health queries freely. No names, email addresses, or phone numbers are collected or stored anywhere.
+              </p>
+            </div>
 
-              <div className="ask-notice-box" style={{ background: '#FFFFFF', borderLeft: '4px solid var(--nss-blue-accent)', padding: '0.85rem 1.2rem', borderRadius: 'var(--r-sm)', marginBottom: '1.8rem', fontSize: '0.86rem', color: 'var(--nss-navy)', fontWeight: 600, lineHeight: 1.55 }}>
-                🛡️ <strong>Educational Notice:</strong> Doctor responses provide general medical awareness and guidance — they do not replace in-person clinical diagnosis or emergency care.
+            <div style={{ background: 'var(--bg-main)', border: '1.5px solid var(--border-light)', borderRadius: 'var(--r-sm)', padding: '0.9rem 1.1rem', marginBottom: '1.8rem', fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <IconShield size={18} color="var(--nss-blue-accent)" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <div>
+                <strong>Educational Notice:</strong> Doctor responses provide general medical awareness and guidance — they do not replace in-person clinical diagnosis or emergency care.
               </div>
+            </div>
 
               {!submitted ? (
                 <form onSubmit={handleSubmit}>

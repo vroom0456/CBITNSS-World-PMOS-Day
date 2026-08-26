@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { IconExternalLink, IconMessage } from '@/components/ui/Icons';
 import Link from 'next/link';
 
 export interface MythItem {
@@ -192,11 +193,11 @@ export default function MythsPage() {
 
                           {/* EVIDENCE & ANONYMOUS ACTION ROW */}
                           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center', paddingTop: '0.6rem', borderTop: '1px dashed var(--border-light)' }}>
-                            <Link href={m.evidenceUrl} className="myth-evidence-link">
-                              🔗 {m.evidenceTitle}
+                            <Link href={m.evidenceUrl} className="myth-evidence-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                              <IconExternalLink size={13} /> {m.evidenceTitle}
                             </Link>
-                            <Link href="/ask" className="myth-action-link">
-                              💬 Still unsure? Ask anonymously →
+                            <Link href="/ask" className="myth-action-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                              <IconMessage size={13} /> Still unsure? Ask anonymously →
                             </Link>
                           </div>
                         </div>

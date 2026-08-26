@@ -7,7 +7,7 @@ interface IconProps {
   style?: React.CSSProperties;
 }
 
-// 🩸 Irregular Periods / Cycle Drop Icon
+// Irregular Periods / Cycle Drop Icon
 export function IconBloodDrop({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -16,7 +16,7 @@ export function IconBloodDrop({ size = 24, color = 'currentColor', className = '
   );
 }
 
-// ✨ Hormonal Acne / Sparkle Icon
+// Hormonal Acne / Sparkle Icon
 export function IconSparkle({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -26,7 +26,7 @@ export function IconSparkle({ size = 24, color = 'currentColor', className = '',
   );
 }
 
-// 💇 Hair Changes Icon
+// Hair Changes Icon
 export function IconHairThinning({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -36,7 +36,7 @@ export function IconHairThinning({ size = 24, color = 'currentColor', className 
   );
 }
 
-// ⚖️ Balance / Metabolic Scale Icon
+// Balance / Metabolic Scale Icon
 export function IconScaleBalance({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -45,7 +45,7 @@ export function IconScaleBalance({ size = 24, color = 'currentColor', className 
   );
 }
 
-// 😴 Sleep / Fatigue Moon Icon
+// Sleep / Fatigue Moon Icon
 export function IconSleepFatigue({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -54,7 +54,7 @@ export function IconSleepFatigue({ size = 24, color = 'currentColor', className 
   );
 }
 
-// 🌙 Pigmentation / Wellbeing Moon Star Icon
+// Pigmentation / Wellbeing Moon Star Icon
 export function IconPigmentationMoon({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -64,7 +64,7 @@ export function IconPigmentationMoon({ size = 24, color = 'currentColor', classN
   );
 }
 
-// 📞 Phone Icon
+// Phone Icon
 export function IconPhone({ size = 18, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -73,7 +73,7 @@ export function IconPhone({ size = 18, color = 'currentColor', className = '', s
   );
 }
 
-// ✉️ Email Icon
+// Email Icon
 export function IconMail({ size = 18, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -83,7 +83,7 @@ export function IconMail({ size = 18, color = 'currentColor', className = '', st
   );
 }
 
-// 💬 Chat / WhatsApp / Message Icon
+// Chat / WhatsApp / Message Icon
 export function IconMessage({ size = 18, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
@@ -92,12 +92,73 @@ export function IconMessage({ size = 18, color = 'currentColor', className = '',
   );
 }
 
-// ✅ Check Circle Success Icon
+// Check Circle Success Icon
 export function IconCheckCircle({ size = 48, color = 'currentColor', className = '', style }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
       <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  );
+}
+
+// Shield Security & Medical Notice Icon
+export function IconShield({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+
+// Heart Care & Wellbeing Icon
+export function IconHeart({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    </svg>
+  );
+}
+
+// Plant / Growth & Myth Icon
+export function IconPlant({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+    </svg>
+  );
+}
+
+// Leaf Growth Icon
+export function IconLeaf({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    </svg>
+  );
+}
+
+// Hospital / Clinical Care Icon
+export function IconHospital({ size = 24, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M3 21h18" />
+      <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16" />
+      <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+      <path d="M10 9h4" />
+      <path d="M12 7v4" />
+    </svg>
+  );
+}
+
+// External Link Icon
+export function IconExternalLink({ size = 16, color = 'currentColor', className = '', style }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
   );
 }

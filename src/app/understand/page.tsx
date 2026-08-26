@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { IconHeart, IconLeaf, IconHospital } from '@/components/ui/Icons';
 import Link from 'next/link';
 
 export default function UnderstandPage() {
@@ -180,13 +181,13 @@ export default function UnderstandPage() {
             <div style={{ background: '#FFFFFF', border: '1px solid var(--border-light)', borderRadius: 'var(--r-lg)', padding: '2rem 1.8rem' }}>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', listStyle: 'none', padding: 0 }}>
                 {[
-                  { icon: '💚', bold: 'Listen without judgement', body: 'Avoid reducing symptoms to simple willpower, weight, or diet choices. Symptoms are physiological, not personal weakness.' },
-                  { icon: '🌱', bold: 'Avoid assuming infertility', body: 'PCOS does not mean permanent infertility. With appropriate care, most people can conceive.' },
-                  { icon: '🏥', bold: 'Encourage professional care', body: 'Support seeking medical guidance from certified physicians rather than unverified online remedies or social media advice.' },
-                  { icon: '💜', bold: 'Support emotional wellbeing', body: 'Recognise that anxiety, mood shifts and body image concerns are real symptoms, not over-reactions. Validate their experience.' },
+                  { icon: <IconHeart size={20} color="var(--soft-teal-accent)" />, bold: 'Listen without judgement', body: 'Avoid reducing symptoms to simple willpower, weight, or diet choices. Symptoms are physiological, not personal weakness.' },
+                  { icon: <IconLeaf size={20} color="var(--soft-teal-accent)" />, bold: 'Avoid assuming infertility', body: 'PCOS does not mean permanent infertility. With appropriate care, most people can conceive.' },
+                  { icon: <IconHospital size={20} color="var(--soft-teal-accent)" />, bold: 'Encourage professional care', body: 'Support seeking medical guidance from certified physicians rather than unverified online remedies or social media advice.' },
+                  { icon: <IconHeart size={20} color="var(--soft-teal-accent)" />, bold: 'Support emotional wellbeing', body: 'Recognise that anxiety, mood shifts and body image concerns are real symptoms, not over-reactions. Validate their experience.' },
                 ].map((item, i) => (
                   <li key={i} style={{ display: 'flex', gap: '0.9rem', alignItems: 'flex-start' }}>
-                    <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '0.1rem' }} aria-hidden="true">{item.icon}</span>
+                    <span style={{ flexShrink: 0, marginTop: '0.2rem' }} aria-hidden="true">{item.icon}</span>
                     <div>
                       <strong style={{ color: 'var(--nss-navy)', display: 'block', marginBottom: '0.15rem' }}>{item.bold}</strong>
                       <span style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.65 }}>{item.body}</span>

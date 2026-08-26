@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { IconBloodDrop, IconSparkle, IconHairThinning, IconScaleBalance, IconSleepFatigue, IconPigmentationMoon } from '@/components/ui/Icons';
+import { IconBloodDrop, IconSparkle, IconHairThinning, IconScaleBalance, IconSleepFatigue, IconPigmentationMoon, IconHeart } from '@/components/ui/Icons';
 import Link from 'next/link';
 
 declare global {
@@ -220,7 +220,9 @@ export default function SymptomsPage() {
         <section style={{ padding: 'clamp(2rem, 5vw, 3.5rem) 5%', background: 'var(--bg-main)' }} aria-labelledby="care-cta">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="doctor-advocacy-banner reveal" style={{ background: '#FFFFFF', border: '1.5px solid var(--soft-teal-border)', padding: 'clamp(1.5rem, 5vw, 2.4rem)', borderRadius: 'var(--r-lg)', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-              <div style={{ fontSize: '2.5rem', flexShrink: 0 }} aria-hidden="true">💜</div>
+              <div style={{ flexShrink: 0, color: 'var(--soft-teal-accent)' }} aria-hidden="true">
+                <IconHeart size={36} />
+              </div>
               <div>
                 <h2 id="care-cta" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--nss-navy)', marginBottom: '0.3rem' }}>You deserve proper medical care</h2>
                 <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
