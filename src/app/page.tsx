@@ -51,8 +51,7 @@ export default function HomePage() {
             <div className="hero-cta-row">
               <Link
                 href="/ask"
-                className="btn-primary-cta"
-                style={{ fontSize: '1.05rem', padding: '0.9rem 2.2rem', boxShadow: '0 8px 28px rgba(86, 124, 141, 0.35)' }}
+                className="btn-primary-cta hero-ask-btn"
               >
                 Ask an Anonymous Question →
               </Link>
@@ -94,21 +93,7 @@ export default function HomePage() {
               <div className="speaker-cta-wrap" style={{ marginTop: '1.25rem', width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
                 <Link
                   href="/ask"
-                  className="btn-primary-cta"
-                  style={{
-                    fontSize: '0.92rem',
-                    padding: '0.75rem 1.6rem',
-                    minHeight: '44px',
-                    height: 'auto',
-                    width: 'auto',
-                    maxWidth: '100%',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center',
-                    whiteSpace: 'nowrap',
-                    fontWeight: 700
-                  }}
+                  className="btn-primary-cta speaker-ask-btn"
                 >
                   Ask Dr. Sindura an Anonymous Question
                 </Link>

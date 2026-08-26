@@ -828,8 +828,8 @@
     .input-field label{display:block;font-size:0.78rem;font-weight:800;color:var(--nss-navy);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;}
     .input-field input,.input-field select,.input-field textarea{width:100%;padding:0.88rem 1.1rem;border:1.5px solid var(--border-light);border-radius:var(--r-sm);font-family:inherit;font-size:0.93rem;background:#fff;outline:none;transition:border-color 0.25s ease,box-shadow 0.25s ease;color:var(--text-main);}
     .input-field input:focus,.input-field select:focus,.input-field textarea:focus{border-color:var(--nss-navy);box-shadow:0 0 0 3px rgba(58,43,39,0.08);}
-    .btn-send-general{width:100%;background:var(--nss-navy);color:#fff;padding:0.95rem;border-radius:var(--r-pill);font-size:1rem;font-weight:800;box-shadow:0 4px 18px rgba(86,124,141,0.30);transition:all 0.35s var(--ease-spring);}
-    .btn-send-general:hover{background:var(--nss-navy-dark);transform:translateY(-3px);box-shadow:0 10px 28px rgba(86,124,141,0.38);}
+    .btn-send-general{width:100%;background:var(--nss-navy);color:#fff;padding:0.75rem 1.4rem;border-radius:var(--r-control);font-size:0.92rem;font-weight:700;box-shadow:0 4px 14px rgba(86,124,141,0.25);transition:all 0.25s var(--ease-spring);}
+    .btn-send-general:hover{background:var(--nss-navy-dark);transform:translateY(-2px);box-shadow:0 8px 22px rgba(86,124,141,0.35);}
 
     /* MODAL */
     .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(40,30,27,0.65);backdrop-filter:blur(10px) saturate(150%);-webkit-backdrop-filter:blur(10px) saturate(150%);z-index:100000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
@@ -1076,24 +1076,42 @@
         will-change: opacity;
       }
 
-      /* PRIMARY CTA — spacious button ratio */
+      /* PRIMARY CTA — sleek, proportional mobile size */
       .btn-primary-cta {
         display: inline-flex !important; align-items: center !important; justify-content: center !important;
-        gap: 8px; min-height: 48px !important; height: auto !important;
-        padding: 0.85rem 1.8rem !important; font-size: 15px !important;
-        font-weight: 800 !important; letter-spacing: -0.01em;
-        border-radius: 9999px !important; width: 100% !important;
-        max-width: 320px; align-self: center; text-decoration: none !important;
+        gap: 6px; min-height: 40px !important; height: auto !important;
+        padding: 0.55rem 1.25rem !important; font-size: 0.86rem !important;
+        font-weight: 700 !important; letter-spacing: -0.01em;
+        border-radius: var(--r-control) !important; width: auto !important;
+        max-width: 100% !important; align-self: center; text-decoration: none !important;
         background: var(--soft-teal-accent);
         color: #FFFFFF !important; border: none;
-        box-shadow: 0 6px 20px rgba(86,124,141,0.35) !important;
+        white-space: normal !important; text-align: center !important; line-height: 1.35 !important;
+        box-shadow: 0 4px 14px rgba(86,124,141,0.25) !important;
         transition: transform 0.15s ease, box-shadow 0.15s ease !important;
         cursor: pointer;
       }
       .btn-primary-cta:hover, .btn-primary-cta:active {
         background: var(--nss-navy);
-        box-shadow: 0 8px 24px rgba(86,124,141,0.45) !important;
-        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(86,124,141,0.35) !important;
+        transform: translateY(-1px) !important;
+      }
+      .btn-send-general {
+        padding: 0.65rem 1.2rem !important;
+        font-size: 0.88rem !important;
+        min-height: 40px !important;
+      }
+      .drawer-ask-btn {
+        min-height: 38px !important;
+        font-size: 13px !important;
+        padding: 0.45rem 0.9rem !important;
+      }
+      .floating-ask-btn {
+        bottom: 1.25rem !important;
+        right: 1.25rem !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+        min-height: 38px !important;
       }
 
       /* ── EMERGENCY STRIP — ultra-compact ── */
@@ -1638,7 +1656,7 @@
       }
       .section-title { font-size: clamp(20px, 5.5vw, 23px) !important; }
       .team-grid { grid-template-columns: 1fr; }
-      .btn-primary-cta { padding: 0.75rem 1.25rem !important; min-height: 46px !important; font-size: 14px !important; }
+      .btn-primary-cta { padding: 0.5rem 1rem !important; min-height: 38px !important; font-size: 0.82rem !important; }
       .btn-sec-link { padding: 0 11px !important; font-size: 12px !important; }
     }
 
